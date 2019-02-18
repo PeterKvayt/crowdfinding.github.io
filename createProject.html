@@ -101,6 +101,64 @@
                 </div>  
             </div>  
         </div>
+        <!-- модально окно "задать вопрос" -->
+        <div class="modal fade" id="askQuestion">
+                <div class="modal-dialog modal-lg">
+                     <div class="modal-content">
+                         <div class="modal-body">
+                            <h5>Обратная связь</h5>
+                            <button class="closeBtn" id="askQuestionClose" data-dismiss="modal">&times;</button>
+                            <div class="row">
+                                <div class="col">
+                                    <form action="#">
+                                        <p>
+                                            <select class="inputBox">
+                                                <option disabled selected>Выберите тему вопроса</option>
+                                                <option>Служба поддержки</option>
+                                                <option>Жалоба</option>
+                                                <option>Предложение</option>
+                                                <option>Другое</option>
+                                            </select>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <form action="#">
+                                        <p>
+                                          <textarea class="inputBox" type="text" placeholder="Задайте свой вопрос" rows="6"></textarea>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <form action="#">
+                                        <p>
+                                          <input class="inputBox" type="text" placeholder="Как вас называть?">
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <form action="#">
+                                        <p>
+                                          <input class="inputBox" type="text" placeholder="Контактный email">
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <a class="my-btn" id="askQestionBtn" href="#">Задать вопрос</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>  
+        </div>
         <div class="section">
           <div class="container">
             <div class="row">
@@ -129,295 +187,324 @@
               </ul>
               <!-- Вкладки панелей -->  
               <div class="tab-content">
-                <div class="tab-pane active box" id="totalInformation">
+                <div class="tab-pane active" id="totalInformation">
                     <div class="row">
-                        <div class="col">
-                            <div>
-                                <h5 class="title">Название проекта</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <form action="#">
-                                    <p>
-                                      <input class="inputBox" type="text" placeholder="Введите название проекта">
-                                    </p>
-                                    <p>
-                                      Название должно быть лаконичным, уникальным и запоминающимся. 
-                                      Будьте уверены в том, что название проекта отражает его суть.
-                                    </p>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <h5 class="title">Краткое описание проекта</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <form action="#">
-                                    <p>
-                                      <textarea class="inputBox" type="text" placeholder="Коротко расскажите о проекте ( не больше 280 символов)" rows="4"></textarea>
-                                    </p>
-                                    <p>
-                                        Опишите в одном предложении цель вашего проекта.
-                                    </p>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <h5 class="title">Категория проекта</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <form action="#">
-                                    <p>
-                                        <select class="inputBox">
-                                            <option disabled selected>Выберите категорию</option>
-                                            <option>Еда</option>
-                                            <option>Дизайн</option>
-                                            <option>Социальные проекты</option>
-                                            <option>Спорт</option>
-                                            <option>Театр</option>
-                                            <option>Фотография</option>
-                                            <option>Фильмы и видео</option>
-                                            <option>Технологии</option>
-                                            <option>Игры</option>
-                                            <option>Искусство</option>
-                                            <option>Литература</option>
-                                            <option>Музыка</option>
-                                            <option>Наука и образование</option>
-                                            <option>Ремесло</option>
-                                            <option>Другое</option>
-                                        </select>
-                                    </p>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                            <div class="col">
-                                <div>
-                                    <h5 class="title">Город реализации</h5>
+                        <div class="col-lg-8">
+                            <div class="box">
+                                <div class="row">
+                                <div class="col">
+                                    <div>
+                                        <h5 class="title">Название проекта</h5>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            <form action="#">
+                                                <p>
+                                                <input class="inputBox" type="text" placeholder="Введите название проекта">
+                                                </p>
+                                                <p>
+                                                Название должно быть лаконичным, уникальным и запоминающимся. 
+                                                Будьте уверены в том, что название проекта отражает его суть.
+                                                </p>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <form action="#">
-                                    <p>
-                                    <select class="inputBox">
-                                            <option disabled selected>Выберите город</option>
-                                            <option>Минск</option>
-                                            <option>Брест</option>                                                <option>Гродно</option>
-                                            <option>Гомель</option>
-                                            <option>Могилев</option>
-                                            <option>Витебск</option>
-                                            <option>Пинск</option>
-                                            <option>Барановичи</option>
-                                        </select>
-                                    </p>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                            <div class="col">
-                                <div>
-                                    <h5 class="title">Обложка проекта</h5>
+                            <div class="box">
+                                <div class="row">
+                                <div class="col">
+                                    <div>
+                                        <h5 class="title">Краткое описание проекта</h5>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            <form action="#">
+                                                <p>
+                                                <textarea class="inputBox" type="text" placeholder="Коротко расскажите о проекте ( не больше 280 символов)" rows="4"></textarea>
+                                                </p>
+                                                <p>
+                                                    Опишите в одном предложении цель вашего проекта.
+                                                </p>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <img class="projectWall" src="images/code2.jpg">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div>
-                                <form  action="#">
-                                    <input class="chooseImg" type="file">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                            <div class="col">
-                                <div>
-                                    <h5 class="title">Видео проекта</h5>
+                            <div class="box">
+                                <div class="row">
+                                <div class="col">
+                                    <div>
+                                        <h5 class="title">Категория проекта</h5>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            <form action="#">
+                                                <p>
+                                                    <select class="inputBox">
+                                                        <option disabled selected>Выберите категорию</option>
+                                                        <option>Еда</option>
+                                                        <option>Дизайн</option>
+                                                        <option>Социальные проекты</option>
+                                                        <option>Спорт</option>
+                                                        <option>Театр</option>
+                                                        <option>Фотография</option>
+                                                        <option>Фильмы и видео</option>
+                                                        <option>Технологии</option>
+                                                        <option>Игры</option>
+                                                        <option>Искусство</option>
+                                                        <option>Литература</option>
+                                                        <option>Музыка</option>
+                                                        <option>Наука и образование</option>
+                                                        <option>Ремесло</option>
+                                                        <option>Другое</option>
+                                                    </select>
+                                                </p>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <form  action="#">
-                                    <input class="inputBox"  type="text" placeholder="Введите ссылку на ваше видео">
-                                </form>
+                            <div class="box">
+                                <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            <h5 class="title">Город реализации</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            <form action="#">
+                                                <p>
+                                                <select class="inputBox">
+                                                        <option disabled selected>Выберите город</option>
+                                                        <option>Минск</option>
+                                                        <option>Брест</option>                                                
+                                                        <option>Гомель</option>
+                                                        <option>Могилев</option>
+                                                        <option>Витебск</option>
+                                                        <option>Пинск</option>
+                                                        <option>Барановичи</option>
+                                                        <option>Гродно</option>
+                                                    </select>
+                                                </p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            <h5 class="title">Обложка проекта</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            <img class="projectWall" src="images/code2.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div>
+                                            <form  action="#">
+                                                <input class="chooseImg" type="file">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            <h5 class="title">Видео проекта</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            <form  action="#">
+                                                <input class="inputBox"  type="text" placeholder="Введите ссылку на ваше видео">
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div>
+                                            Вам необходимо предварительно загрузить свое видео на YouTube, 
+                                            а затем скопировать сюда ссылку на него.
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <div class="row">
+                                <div class="col">
+                                    <div>
+                                        <h5 class="title">Бюджет и продолжительность компании</h5>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col">
+                                            <p>
+                                                <form  action="#">
+                                                    <input class="inputBox"  type="text" placeholder="Введите сумму (BYN)">
+                                                </form>
+                                            <p>
+                                        </div>
+                                        <div class="col">
+                                            <p>
+                                                <form  action="#">
+                                                    <input class="inputBox"  type="text" placeholder="Дней (от 1 до 180)">
+                                                </form>
+                                        <p>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            <p>
+                                                <span>0</span> BYN Комиссионный сбор (10%) 
+                                                <span class="info"  title="Комиссионный сбор включает общую комиссию платформы, банка и платежной системы. Комиссия взимается со всей собранной суммы ТОЛЬКО в случае успешного окончания краудфандинговой кампании.">
+                                                    ?
+                                                </span>
+                                            </p> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            <p>
+                                                <span>0</span> BYN Подоходный налог (13%)
+                                                <span class="info"  title="Подоходный налог, взимаемый государством, составляет 13%. Стоит учитывать, что сумма в 4 947 руб. налогом не облагается. Уплату налога следует производить самостоятельно.">
+                                                    ?
+                                                </span>
+                                            </p> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            <p>
+                                                Итого = <span>0</span> BYN
+                                                <span class="info"  title="Данный подсчет является приблизительным. Итоговая сумма может отличаться от указанной.">
+                                                    ?
+                                                </span> 
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>
+                                            Мы рекомендуем указывать минимальную сумму, 
+                                            необходимую для реализации проекта. 
+                                            Платформа использует модель «все или ничего», а это значит, 
+                                            что для получение средств вам обязательно необходимо собрать от 100% и выше.
+                                        </p>
+                                        <p>
+                                            Обращаем ваше внимание на то, что платформа берет комиссию только с успешных проектов.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col">
-                            <div>
-                                Вам необходимо предварительно загрузить свое видео на YouTube, 
-                                а затем скопировать сюда ссылку на него.
-                           </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <h5 class="title">Бюджет и продолжительность компании</h5>
+                        <div class="col-lg-4">
+                            <div class="row">
+                                <div class="card myCard">
+                                            <a href="#"><img class="card-img-top" src="images/exampleProjectPict.png"/></a>
+                                            <a href="#" class="cardLinkHover"><img class="card-img-top" src="images/exampleProjectPictHover.png" alt="cardImage1"/></a>
+                                            <a href="#" class="cardLinkHoverSupport ">ПОДДЕРЖАТЬ ПРОЕКТ</a>
+                                            <div class="card-body">
+                                                <a class="filter" href="#">Тег</a>
+                                                <a href="#" class="projectName">Название вашего проекта</a>
+                                                <a href="#" class="descriptionOfCard">
+                                                    <p >
+                                                        Краткое описание проекта
+                                                    </p>
+                                                </a>
+                                                <div class="progressLine">
+                                                    <div class="progressBarZero"></div>
+                                                </div>
+                                                <div class="progressStatus">
+                                                    <div class="progressStatusLeft">
+                                                        <span class="progressProcent ">0%</span><!--показывает сколько процентов под прогресслайном-->
+                                                        <span class="status ">ИДЕТ СБОР</span><!--показывает статус-->
+                                                    </div>
+                                                    <div class="progressStatusRight">
+                                                        <span class="progressMoneyNow progressStatusRightItem ">
+                                                            0 BYN
+                                                        </span><!--показывает собранную сумму-->
+                                                        <span class="status progressStatusRightItem ">СОБРАНО</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                            <div class="col">
-                                <p>
-                                    <form  action="#">
-                                        <input class="inputBox"  type="text" placeholder="Введите сумму (BYN)">
-                                    </form>
-                                <p>
+                            <div class="row">
+                                    <div class="col">
+                                        <p>
+                                            <h5 class="rulesArticle">Помощь</h5>
+                                        </p>
+                                    </div>
                             </div>
-                            <div class="col">
-                                <p>
-                                    <form  action="#">
-                                        <input class="inputBox"  type="text" placeholder="Дней (от 1 до 180)">
-                                    </form>
-                               <p>
+                            <div class="row">
+                                    <div class="col">
+                                        <p> 
+                                            <a class="link" data-toggle="collapse" href="#WhyVideo">Зачем записывать видео?</a>
+                                        </p>
+                                        <div class="collapse" id="WhyVideo">
+                                            <div class="well">
+                                                <p>Видео-обращение значительно повысит ваши шансы на успех. Это эффективный
+                                                        инструмент, который позволит лично обратиться к потенциальным спонсорам,
+                                                        рассказать о проекте и призвать к действию.</p>
+                                            </div>
+                                        </div>
+                                    </div>
                             </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <p>
-                                    <span>0</span> BYN Комиссионный сбор (10%) 
-                                    <span class="info"  title="Комиссионный сбор включает общую комиссию платформы, банка и платежной системы. Комиссия взимается со всей собранной суммы ТОЛЬКО в случае успешного окончания краудфандинговой кампании.">
-                                        ?
-                                    </span>
-                                </p> 
+                            <div class="row">
+                                        <div class="col">
+                                            <a class="link" href="#askQuestion" data-toggle="modal">Задать вопрос</a>
+                                        </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <p>
-                                    <span>0</span> BYN Подоходный налог (13%)
-                                    <span class="info"  title="Подоходный налог, взимаемый государством, составляет 13%. Стоит учитывать, что сумма в 4 947 руб. налогом не облагается. Уплату налога следует производить самостоятельно.">
-                                        ?
-                                    </span>
-                                </p> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <p>
-                                    Итого = <span>0</span> BYN
-                                    <span class="info"  title="Данный подсчет является приблизительным. Итоговая сумма может отличаться от указанной.">
-                                        ?
-                                    </span> 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p>
-                                Мы рекомендуем указывать минимальную сумму, 
-                                необходимую для реализации проекта. 
-                                Платформа использует модель «все или ничего», а это значит, 
-                                что для получение средств вам обязательно необходимо собрать от 100% и выше.
-                            </p>
-                            <p>
-                                Обращаем ваше внимание на то, что платформа берет комиссию только с успешных проектов.
-                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane box" id="listOfRewards">
+                <div class="tab-pane" id="listOfRewards">
                     <div class="row">
+                        <div class="col-lg-8">
+                            <div class="box">
+                        <div class="row">
                         <div class="col">
                             <div>
                                 <h5 class="title">Новое вознаграждение</h5>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <form action="#">
-                                    <p>
-                                        <input class="inputBox" type="text" placeholder="Введите название вознаграджения">
-                                    </p>    
-                                </form>
-                            </div>
                         </div>
-                        <div class="col">
+                        <div class="row">
+                            <div class="col">
                                 <div>
                                     <form action="#">
                                         <p>
-                                            <input class="inputBox" type="text" placeholder="Введите стоимость (BYN)">
+                                            <input class="inputBox" type="text" placeholder="Введите название вознаграджения">
                                         </p>    
-                                    </form>
-                                </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                            <div class="col">
-                                <div>
-                                    <form action="#">
-                                        <p>
-                                          <textarea class="inputBox" type="text" placeholder="Описание вознаграждения" rows="2"></textarea>
-                                        </p>
-                                    </form>
-                                </div>
-                            </div>
-                    </div>
-                    <div class="row">
-                            <div class="col">
-                                <div>
-                                    <h5 class="title">Дата доставки</h5>
-                                </div>
-                            </div>
-                    </div>
-                    <div class="row">
-                            <div class="col">
-                                <div>
-                                    <form action="#">
-                                        <p>
-                                            <select class="inputBox">
-                                                <option disabled selected>Выберите месяц</option>
-                                                <option>Январь</option>
-                                                <option>Февраль</option>
-                                                <option>Март</option>
-                                                <option>Апрель</option>
-                                                <option>Май</option>
-                                                <option>Июнь</option>
-                                                <option>Июль</option>
-                                                <option>Август</option>
-                                                <option>Сентябрь</option>
-                                                <option>Октябрь</option>
-                                                <option>Ноябрь</option>
-                                                <option>Декабрь</option>
-                                            </select>
-                                        </p>
                                     </form>
                                 </div>
                             </div>
@@ -425,436 +512,691 @@
                                     <div>
                                         <form action="#">
                                             <p>
-                                                <select class="inputBox">
-                                                    <option disabled selected>Выберите год</option>
-                                                    <option>2019</option>
-                                                    <option>2020</option>
-                                                    <option>2021</option>
-                                                    <option>2022</option>
-                                                    <option>2023</option>
-                                                    <option>2024</option>
-                                                    <option>2025</option>
-                                                    <option>2026</option>
-                                                    <option>2027</option>
-                                                    <option>2028</option>
-                                                    <option>2029</option>
-                                                    <option>2030</option>
-                                                </select>
+                                                <input class="inputBox" type="text" placeholder="Введите стоимость (BYN)">
+                                            </p>    
+                                        </form>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="col">
+                                    <div>
+                                        <form action="#">
+                                            <p>
+                                            <textarea class="inputBox" type="text" placeholder="Описание вознаграждения" rows="2"></textarea>
                                             </p>
                                         </form>
                                     </div>
                                 </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <h5 class="title">География доставки</h5>
+                        </div>
                             </div>
-                        </div>       
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <form action="#">
-                                    <p>
-                                        <input type="radio" name="deliveryLocation"><label>Доставка отсутствует</label>
-                                    </p>
-                                    <p>
-                                        <input type="radio" name="deliveryLocation" data-toggle="collapse" href="#someContries"><label>Некоторые страны</label>
-                                    </p>
-                                    <p>
-                                        <input type="radio" name="deliveryLocation" data-toggle="collapse" href="#allWorld"><label>По всему миру</label>
-                                    </p>
-                                </form>
-                                <div class="collapse" id="someContries">
-                                    <div class="well">
-                                        <div class="col-lg-4">
-                                            <select class="inputBox">
-                                                <option disabled selected>Выберите страну</option>
-                                                <option>Беларусь</option>
-                                                <option>Россия</option>
-                                                <option>Украина</option>
-                                                <option>Литва</option>
-                                                <option>Латвия</option>
-                                                <option>Польша</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <form action="#">
-                                                <input class="inputBox" type="text" placeholder="Введите стоимость (BYN)">    
-                                            </form>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <a class="my-btn" href="#">Добавить страну</a>
-                                        </div>
+                            <div class="box">
+                                    <div class="row">
+                                            <div class="col">
+                                                <div>
+                                                    <h5 class="title">Дата доставки</h5>
+                                                </div>
+                                            </div>
                                     </div>
-                                </div>
-                                <div class="collapse" id="allWorld">
-                                        <div class="well">
+                                    <div class="row">
+                                            <div class="col">
+                                                <div>
+                                                    <form action="#">
+                                                        <p>
+                                                            <select class="inputBox">
+                                                                <option disabled selected>Выберите месяц</option>
+                                                                <option>Январь</option>
+                                                                <option>Февраль</option>
+                                                                <option>Март</option>
+                                                                <option>Апрель</option>
+                                                                <option>Май</option>
+                                                                <option>Июнь</option>
+                                                                <option>Июль</option>
+                                                                <option>Август</option>
+                                                                <option>Сентябрь</option>
+                                                                <option>Октябрь</option>
+                                                                <option>Ноябрь</option>
+                                                                <option>Декабрь</option>
+                                                            </select>
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                    <div>
+                                                        <form action="#">
+                                                            <p>
+                                                                <select class="inputBox">
+                                                                    <option disabled selected>Выберите год</option>
+                                                                    <option>2019</option>
+                                                                    <option>2020</option>
+                                                                    <option>2021</option>
+                                                                    <option>2022</option>
+                                                                    <option>2023</option>
+                                                                    <option>2024</option>
+                                                                    <option>2025</option>
+                                                                    <option>2026</option>
+                                                                    <option>2027</option>
+                                                                    <option>2028</option>
+                                                                    <option>2029</option>
+                                                                    <option>2030</option>
+                                                                </select>
+                                                            </p>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                    </div>
+                            </div>
+                            <div class="box">
+                                    <div class="row">
+                                            <div class="col">
+                                                <div>
+                                                    <h5 class="title">География доставки</h5>
+                                                </div>
+                                            </div>       
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div>
+                                                    <form action="#">
+                                                        <p>
+                                                            <input type="radio" name="deliveryLocation"><label>Доставка отсутствует</label>
+                                                        </p>
+                                                        <p>
+                                                            <input type="radio" name="deliveryLocation" data-toggle="collapse" href="#someContries"><label>Некоторые страны</label>
+                                                        </p>
+                                                        <p>
+                                                            <input type="radio" name="deliveryLocation" data-toggle="collapse" href="#allWorld"><label>По всему миру</label>
+                                                        </p>
+                                                    </form>
+                                                    <div class="collapse" id="someContries">
+                                                        <div class="well">
+                                                            <div class="col-lg-4">
+                                                                <select class="inputBox">
+                                                                    <option disabled selected>Выберите страну</option>
+                                                                    <option>Беларусь</option>
+                                                                    <option>Россия</option>
+                                                                    <option>Украина</option>
+                                                                    <option>Литва</option>
+                                                                    <option>Латвия</option>
+                                                                    <option>Польша</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-lg-4">
+                                                                <form action="#">
+                                                                    <input class="inputBox" type="text" placeholder="Введите стоимость (BYN)">    
+                                                                </form>
+                                                            </div>
+                                                            <div class="col-lg-4">
+                                                                <a class="my-btn" href="#">Добавить страну</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="collapse" id="allWorld">
+                                                            <div class="well">
+                                                                <div class="col">
+                                                                    <p>
+                                                                        <select class="inputBox">
+                                                                            <option disabled selected>Выберите страну</option>
+                                                                            <option>Беларусь</option>
+                                                                            <option>Россия</option>
+                                                                            <option>Украина</option>
+                                                                            <option>Литва</option>
+                                                                            <option>Латвия</option>
+                                                                            <option>Польша</option>
+                                                                        </select>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <form action="#">
+                                                                        <p>
+                                                                            <input class="inputBox" type="text" placeholder="Введите стоимость (BYN)">
+                                                                        </p>    
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                        </div>
+                            </div>
+                            <div class="box">
+                                    <div class="row">
+                                            <div class="col">
+                                                <div>
+                                                    <h5 class="title">Количество</h5>
+                                                </div>
+                                            </div>       
+                                    </div>
+                                    <div class="row">
                                             <div class="col">
                                                 <p>
-                                                    <select class="inputBox">
-                                                        <option disabled selected>Выберите страну</option>
-                                                        <option>Беларусь</option>
-                                                        <option>Россия</option>
-                                                        <option>Украина</option>
-                                                        <option>Литва</option>
-                                                        <option>Латвия</option>
-                                                        <option>Польша</option>
-                                                    </select>
+                                                    <input type="checkbox" data-toggle="collapse" href="#countOfRewards">
+                                                    Есть ограничение по количеству
                                                 </p>
+                                                <div class="collapse" id="countOfRewards">
+                                                    <div class="well">
+                                                        <form action="#">
+                                                            <p>
+                                                                <input class="inputBox" type="text" placeholder="Введите количество">
+                                                            </p>    
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col">
-                                                <form action="#">
-                                                    <p>
-                                                        <input class="inputBox" type="text" placeholder="Введите стоимость (BYN)">
-                                                    </p>    
-                                                </form>
-                                            </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            <a href="#" class="my-btn">Добавить вознаграждение</a>
                                         </div>
-                                </div>
-                            </div>
-                        </div>   
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <h5 class="title">Количество</h5>
-                            </div>
-                        </div>       
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <p>
-                                <input type="checkbox" data-toggle="collapse" href="#countOfRewards">
-                                Есть ограничение по количеству
-                            </p>
-                            <div class="collapse" id="countOfRewards">
-                                <div class="well">
-                                    <form action="#">
-                                        <p>
-                                            <input class="inputBox" type="text" placeholder="Введите количество">
-                                        </p>    
-                                    </form>
-                                </div>
+                                    </div>
+                                    </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <a href="#" class="my-btn">Добавить вознаграждение</a>
+                        <div class="col-lg-4">
+                            <div class="row">
+                                    <div class="col">
+                                        <p>
+                                            <h5 class="rulesArticle">Помощь</h5>
+                                        </p>
+                                    </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col">
+                                        <p> 
+                                            <a class="link" data-toggle="collapse" href="#Lots">Что такое лоты?</a>
+                                        </p>
+                                        <div class="collapse" id="Lots">
+                                            <div class="well">
+                                                <p>Лоты – это продукты, которые вы предлагаете в рамках крауд-кампании. Это то, ради чего люди перечисляют деньги в ваш проект.
+                                                    </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col">
+                                        <p> 
+                                            <a class="link" data-toggle="collapse" href="#BetterLots">Какие лоты лучше добавлять?</a>
+                                        </p>
+                                        <div class="collapse" id="BetterLots">
+                                            <div class="well">
+                                                <p>Если вы выводите на рынок новый продукт, то в качестве лота должен выступить 
+                                                    сам продукт и его модификации. Если вы решили издать книгу, то лотом является ваша книга. 
+                                                    Если вы организуете концерт или другое мероприятие, то лотами могут выступить билеты на мероприятие. 
+                                                    Подробнее с нашими рекомендациями вы можете 
+                                                        ознакомиться <a class="link" href="#">здесь</a>.
+                                                    </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <a class="link" href="#askQuestion" data-toggle="modal">Задать вопрос</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane box" id="detailInformation">
+                <div class="tab-pane" id="detailInformation">
                     <div class="row">
+                        <div class="col-lg-8">
+                            <div class="box">
+                                <div class="row">
                         <div class="col">
                             <div>
                                 <h5 class="title">Описание проекта</h5>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <textarea  id="fullDescription"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p></p>
-                            <p>
-                                    Начните с представления себя, своей команды, 
-                                    а также с предыстории проекта. Далее опишите суть 
-                                    и цель проекта, объясните, в чем его уникальность и 
-                                    почему он должен заинтересовать людей. Распишите, на что 
-                                    будут потрачены вложенные пользователями средства. Избегайте 
-                                    монотонности изложения, разбивайте текст на абзацы с привлекательными 
-                                    заголовками, фото- и видеоматериалами, графическими изображениями и т.п. 
-                                    Совет: по объему текст-описание должен быть примерно наравне с колонкой 
-                                    вознаграждений – идеально, если они заканчиваются на одном уровне.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane box" id="payInformation">
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <h5 class="title">Личные данные</h5>
-                                <p>
-                                        Чтобы платформа могла заключить с вами договор, 
-                                        необходимо заполнить паспортные данные. 
-                                        Информация, которую вы передаете в платформу, 
-                                        является конфиденциальной и не подлежит разглашению.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <form action="#">
-                                    <p>
-                                        <input class="inputBox" type="text" placeholder="Фамилия">
-                                    </p>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                            <div class="col">
-                                <div>
-                                    <form action="#">
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            <textarea  id="fullDescription"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p></p>
                                         <p>
-                                            <input class="inputBox" type="text" placeholder="Имя">
-                                        </p>    
-                                    </form>
+                                                Начните с представления себя, своей команды, 
+                                                а также с предыстории проекта. Далее опишите суть 
+                                                и цель проекта, объясните, в чем его уникальность и 
+                                                почему он должен заинтересовать людей. Распишите, на что 
+                                                будут потрачены вложенные пользователями средства. Избегайте 
+                                                монотонности изложения, разбивайте текст на абзацы с привлекательными 
+                                                заголовками, фото- и видеоматериалами, графическими изображениями и т.п. 
+                                                Совет: по объему текст-описание должен быть примерно наравне с колонкой 
+                                                вознаграждений – идеально, если они заканчиваются на одном уровне.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                    <div>
-                                        <form action="#">
-                                            <p>
-                                                <input class="inputBox" type="text" placeholder="Отчество">
-                                            </p>    
-                                        </form>
+                            <div class="box">
+                                <div class="row">
+                                    <div class="col">
+                                        <div>
+                                            <h5 class="title">Частые вопросы</h5>
+                                        </div>
                                     </div>
-                            </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <p>
-                                    Дата рождения:
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                                <div>
-                                    <form action="#">
-                                        <p>
-                                            <select class="inputBox">
-                                                <option disabled selected>Выберите месяц</option>
-                                                <option>Январь</option>
-                                                <option>Февраль</option>
-                                                <option>Март</option>
-                                                <option>Апрель</option>
-                                                <option>Май</option>
-                                                <option>Июнь</option>
-                                                <option>Июль</option>
-                                                <option>Август</option>
-                                                <option>Сентябрь</option>
-                                                <option>Октябрь</option>
-                                                <option>Ноябрь</option>
-                                                <option>Декабрь</option>
-                                            </select>
-                                        </p>    
-                                    </form>
                                 </div>
-                        </div>
-                        <div class="col">
-                                    <div>
-                                        <form action="#">
-                                            <p>
-                                                <select class="inputBox">
-                                                <option disabled selected>Выберите число</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                                <option>6</option>
-                                                <option>7</option>
-                                                <option>8</option>
-                                                <option>9</option>
-                                                <option>10</option>
-                                                <option>11</option>
-                                                <option>12</option>
-                                                <option>13</option>
-                                                <option>14</option>
-                                                <option>15</option>
-                                                <option>16</option>
-                                                <option>17</option>
-                                                <option>18</option>
-                                                <option>19</option>
-                                                <option>20</option>
-                                                <option>21</option>
-                                                <option>22</option>
-                                                <option>23</option>
-                                                <option>24</option>
-                                                <option>25</option>
-                                                <option>26</option>
-                                                <option>27</option>
-                                                <option>28</option>
-                                                <option>29</option>
-                                                <option>30</option>
-                                                <option>31</option>
-                                            </select>
-                                            </p>    
-                                        </form>
+                                <div class="row">
+                                        <div class="col">
+                                            <div>
+                                                <form action="#">
+                                                    <p>
+                                                    <input class="inputBox" type="text" placeholder="Введите вопрос">
+                                                    </p>
+                                                </form>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col">
+                                            <div>
+                                                <form action="#">
+                                                    <p>
+                                                    <textarea class="inputBox" type="text" placeholder="Введите ответ" rows="4"></textarea>
+                                                    </p>
+                                                </form>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <a class="my-btn" href="#">Добавить вопрос</a>
                                     </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col">
-                                    <div>
-                                        <form action="#">
-                                            <p>
-                                                    <select class="inputBox">
-                                                            <option disabled selected>Выберите год</option>
-                                                            <option>1900</option>
-                                                            <option>1901</option>
-                                                            <option>1902</option>
-                                                            <option>1903</option>
-                                                            <option>1904</option>
-                                                            <option>1905</option>
-                                                            <option>1906</option>
-                                                            <option>1907</option>
-                                                            <option>1908</option>
-                                                            <option>1909</option>
-                                                            <option>1910</option>
-                                                            <option>1911</option>
-                                                            <option>1912</option>
-                                                            <option>1913</option>
-                                                            <option>1914</option>
-                                                            <option>1915</option>
-                                                            <option>1916</option>
-                                                            <option>1917</option>
-                                                            <option>1918</option>
-                                                            <option>1919</option>
-                                                            <option>1920</option>
-                                                            <option>1921</option>
-                                                            <option>1922</option>
-                                                            <option>1923</option>
-                                                            <option>1924</option>
-                                                            <option>1925</option>
-                                                            <option>1926</option>
-                                                            <option>1927</option>
-                                                            <option>1928</option>
-                                                            <option>1929</option>
-                                                            <option>1930</option>
-                                                            <option>1931</option>
-                                                            <option>1932</option>
-                                                            <option>1933</option>
-                                                            <option>1934</option>
-                                                            <option>1935</option>
-                                                            <option>1936</option>
-                                                            <option>1937</option>
-                                                            <option>1938</option>
-                                                            <option>1939</option>
-                                                            <option>1940</option>
-                                                            <option>1941</option>
-                                                            <option>1942</option>
-                                                            <option>1943</option>
-                                                            <option>1944</option>
-                                                            <option>1945</option>
-                                                            <option>1946</option>
-                                                            <option>1947</option>
-                                                            <option>1948</option>
-                                                            <option>1949</option>
-                                                            <option>1950</option>
-                                                            <option>1951</option>
-                                                            <option>1952</option>
-                                                            <option>1953</option>
-                                                            <option>1954</option>
-                                                            <option>1955</option>
-                                                            <option>1956</option>
-                                                            <option>1957</option>
-                                                            <option>1958</option>
-                                                            <option>1959</option>
-                                                            <option>1960</option>
-                                                            <option>1961</option>
-                                                            <option>1962</option>
-                                                            <option>1963</option>
-                                                            
-                                                        </select>
-                                            </p>    
-                                        </form>
+                        <div class="col-lg-4">
+                            <div class="row">
+                                    <div class="col">
+                                        <p>
+                                            <h5 class="rulesArticle">Помощь</h5>
+                                        </p>
                                     </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <form action="#">
-                                    <p>
-                                        <select class="inputBox">
-                                            <option disabled selected>Выберите тип документа</option>
-                                            <option>Паспорт</option>
-                                            <option>Вид на жительство</option>
-                                            <option>Удостоверение беженца</option>
-                                        </select>
-                                    </p>    
-                                </form>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <form action="#">
-                                    <p>
-                                        <input class="inputBox" type="text" placeholder="Серия и номер">
-                                        Пример: MР1234567
-                                    </p>
-                                </form>
+                            <div class="row">
+                                    <div class="col">
+                                        <p> 
+                                            <a class="link" data-toggle="collapse" href="#WhatDescription">Что должно быть в описании?</a>
+                                        </p>
+                                        <div class="collapse" id="WhatDescription">
+                                            <div class="well">
+                                                <p>Специально для вас мы подготовили рекомендации для написания грамотного
+                                                        и эффективного описания.
+                                                        <a class="link" href="#">Перейти к рекомендациям</a>
+                                                    </p>
+                                            </div>
+                                        </div>
+                                    </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <form action="#">
-                                    <p>
-                                        <input class="inputBox" type="text" placeholder="Личный номер">
-                                        Пример: 1234567A002PB9
-                                    </p>
-                                </form>
+                            <div class="row">
+                                    <div class="col">
+                                        <p> 
+                                            <a class="link" data-toggle="collapse" href="#OftenQuestions">Что такое «Частые вопросы»?</a>
+                                        </p>
+                                        <div class="collapse" id="OftenQuestions">
+                                            <div class="well">
+                                                <p>«Частые вопросы» – это блок, в котором вы можете заранее ответить на
+                                                        наиболее очевидные вопросы, которые могут возникнуть у потенциальных спонсоров в процессе знакомства с вашим проектом.
+                                                    </p>
+                                            </div>
+                                        </div>
+                                    </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <form action="#">
-                                    <p>
-                                        <input class="inputBox" type="text" placeholder="Кем и когда выдан">
-                                        Пример: Советское РУВД г.Минска, выдан 22.04.2015
-                                    </p>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <form action="#">
-                                    <p>
-                                        <input class="inputBox" type="text" placeholder="Адрес регистрации">
-                                        Пример: г.Минск, ул. Е. Полоцкой, д.3, кв. 16
-                                    </p>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <form action="#">
-                                    <p>
-                                        <input class="inputBox" type="text" placeholder="Контактный номер">
-                                        Пример: +375 (29) 123 45 67
-                                    </p>
-                                </form>
+                            <div class="row">
+                                <div class="col">
+                                    <a class="link" href="#askQuestion" data-toggle="modal">Задать вопрос</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <a class="my-btn" href="#" >Отправить на модерацию</a>
+                <div class="tab-pane" id="payInformation">
+                    <div class="row">
+                        <div class="col-lg-8">
+                                <div class="box">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div>
+                                                <h5 class="title">Личные данные</h5>
+                                                <p>
+                                                        Чтобы платформа могла заключить с вами договор, 
+                                                        необходимо заполнить паспортные данные. 
+                                                        Информация, которую вы передаете в платформу, 
+                                                        является конфиденциальной и не подлежит разглашению.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="col">
+                                                <div>
+                                                    <form action="#">
+                                                        <p>
+                                                            <input class="inputBox" type="text" placeholder="Фамилия">
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="row">
+                                                <div class="col">
+                                                    <div>
+                                                        <form action="#">
+                                                            <p>
+                                                                <input class="inputBox" type="text" placeholder="Имя">
+                                                            </p>    
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                        <div>
+                                                            <form action="#">
+                                                                <p>
+                                                                    <input class="inputBox" type="text" placeholder="Отчество">
+                                                                </p>    
+                                                            </form>
+                                                        </div>
+                                                </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="col">
+                                                <div>
+                                                    <p>
+                                                        Дата рождения:
+                                                    </p>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="col">
+                                                    <div>
+                                                        <form action="#">
+                                                            <p>
+                                                                <select class="inputBox">
+                                                                    <option disabled selected>Выберите месяц</option>
+                                                                    <option>Январь</option>
+                                                                    <option>Февраль</option>
+                                                                    <option>Март</option>
+                                                                    <option>Апрель</option>
+                                                                    <option>Май</option>
+                                                                    <option>Июнь</option>
+                                                                    <option>Июль</option>
+                                                                    <option>Август</option>
+                                                                    <option>Сентябрь</option>
+                                                                    <option>Октябрь</option>
+                                                                    <option>Ноябрь</option>
+                                                                    <option>Декабрь</option>
+                                                                </select>
+                                                            </p>    
+                                                        </form>
+                                                    </div>
+                                            </div>
+                                            <div class="col">
+                                                        <div>
+                                                            <form action="#">
+                                                                <p>
+                                                                    <select class="inputBox">
+                                                                    <option disabled selected>Выберите число</option>
+                                                                    <option>1</option>
+                                                                    <option>2</option>
+                                                                    <option>3</option>
+                                                                    <option>4</option>
+                                                                    <option>5</option>
+                                                                    <option>6</option>
+                                                                    <option>7</option>
+                                                                    <option>8</option>
+                                                                    <option>9</option>
+                                                                    <option>10</option>
+                                                                    <option>11</option>
+                                                                    <option>12</option>
+                                                                    <option>13</option>
+                                                                    <option>14</option>
+                                                                    <option>15</option>
+                                                                    <option>16</option>
+                                                                    <option>17</option>
+                                                                    <option>18</option>
+                                                                    <option>19</option>
+                                                                    <option>20</option>
+                                                                    <option>21</option>
+                                                                    <option>22</option>
+                                                                    <option>23</option>
+                                                                    <option>24</option>
+                                                                    <option>25</option>
+                                                                    <option>26</option>
+                                                                    <option>27</option>
+                                                                    <option>28</option>
+                                                                    <option>29</option>
+                                                                    <option>30</option>
+                                                                    <option>31</option>
+                                                                </select>
+                                                                </p>    
+                                                            </form>
+                                                        </div>
+                                            </div>
+                                            <div class="col">
+                                                        <div>
+                                                            <form action="#">
+                                                                <p>
+                                                                        <select class="inputBox">
+                                                                                <option disabled selected>Выберите год</option>
+                                                                                <option>1900</option>
+                                                                                <option>1901</option>
+                                                                                <option>1902</option>
+                                                                                <option>1903</option>
+                                                                                <option>1904</option>
+                                                                                <option>1905</option>
+                                                                                <option>1906</option>
+                                                                                <option>1907</option>
+                                                                                <option>1908</option>
+                                                                                <option>1909</option>
+                                                                                <option>1910</option>
+                                                                                <option>1911</option>
+                                                                                <option>1912</option>
+                                                                                <option>1913</option>
+                                                                                <option>1914</option>
+                                                                                <option>1915</option>
+                                                                                <option>1916</option>
+                                                                                <option>1917</option>
+                                                                                <option>1918</option>
+                                                                                <option>1919</option>
+                                                                                <option>1920</option>
+                                                                                <option>1921</option>
+                                                                                <option>1922</option>
+                                                                                <option>1923</option>
+                                                                                <option>1924</option>
+                                                                                <option>1925</option>
+                                                                                <option>1926</option>
+                                                                                <option>1927</option>
+                                                                                <option>1928</option>
+                                                                                <option>1929</option>
+                                                                                <option>1930</option>
+                                                                                <option>1931</option>
+                                                                                <option>1932</option>
+                                                                                <option>1933</option>
+                                                                                <option>1934</option>
+                                                                                <option>1935</option>
+                                                                                <option>1936</option>
+                                                                                <option>1937</option>
+                                                                                <option>1938</option>
+                                                                                <option>1939</option>
+                                                                                <option>1940</option>
+                                                                                <option>1941</option>
+                                                                                <option>1942</option>
+                                                                                <option>1943</option>
+                                                                                <option>1944</option>
+                                                                                <option>1945</option>
+                                                                                <option>1946</option>
+                                                                                <option>1947</option>
+                                                                                <option>1948</option>
+                                                                                <option>1949</option>
+                                                                                <option>1950</option>
+                                                                                <option>1951</option>
+                                                                                <option>1952</option>
+                                                                                <option>1953</option>
+                                                                                <option>1954</option>
+                                                                                <option>1955</option>
+                                                                                <option>1956</option>
+                                                                                <option>1957</option>
+                                                                                <option>1958</option>
+                                                                                <option>1959</option>
+                                                                                <option>1960</option>
+                                                                                <option>1961</option>
+                                                                                <option>1962</option>
+                                                                                <option>1963</option>
+                                                                                
+                                                                            </select>
+                                                                </p>    
+                                                            </form>
+                                                        </div>
+                                            </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="col">
+                                                <div>
+                                                    <form action="#">
+                                                        <p>
+                                                            <select class="inputBox">
+                                                                <option disabled selected>Выберите тип документа</option>
+                                                                <option>Паспорт</option>
+                                                                <option>Вид на жительство</option>
+                                                                <option>Удостоверение беженца</option>
+                                                            </select>
+                                                        </p>    
+                                                    </form>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="col">
+                                                <div>
+                                                    <form action="#">
+                                                        <p>
+                                                            <input class="inputBox" type="text" placeholder="Серия и номер">
+                                                            Пример: MР1234567
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="col">
+                                                <div>
+                                                    <form action="#">
+                                                        <p>
+                                                            <input class="inputBox" type="text" placeholder="Личный номер">
+                                                            Пример: 1234567A002PB9
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="col">
+                                                <div>
+                                                    <form action="#">
+                                                        <p>
+                                                            <input class="inputBox" type="text" placeholder="Кем и когда выдан">
+                                                            Пример: Советское РУВД г.Минска, выдан 22.04.2015
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="col">
+                                                <div>
+                                                    <form action="#">
+                                                        <p>
+                                                            <input class="inputBox" type="text" placeholder="Адрес регистрации">
+                                                            Пример: г.Минск, ул. Е. Полоцкой, д.3, кв. 16
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="col">
+                                                <div>
+                                                    <form action="#">
+                                                        <p>
+                                                            <input class="inputBox" type="text" placeholder="Контактный номер">
+                                                            Пример: +375 (29) 123 45 67
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    </div>
+                        </div>
+                        <div class="col-lg-4">
+                                <div class="row">
+                                        <div class="col">
+                                            <p>
+                                                <h5 class="rulesArticle">Помощь</h5>
+                                            </p>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col">
+                                            <p> 
+                                                <a class="link" data-toggle="collapse" href="#WhyBankAcc">Зачем вводить номер счета?</a>
+                                            </p>
+                                            <div class="collapse" id="WhyBankAcc">
+                                                <div class="well">
+                                                    <p>Номер счета необходим для перечисления средств в случае успеха вашей
+                                                            краудфандинговой кампании.
+                                                        </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col">
+                                            <p> 
+                                                <a class="link" data-toggle="collapse" href="#WhyPassport">Зачем вводить паспортные данные?</a>
+                                            </p>
+                                            <div class="collapse" id="WhyPassport">
+                                                <div class="well">
+                                                    <p>Для публикации проекта и сбора средств вам необходимо заключить
+                                                            договоры с «Ульем» и ОАО «Белгазпромбанком». Ваши данные необходимы
+                                                            для формирования договоров.
+                                                        </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col">
+                                            <p> 
+                                                <a class="link" data-toggle="collapse" href="#WhoGetData">Кому доступны мои данные?</a>
+                                            </p>
+                                            <div class="collapse" id="WhoGetData">
+                                                <div class="well">
+                                                    <p>Ваши данные будут использоваться исключительно для вашей идентификации и
+                                                            формирования договоров. Доступ третьих лиц к вашим данным исключен.
+                                                        </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <a class="link" href="#askQuestion" data-toggle="modal">Задать вопрос</a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="supportBox">
+                    <a class="my-btn" href="#">Отправить на модерацию</a>
+                </div>
               </div>
             </div>
           </div>
