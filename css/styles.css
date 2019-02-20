@@ -401,7 +401,7 @@ text-decoration: none;
   background-color: white;
   font-weight: 700;
   opacity: 0.8;
-  border-radius: 5px;
+  border-radius: 0px;
   transition: 0.3s;
 }
 .carouselLink:hover{
@@ -439,11 +439,23 @@ text-decoration: none;
 }
 
 /* projectPage.html */
+.projectAuthorBox{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .shortTextInfo{
-  font-size: 30px;
+  font-size: 60px;
+  line-height: 1;
+}
+.littleShortText{
+  font-size: 13px;
+  font-weight: 700;
 }
 .shortDescription{
-  font-size: 17px;
+  font-size: 18px;
+}
+.headNumber{
+  margin-bottom: 2.5rem;
 }
 
 /* rewardPage.html */

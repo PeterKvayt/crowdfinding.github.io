@@ -100,6 +100,48 @@
                 </div>  
             </div>  
         </div>
+        <!-- модально окно "задать вопрос" -->
+        <div class="modal fade" id="askQuestion">
+                <div class="modal-dialog modal-lg">
+                     <div class="modal-content">
+                         <div class="modal-body">
+                            <h5 class="title">Новое сообщение</h5>
+                            <button class="closeBtn" id="askQuestionClose" data-dismiss="modal">&times;</button>
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <img src="images/avatar.jpg" alt="ava" width="50">
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <a class="link" href="profile.html">Филипп Галлагер</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <span class="littleShortText">АВТОР ПРОЕКТА</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <form action="#">
+                                        <p class="supportBox">
+                                          <textarea class="inputBox" type="text" placeholder="Задайте свой вопрос" rows="6"></textarea>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <a class="my-btn" id="askQestionBtn" href="#">Отправить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>  
+        </div>
         <div class="section">
           <div class="container">
             <div class="row">
@@ -112,42 +154,43 @@
                 <img src="images/exampleProjectPict.png" width="630" alt="project avatar">
               </div>
               <div class="col-lg-5">
-                  <div class="row">
+                  <div class="row headNumber">
                       <div class="col">
-                        <span class="title shortTextInfo">Количество заявок: </span><span class="title shortTextInfo">25</span>
+                            <span class="title shortTextInfo">25</span><br>
+                            <span class="littleShortText">КОЛИЧЕСТВО ЗАЯВОК</span>
                       </div>
                   </div>
-                  <div class="row">
+                  <div class="row headNumber">
                       <div class="col">
-                          <span class="title shortTextInfo">Собрано: </span><span class="title shortTextInfo">10000 BYN</span><span class="title shortTextInfo"> 10%</span>
+                            <span class="title shortTextInfo">10000</span>
+                            <span class="littleShortText">BYN</span><br>
+                            <span class="littleShortText">НЕОБХОДИМО 1000000 BYN</span>
                       </div>
                   </div>
-                  <div class="row">
-                      <div class="col">
-                          <span>необходимо </span><span>100000 BYN</span>
-                      </div>
-                  </div>
-                  <div class="row">
+                  <div class="row headNumber">
                     <div class="col">
-                        <span class="title shortTextInfo">Осталось дней: </span><span class="title shortTextInfo">10</span>
+                            <span class="title shortTextInfo">11</span><br>
+                            <span class="littleShortText">ОСТАЛОСЬ ДНЕЙ</span>
                     </div>
                   </div>
-                <div class="row">
+                  <div class="row headNumber">
                     <div class="col">
                         <a class="my-btn" href="rewardPage.html
                         ">Поддержать проект</a>
                     </div>
-                </div>
+                  </div>
               </div>
             </div>
             <div class="row">
-                <div class="col-lg-7 shortDescription">
-                    К громкому событию - 30-летнему юбилею легендарной панк-стёб-группы, 
+                <div class="col shortDescription">
+                    <p>
+                        К громкому событию - 30-летнему юбилею легендарной панк-стёб-группы, 
                     представляем сбор на новый альбом, который обещает стать настоящим феноменом 
                     музыкальной индустрии.
+                    </p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row projectAuthorBox">
                 <div class="col-lg-1">
                     <img src="images/avatar.jpg" alt="ava" width="40">
                 </div>
@@ -159,28 +202,318 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <p>АВТОР ПРОЕКТА</p>
+                            <p class="littleShortText">АВТОР ПРОЕКТА</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2">
-                    <a class="link" href="#"><span>Музыка</span></a>
+                    <div class="row">
+                        <div class="col">
+                            <a class="link" href="#"><span>Музыка</span></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                                <p class="littleShortText">КАТЕГОРИЯ</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Навигационные вкладки -->
             <ul class="nav">
-                <li class="col active">
+                <li class="col-lg-2 active">
                     <a class="my-tab" href="#totalInformation" data-toggle="tab">О проекте</a>
                 </li>
-                <li class="col active">
+                <li class="col-lg-2">
                     <a class="my-tab" href="#society" data-toggle="tab">Сообщество</a>
                 </li>
             </ul>
             <!-- Вкладки панелей -->
             <div class="tab-content">
-                <div class="tab-pane active box" id="totalInformation">
-                    
-                </div>  
+                <div class="tab-pane active" id="totalInformation">
+                    <div class="row">
+                        <div class="col-lg-9 box">
+                            <p>
+                                Все вечеринки уже давно похожи друг на друга? У нашей команды свой взгляд на то, какой должна быть бессонная ночь в Комарово!
+                            </p>
+                            <p>
+                                <img src="images/photo1.jpg" alt="photo1">
+                            </p>
+                            <p>
+                                И если Вы поддержите нас, мы сделаем Rock'n'Rave незабываемым и ярким событием Вашего лета!
+                            </p>
+                            <h4 class="title">Только представьте…</h4>
+                            <p>
+                                Live-сцена, 4 танц-пола под бесконечным небом, мощный звук, насыщенный свет, шумные бары, фудкорт, перфомансы с 
+                                развлечениями в коктейле с вашими любимым ди-джеями и музыкальными группами! Rock'n'Rave сделает эту ночь долгой, 
+                                насыщенной и незабываемой! Мы остановим для Вас время!
+                            </p>
+                            <p>
+                                <img src="images/photo2.jpg" alt="photo2">
+                            </p>
+                            <p>
+                                Чтобы сделать Ваше пребывание на фестивале Rock'n'Rave еще более комфортным, 
+                                мы доставим Вас из самого центра Минска на автобусах, которые будут курсировать целую ночь!
+                            </p>
+                            <p>
+                                Поддержите нас и станьте самым желанным гостем фестиваля Rock'n'Rave! Для Вас проезд на автобусе будет бесплатным!
+                            </p>
+                            <h4 class="title">На что пойдут собранные средства?</h4>
+                            <p>
+                                <ul>
+                                    <li>Чтобы всю ночь с 9 по 10 июня с Городского Вала в загородный комплекс «Комарово» курсировали автобусы, нам нужно собрать 20 000 000 руб.</li>
+                                    <li>Чтобы Вы могли приехать и на велосипеде – мы организуем охраняемую стоянку с веломастерской - 5 000 000 руб.</li>
+                                    <li>Чтобы забронировать гостиницу загородного комплекса для Вашего комфортного пребывания на фестивале - 25 000 000 руб.</li>
+                                    <li>Чтобы подарить Вам оригинальные подарки за Вашу помощь и доставить их вам – еще 5 000 000 руб.</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="title">ВОЗНАГРАЖДЕНИЯ</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col supportBox">
+                                            <div class="card rewardCard">
+                                                <img src="images/rewardImg.jpg" alt="rewardImg"/>
+                                                <div class="rewardInfo">
+                                                    <p>
+                                                        <span class="wordProject">ПРОЕКТ</span>
+                                                        <a class="rewardProjectName" href="ссылка на проект">Project Spar</a>
+                                                    </p>
+                                                    <div class="descriptionOfCard">
+                                                        Нарисованая фломастером лампочка на стекле как на рисунке
+                                                    </div>
+                                                    <div class="progressReward">
+                                                        <div class="progressRewardCost">5 BYN</div>
+                                                        <div class="progressRewardSells">
+                                                            <span class="">КУПЛЕНО <span class="progressRewardSellsNumber">3</span></span>
+                                                            <span>ОСТАЛОСЬ<span> 10<span></span>
+                                                        </div><!--показывает сколько куплено наград-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                </div>
+                                <div class="col supportBox">
+                                    <div class="card rewardCard">
+                                        <div class="rewardInfo">
+                                            <p>
+                                                <span class="wordProject">ПРОЕКТ</span>
+                                                <a class="rewardProjectName" href="ссылка на проект">Project Spar</a>
+                                            </p>
+                                            <div class="descriptionOfCard">
+                                                Пригласительный на фестиваль + бесплатный проезд на автобусе
+                                            </div>
+                                            <div class="progressReward">
+                                                <div class="progressRewardCost">15 BYN</div>
+                                                <div class="progressRewardSells">
+                                                    <span class="">КУПЛЕНО <span class="progressRewardSellsNumber">0</span></span>
+                                                </div><!--показывает сколько куплено наград-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col supportBox">
+                                    <div class="card rewardCard">
+                                        <div class="rewardInfo">
+                                            <p>
+                                                <span class="wordProject">ПРОЕКТ</span>
+                                                <a class="rewardProjectName" href="ссылка на проект">Project Spar</a>
+                                            </p>
+                                            <div class="descriptionOfCard">
+                                                Пригласительный на фестиваль + бесплатный проезд на автобусе + аквагримм и перья
+                                            </div>
+                                            <div class="progressReward">
+                                                <div class="progressRewardCost">20 BYN</div>
+                                                <div class="progressRewardSells">
+                                                    <span class="">КУПЛЕНО <span class="progressRewardSellsNumber">6</span></span>
+                                                    <span>ОСТАЛОСЬ<span> 20<span></span>
+                                                </div><!--показывает сколько куплено наград-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col supportBox">
+                                    <div class="card rewardCard">
+                                        <div class="rewardInfo">
+                                            <p>
+                                                <span class="wordProject">ПРОЕКТ</span>
+                                                <a class="rewardProjectName" href="ссылка на проект">Project Spar</a>
+                                            </p>
+                                            <div class="descriptionOfCard">
+                                                4 пригласительных на фестиваль + бесплатный проезд на автобусе
+                                            </div>
+                                            <div class="progressReward">
+                                                <div class="progressRewardCost">50 BYN</div>
+                                                <div class="progressRewardSells">
+                                                    <span class="">КУПЛЕНО <span class="progressRewardSellsNumber">3</span></span>
+                                                    <span>ОСТАЛОСЬ<span> 5<span></span>
+                                                </div><!--показывает сколько куплено наград-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="society">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <div class="row box">
+                                <div class="col-lg-3">
+                                    <img src="images/avatar.jpg" alt="ava">
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <a class="link" href="profile.html"><h3>Филипп Галлагер</h3></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>
+                                                <span><h3>20 BYN</h3></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row box">
+                                <div class="col-lg-3">
+                                    <img src="images/avatar.jpg" alt="ava">
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <a class="link" href="profile.html"><h3>Владимир Андреев</h3></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>
+                                                <span><h3>20 BYN</h3></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row box">
+                                <div class="col-lg-3">
+                                    <img src="images/avatar.jpg" alt="ava">
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <a class="link" href="profile.html"><h3>Андрей Владимиров</h3></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>
+                                                <span><h3>20 BYN</h3></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="title">ВОЗНАГРАЖДЕНИЯ</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col supportBox">
+                                            <div class="card rewardCard">
+                                                <img src="images/rewardImg.jpg" alt="rewardImg"/>
+                                                <div class="rewardInfo">
+                                                    <p>
+                                                        <span class="wordProject">ПРОЕКТ</span>
+                                                        <a class="rewardProjectName" href="ссылка на проект">Project Spar</a>
+                                                    </p>
+                                                    <div class="descriptionOfCard">
+                                                        Нарисованая фломастером лампочка на стекле как на рисунке
+                                                    </div>
+                                                    <div class="progressReward">
+                                                        <div class="progressRewardCost">5 BYN</div>
+                                                        <div class="progressRewardSells">
+                                                            <span class="">КУПЛЕНО <span class="progressRewardSellsNumber">3</span></span>
+                                                            <span>ОСТАЛОСЬ<span> 10<span></span>
+                                                        </div><!--показывает сколько куплено наград-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                </div>
+                                <div class="col supportBox">
+                                    <div class="card rewardCard">
+                                        <div class="rewardInfo">
+                                            <p>
+                                                <span class="wordProject">ПРОЕКТ</span>
+                                                <a class="rewardProjectName" href="ссылка на проект">Project Spar</a>
+                                            </p>
+                                            <div class="descriptionOfCard">
+                                                Пригласительный на фестиваль + бесплатный проезд на автобусе
+                                            </div>
+                                            <div class="progressReward">
+                                                <div class="progressRewardCost">15 BYN</div>
+                                                <div class="progressRewardSells">
+                                                    <span class="">КУПЛЕНО <span class="progressRewardSellsNumber">0</span></span>
+                                                </div><!--показывает сколько куплено наград-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col supportBox">
+                                    <div class="card rewardCard">
+                                        <div class="rewardInfo">
+                                            <p>
+                                                <span class="wordProject">ПРОЕКТ</span>
+                                                <a class="rewardProjectName" href="ссылка на проект">Project Spar</a>
+                                            </p>
+                                            <div class="descriptionOfCard">
+                                                Пригласительный на фестиваль + бесплатный проезд на автобусе + аквагримм и перья
+                                            </div>
+                                            <div class="progressReward">
+                                                <div class="progressRewardCost">20 BYN</div>
+                                                <div class="progressRewardSells">
+                                                    <span class="">КУПЛЕНО <span class="progressRewardSellsNumber">6</span></span>
+                                                    <span>ОСТАЛОСЬ<span> 20<span></span>
+                                                </div><!--показывает сколько куплено наград-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col supportBox">
+                                    <div class="card rewardCard">
+                                        <div class="rewardInfo">
+                                            <p>
+                                                <span class="wordProject">ПРОЕКТ</span>
+                                                <a class="rewardProjectName" href="ссылка на проект">Project Spar</a>
+                                            </p>
+                                            <div class="descriptionOfCard">
+                                                4 пригласительных на фестиваль + бесплатный проезд на автобусе
+                                            </div>
+                                            <div class="progressReward">
+                                                <div class="progressRewardCost">50 BYN</div>
+                                                <div class="progressRewardSells">
+                                                    <span class="">КУПЛЕНО <span class="progressRewardSellsNumber">3</span></span>
+                                                    <span>ОСТАЛОСЬ<span> 5<span></span>
+                                                </div><!--показывает сколько куплено наград-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="supportBox">
+                    <a class="my-btn" href="#askQuestion" data-toggle="modal">Задать вопрос</a>
+                </div>
           </div>
         </div>
         <div id="footar">
