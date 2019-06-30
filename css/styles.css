@@ -1,3 +1,10 @@
+﻿:root{
+  --greenPoles: #053F0C;
+  --backgroundColor: #F4F4F4;
+  --borderBtn: #7C7C7D;
+  --border: #DFDFDF;
+}
+
 /* шрифты */
 *{
   font-family: 'Open Sans', sans-serif;
@@ -5,24 +12,43 @@
 /* кнопки */
 /* -зелекая кнопка */
 .my-btn{
-  color: #053F0C!important;
-  border: 1px solid #7C7C7D;
+  color: var(--greenPoles);
+  border: 1px solid var(--borderBtn);
   border-radius: 4px;
   padding: 0.5rem 1rem;
   display: inline-block;
   font-weight: 700;
-  transition: 0.32s; 
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden; 
+  z-index: 1;
 }
 .my-btn:hover{
-  background-color: #053F0C;
-  color: white!important;
+  color: #fff;
   text-decoration: none;
+}
+
+.my-btn:hover::before{
+  height: 180%;
+}
+
+.my-btn::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--greenPoles);
+  z-index: -1;
+  transition: 0.5s;
+  border-radius: 50% 50% 0 0;
 }
 /* -белая кнопка */
 .butt{
-  border: 1px solid #053F0C;
+  border: 1px solid var(--greenPoles);
   color: white;
-  background-color: #053F0C;
+  background-color: var(--greenPoles);
   text-decoration: none;
   border-radius: 4px;
   padding: 15px 25px;
@@ -41,7 +67,7 @@
   border: none;
   background-color: transparent;
   font-size: 2rem;
-  color: black;
+  /* color: black; */
 }
 .closeBtn:focus{
   outline: none;
@@ -64,7 +90,7 @@
 .inputBox{
   width: 100%;
   display: block;
-  border: 1px solid #7C7C7D;
+  border: 1px solid var(--border);
   border-radius: 4px;
   padding: 5px 10px;
   background-color: #F9F9F9;
@@ -78,13 +104,13 @@
 
 /* Стиль ссылки */
 .link{
-  color: #053F0C;
+  color: var(--greenPoles);
   display: inline-block;
   position: relative;
   padding: auto;
 }
 .link:hover{
-  color: #053F0C;
+  color: var(--greenPoles);
   text-decoration: none;
 }
 .link::before{
@@ -94,7 +120,7 @@
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: #053F0C;
+  background-color: var(--greenPoles);
   transition: 0.2s;
   transform: scaleX(0);
 }
@@ -107,32 +133,244 @@
   padding-bottom: 1rem;
   text-align: center;
   font-weight: 700;
-  color: #053F0C;
+  color: var(--greenPoles);
 }
 /* Категории проектов */
 .categoryBox{
   margin-bottom: 2rem;
 }
 .category{
-  text-decoration: none;
-  border: 1px solid #7C7C7D;
+  border: 1px solid var(--borderBtn);
   border-radius: 4px;
   display: block;
   text-align: center;
-  color: #053F0C;
-  font-family: inherit;
+  color: var(--greenPoles);
   font-weight: 700;
-  transition: 0.3s;
   padding: 5px 0px;
-  margin-bottom: 5px;
-  margin-top: 5px;
+  margin: 5px 0;
+  z-index: 1;
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
 }
 .category:hover{
   text-decoration: none;
   color: white;
-  background-color: #053F0C;
 }
+
+.category:hover::before{
+  height: 180%;
+}
+
+.category::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--greenPoles);
+  z-index: -1;
+  transition: 0.5s;
+  bottom: 0;
+  border-radius: 50% 50% 0 0;
+}
+
 /* карточки проектов */
+
+.card-wrapper{
+  padding: 5px 15px ;
+  margin: 0;
+}
+
+.card-box{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: white;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.card-box:hover{
+  box-shadow: 5px 10px 15px #AFAFAF,
+              -5px 0 15px #AFAFAF;
+}
+
+.card-box:hover .card-picture-hover{
+  opacity: 0.75;
+}
+
+.card-box:hover .card-description{
+  color: black;
+}
+
+.card-box:hover .card-picture-link{
+  text-decoration: none;
+  color: #fff;
+  opacity: 1;
+  font-size: 120%;
+}
+
+.card-picture-box{
+  display: block;
+}
+
+.card-picture-link{
+  position: absolute;
+  display: inline-block;
+  width: calc(100% - 31.6px);
+  height: calc(50% - 11px);
+  line-height: 1150%;
+  text-align: center;
+  font-size: 170%;
+  font-weight: 600;
+  color: #fff;
+  z-index: 1;
+  text-decoration: none;
+  opacity: 0;
+  transition: 0.32s;
+}
+
+.card-picture-hover{
+  position: absolute;
+  right: 16px;
+  width: calc(100% - 31.6px);
+  border-radius: 4px 4px 0 0;
+  opacity: 0;
+  transition: 0.32s;
+}
+
+.card-picture{
+  width: 100%;
+}
+
+.card-body{
+  padding: 1rem;
+  padding-top: 6px;
+}
+
+.filter{
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+
+.card-description{
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  text-decoration: none;
+  color: #AFAFAF;
+  height: 130px;
+  overflow: hidden;
+  text-align: justify;
+  transition: 0.32s;
+}
+
+.card-description:hover{
+  text-decoration: none;
+}
+
+.projectName{
+  display: inline-block;
+  text-decoration: none;
+  color: var(--greenPoles);
+  text-align: left;
+  font-weight: 600;
+  font-size: 17px;
+  width: 100%;
+}
+.projectName:hover{
+  text-decoration: none;
+  color: var(--greenPoles);
+}
+
+.card-progress-box{
+  display: block;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 100%;
+  height: 4px;
+  background-color: var(--border);
+}
+
+.progress-bar{
+  /* width: 10%; */
+  height: 100%;
+  background-color: var(--greenPoles);
+}
+
+.card-right-status{
+  text-align: end;
+}
+
+.card-up-status{
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  color: var(--greenPoles);
+  font-weight: 600;
+  font-size: 18px;
+
+}
+
+.card-up-status:hover{
+  text-decoration: none;
+  color: var(--greenPoles);
+}
+
+.card-down-status{
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  color: #AFAFAF;
+  font-size: 13px;
+}
+
+.card-down-status:hover{
+  text-decoration: none;
+  color: #AFAFAF;
+}
+
+.progressBar{
+  width: 10%;
+  height: 4px;
+  background-color: var(--greenPoles);
+}
+
+/* projects carousel */
+
+.carousel-btn-box{
+  text-align: end;
+}
+
+.carousel-next-btn{
+  border-radius: 0 50% 50% 0;
+  margin-top: 16px;
+}
+
+.carousel-prev-btn{
+  border-radius: 50% 0 0 50%;
+  margin-top: 16px;
+}
+
+.carousel-next-arrow{
+  border-right: 3px solid var(--greenPoles);
+  border-bottom: 3px solid var(--greenPoles);
+  height: 17px;
+  width: 17px;
+
+}
+
+.carousel-prev-arrow{
+  border-left: 3px solid var(--greenPoles);
+  border-bottom: 3px solid var(--greenPoles);
+  height: 17px;
+  width: 17px;
+  transform: rotate(45deg);
+}
+
 .myCard{
   margin-top: 1rem;
   margin-bottom: 20px!important;
@@ -150,7 +388,6 @@
   transition: 0.3s;
 }
 .cardLinkHoverSupport{
-  width: 100%;
   text-align: center;
   line-height: 900%;
   text-decoration: none!important;
@@ -168,25 +405,8 @@
   opacity: 1;
   font-size: 20px;
 }
-.filter{
-  color: black;
-  font-size: 13px;
-  padding-bottom: 10px;
-  height: 100%;;
-}
-.filter:hover{
-  color: #053F0C;
-}
-.projectName{
-  display: block;
-  text-decoration: none!important;
-  color: black;
-  font-weight: 600;
-  width: 320px;
-}
-.projectName:hover{
-  color: black;
-}
+
+
 .descriptionOfCard{
   display: block;
   font-size: 13px;
@@ -202,18 +422,14 @@
 .progressLine{
   width: 100%;
   height: 4px;
-  background-color: #F4F4F4;
+  background-color: var(--backgroundColor);
   margin: 10px 0;
 }
-.progressBar{
-  width: 10%;
-  height: 4px;
-  background-color: #053F0C;
-}
+
 .progressBarZero{
   width: 0%;
   height: 4px;
-  background-color: #053F0C;
+  background-color: var(--greenPoles);
 }
 .progressStatus{
   display: flex;
@@ -224,7 +440,7 @@
   flex-direction: column;
 }
 .progressProcent{
-  color: #053F0C;
+  color: var(--greenPoles);
   font-size: 19px;
   font-weight: 600;
 }
@@ -252,7 +468,7 @@
   margin-bottom: 1rem!important;
 }
 .rewardCard:hover{
-  background-color: #053F0C;
+  background-color: var(--greenPoles);
   box-shadow: 5px 10px 15px #AFAFAF,
               -5px 0 15px #AFAFAF;             
 }
@@ -277,10 +493,10 @@ padding: 1rem;
 }
 .rewardProjectName{
   font-size: 12px;
-  color: #053F0C;
+  color: var(--greenPoles);
 }
 .rewardProjectName:hover{
-  color: #053F0C;
+  color: var(--greenPoles);
 }
 .progressReward{
   display: flex;
@@ -303,29 +519,30 @@ padding: 1rem;
   margin-top: 1rem;
   background-color: white;
   border-radius: 5px;
+  border: 1px solid #DFDFDF;
   padding: 1rem 1rem;
-  
+/*   
   box-shadow: 1px 1px 50px #AFAFAF,
-              -1px 0 10px #AFAFAF; 
+              -1px 0 10px #AFAFAF;  */
 
 }
 /* вкладки */
 .my-tab{
   text-decoration: none;
-  color: #053F0C;
-  border: 1px solid #7C7C7D;
+  color: var(--greenPoles);
+  border: 1px solid var(--borderBtn);
   border-radius: 4px;
   padding: 0.5rem 1rem; 
   font-weight: 700;
   transition: 0.32s; 
 }
 .my-tab:hover{
-background-color: #053F0C;
+background-color: var(--greenPoles);
 color: white;
 text-decoration: none;
 }
 .my-tab:focus{
-background-color: #053F0C;
+background-color: var(--greenPoles);
 color: white;
 text-decoration: none;
 }
@@ -334,7 +551,7 @@ text-decoration: none;
 /* createProjectRules.html */
 /* -подзаголовок */
 .rulesArticle{
-  color: #053F0C;
+  color: var(--greenPoles);
   font-weight: 700;
 }
 .bottomWarning{
@@ -357,9 +574,9 @@ text-decoration: none;
   outline: none;
 }
 .info{
-  color: #7C7C7D;
+  color: var(--border);
   background-color: #F9F9F9;
-  border: 1px solid #7C7C7D;
+  border: 1px solid var(--border);
   border-radius: 50%;
   display: inline-block;
   width: 1.5rem;
@@ -370,9 +587,9 @@ text-decoration: none;
   font-weight: 700;
 }
 .info:hover{
-  background-color: #053F0C;
+  background-color: var(--greenPoles);
   color: white;
-  border-color: #053F0C;
+  border-color: var(--greenPoles);
 }
 #fullDescription{
   z-index: 5!important;
@@ -384,9 +601,7 @@ text-decoration: none;
   vertical-align: center;
   
 }
-.carouselText{
 
-}
 .carouselLink{
   width: 35%;
   height: 30%;
@@ -396,7 +611,7 @@ text-decoration: none;
   right: 5%;
   margin: 2rem 0rem;
   padding: 1rem 1rem;
-  color: #053F0C;
+  color: var(--greenPoles);
   /* display: inline-block; */
   background-color: white;
   font-weight: 700;
@@ -406,7 +621,7 @@ text-decoration: none;
 }
 .carouselLink:hover{
   text-decoration: none;
-  background-color: #053F0C;
+  background-color: var(--greenPoles);
   color: white;
 }
 @media (min-width: 768px) and (max-width: 991px){
@@ -422,7 +637,7 @@ text-decoration: none;
 .littleDecorationLine{
   width: 100%;
   height: 2.5px;
-  background-color: #053F0C;
+  background-color: var(--greenPoles);
   margin-bottom: 2rem;;
 }
 
@@ -464,8 +679,166 @@ text-decoration: none;
 }
 
 body{
-  background-color: #F4F4F4;
+  background-color: var(--backgroundColor);
 }
 .container{
   margin-top: 4.5rem;
+}
+
+/* SLIDER */
+
+.slider-descriprion-box{
+  position: absolute;
+  height: 47em;
+  border-radius: 4px;
+  padding: 2em;
+  z-index: 1;
+}
+
+.slider-descriprion-title, .slider-descriprion-text{
+  background-color: #fff;
+  color: var(--greenPoles);
+  font-size: 1.1em;
+  padding: 0.5em 0.5em;
+  margin: 0;
+}
+
+.slider-descriprion-title{
+  text-align: center;
+  border-radius: 4px 4px 0px 0px;
+  opacity: 0.9;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.slider-descriprion-text{
+  text-align: justify;
+  border-radius: 0px 0px 4px 4px;
+  opacity: 0.7;
+  transition: 0.32s;
+}
+
+.slider-descriprion-text:hover{
+  opacity: 1;
+  
+}
+
+#block-for-slider {
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+#viewport {
+  width: 100%;
+  display: table;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+#slidewrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.slide-wrapper{
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.slide{
+  list-style: none;
+  display: block;
+  float: left;
+}
+
+#prev-btn, #next-btn {
+  display: block;
+  position: absolute;
+  bottom: 50%;
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  border: none;
+  font-weight: 700;
+  transition: 0.32s;
+  outline: none;
+  top: calc(50% - 25px);
+  z-index: 2;
+}
+
+#prev-btn:hover, #next-btn:hover {
+  cursor: pointer;
+  color: #fff;
+}
+
+#next-btn {
+  right: 0px;
+  transform: rotate(180deg);  
+}
+
+.left-arrow, .right-arrow{
+  color: var(--border);
+  display: block;
+  height: 17px;
+  width: 17px;
+  margin-left: 4px;
+  border-left: 3px solid;
+  border-bottom: 3px solid;
+  text-decoration: none;
+  transform: rotate(45deg);
+}
+
+.left-arrow:hover, .right-arrow:hover{
+  color: #fff;
+}
+
+#nav-btns {
+  position: absolute;
+  width: 100%;
+  bottom: 15px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.slide-nav-btn {
+  position: relative;
+  display: inline-block;
+  list-style: none;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  margin: 0px 8px;
+  opacity: 0.7;
+}
+
+.slide-nav-btn-active{
+  background-color: var(--greenPoles);
+}
+
+.slide-nav-btn:hover {
+  cursor: pointer;
+  background-color: var(--greenPoles);
+  opacity: 1;
+  border: none;
+  transition: 0.32s;
 }

@@ -1,14 +1,24 @@
+:root{
+    --greenPoles: #053F0C;
+    --backgroundColor: #F4F4F4;
+}
+
 #wrapper{
-    background-color: #F4F4F4;
+    background-color: var(--backgroundColor);
     margin: auto;
     width: 100%;
     height: auto;
     font-weight: 400;
 }
 .navbar{
-    border-bottom: 1px solid white;
+    position: fixed;
+    width: 100%;
+    border-bottom: 1px solid #fff;
     opacity: 0.985;
-    z-index: 8;
+    z-index: 2;
+    background-color: #fff;
+    top: 0;
+    transition: 0.32s;
 }
 .navbar-toggler:focus{
     outline: none;
@@ -29,7 +39,7 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #053F0C;
+    background-color: var(--greenPoles);
     transition: 0.2s;
     transform: scaleX(0);
 }
@@ -37,5 +47,5 @@
     transform: scaleX(1);
 }
 .nav-link:hover{
-    color: #053F0C!important;
+    color: var(--greenPoles)!important;
 }

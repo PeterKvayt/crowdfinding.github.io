@@ -13,31 +13,19 @@
     </head>
     <body>
         <div id="wrapper">
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light justify-content-space-between">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
                 <a href="crowdFinding.html"><img src="http://www.polessu.by/sites/all/themes/danland/logo.png" height="50px" alt="logo"/></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
                     <span class="navbar-toggler-icon navbar-toggler-icon-dark"></span>
                 </button>
                 <div id="navbarContent" class="collapse navbar-collapse justify-content-center">
                     <ul class="navbar-nav text-center">
-                        <!-- <li class="nav-item ">
-                            <a class="nav-link" href="crowdinvesting.html">КРАУДИНВЕСТИНГ</a>
-                        </li> -->
-                        <!-- <li class="nav-item">
-                            <a href="crowdFinding.html"><img src="http://www.polessu.by/sites/all/themes/danland/logo.png" height="50px" alt="logo"/></a>
-                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link" href="allProjects.html">ВСЕ ПРОЕКТЫ</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="createProjectRules.html">СОЗДАТЬ ПРОЕКТ</a>
                         </li>
-                        <!-- <li class="nav-item ">
-                            <a class="nav-link" href="personal.html">СОТРУДНИКИ</a>
-                        </li> -->
-                        <!-- <li class="nav-item ">
-                            <a class="nav-link" href="contacts.html">ВАКАНСИИ</a>
-                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link" href="help.html">ПОМОЩЬ</a>
                         </li>
@@ -47,9 +35,6 @@
                         <li class="nav-item">
                             <a class="nav-link " href="#modalEnter" data-toggle="modal">ВОЙТИ</a>   
                         </li>
-                        <!-- <li class="nav-item ">
-                            <a class="my-btn"  href="register.html">РЕГИСТРАЦИЯ</a>
-                        </li> -->
                     </ul>    
                 </div>
         </nav>
@@ -120,30 +105,25 @@
             <div id="main">
                 <div class="container-fluid">
                     <div class="container">
-                        <!-- Карусель с проектами -->
-                        <div class="fotorama" data-maxheight="600" data-width="100%" data-loop="true" data-autoplay="5000">
-                            <div class="carouselItem" data-img="images/maxresdefault.jpg">
-                                <div class="carouselText" >
-                                    <a class="carouselLink" href="#">Проект Spark
-                                        <br>
-                                        К громкому событию - 30-летнему юбилею легендарной панк-стёб-группы, 
-                                                    представляем сбор на новый альбом, который обещает стать настоящим феноменом 
-                                                    музыкальной индустрии.
-                                                    
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="carouselItem" data-img="images/220a0d8aa6257538bae563bbc2a7d6c0.jpg">
-                                <div class="carouselText" >
-                                    <a class="carouselLink" href="#">Горы</a>
-                                </div>
-                            </div>
-                            <div class="carouselItem" data-img="images/code.jpg">
-                                <div class="carouselText" >
-                                    <a class="carouselLink" href="#">Код</a>
+                        
+                        <!-- слайдер с проектами -->
+                        <div class="row">
+                            <div class="col">
+                                <div id="block-for-slider">
+                                    <div id="viewport">
+                                        <div id="slidewrapper"></div>
+                                        <div id="prev-next-btns">
+                                            <div class="row"></div>
+                                            <button id="prev-btn" class=".my-btn"><div class="left-arrow" href=""></div></button>
+                                            <button id="next-btn" class=".my-btn"><div class="right-arrow" href=""></div></button>
+                                        </div>
+                                        <div id="nav-btns">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                         <!-- Популярные проекты -->
                         <div class="row">
                             <div class="col">
@@ -152,116 +132,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-deck">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4">
-                                    <div class="card myCard">
-                                        <a href="projectPage.html"><img class="card-img-top" src="images/exampleProjectPict.png"/></a>
-                                        <a href="projectPage.html" class="cardLinkHover"><img class="card-img-top" src="images/exampleProjectPictHover.png" alt="cardImage1"/></a>
-                                        <a href="projectPage.html" class="cardLinkHoverSupport ">ПОДДЕРЖАТЬ ПРОЕКТ</a>
-                                        <div class="card-body">
-                                            <a class="filter" href="#">Музыка</a>
-                                            <a href="projectPage.html" class="projectName">Project Spark</a>
-                                            <a href="projectPage.html" class="descriptionOfCard">
-                                                <p >
-                                                    К громкому событию - 30-летнему юбилею легендарной панк-стёб-группы, 
-                                                    представляем сбор на новый альбом, который обещает стать настоящим феноменом 
-                                                    музыкальной индустрии.
-                                                    
-                                                </p>
-                                            </a>
-                                            <div class="progressLine">
-                                                <div class="progressBar"></div>
-                                            </div>
-                                            <div class="progressStatus">
-                                                <div class="progressStatusLeft">
-                                                    <span class="progressProcent ">10%</span><!--показывает сколько процентов под прогресслайном-->
-                                                    <span class="status ">ИДЕТ СБОР</span><!--показывает статус-->
-                                                </div>
-                                                <div class="progressStatusRight">
-                                                    <span class="progressMoneyNow progressStatusRightItem ">
-                                                        10000 BYN
-                                                    </span><!--показывает собранную сумму-->
-                                                    <span class="status progressStatusRightItem ">СОБРАНО</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4">
-                                    <div class="card myCard">
-                                        <a href="#"><img class="card-img-top" src="images/exampleProjectPict.png"/></a>
-                                        <a href="#" class="cardLinkHover"><img class="card-img-top" src="images/exampleProjectPictHover.png" alt="cardImage1"/></a>
-                                        <a href="#" class="cardLinkHoverSupport ">ПОДДЕРЖАТЬ ПРОЕКТ</a>
-                                        <div class="card-body">
-                                            <a class="filter" href="#">Музыка</a>
-                                            <a href="#" class="projectName">Project Spark</a>
-                                            <a href="#" class="descriptionOfCard">
-                                                <p >
-                                                    К громкому событию - 30-летнему юбилею легендарной панк-стёб-группы, 
-                                                    представляем сбор на новый альбом, который обещает стать настоящим феноменом 
-                                                    музыкальной индустрии.
-                                                </p>
-                                            </a>
-                                            <div class="progressLine">
-                                                <div class="progressBar"></div>
-                                            </div>
-                                            <div class="progressStatus">
-                                                <div class="progressStatusLeft">
-                                                    <span class="progressProcent ">10%</span><!--показывает сколько процентов под прогресслайном-->
-                                                    <span class="status ">ИДЕТ СБОР</span><!--показывает статус-->
-                                                </div>
-                                                <div class="progressStatusRight">
-                                                    <span class="progressMoneyNow progressStatusRightItem ">
-                                                        10000 BYN
-                                                    </span><!--показывает собранную сумму-->
-                                                    <span class="status progressStatusRightItem ">СОБРАНО</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4">
-                                    <div class="card myCard">
-                                        <a href="#"><img class="card-img-top" src="images/exampleProjectPict.png"/></a>
-                                        <a href="#" class="cardLinkHover"><img class="card-img-top" src="images/exampleProjectPictHover.png" alt="cardImage1"/></a>
-                                        <a href="#" class="cardLinkHoverSupport ">ПОДДЕРЖАТЬ ПРОЕКТ</a>
-                                        <div class="card-body">
-                                            <a class="filter" href="#">Музыка</a>
-                                            <a href="#" class="projectName">Project Spark</a>
-                                            <a href="#" class="descriptionOfCard">
-                                                <p >
-                                                    К громкому событию - 30-летнему юбилею легендарной панк-стёб-группы, 
-                                                    представляем сбор на новый альбом, который обещает стать настоящим феноменом 
-                                                    музыкальной индустрии.
-                                                </p>
-                                            </a>
-                                            <div class="progressLine">
-                                                <div class="progressBar"></div>
-                                            </div>
-                                            <div class="progressStatus">
-                                                <div class="progressStatusLeft">
-                                                    <span class="progressProcent ">10%</span><!--показывает сколько процентов под прогресслайном-->
-                                                    <span class="status ">ИДЕТ СБОР</span><!--показывает статус-->
-                                                </div>
-                                                <div class="progressStatusRight">
-                                                    <span class="progressMoneyNow progressStatusRightItem ">
-                                                        10000 BYN
-                                                    </span><!--показывает собранную сумму-->
-                                                    <span class="status progressStatusRightItem ">СОБРАНО</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div id="popular-projects" class="row">
+                            
                         </div>
                         <div class="row">
+                            <!-- <div class="col-3"></div> -->
                             <div class="col">
                                 <div class="title">
                                     <a class="my-btn" href="allProjects.html">ПОСМОТРЕТЬ ВСЕ</a>
                                 </div>
                             </div>
+                            <!-- <div class="col-3 carousel-btn-box">
+                                <button class="my-btn carousel-btn carousel-prev-btn"><span class="carousel-prev-arrow"></span></button>
+                                <button class="my-btn carousel-btn carousel-next-btn"><span class="carousel-next-arrow"></span></button>
+                            </div> -->
                         </div>
                         <!-- Рекомендованные проекты -->
                         <div class="row">
@@ -639,18 +523,9 @@
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script><!--jQuery-->
-        <script type="text/javascript">
-                $(document).ready(function(){
-                    $('.registerBtn').on('click', function(event){
-                        $('#modalEnterClose').click();
-                        $('#modalRegistration').show();
-                    })
-                    $('.enterBtn').on('click', function(event){
-                        $('#modalRegistrationClose').click();
-                        $('#modalEnter').show();
-                    })
-                })
-        </script>
+        <script src="js/projectCard.js"></script>
+        <script src="js/slider.js"></script>
+        <script src="js/main.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script><!-- js bootstrap-->
         <script src="fotorama-4.6.4/fotorama.js"></script><!--js fotorama-->
     </body>

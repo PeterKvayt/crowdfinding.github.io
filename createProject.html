@@ -12,7 +12,7 @@
         <link href="css/footarStyles.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light justify-content-space-between">
+      <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
             <a href="crowdFinding.html"><img src="http://www.polessu.by/sites/all/themes/danland/logo.png" height="50px" alt="logo"/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
                 <span class="navbar-toggler-icon navbar-toggler-icon-dark"></span>
@@ -428,31 +428,49 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="row">
-                                <div class="card myCard">
-                                            <a href="#"><img class="card-img-top" src="images/exampleProjectPict.png"/></a>
-                                            <a href="#" class="cardLinkHover"><img class="card-img-top" src="images/exampleProjectPictHover.png" alt="cardImage1"/></a>
-                                            <a href="#" class="cardLinkHoverSupport ">ПОДДЕРЖАТЬ ПРОЕКТ</a>
-                                            <div class="card-body">
-                                                <a class="filter" href="#">Тег</a>
-                                                <a href="#" class="projectName">Название вашего проекта</a>
-                                                <a href="#" class="descriptionOfCard">
-                                                    <p >
-                                                        Краткое описание проекта
-                                                    </p>
-                                                </a>
-                                                <div class="progressLine">
-                                                    <div class="progressBarZero"></div>
-                                                </div>
-                                                <div class="progressStatus">
-                                                    <div class="progressStatusLeft">
-                                                        <span class="progressProcent ">0%</span><!--показывает сколько процентов под прогресслайном-->
-                                                        <span class="status ">ИДЕТ СБОР</span><!--показывает статус-->
+                                <div class="col card-wrapper">
+                                            <div class="card-box">
+                                                <div class="card-picture-wrapper">
+                                                    <div class="card-picture-box">
+                                                        <a class="card-picture-link" href="projectPage.html">ПОДДЕРЖАТЬ ПРОЕКТ</a>
+                                                        <img class="card-picture-hover" src="images/exampleProjectPictHover.png"/>
+                                                        <img class="card-picture" src="images/exampleProjectPict.png" alt="Project picture">
                                                     </div>
-                                                    <div class="progressStatusRight">
-                                                        <span class="progressMoneyNow progressStatusRightItem ">
-                                                            0 BYN
-                                                        </span><!--показывает собранную сумму-->
-                                                        <span class="status progressStatusRightItem ">СОБРАНО</span>
+                                                </div>
+                                                <div class="card-body">
+                                                    <a class="link filter" href="allProjects.html">Категория</a>
+                                                    <a class="card-description" href="projectPage.html">
+                                                        <span class="projectName">Название проекта</span>
+                                                        Описание проекта
+                                                    </a>
+                                                    <a class="card-progress-box" href="projectPage.html">
+                                                        <div class="progress-bar"></div>
+                                                    </a>
+                                                    <div class="progressStatus row">
+                                                        <div class="col">
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <a class="card-up-status" href="projectPage.html">0%</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <a class="card-down-status" href="projectPage.html">ИДЕТ СБОР</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="row">
+                                                                <div class="col card-right-status">
+                                                                    <a class="card-up-status" href="projectPage.html">0 BYN</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col card-right-status">
+                                                                    <a class="card-down-status" href="projectPage.html">СОБРАНО</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1252,18 +1270,7 @@
       </div>
       </div>
       <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script><!--jQuery-->
-      <script type="text/javascript">
-        $(document).ready(function(){
-            $('.registerBtn').on('click', function(event){
-                $('#modalEnterClose').click();
-                $('#modalRegistration').show();
-            })
-            $('.enterBtn').on('click', function(event){
-                $('#modalRegistrationClose').click();
-                $('#modalEnter').show();
-            })
-        })
-      </script>
+      <script src="js/script.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script><!-- popperjs(bootstrap)-->
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script><!-- js bootstrap-->
       <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script><!-- summernote js-->
