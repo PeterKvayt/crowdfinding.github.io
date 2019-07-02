@@ -262,7 +262,7 @@
   font-size: 14px;
   text-decoration: none;
   color: #AFAFAF;
-  height: 130px;
+  height: 135px;
   overflow: hidden;
   text-align: justify;
   transition: 0.32s;
@@ -340,7 +340,7 @@
 }
 
 /* projects carousel */
-
+/* 
 .carousel-btn-box{
   text-align: end;
 }
@@ -369,7 +369,7 @@
   height: 17px;
   width: 17px;
   transform: rotate(45deg);
-}
+} */
 
 .myCard{
   margin-top: 1rem;
@@ -462,6 +462,88 @@
 }
 
 /* Вознаграждения */
+.reward-link{
+  color: inherit;
+}
+
+.reward-link:hover{
+  text-decoration: none;
+  color: inherit;
+}
+
+.reward-card-box{
+  margin-bottom: 1rem;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: 0.32s;
+}
+
+.reward-card-box:hover{
+  box-shadow: 5px 10px 15px #AFAFAF,
+              -5px 0 15px #AFAFAF;
+}
+
+.reward-card-box:hover .reward-card-description{
+  color: #000;
+  
+}
+
+.reward-card-box:hover .rewards-left{
+  color: #000;
+}
+
+.reward-img{
+  width: 100%;
+}
+
+.reward-card-body{
+  padding: 1rem;
+}
+
+.reward-project-name{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.reward-card-description{
+  text-align: justify;
+  font-size: 14px;
+  color: #AFAFAF;
+  height: 109px;
+  overflow: hidden;
+
+  transition: 0.32s;
+}
+
+.reward-title{
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: var(--greenPoles);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reward-cost{
+  height: 100%;
+  font-weight: 600;
+  columns: var(--greenPoles);
+  font-size: 17px;
+}
+
+.rewards-left{
+  position: relative;
+  top: 10%;
+  text-align: end;
+  font-size: 14px;
+  color: #AFAFAF;
+  transition: 0.32s;
+}
+
 .rewardCard{
   background-color: white;
   transition: 0.3s;

@@ -1,17 +1,18 @@
 class Slider {
   
-  constructor(){
+  constructor(projectsCount){
     this.SlideNow = 1; // index of current slide
     this.TranslateWidth = 0; // one slide width
     this.NavBtnId = 0; // start index of nav btn
     this.CurrentSlide = 1; // index of current slide
     this.TranslateWidth = 0; // one slide width
     this.NavBtnId = 0; // start index of nav btn
-    this.SlideInterval = 2000; // interval for slide
+    this.SlideInterval = 5000; // interval for slide
+    this.SlidesCount = projectsCount; // count of projects
   }
 
   // initialization
-  Init(projectsCount) {
+  Init() {
     var that = this;
     var switchInterval = setInterval(function(){that.NextSlide()}, that.SlideInterval);
     
@@ -30,12 +31,12 @@ class Slider {
 
     // click - event to next
     $('#next-btn').click(function () {
-      that.NextSlide(projectsCount);
+      that.NextSlide();
     });
 
     // click - event to previous
     $('#prev-btn').click(function () {
-      that.PrevSlide(projectsCount);
+      that.PrevSlide();
     });
 
     // click-event to dots
@@ -81,8 +82,8 @@ class Slider {
   }
   
   // next slide
-  NextSlide(projectsCount) {
-    if (this.CurrentSlide === projectsCount || this.CurrentSlide <= 0 || this.CurrentSlide > projectsCount) {
+  NextSlide() {
+    if (this.CurrentSlide === this.SlidesCount || this.CurrentSlide <= 0 || this.CurrentSlide > this.SlidesCount) {
         $('#slidewrapper').css('transform', 'translate(0, 0)');
         this.CurrentSlide = 1;
         this.ChangeNavDotActivity();
@@ -99,15 +100,15 @@ class Slider {
   }
 
   // previous slide
-  PrevSlide(projectsCount) {
-    if (this.CurrentSlide === 1 || this.CurrentSlide <= 0 || this.CurrentSlide > projectsCount) {
-      this.TranslateWidth = -$('#viewport').width() * (projectsCount - 1);
+  PrevSlide() {
+    if (this.CurrentSlide === 1 || this.CurrentSlide <= 0 || this.CurrentSlide > this.SlidesCount) {
+      this.TranslateWidth = -$('#viewport').width() * (this.SlidesCount - 1);
         $('#slidewrapper').css({
             'transform': 'translate(' + this.TranslateWidth + 'px, 0)',
             '-webkit-transform': 'translate(' + this.TranslateWidth + 'px, 0)',
             '-ms-transform': 'translate(' + this.TranslateWidth + 'px, 0)',
         });
-        this.CurrentSlide = projectsCount;
+        this.CurrentSlide = this.SlidesCount;
         this.ChangeNavDotActivity();
     } else {
       this.TranslateWidth = -$('#viewport').width() * (this.CurrentSlide - 2);

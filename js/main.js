@@ -46,14 +46,47 @@ $(document).ready(function(){
       'images/child.jpg',
       'Фильмы и видео',
       'Короткометражный фильм-антиутопия о правах ребенка',
-      'Сбор средств на расходы во время съемки, а также на постпродакшен короткометражного игрового фильма-антиутопии о правах ребенка в духе "Черного зеркала"',
+      'Сбор средств на расходы во время съемки, а также на постпродакшен короткометражного игрового фильма-антиутопии о правах ребенка в духе "Черного зеркала".',
       '1200',
       '270'
     )
   ]
 
   // инициализация слайдера
-  var slider = new Slider();
+  var slider = new Slider(projects.length);
+
+  var rewards = [
+    new RewardCard(
+      'images/chair.jpg',
+      'Уникальный стул',
+      'Одна из лучших вещей для того, что бы украсить свой дом и сделать его непохожим на другие.',
+      '120',
+      4
+    ),
+    new RewardCard(
+      'images/candle.jpeg',
+      'Свечи',
+      'Они создадут незабываемую атмосферу сказки и чудес и подарят вам счастье и тепло, которое не погаснет многие вечера и будет согревать вас.',
+      '20',
+      12,
+      'Project Spark Project Spark Project Spark'
+    ),
+    new RewardCard(
+      'images/notebook.jpg',
+      'Записная книга для тех кто много пишет',
+      'Для тех, кто ценит свое время, эта вешь будет незаменимой находкой и поможет нашему проекту.',
+      '25',
+      68
+    ),
+    new RewardCard(
+      'images/pen.jpeg',
+      'Сувенирная ручка',
+      'Эта ручка будет выделять вас из толпы своим классическим стилем.',
+      // 'a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a',
+      '13',
+      47
+    )
+  ]
 
   // добавление слайдов и nav dots в разметку
   for (let i = 0; i < projects.length; i++) {
@@ -66,7 +99,12 @@ $(document).ready(function(){
 
   // добавление проектов в разметку
   for (let i = 0; i < projects.length; i++) {
-    projects[i].AddProjectCard();
+    projects[i].AddProjectCard('#popular-projects');
+    projects[i].AddProjectCard('#recomended-projects');
+  }
+
+  for (let i = 0; i < rewards.length; i++) {
+    rewards[i].AddRewardCard('#rewards');
   }
 
  });
