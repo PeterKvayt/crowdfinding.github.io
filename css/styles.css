@@ -8,11 +8,13 @@
 /* шрифты */
 *{
   font-family: 'Open Sans', sans-serif;
+  outline: none;
 }
 /* кнопки */
 /* -зелекая кнопка */
 .my-btn{
   color: var(--greenPoles);
+  background-color: var(--backgroundColor);
   border: 1px solid var(--borderBtn);
   border-radius: 4px;
   padding: 0.5rem 1rem;
@@ -135,11 +137,17 @@
   font-weight: 700;
   color: var(--greenPoles);
 }
+
+.title-min-left{
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--greenPoles);
+}
 /* Категории проектов */
 .categoryBox{
   margin-bottom: 2rem;
 }
-.category{
+.category, .active-category, .active-filter{
   border: 1px solid var(--borderBtn);
   border-radius: 4px;
   display: block;
@@ -153,6 +161,7 @@
   position: relative;
   overflow: hidden;
 }
+
 .category:hover{
   text-decoration: none;
   color: white;
@@ -173,6 +182,21 @@
   transition: 0.5s;
   bottom: 0;
   border-radius: 50% 50% 0 0;
+}
+
+.active-category, .active-filter{
+  color: #fff;
+  background-color: var(--greenPoles);
+}
+
+.active-category:hover{
+  text-decoration: none;
+  color: white;
+}
+
+.active-filter:hover{
+  text-decoration: none;
+  color: white;
 }
 
 /* карточки проектов */
@@ -488,7 +512,6 @@
 
 .reward-card-box:hover .reward-card-description{
   color: #000;
-  
 }
 
 .reward-card-box:hover .rewards-left{
@@ -632,6 +655,10 @@ text-decoration: none;
 
 /* createProjectRules.html */
 /* -подзаголовок */
+.video-box{
+  border-radius: 4px;
+}
+
 .rulesArticle{
   color: var(--greenPoles);
   font-weight: 700;

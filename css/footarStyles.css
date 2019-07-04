@@ -1,6 +1,7 @@
 /*FOOTAR----------------------------------------------------------------*/
 #footar{
-    background-color: #053F0C;
+    /* background-color: #053F0C; */
+    /* background: linear-gradient(to bottom, var(--backgroundColor), var(--greenPoles) 100%); */
 }
 .footarColumn{
     color: #F4F4F4;

@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>PolessInvest</title>
-        <link href="http://www.polessu.by/sites/all/themes/danland/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"><!-- ico полессского -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"><!-- библиотека bootstrap -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic" rel="stylesheet"><!-- шрифты -->
-        <link href="css/headerStyles.css" rel="stylesheet" type="text/css"/>
-        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
-        <link href="css/footarStyles.css" rel="stylesheet" type="text/css"/>
-    </head>
-    <body>
-      <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
-            <a href="crowdFinding.html"><img src="http://www.polessu.by/sites/all/themes/danland/logo.png" height="50px" alt="logo"/></a>
+
+<head>
+    <meta charset="utf-8">
+    <title>PolessInvest</title>
+    <link href="http://www.polessu.by/sites/all/themes/danland/favicon.ico" rel="shortcut icon"
+        type="image/vnd.microsoft.icon"><!-- ico полессского -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- библиотека bootstrap -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <!-- шрифты -->
+    <link href="css/headerStyles.css" rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="css/footarStyles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+            <a href="crowdFinding.html"><img src="http://www.polessu.by/sites/all/themes/danland/logo.png" height="50px"
+                    alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
                 <span class="navbar-toggler-icon navbar-toggler-icon-dark"></span>
             </button>
@@ -23,7 +31,7 @@
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="createProjectRules.html">СОЗДАТЬ ПРОЕКТ</a>
-                    </li> 
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="help.html">ПОМОЩЬ</a>
                     </li>
@@ -31,13 +39,13 @@
                         <a class="nav-link" href="#">ПОИСК <img src="images\search.png" style="height: 14px;"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="#modalEnter" data-toggle="modal">ВОЙТИ</a>   
+                        <a class="nav-link " href="#modalEnter" data-toggle="modal">ВОЙТИ</a>
                     </li>
-                </ul>    
+                </ul>
             </div>
-      </nav>
-       <!-- Модальное окно входа -->
-       <div class="modal fade" id="modalEnter">
+        </nav>
+        <!-- Модальное окно входа -->
+        <div class="modal fade" id="modalEnter">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -57,19 +65,20 @@
                                 <a class="my-btn modalBtn" href="#">ВОЙТИ</a>
                             </p>
                             <p>
-                                <a class="my-btn modalBtn registerBtn" href="#modalRegistration" data-toggle="modal">ЗАРЕГИСТРИРОВАТЬСЯ</a>
+                                <a class="my-btn modalBtn registerBtn" href="#modalRegistration"
+                                    data-toggle="modal">ЗАРЕГИСТРИРОВАТЬСЯ</a>
                             </p>
                         </form>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
-        <!-- Модальное окно регистрации -->  
+        <!-- Модальное окно регистрации -->
         <div class="modal fade" id="modalRegistration">
             <div class="modal-dialog">
-                 <div class="modal-content">
-                     <div class="modal-body">
-                            <button class="closeBtn" id="modalRegistrationClose" data-dismiss="modal">&times;</button>
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button class="closeBtn" id="modalRegistrationClose" data-dismiss="modal">&times;</button>
                         <h4 class="title">Регистрация</h4>
                         <form action="#">
                             <p>
@@ -87,7 +96,7 @@
                             <p class="modalLink modalConditionRegistration">
                                 Нажимая кнопку зарегистрироваться, вы автоматически подтверждаете,
                                 что ознакомлены и согласны с <a class="link" href="#">условиями</a>
-                                платформы PolessCrowdFinding. 
+                                платформы PolessCrowdFinding.
                             </p>
                             <p>
                                 <a class="my-btn modalBtn" href="#">ЗАРЕГИСТРИРОВАТЬСЯ</a>
@@ -97,135 +106,148 @@
                             </p>
                         </form>
                     </div>
-                </div>  
-            </div>  
+                </div>
+            </div>
         </div>
-      <div class="section">
-        <div class="container">
-          <div class="row">
-                <div class="col">
-                    <div>
-                        <h2 class="title">Создайте свой проект!</h2>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <h2 class="title">Создайте свой проект!</h2>
+                        </div>
                     </div>
                 </div>
-          </div>
-          <iframe width="100%" height="624.375" src="https://www.youtube.com/embed/bCNsXA8YTfo" frameborder="0"  allowfullscreen></iframe>
-          <div class="rulesBox">
-            <div class="box">
-                <h3 class="title">Tребования к проекту</h3>
-                <p>PolessCrowdFinding публикует проекты любой тематики и направленности. Основные требования к проектам:</p>
-                <ol>
-                <li>
-                    <h5 class="rulesArticle">Качественное оформление</h5>
-                    Текст описания должен быть написан грамотным языком и четко структурирован. 
-                    Также обязательным является наличие качественных фотоматериалов, иллюстраций или инфографики. 
-                    Желательно наличие видео-обращения.
-                </li>
-                <li>
-                    <h5 class="rulesArticle">Актуальные подарки</h5>
-                    Список подарков для спонсоров должен быть тщательно продуман и напрямую связан с результатами проекта. 
-                    У проектов с отстраненными подарками нет шансов на успех.
-                </li>
-                <li>
-                        <h5 class="rulesArticle">Обоснованный бюджет</h5>
-                        Бюджет проекта не должен быть раздут. Он должен включать в себя тот минимум, 
-                        который необходим для успешной реализации проекта.
-                </li>
-                <li>
-                    <h5 class="rulesArticle">Соответствие закону и правилам</h5>
-                    Проект не должен нарушать законов РБ и должен соответствовать 
-                    <a class="link" href="#">правилам платформы PolessCrowdFinding</a>.
-                </li>
-                </ol>
-            </div>
-            <div class="box">
-                <h3 class="title">Требования к автору</h3>
-                <p>
-                На данный момент PolessCrowdFinding работает исключительно с физическими лицами. 
-                Для создания проекта автор должен соответствовать ряду требований:
-                </p>
-                <ol>
-                    <li>Возраст: от 18 лет.</li>
-                    <li>Гражданин Республики Беларусь.</li>
-                    <li>Имеется расчетный счет в любом белорусском банке.</li>
-                </ol>
-            </div>
-            <div class="box">
-                <h3 class="title">Процесс создания проекта</h3>
-                <p>Создание проекта состоит из нескольких последовательных этапов:</p>
-                <ol>
-                    <li>Оформление проекта с помощью «редактора проектов».</li>
-                    <li>Модерация оформленного проекта.</li>
-                    <li>Подписание с автором договоров на публикацию проекта на платформе и сбор средств.</li>
-                    <li>Публикация проекта на сайте.</li>
-                </ol>
-            </div>
-            <div class="row">
-              <div class="col">
-                <div class="title">
-                    <a class="my-btn" href="createProject.html">СОЗДАТЬ ПРОЕКТ</a>
+                <iframe class="video-box" width="100%" height="624.375" src="https://www.youtube.com/embed/bCNsXA8YTfo"
+                    frameborder="0" allowfullscreen></iframe>
+                <div class="rulesBox">
+                    <div class="box">
+                        <h3 class="title">Tребования к проекту</h3>
+                        <p>PolessCrowdFinding публикует проекты любой тематики и направленности. Основные требования к
+                            проектам:</p>
+                        <ol>
+                            <li>
+                                <h5 class="rulesArticle">Качественное оформление</h5>
+                                Текст описания должен быть написан грамотным языком и четко структурирован.
+                                Также обязательным является наличие качественных фотоматериалов, иллюстраций или
+                                инфографики.
+                                Желательно наличие видео-обращения.
+                            </li>
+                            <li>
+                                <h5 class="rulesArticle">Актуальные подарки</h5>
+                                Список подарков для спонсоров должен быть тщательно продуман и напрямую связан с
+                                результатами проекта.
+                                У проектов с отстраненными подарками нет шансов на успех.
+                            </li>
+                            <li>
+                                <h5 class="rulesArticle">Обоснованный бюджет</h5>
+                                Бюджет проекта не должен быть раздут. Он должен включать в себя тот минимум,
+                                который необходим для успешной реализации проекта.
+                            </li>
+                            <li>
+                                <h5 class="rulesArticle">Соответствие закону и правилам</h5>
+                                Проект не должен нарушать законов РБ и должен соответствовать
+                                <a class="link" href="#">правилам платформы PolessCrowdFinding</a>.
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="box">
+                        <h3 class="title">Требования к автору</h3>
+                        <p>
+                            На данный момент PolessCrowdFinding работает исключительно с физическими лицами.
+                            Для создания проекта автор должен соответствовать ряду требований:
+                        </p>
+                        <ol>
+                            <li>Возраст: от 18 лет.</li>
+                            <li>Гражданин Республики Беларусь.</li>
+                            <li>Имеется расчетный счет в любом белорусском банке.</li>
+                        </ol>
+                    </div>
+                    <div class="box">
+                        <h3 class="title">Процесс создания проекта</h3>
+                        <p>Создание проекта состоит из нескольких последовательных этапов:</p>
+                        <ol>
+                            <li>Оформление проекта с помощью «редактора проектов».</li>
+                            <li>Модерация оформленного проекта.</li>
+                            <li>Подписание с автором договоров на публикацию проекта на платформе и сбор средств.</li>
+                            <li>Публикация проекта на сайте.</li>
+                        </ol>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="title">
+                                <a class="my-btn" href="createProject.html">СОЗДАТЬ ПРОЕКТ</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="bottomWarning">Для создания проекта вам необходимо <a class="link"
+                                    href="#modalEnter" data-toggle="modal">Войти</a> или <a class="link"
+                                    href="#modalRegistration" data-toggle="modal">Зарегистрироваться</a>.</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class="row">
-              <div class="col">
-                  <p class="bottomWarning">Для создания проекта вам необходимо <a class="link" href="#modalEnter" data-toggle="modal">Войти</a> или <a class="link" href="#modalRegistration" data-toggle="modal">Зарегистрироваться</a>.</p>
-              </div>
+            <div id="footar">
+                <div class="container">
+                    <div class="row">
+                        <div class="footarColumn col-lg-3">
+                            <a href="index.html" class="footarColumnTitle"><img
+                                    src="http://www.polessu.by/sites/all/themes/danland/logo.png" height="50px"
+                                    alt="logo" /></a>
+                            <p class="footarText">
+                                ул. Днепровской флотилии, 23, 225710 Пинск, Брестская область, Республика Беларусь.
+                            </p>
+                        </div>
+                        <div class="footarColumn col-lg-3">
+                            <div class="footarColumnTitle">
+                                <h5>О НАС</h5>
+                            </div>
+                            <div>
+                                <a href="#" class="footarLinks">Что такое PolessInvest?</a><br>
+                                <a href="#" class="footarLinks">Пользовательское соглашение</a><br>
+                                <a href="#" class="footarLinks">Персональные данные</a>
+                            </div>
+                        </div>
+                        <div class="footarColumn col-lg-3">
+                            <div class="footarColumnTitle">
+                                <h5>ПОМОЩЬ</h5>
+                            </div>
+                            <div>
+                                <a href="#" class="footarLinks">Способы оплаты</a><br>
+                                <a href="#" class="footarLinks">Возврат средств</a><br>
+                                <a href="#" class="footarLinks">Задать вопрос</a>
+                            </div>
+                        </div>
+                        <div class="footarColumn col-lg-3">
+                            <div class="footarColumnTitle">
+                                <h5>КОНТАКТЫ</h5>
+                            </div>
+                            <div>
+                                <p class="footarText">
+                                    Tel.: + 375 (165) 31 21 60<br>
+                                    Fax: + 375 (165) 31 21 95<br>
+                                    email@mail.ru
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footarBottom">
+                        <p class="footarBottomText">
+                            PolessInvest © 2019
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div id="footar">
-          <div class="container">
-              <div class="row">
-                  <div class="footarColumn col-lg-3">
-                      <a href="index.html" class="footarColumnTitle"><img src="http://www.polessu.by/sites/all/themes/danland/logo.png" height="50px" alt="logo"/></a>
-                      <p class="footarText">
-                          ул. Днепровской флотилии, 23, 225710 Пинск, Брестская область, Республика Беларусь.
-                      </p>
-                  </div>
-                  <div class="footarColumn col-lg-3">
-                      <div class="footarColumnTitle">
-                          <h5>О НАС</h5>
-                      </div>
-                      <div>
-                          <a href="#" class="footarLinks">Что такое PolessInvest?</a><br>
-                          <a href="#" class="footarLinks">Пользовательское соглашение</a><br>
-                          <a href="#" class="footarLinks">Персональные данные</a>
-                      </div>
-                  </div>
-                  <div class="footarColumn col-lg-3">
-                      <div class="footarColumnTitle">
-                          <h5>ПОМОЩЬ</h5>
-                      </div>
-                      <div>
-                          <a href="#" class="footarLinks">Способы оплаты</a><br>
-                          <a href="#" class="footarLinks">Возврат средств</a><br>
-                          <a href="#" class="footarLinks">Задать вопрос</a>
-                      </div>
-                  </div>
-                  <div class="footarColumn col-lg-3">
-                      <div class="footarColumnTitle">
-                          <h5>КОНТАКТЫ</h5>
-                      </div>
-                      <div>
-                          <p class="footarText">
-                              Tel.: + 375 (165) 31 21 60<br>
-                              Fax: + 375 (165) 31 21 95<br>
-                              email@mail.ru
-                          </p>
-                      </div>
-                  </div>  
-              </div>
-              <div class="footarBottom">
-                  <p class="footarBottomText">
-                      PolessInvest © 2019
-                  </p>
-              </div>
-          </div>
-        </div>
-      </div>
-      <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script><!--jQuery-->
-      <script src="js/script.js"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script><!-- js bootstrap-->
-    </body>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <!--jQuery-->
+    <script src="js/main.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script><!-- js bootstrap-->
+</body>
+
 </html>
