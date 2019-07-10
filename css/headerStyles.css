@@ -5,7 +5,7 @@
 
 .wrapper{
     /* background-color: var(--backgroundColor); */
-    background: linear-gradient(to bottom, var(--backgroundColor)77%, var(--greenPoles)95%);
+    background: linear-gradient(to bottom, var(--backgroundColor)15%, var(--greenPoles)100%);
     /* margin: auto;
     width: 100%;
     height: auto;
