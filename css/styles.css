@@ -25,10 +25,12 @@
   overflow: hidden; 
   z-index: 1;
   cursor: pointer;
+  outline: none;
 }
 .my-btn:hover{
   color: #fff;
   text-decoration: none;
+  outline: none;
 }
 
 .my-btn:hover::before{
@@ -63,8 +65,11 @@
   color: var(--greenPoles);
   font-size:12px;
   font-weight: 600;
-  opacity: 0.8;
   }
+  /* минималистичная кнопка */
+.min-btn{
+  cursor: pointer;
+}
 
 /* Модальные окна */
 .closeBtn{
@@ -97,7 +102,7 @@
 /* input */
 .inputBox{
   width: 100%;
-  display: block;
+  display: inline-block;
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 5px 10px;
@@ -521,6 +526,10 @@
   color: #000;
 }
 
+.reward-card-box:hover .reward-card-description-full{
+  color: #000;
+}
+
 .reward-card-box:hover .rewards-left{
   color: #000;
 }
@@ -539,21 +548,26 @@
   text-overflow: ellipsis;
 } */
 
-.reward-card-description{
+.reward-card-description, .reward-card-description-full{
   text-align: justify;
   font-size: 14px;
   color: #AFAFAF;
-  height: 109px;
   overflow: hidden;
-
   transition: 0.32s;
 }
 
-.reward-title{
+.reward-card-description{
+  height: 109px;
+}
+
+.reward-title, .reward-title-full{
   margin-bottom: 5px;
   font-weight: 600;
   color: var(--greenPoles);
   overflow: hidden;
+}
+
+.reward-title{
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -709,8 +723,11 @@ text-decoration: none;
   z-index: 5!important;
 }
 
-.delivery-checkbox, .delivery-checkbox-active{
+.delivery-checkbox, .delivery-checkbox-active, .count-checkbox{
   cursor: pointer;
+  -moz-user-select: none;
+-khtml-user-select: none;
+user-select: none;
 }
 
 .delivery-input{
@@ -733,6 +750,19 @@ text-decoration: none;
 
 .country-btn{
   margin-left: 0.5rem;
+}
+
+.alert{
+  /* border-color: red; */
+  /* background-color: #fc6c85;
+  border-color: #fc0a32; */
+  margin: 10px;
+  width: 25%;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  opacity: 0.98;
+  z-index: 1;
 }
 
 /* crowdFinding.html */

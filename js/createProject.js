@@ -16,7 +16,7 @@ jQuery(function($){
 })
 
 $(document).ready(function(){
-  const comissionPercent = 0.1;
+  const comissionPercent = 0.1;// заработок платформы
   const maxProjectDuration = 180;
   var categories = $('.project-category');
   var projectPicture = $('#project-picture');
@@ -32,10 +32,127 @@ $(document).ready(function(){
   var comissionFee = $('#comission-fee');
   var tax = $('#tax');
   var total = $('#total');
+  var rewards = [];
 
-  function CheckNumbers(target){
-    if (target.val().match(/[^0-9]/g)) {return false;}
-    else{return true;}
+  // проверка на цифры
+  function CheckNumbers(elem, flag){
+    if(flag){
+      if (elem.value.match(/[^0-9]/g)) {
+        elem.value = elem.value.replace(/[^0-9]/g, '');
+      }
+    }
+    else{
+      if (elem.val().match(/[^0-9]/g)) {return false;}
+      else{return true;}
+    }
+  }
+
+  // добавление стран доставки
+  function AddCountry(selecCountry, selecCost, title, flag){
+      if(flag){
+        let country = $(selecCountry).val();
+        let cost = $(selecCost).val();
+        if (cost == '' || Number(cost) < 0) { cost = 0; }
+        while(cost.length > 1 && cost[0] == '0'){
+          cost = cost.substring(1);
+        }
+        if (country != null && CheckNumbers($(selecCost, false))) {
+          $(selecCountry + ' > option:contains(' + country + ')').attr('disabled', '');
+          $('#countries-title').text(title);
+          $('#countries').append(
+            '<p class="added-country">' +
+              '<span class="countries-country title-min-left country-text">' + country + '</span>' +
+              '<span class="countries-delivery-cost title-min-left country-text"> ' + cost + ' BYN</span>' +
+              '<span class="my-btn change-delivery-country country-btn">Изменить</span>' +
+              '<span class="my-btn remove-delivery-country country-btn">Удалить</span>' +
+            '</p>'
+          );
+        }
+        $(selecCost).val('');
+      }
+      else{
+        if(title == 'Некоторые страны'){
+          $('#add-country-box > option:contains(' + selecCountry + ')').attr('disabled', '');
+          $('#add-country-cost').val('');
+        }
+        else{
+          $('#exception-country-box > option:contains(' + selecCountry + ')').attr('disabled', '');
+          $('#exception-country-cost').val('');
+        }
+          $('#countries-title').text(title);
+          $('#countries').append(
+            '<p class="added-country">' +
+              '<span class="countries-country title-min-left country-text">' + selecCountry + '</span>' +
+              '<span class="countries-delivery-cost title-min-left country-text"> ' + selecCost + ' BYN</span>' +
+              '<span class="my-btn change-delivery-country country-btn">Изменить</span>' +
+              '<span class="my-btn remove-delivery-country country-btn">Удалить</span>' +
+            '</p>'
+          );
+          
+      }
+    }
+
+  // изименение/удаление страны доставки
+  function ChangeRemoveCountry(e, param){
+    let activeCheckBox = $('.delivery-checkbox-active');
+    let selecCountry = '#add-country-box';
+    let selecCost = '#add-country-cost';
+    if (activeCheckBox.text().includes('Некоторые страны')) {
+      selecCountry = '#add-country-box';
+      selecCost = '#add-country-cost';
+    }
+    if(activeCheckBox.text().includes('Весь мир')){
+      selecCountry = '#exception-country-box';
+      selecCost = '#exception-country-cost';
+    }
+    let country = param.children('.countries-country').text();
+    let cost = param.children('.countries-delivery-cost').text();
+    cost = cost.substring(0, cost.length - 4);
+    if(e.target.className == 'my-btn change-delivery-country country-btn'){
+      $(selecCountry + ' > option:contains('+ country +')').removeAttr('disabled');
+      $(selecCountry).val(country);
+      $(selecCost).val(cost.substring(1));
+      param.remove();
+      if($('.added-country').length < 1){$('#countries-title').text('');} 
+    }
+    // обработка нажатия на удаление страны
+    if(e.target.className == 'my-btn remove-delivery-country country-btn'){
+      $(selecCountry + ' > option:contains('+ country +')').removeAttr('disabled');
+      param.remove(); 
+      if($('.added-country').length < 1){$('#countries-title').text('');} 
+    }
+  }
+
+  // изменение активности стран
+  function EnableCountries(list, text){
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].text != text ) {
+        list[i].removeAttribute('disabled');
+      }
+    }
+  }
+
+  // 
+  function ShowAlert(message, elem, type){
+    let alertElem = $('#alert');
+    if(type){
+      alertElem.css('border-color', '#008000');
+      alertElem.css('background-color', '#00e600');
+    }
+    else{
+      alertElem.css('border-color', '#fc0a32');
+      alertElem.css('background-color', '#fc6c85');
+    }
+    let messageBox = $('#alert-text');
+    let elemY = elem.offset().top - 80;
+    messageBox.text(message);
+    alertElem.slideDown(400);
+    setTimeout(function(){
+      alertElem.slideUp(400);
+    }, 
+    2500);
+    $('body,html').animate({ scrollTop: elemY }, 400);
+    elem.focus();
   }
 
   // event on change tabs
@@ -69,18 +186,39 @@ $(document).ready(function(){
   
   // ввод винансовой цели проекта
   financialGoal.on('keyup', function(){
-    if (this.value.match(/[^0-9]/g)) {
-      this.value = this.value.replace(/[^0-9]/g, '');
-    }
-    comissionFee.text(Number(financialGoal.val()) * comissionPercent);
+    CheckNumbers(this, true);
+    comissionFee.text(Number((financialGoal.val()) * comissionPercent).toFixed(2));
   })
 
   // ввод продолжительности проекта
   projectDurationEl.on('keyup', function(){
-    if (this.value.match(/[^0-9]/g)) {
-      this.value = this.value.replace(/[^0-9]/g, '');
-    }
+    CheckNumbers(this, true);
     if(projectDurationEl.val() > maxProjectDuration){projectDurationEl.val(maxProjectDuration);}
+  })
+
+  // ввод стоимости лота
+  $('#reward-cost-input').on('keyup', function(){
+    CheckNumbers(this, true);
+  })
+
+  // ввод количества лотов
+  $('#reward-count-input').on('keyup', function () {
+    CheckNumbers(this, true);
+  })
+
+  // ввод стоимости доставки в некоторых странах
+  $(document).on('keyup', '#add-country-cost', function(event){
+    CheckNumbers(event.target, true);
+  })
+
+  // ввод стоимости доставки по всему миру
+  $(document).on('keyup', '#all-world-delivery-cost', function(event){
+    CheckNumbers(event.target, true);
+  })
+
+  // ввод стоимости доставки в странах исключениях
+  $(document).on('keyup', '#exception-country-cost', function(event){
+    CheckNumbers(event.target, true);
   })
 
   // downloadPicture.on('change', function(event){
@@ -92,32 +230,337 @@ $(document).ready(function(){
   }
   
   // смена вида доставки
-  $('.delivery-checkbox').on('click', function(){
+  $(document).on('click', '.delivery-checkbox, .delivery-checkbox .fa.fa-square', function(event){
     $('.fa-check-square').attr('class','fa fa-square');
     $('.delivery-input-active').attr('class','delivery-input');
     $('.delivery-checkbox-active').attr('class','delivery-checkbox');
-    $(this).attr('class', 'delivery-checkbox-active');
+    event.target.className = 'delivery-checkbox-active';
     $('.delivery-checkbox-active span').attr('class','fa fa-check-square');
     $('.delivery-checkbox-active + .delivery-input').attr('class','delivery-input-active');
+    $('#countries-title').text('');
+    $('.added-country').remove();
+    EnableCountries($('#add-country-box > option'), 'Выберите страну');
+    EnableCountries($('#exception-country-box > option'), 'Страны исключения');
   })
 
   // обработка нажатия добавить страну доставки
   $('#add-country-btn').on('click', function(){
-    let country = $('#add-country-box').val();
-    let cost = $('#add-country-cost').val();
-    if(cost == '' || Number(cost) < 0){ cost = 0;}
-      if(country != 'Выберите страну' && country != null && CheckNumbers($('#add-country-cost')) ){
-        $('#add-country-box > option:contains('+ country +')').attr('disabled', 'disabled');
-        $('#countries-title').text('Страны доставки');
-        $('#countries').append(
-          '<p class="added-country">'+
-            '<span class="countries-country title-min-left country-text">'+ country +'</span>'+
-            '<span class="countries-delivery-cost title-min-left country-text"> '+ cost +' BYN</span>'+
-            '<span class="my-btn change-delivery-country country-btn" >Изменить</span>'+
-            '<span class="my-btn remove-delivery-country country-btn">Удалить</span>'+
-        '</p>'
-        )
-      }
-
+    AddCountry('#add-country-box', '#add-country-cost', 'Страны доставки', true);
   })
+
+  // обработка нажатия на изменение страны
+  $('#countries').on('click', '.added-country', function(event){
+    ChangeRemoveCountry(event, $(this));
+  })
+
+  // обработка нажатия добавить страну исключение
+  $('#exception-country-btn').on('click', function () {
+    AddCountry('#exception-country-box', '#exception-country-cost', 'Страны исключения', true);
+  })
+
+  // клик по ограничению по количеству
+  $('.count-checkbox').on('click', function(){
+    if($('#reward-count-check').hasClass('fa fa-square')){$('#reward-count-check').attr('class','fa fa-check-square');}
+    else{$('#reward-count-check').attr('class','fa fa-square');}
+  })
+
+  // обработка нажатия на изменение вознгарждения
+  $(document).on('click', '.change-reward-btn', function(event){
+    let rewardParent = event.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
+    let rewardParentIndex = $(rewardParent).index();
+    $('#reward-name-input').val(rewards[rewardParentIndex].Name);
+    $('#reward-description-input').val(rewards[rewardParentIndex].Description);
+    $('#reward-cost-input').val(rewards[rewardParentIndex].Price);
+    $('#delivery-month-input').val(rewards[rewardParentIndex].DeliveryMonth);
+    $('#delivery-year-input').val(rewards[rewardParentIndex].DeliveryYear);
+    switch(rewards[rewardParentIndex].DeliveryType){
+      case 'Самовывоз':
+        $('.fa-check-square').attr('class','fa fa-square');
+        $('.delivery-input-active').attr('class','delivery-input');
+        $('.delivery-checkbox-active').attr('class','delivery-checkbox');
+        $('#no-delivery').attr('class', 'delivery-checkbox-active');
+        $('#no-delivery .fa.fa-square').attr('class', 'fa fa-check-square');
+        rewards.splice(rewardParentIndex, 1);
+        rewardParent.remove();
+        break;
+      case 'Некоторые страны':
+        $('.fa-check-square').attr('class','fa fa-square');
+        $('.delivery-input-active').attr('class','delivery-input');
+        $('.delivery-checkbox-active').attr('class','delivery-checkbox');
+        $('#some-countries-delivery').attr('class', 'delivery-checkbox-active');
+        $('#some-countries-delivery .fa.fa-square').attr('class', 'fa fa-check-square');
+        $('#some-countries-delivery + .delivery-input').attr('class', 'delivery-input-active');
+        $('#countries-title').val('Страны доставки');
+        for (let i = 0; i < rewards[rewardParentIndex].Delivery.length; i++) {
+          AddCountry(rewards[rewardParentIndex].Delivery[i].Country, rewards[rewardParentIndex].Delivery[i].Cost, 'Некоторые страны', false);
+        }
+        rewards.splice(rewardParentIndex, 1);
+        rewardParent.remove();
+        break;
+      case 'Весь мир':
+        $('.fa-check-square').attr('class','fa fa-square');
+        $('.delivery-input-active').attr('class','delivery-input');
+        $('.delivery-checkbox-active').attr('class','delivery-checkbox');
+        $('#all-world-delivery').attr('class', 'delivery-checkbox-active');
+        $('#all-world-delivery .fa.fa-square').attr('class', '.fa-check-square');
+        $('#all-world-delivery + .delivery-input').attr('class', 'delivery-input-active');
+        $('#countries-title').val('Страны исключения');
+        for (let i = 0; i < rewards[rewardParentIndex].Delivery.length; i++) {
+          if(rewards[rewardParentIndex].Delivery[i].Country == 'all'){
+            $('#all-world-delivery-cost').val(rewards[rewardParentIndex].Delivery[i].Cost);
+          }
+          else{
+            AddCountry(rewards[rewardParentIndex].Delivery[i].Country, rewards[rewardParentIndex].Delivery[i].Cost, 'Страны исключения', false);
+          }
+        }
+        rewards.splice(rewardParentIndex, 1);
+        rewardParent.remove();
+        break;
+    }
+  })
+
+  // обработка нажатия на удаление вознгарждения
+  $(document).on('click', '.delete-reward-btn', function(){
+    let rewardParent = event.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
+    let rewardParentIndex = $(rewardParent).index();
+    rewards.splice(rewardParentIndex, 1);
+    rewardParent.remove();
+  }) 
+
+  // добавление лота
+  $(document).on('click', '#add-reward-btn', function(event){
+    let image = 'images/pen.jpeg';
+    let name =  $('#reward-name-input');
+    let description = $('#reward-description-input');
+    let cost = $('#reward-cost-input');
+    let month = $('#delivery-month-input');
+    let year = $('#delivery-year-input');
+    let deliveryCheckBox = $('.delivery-checkbox-active');
+    let countCheckBox = $('.count-checkbox');
+    let countSpanCheck = $('#reward-count-check');
+    let count = $('#reward-count-input');
+    if(name.val() != ''){
+      if(description.val() != ''){
+        if(cost.val() != ''){ 
+          if(month.val() != null){
+            if(year.val() != null){
+              if (deliveryCheckBox.text().includes('Доставка отсутствует')) {
+                if (countSpanCheck.attr('class') == 'fa fa-square') {
+                  let reward = new RewardCard(
+                    image,
+                    name.val(),
+                    description.val(),
+                    cost.val(),
+                    null,
+                    month.val(),
+                    year.val(),
+                    'Самовывоз',
+                    null
+                  );
+                  rewards.push(reward);
+                  reward.AddFullRewardCard('#rewards-wrapper');
+                  reward.AddContolButtons('.reward-card-pay-info:last');
+                  ShowAlert('Вознаграждение успешно добавлено', $('#rewards-wrapper > .col-12:first-child'), true);
+                  name.val('');
+                  description.val('');
+                  cost.val('');
+                  month.val('Выберите месяц');
+                  year.val('Выберите год');
+                }
+                else {
+                  if (count.val() != '') {
+                    let reward = new RewardCard(
+                      image,
+                      name.val(),
+                      description.val(),
+                      cost.val(),
+                      count.val(),
+                      month.val(),
+                      year.val(),
+                      'Самовывоз',
+                      null
+                    );
+                    rewards.push(reward);
+                    reward.AddFullRewardCard('#rewards-wrapper');
+                    reward.AddContolButtons('.reward-card-pay-info:last');
+                    ShowAlert('Вознаграждение успешно добавлено', $('#rewards-wrapper > .col-12:first-child'), true);
+                    name.val('');
+                    description.val('');
+                    cost.val('');
+                    month.val('Выберите месяц');
+                    year.val('Выберите год');
+                    count.val('');
+                    countCheckBox.click();
+                  }
+                  else { ShowAlert('Введите количество вознаграждений!', count, false); }
+                }
+              }
+              if (deliveryCheckBox.text().includes('Некоторые страны')) {
+                if ($('.added-country').length >= 1) {
+                  if (countSpanCheck.attr('class') == 'fa fa-square') {
+                    let addedCountries = $('.added-country');
+                    let countries = new Array(addedCountries.length);
+                    for (let i = 0; i < addedCountries.length; i++) {
+                      countries[i] = new DeliveryCountry(addedCountries[i].firstChild.firstChild.data,
+                        addedCountries[i].childNodes[1].innerText.substring(1).substring(0, addedCountries[i].childNodes[1].innerText.substring(1).length - 4));
+                    }
+                    let reward = new RewardCard(
+                      image,
+                      name.val(),
+                      description.val(),
+                      cost.val(),
+                      null,
+                      month.val(),
+                      year.val(),
+                      'Некоторые страны',
+                      countries
+                    );
+                    rewards.push(reward);
+                    reward.AddFullRewardCard('#rewards-wrapper');
+                    reward.AddContolButtons('.reward-card-pay-info:last');
+                    ShowAlert('Вознаграждение успешно добавлено', $('#rewards-wrapper > .col-12:first-child'), true);
+                    name.val('');
+                    description.val('');
+                    cost.val('');
+                    month.val('Выберите месяц');
+                    year.val('Выберите год');
+                    $('#countries-title').text('');
+                    $('.added-country').remove();
+                    EnableCountries($('#add-country-box > option'), 'Выберите страну');
+                    EnableCountries($('#exception-country-box > option'), 'Страны исключения');
+                  }
+                  else {
+                    if (count.val() != '') {
+                      let addedCountries = $('.added-country');
+                      let countries = new Array(addedCountries.length);
+                      for (let i = 0; i < addedCountries.length; i++) {
+                        countries[i] = new DeliveryCountry(addedCountries[i].firstChild.firstChild.data,
+                          addedCountries[i].childNodes[1].innerText.substring(1).substring(0, addedCountries[i].childNodes[1].innerText.substring(1).length - 4));
+                      }
+                      let reward = new RewardCard(
+                        image,
+                        name.val(),
+                        description.val(),
+                        cost.val(),
+                        count.val(),
+                        month.val(),
+                        year.val(),
+                        'Некоторые страны',
+                        countries
+                      );
+                      rewards.push(reward);
+                      reward.AddFullRewardCard('#rewards-wrapper');
+                      reward.AddContolButtons('.reward-card-pay-info:last');
+                      ShowAlert('Вознаграждение успешно добавлено', $('#rewards-wrapper > .col-12:first-child'), true);
+                      name.val('');
+                      description.val('');
+                      cost.val('');
+                      month.val('Выберите месяц');
+                      year.val('Выберите год');
+                      count.val('');
+                      countCheckBox.click();
+                      $('#countries-title').text('');
+                      $('.added-country').remove();
+                      EnableCountries($('#add-country-box > option'), 'Выберите страну');
+                      EnableCountries($('#exception-country-box > option'), 'Страны исключения');
+                    }
+                    else { ShowAlert('Введите количество вознаграждений!', count, false); }
+                  }
+                }
+                else {
+                  ShowAlert('Выберите страну и введите стоимость доставки!', $('#add-country-cost'), false);
+                }
+              }
+              if (deliveryCheckBox.text().includes('Весь мир')) {
+                if ($('#all-world-delivery-cost').val() != '') {
+                  if (countSpanCheck.attr('class') == 'fa fa-square') {
+                    let addedCountries = $('.added-country');
+                    let countries = new Array(addedCountries.length + 1);
+                    countries[addedCountries.length] = new DeliveryCountry('all', $('#all-world-delivery-cost').val());
+                    for (let i = 0; i < addedCountries.length; i++) {
+                      countries[i] = new DeliveryCountry(addedCountries[i].firstChild.firstChild.data,
+                        addedCountries[i].childNodes[1].innerText.substring(1).substring(0, addedCountries[i].childNodes[1].innerText.substring(1).length - 4));
+                    }
+                    let reward = new RewardCard(
+                      image,
+                      name.val(),
+                      description.val(),
+                      cost.val(),
+                      null,
+                      month.val(),
+                      year.val(),
+                      'Весь мир',
+                      countries
+                    );
+                    rewards.push(reward);
+                    reward.AddFullRewardCard('#rewards-wrapper');
+                    reward.AddContolButtons('.reward-card-pay-info:last');
+                    ShowAlert('Вознаграждение успешно добавлено', $('#rewards-wrapper > .col-12:first-child'), true);
+                    name.val('');
+                    description.val('');
+                    cost.val('');
+                    month.val('Выберите месяц');
+                    year.val('Выберите год');
+                    $('#all-world-delivery-cost').val('');
+                    $('#countries-title').text('');
+                    $('.added-country').remove();
+                    EnableCountries($('#add-country-box > option'), 'Выберите страну');
+                    EnableCountries($('#exception-country-box > option'), 'Страны исключения');
+                  }
+                  else {
+                    if (count.val() != '') {
+                      let addedCountries = $('.added-country');
+                      let countries = new Array(addedCountries.length + 1);
+                      countries[addedCountries.length] = new DeliveryCountry('all', $('#all-world-delivery-cost').val());
+                      for (let i = 0; i < addedCountries.length; i++) {
+                        countries[i] = new DeliveryCountry(addedCountries[i].firstChild.firstChild.data,
+                          addedCountries[i].childNodes[1].innerText.substring(1).substring(0, addedCountries[i].childNodes[1].innerText.substring(1).length - 4));
+                      }
+                      let reward = new RewardCard(
+                        image,
+                        name.val(),
+                        description.val(),
+                        cost.val(),
+                        count.val(),
+                        month.val(),
+                        year.val(),
+                        'Весь мир',
+                        countries
+                      );
+                      rewards.push(reward);
+                      reward.AddFullRewardCard('#rewards-wrapper');
+                      reward.AddContolButtons('.reward-card-pay-info:last');
+                      ShowAlert('Вознаграждение успешно добавлено', $('#rewards-wrapper > .col-12:first-child'), true);
+                      name.val('');
+                      description.val('');
+                      cost.val('');
+                      month.val('Выберите месяц');
+                      year.val('Выберите год');
+                      count.val('');
+                      countCheckBox.click();
+                      $('#all-world-delivery-cost').val('');
+                      $('#countries-title').text('');
+                      $('.added-country').remove();
+                      EnableCountries($('#add-country-box > option'), 'Выберите страну');
+                      EnableCountries($('#exception-country-box > option'), 'Страны исключения');
+                    }
+                    else { ShowAlert('Введите количество вознаграждений!', count, false); }
+                  }
+                }
+                else {
+                  ShowAlert('Введите стоимость доставки по всему миру!', $('#all-world-delivery-cost'), false);
+                }
+              }
+            }
+            else{ShowAlert('Введите год доставки вознаграждения!', year, false);}
+          }
+          else{ShowAlert('Введите месяц доставки вознаграждения!', month, false);}
+        }
+        else{ShowAlert('Введите стоимость вознаграждения!', cost, false);}
+      }
+      else{ShowAlert('Введите описание вознаграждения!', description, false);}
+    }
+    else{ShowAlert('Введите название вознаграждения!', name, false);}
+  })
+
 })

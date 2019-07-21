@@ -1,11 +1,19 @@
 class RewardCard{
-   constructor(picture, name, description, price, left, project){
-    this.Picture = picture;
-    this.Name = name;
-    this.Description = description;
-    this.Price = price;
-    this.Left = left;
-    this.Project = project;
+   constructor(picture, name, description, price, left, deliveryMonth, deliveryYear, deliveryType, delivery, project){
+    this.Picture = picture; // катринка
+    this.Name = name; // название лота
+    this.Description = description; // описание лота
+    this.Price = price; // стоимость
+    if(left != null){this.Left = 'ОСТАЛОСЬ ' + left;} // оставшееся количество
+    else{this.Left = '';}
+    if(deliveryMonth != null){this.DeliveryMonth = deliveryMonth} // месяц доставки
+    else{this.DeliveryMonth = '';}
+    if(deliveryYear != null){this.DeliveryYear = deliveryYear} // год доставки
+    else{this.DeliveryYear = '';}
+    if(deliveryType != null){this.DeliveryType = deliveryType;} // тип доставки
+    else{this.DeliveryType = ''};
+    this.Delivery = delivery; // страны доставки
+    this.Project = project; // проект лота
   }
 
   AddRewardCard(selector){
@@ -25,7 +33,7 @@ class RewardCard{
                   '<div class="reward-cost">'+ this.Price +' BYN</div>'+
                 '</div>'+
                 '<div class="col">'+
-                  '<div class="rewards-left">ОСТАЛОСЬ '+ this.Left +'</div>'+
+                  '<div class="rewards-left">'+ this.Left +'</div>'+
                '</div>'+
               '</div>'+
             '</div>'+
@@ -33,6 +41,65 @@ class RewardCard{
         '</div>'+
       '</a>'+
     '</div>'
-    )
+    );
+  }
+
+  AddFullRewardCard(selector){
+    $(selector).prepend(
+      '<div class="col-12">' +
+        // '<a class="reward-link" href="projectPage.html">' +
+          '<div class="reward-card-box">' +
+            '<img class="reward-img" src="' + this.Picture + '" />' +
+            '<div class="reward-card-body">' +
+              '<div class="reward-card-description-full">' +
+                '<div class="reward-title-full">' + this.Name + '</div>' +
+                this.Description +
+              '</div>' +
+              '<div class="reward-card-pay-info">' +
+                '<div class="row">' +
+                  '<div class="col">' +
+                  '<span class="card-down-status">Примерная дата доставки</span>'+
+                  '<span class="reward-card-description-full">'+ this.DeliveryMonth +' '+ this.DeliveryYear +'</span>'+
+                  '</div>' +
+                '</div>' +
+                '<div class="row">' +
+                  '<div class="col">' +
+                  '<span class="card-down-status">Способ получения</span>'+
+                  '<span class="reward-card-description-full">'+ this.DeliveryType +'</span>'+
+                  '</div>' +
+                '</div>' +
+                '<div class="row">' +
+                  '<div class="col">' +
+                    '<div class="reward-cost">' + this.Price + ' BYN</div>' +
+                  '</div>' +
+                  '<div class="col">' +
+                    '<div class="rewards-left">' + this.Left + '</div>' +
+                  '</div>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+        // '</a>' +
+      '</div>'
+    );
+  }
+
+  AddContolButtons(selector){
+    $(selector).append(
+      '<div class="row">'+
+        '<div class="col">' +
+          '<div class="change-reward-btn min-btn">'+
+            '<span class="fa fa-pencil fa-fw"></span>'+
+            'Изменить'+
+          '</div>' +
+        '</div>' +
+        '<div class="col" style="text-align:end;">' +
+          '<div class="delete-reward-btn min-btn">'+
+            '<span class="fa fa-times fa-fw"></span>'+
+            'Удалить'+
+          '</div>' +
+        '</div>' +
+      '</div>'
+    );
   }
 }
