@@ -6,8 +6,8 @@
     <link href="http://www.polessu.by/sites/all/themes/danland/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"><!-- ico полессского -->
     <link href="css/bootstrap4.1.3.min.css" rel="stylesheet"><!-- библиотека bootstrap -->
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic" rel="stylesheet"><!-- шрифты -->
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet"><!-- summernote css-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet"><!--шрифты-->
+    <!-- <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">summernote css -->
     <link href="css/headerStyles.css" rel="stylesheet" type="text/css" />
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
     <link href="css/footarStyles.css" rel="stylesheet" type="text/css" />
@@ -18,7 +18,7 @@
             <a href="crowdFinding.html"><img src="http://www.polessu.by/sites/all/themes/danland/logo.png" height="50px"
                     alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
-                <span class="navbar-toggler-icon navbar-toggler-icon-dark"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div id="navbarContent" class="collapse navbar-collapse justify-content-center">
                 <ul class="navbar-nav text-center">
@@ -158,6 +158,38 @@
                         <div class="row">
                             <div class="col">
                                 <a class="my-btn" id="askQestionBtn" href="#">Задать вопрос</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- модальное окно выбора картинки -->
+        <div class="modal fade" id="chooseImage">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h5>Выбор изображения</h5>
+                        <button class="closeBtn" id="askQuestionClose" data-dismiss="modal">&times;</button>
+                        <div class="row">
+                            <div class="col">
+                                <form action="#">
+                                    <input class="inputBox" type="text" placeholder="Название изображения">
+                                </form>
+                            </div>
+                            <div class="col">
+                                <div class="my-btn">
+                                    <span class="fa fa-download"></span>
+                                    Загрузить изображение
+                                </div>
+                                <form action="#" style="display:none;">
+                                    <input id="choose-img" type="file" accept="image/*">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="my-btn" id="choose-img-btn" href="#">Выбрать</div>
                             </div>
                         </div>
                     </div>
@@ -325,14 +357,14 @@
                                             <div class="col">
                                                 <div class="row">
                                                     <div class="col">
-                                                        <img id="preview-picture" class="projectWall" src="images/vr.jpg">
+                                                        <img id="project-preview-picture" class="projectWall" src="images/project-stock.png">
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col">
                                                         <p>
                                                             <form action="#">
-                                                                <input id="picture-path" type="file" accept="image/*" onchange="$('#preview-picture').src = window.URL.createObjectURL(this.files[0])">
+                                                                <input id="project-picture-path" type="file" accept="image/*" onchange="$('#preview-picture').src = window.URL.createObjectURL(this.files[0])">
                                                             </form>
                                                         </p>
                                                     </div>
@@ -462,7 +494,7 @@
                                                             ПРОЕКТ</a>
                                                         <img class="card-picture-hover"
                                                             src="images/exampleProjectPictHover.png" />
-                                                        <img id="project-picture" class="card-picture" src="images/exampleProjectPict.png"
+                                                        <img id="project-picture" class="card-picture" src="images/project-stock.png"
                                                             alt="Project picture">
                                                     </div>
                                                 </div>
@@ -597,7 +629,7 @@
                                                 <div class="row">
                                                     <div class="col">
                                                         <p>Загружать изображение для вознаграждения необязательно, но оно привлекает внимание, что может помочь вам собрать нужную сумму.</p>
-                                                        <img class="projectWall" src="images/chair.jpg">
+                                                        <img class="projectWall" src="images/stock-reward.jpg">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -609,7 +641,7 @@
                                                             </div>
                                                         </p>
                                                         <form action="#" style="display:none;">
-                                                            <input id="picture-path" type="file" accept="image/*"
+                                                            <input id="reward-picture-path" type="file" accept="image/*"
                                                                 onchange="$('#preview-picture').src = window.URL.createObjectURL(this.files[0])">
                                                         </form>
                                                     </div>
@@ -655,18 +687,6 @@
                                                         <p>
                                                             <select id="delivery-year-input" class="inputBox">
                                                                 <option disabled selected>Выберите год</option>
-                                                                <option>2019</option>
-                                                                <option>2020</option>
-                                                                <option>2021</option>
-                                                                <option>2022</option>
-                                                                <option>2023</option>
-                                                                <option>2024</option>
-                                                                <option>2025</option>
-                                                                <option>2026</option>
-                                                                <option>2027</option>
-                                                                <option>2028</option>
-                                                                <option>2029</option>
-                                                                <option>2030</option>
                                                             </select>
                                                         </p>
                                                     </form>
@@ -758,76 +778,6 @@
                                                         <h5 id="countries-title" class="title"></h5>
                                                     </div>
                                                 </div>
-                                                    <!-- <form action="#">
-                                                        <p>
-                                                            <input type="radio" name="deliveryLocation"><label> Доставка
-                                                                отсутствует</label>
-                                                        </p>
-                                                        <p>
-                                                            <input type="radio" name="deliveryLocation"
-                                                                data-toggle="collapse"
-                                                                href="#someContries"><label>Некоторые страны</label>
-                                                        </p>
-                                                        <p>
-                                                            <input type="radio" name="deliveryLocation"
-                                                                data-toggle="collapse" href="#allWorld"><label>По всему
-                                                                миру</label>
-                                                        </p>
-                                                    </form>
-                                                    <div class="collapse" id="someContries">
-                                                        <div class="well">
-                                                            <div class="col">
-                                                                <p>
-                                                                    <select class="inputBox">
-                                                                        <option disabled selected>Выберите страну</option>
-                                                                        <option>Беларусь</option>
-                                                                        <option>Россия</option>
-                                                                        <option>Украина</option>
-                                                                        <option>Литва</option>
-                                                                        <option>Латвия</option>
-                                                                        <option>Польша</option>
-                                                                    </select>
-                                                                </p>
-                                                            </div>
-                                                            <div class="col">
-                                                                <p>
-                                                                    <form action="#">
-                                                                        <input class="inputBox" type="text"
-                                                                            placeholder="Введите стоимость доставки (BYN)">
-                                                                    </form>
-                                                                </p>
-                                                            </div>
-                                                            <div class="col-lg-4">
-                                                                <a class="my-btn" href="#">Добавить страну</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="collapse" id="allWorld">
-                                                        <div class="well">
-                                                            <div class="col">
-                                                                <p>
-                                                                    <select class="inputBox">
-                                                                        <option disabled selected>Выберите страну
-                                                                        </option>
-                                                                        <option>Беларусь</option>
-                                                                        <option>Россия</option>
-                                                                        <option>Украина</option>
-                                                                        <option>Литва</option>
-                                                                        <option>Латвия</option>
-                                                                        <option>Польша</option>
-                                                                    </select>
-                                                                </p>
-                                                            </div>
-                                                            <div class="col">
-                                                                <form action="#">
-                                                                    <p>
-                                                                        <input class="inputBox" type="text"
-                                                                            placeholder="Введите стоимость (BYN)">
-                                                                    </p>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                    </div> -->
                                             </div>
                                         </div>
                                     </div>
@@ -841,7 +791,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col">
-                                                <p class="count-checkbox" data-toggle="collapse" href="#countOfRewards">
+                                                <!-- <p class="count-checkbox" data-toggle="collapse" href="#countOfRewards">
                                                     <span id="reward-count-check" class="fa fa-square"></span>
                                                     Есть ограничение по количеству
                                                 </p>
@@ -853,13 +803,23 @@
                                                             </p>
                                                         </form>
                                                     </div>
+                                                </div> -->
+                                                <p class="count-checkbox">
+                                                    <span id="reward-count-check" class="fa fa-square"></span>
+                                                    Есть ограничение по количеству
+                                                </p>
+                                                <div class="reward-count-box" style="display:none;">
+                                                    <p>
+                                                        <input id="reward-count-input" class="inputBox" type="text" placeholder="Введите количество">
+                                                    </p>
                                                 </div>
+                                                <!-- </div> -->
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col">
                                                 <div>
-                                                    <div id="add-reward-btn" class="my-btn"><span class="fa fa-plus fa-fw"></span> Добавить вознаграждение</div>
+                                                    <div id="add-reward-btn" class="my-btn"><span class="fa fa-plus fa-fw"></span>Добавить вознаграждение</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -922,8 +882,29 @@
                         </div>
                         <div class="describe-project-box" id="detailInformation">
                             <div class="row">
+                                <div class="col-lg-1">
+                                        <div class="row wisiwig-btns">
+                                            <div class="col-9">
+                                                <div class="min-btn header-btn" title="Заголовок"><span class="fa fa-header"></span></div>
+                                                <div class="min-btn bold-btn" title="Жирное начертание"><span class="fa fa-bold"></span></div>
+                                                <div class="min-btn italic-btn" title="Курсив"><span class="fa fa-italic"></div>
+                                                <div class="min-btn strike-btn" title="Зачеркнутый текст"><span class="fa fa-strikethrough"></span></div>
+                                                <div class="min-btn underline-btn" title="Подчеркнутый текст"><span class="fa fa-underline"></span></div>
+                                                <div class="min-btn sub-btn" title="Подстрочный текст"><span class="fa fa-subscript"></span></div>
+                                                <div class="min-btn sup-btn" title="Надстрочный текст"><span class="fa fa-superscript"></span></div>
+                                                <div class="min-btn list-ul-btn" title="Список"><span class="fa fa-list-ul"><span></div>
+                                                <div class="min-btn list-ol-btn" title="Нумерованый список"><span class="fa fa-list-ol"><span></div>
+                                                <div class="min-btn align-left-btn" title="Выравнивание по левому краю"><span class="fa fa-align-left"><span></div>
+                                                <div class="min-btn align-center-btn" title="Выравнивание по центру"><span class="fa fa-align-center"><span></div>
+                                                <div class="min-btn align-right-btn" title="Выравнивание по правому краю"><span class="fa fa-align-right"><span></div>
+                                                <div class="min-btn align-justify-btn" title="Выравнивание по всей строке"><span class="fa fa-align-justify"><span></div>
+                                                <div class="min-btn img-btn" href="#chooseImage" data-toggle="modal" title="Добавление изображения"><span class="fa fa-picture-o"><span></a></div>
+                                                <div class="min-btn link-btn" title="Добавление ссылки"><span class="fa fa-link"><span></div>
+                                            </div>
+                                        </div>
+                                </div>
                                 <div class="col-lg-8">
-                                    <div class="box">
+                                    <div id="full-description-box" class="box">
                                         <div class="row">
                                             <div class="col">
                                                 <div>
@@ -933,15 +914,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col">
-                                                <div>
-                                                    <textarea id="fullDescription"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <p></p>
-                                                <p>
+                                                <p style="text-align:justify; border-bottom: 2px solid var(--border); padding-bottom: 10px;">
                                                     Начните с представления себя, своей команды,
                                                     а также с предыстории проекта. Далее опишите суть
                                                     и цель проекта, объясните, в чем его уникальность и
@@ -957,51 +930,60 @@
                                                 </p>
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div id="full-desciption-input" contenteditable data-placeholder="Введите полное описание проекта ..."></div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="row">
+                                            <div class="col">
+                                                <div>
+                                                    <textarea id="fullDescription"></textarea>
+                                                </div>
+                                            </div>
+                                        </div> -->
                                     </div>
                                     <div class="box">
                                         <div class="row">
                                             <div class="col">
+                                                <h5 class="title">Частые вопросы</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
                                                 <div>
-                                                    <h5 class="title">Частые вопросы</h5>
+                                                    <p>
+                                                        <input id="question-input" class="inputBox" type="text" placeholder="Введите вопрос">
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col">
                                                 <div>
-                                                    <form action="#">
-                                                        <p>
-                                                            <input class="inputBox" type="text"
-                                                                placeholder="Введите вопрос">
-                                                        </p>
-                                                    </form>
+                                                    <p>
+                                                        <textarea id="answer-input" class="inputBox" type="text" style="min-height: 100px; height: auto;" placeholder="Введите ответ"></textarea>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col">
-                                                <div>
-                                                    <form action="#">
-                                                        <p>
-                                                            <textarea class="inputBox" type="text"
-                                                                placeholder="Введите ответ" rows="4"></textarea>
-                                                        </p>
-                                                    </form>
-                                                </div>
+                                                <div id="question-add-btn" class="my-btn"><span class="fa fa-plus fa-fw"></span>Добавить вопрос</div>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col">
-                                                <a class="my-btn" href="#">Добавить вопрос</a>
+                                            <div class="col added-questions">
+                                                <h5 class="title" style="display: none;">Добавленные вопросы</h5>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-lg-3">
                                     <div class="row">
                                         <div class="col">
                                             <p>
-                                                <h5 class="rulesArticle">Помощь</h5>
+                                                <h5 class="rulesArticle">Помощь <span class="fa fa-info-circle"></span></h5>
                                             </p>
                                         </div>
                                     </div>
@@ -1469,9 +1451,9 @@
     <script src="js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script><!-- popperjs(bootstrap)-->
     <script src="js/bootstrap4.1.3.min.js"></script><!-- js bootstrap-->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script><!-- summernote js-->
+    <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>summernote js -->
     <script src="js/createProject.js"></script>
-    <script src="lang/summernote-ru-RU.js"></script>
+    <!-- <script src="lang/summernote-ru-RU.js"></script> -->
 </body>
 
 </html>

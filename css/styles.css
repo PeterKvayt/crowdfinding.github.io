@@ -7,7 +7,7 @@
 
 /* шрифты */
 *{
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', Helvetica, sans-serif;
   outline: none;
 }
 /* кнопки */
@@ -26,6 +26,9 @@
   z-index: 1;
   cursor: pointer;
   outline: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
 }
 .my-btn:hover{
   color: #fff;
@@ -68,7 +71,45 @@
   }
   /* минималистичная кнопка */
 .min-btn{
+  overflow: hidden; 
+  z-index: 1;
+  position: relative;
+  display: block;
+  border: 1px solid var(--borderBtn);
+  border-radius: 4px;
+  background-color: var(--border);
   cursor: pointer;
+  text-align: center;
+  padding: 5px;
+  color: var(--greenPoles);
+  margin-bottom: 5px;
+  text-decoration: none;
+  transition: 0.5s;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+.min-btn:hover{
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+}
+
+.min-btn:hover::before{
+  height: 180%;
+}
+
+.min-btn::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--greenPoles);
+  z-index: -1;
+  transition: 0.5s;
+  border-radius: 50% 50% 0 0;
 }
 
 /* Модальные окна */
@@ -108,12 +149,12 @@
   padding: 5px 10px;
   background-color: #F9F9F9;
 }
-.inputBox:focus{
+/* .inputBox:focus{
   outline: none;
 }
 .inputBox:hover{
   background-color: #F9F9F9;
-}
+} */
 
 /* Стиль ссылки */
 .link{
@@ -121,6 +162,10 @@
   display: inline-block;
   position: relative;
   padding: auto;
+  cursor: pointer;
+  /* -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none; */
 }
 .link:hover{
   color: var(--greenPoles);
@@ -763,6 +808,35 @@ user-select: none;
   bottom: 0;
   opacity: 0.98;
   z-index: 1;
+}
+.wisiwig-btns{
+  margin-top: 16px;
+  position:sticky;
+  position:-webkit-sticky;
+  top: 70px;
+}
+
+/* li{
+  list-style-type: none;
+} */
+li::before{
+  color: var(--greenPoles);
+  /* position: relative; */
+  /* top: 6px; */
+  content: "";
+  /* font-size: 180%;
+  font-weight: bold; */
+  /* padding-right: 15px; */
+}
+
+#full-desciption-input{
+  min-height: 500px;
+  height: auto;
+}
+
+#full-desciption-input:empty:before {
+  content:attr(data-placeholder);
+  color:gray;
 }
 
 /* crowdFinding.html */

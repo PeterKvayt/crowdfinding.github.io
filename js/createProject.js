@@ -26,13 +26,21 @@ $(document).ready(function(){
   var inputProjectName = $('#input-project-name');
   var inputShortDescription = $('#input-short-description');
   var inputCategory = $('#input-category');
-  var downloadPicture = $('#picture-path');
+  var downloadPictureProject = $('#project-picture-path');
   var financialGoal = $('#financial-goal');
   var projectDurationEl = $('#project-duration');
   var comissionFee = $('#comission-fee');
   var tax = $('#tax');
   var total = $('#total');
   var rewards = [];
+
+  // заполнение списка годами доставки
+  let dat = new Date();
+  for (let i = 0; i < 5; i++) {
+    $('#delivery-year-input').append(
+      '<option>'+ (dat.getFullYear() + i) +'</option>'
+    );
+  }
 
   // проверка на цифры
   function CheckNumbers(elem, flag){
@@ -90,9 +98,9 @@ $(document).ready(function(){
           );
           
       }
-    }
+  }
 
-  // изименение/удаление страны доставки
+  // изменение/удаление страны доставки
   function ChangeRemoveCountry(e, param){
     let activeCheckBox = $('.delivery-checkbox-active');
     let selecCountry = '#add-country-box';
@@ -132,7 +140,18 @@ $(document).ready(function(){
     }
   }
 
-  // 
+  function EnableCountToggle(){
+    if($('#reward-count-check').hasClass('fa fa-square')){
+      $('#reward-count-check').attr('class','fa fa-check-square');
+      $('.reward-count-box').slideDown(400);
+    }
+    else{
+      $('#reward-count-check').attr('class','fa fa-square');
+      $('.reward-count-box').slideUp(400);
+    }
+  }
+
+  // вывод сообщения
   function ShowAlert(message, elem, type){
     let alertElem = $('#alert');
     if(type){
@@ -153,6 +172,40 @@ $(document).ready(function(){
     2500);
     $('body,html').animate({ scrollTop: elemY }, 400);
     elem.focus();
+  }
+
+  // обрезка передних нулей
+  function CutZero(elem){
+    $(elem).val($(elem).val() * 1);
+  }
+  
+  // добавление вопросов в описание
+  function AddQuestion(){
+    let questionEl = $('#question-input');
+    let answerEl = $('#answer-input');
+    let addedQuestionsEl = $('.added-questions');
+    if(questionEl.val().trim().length != 0){
+      if(answerEl.val().trim().length != 0){
+        $('.added-questions > .title').slideDown(400);
+        addedQuestionsEl.append(
+          '<div class="added-question" style="padding-bottom: 5px;">' +
+            '<p><span class="link added-question-btn">' + questionEl.val().trim() + '</span></p>' +
+            '<div class="added-answer" style="display:none; padding-bottom: 5px;">' + answerEl.val().trim() + '</div>' +
+            '<div class="my-btn change-question-btn" style="margin-right: 5px;"><span class="fa fa-pencil fa-fw"></span>Изменить</div>' +
+            '<div class="my-btn delete-question-btn"><span class="fa fa-close fa-fw"></span>Удалить</div>' +
+          '</div>'
+        );
+        questionEl.val('');
+        answerEl.val('');
+        ShowAlert('Вопрос успешно добавлен)', questionEl, true);
+      }
+      else{
+        ShowAlert('Вы не ввели ответ на вопрос!', answerEl, false);
+      }
+    }
+    else{
+      ShowAlert('Вы не ввели вопрос!', questionEl, false);
+    }
   }
 
   // event on change tabs
@@ -187,56 +240,84 @@ $(document).ready(function(){
   // ввод винансовой цели проекта
   financialGoal.on('keyup', function(){
     CheckNumbers(this, true);
+    CutZero(this);
     comissionFee.text(Number((financialGoal.val()) * comissionPercent).toFixed(2));
   })
 
   // ввод продолжительности проекта
   projectDurationEl.on('keyup', function(){
     CheckNumbers(this, true);
+    CutZero(this);
     if(projectDurationEl.val() > maxProjectDuration){projectDurationEl.val(maxProjectDuration);}
   })
 
   // ввод стоимости лота
   $('#reward-cost-input').on('keyup', function(){
     CheckNumbers(this, true);
+    CutZero(this);
   })
 
   // ввод количества лотов
   $('#reward-count-input').on('keyup', function () {
     CheckNumbers(this, true);
+    CutZero(this);
   })
 
   // ввод стоимости доставки в некоторых странах
   $(document).on('keyup', '#add-country-cost', function(event){
     CheckNumbers(event.target, true);
+    CutZero(event.target);
   })
 
   // ввод стоимости доставки по всему миру
   $(document).on('keyup', '#all-world-delivery-cost', function(event){
     CheckNumbers(event.target, true);
+    CutZero(event.target);
   })
 
   // ввод стоимости доставки в странах исключениях
   $(document).on('keyup', '#exception-country-cost', function(event){
     CheckNumbers(event.target, true);
+    CutZero(event.target);
   })
 
-  // downloadPicture.on('change', function(event){
-  //   $('#preview-picture').src = URL.createObjectURL(event.target.files[0]);
-  // })
+  downloadPictureProject.on('change', function(event){
+    // $('#preview-picture').src = URL.createObjectURL(event.target.files[0]);
+    console.log(downloadPictureProject);
+    let preview = $('#project-preview-picture');
+    preview.attr('src', downloadPictureProject.val());
+    // let file = document.getElementById('project-picture-path').files[0];
+    // let reader  = new FileReader();
+    // reader.onloadend = function () {
+    //   preview.src = reader.result;
+    // }
+  
+    // if (file) {
+    //   reader.readAsDataURL(file);
+    // } else {
+    //   preview.src = "";
+    // }
+  })
 
    var loadFile = function(event){
     $('#preview-picture').src = URL.createObjectURL(event.target.files[0]);
   }
   
   // смена вида доставки
-  $(document).on('click', '.delivery-checkbox, .delivery-checkbox .fa.fa-square', function(event){
+  $(document).on('click', '.delivery-checkbox', function(event){
     $('.fa-check-square').attr('class','fa fa-square');
     $('.delivery-input-active').attr('class','delivery-input');
     $('.delivery-checkbox-active').attr('class','delivery-checkbox');
-    event.target.className = 'delivery-checkbox-active';
-    $('.delivery-checkbox-active span').attr('class','fa fa-check-square');
-    $('.delivery-checkbox-active + .delivery-input').attr('class','delivery-input-active');
+    if(event.target.tagName == 'P' ){
+      event.target.className = 'delivery-checkbox-active';
+      $('.delivery-checkbox-active span').attr('class','fa fa-check-square');
+      $('.delivery-checkbox-active + .delivery-input').attr('class','delivery-input-active');
+    }
+    else{
+      event.target.className = 'fa fa-check-square';
+      event.target.parentNode.className = 'delivery-checkbox-active';
+      $('.delivery-checkbox-active + .delivery-input').attr('class','delivery-input-active');
+    }
     $('#countries-title').text('');
     $('.added-country').remove();
     EnableCountries($('#add-country-box > option'), 'Выберите страну');
@@ -260,8 +341,7 @@ $(document).ready(function(){
 
   // клик по ограничению по количеству
   $('.count-checkbox').on('click', function(){
-    if($('#reward-count-check').hasClass('fa fa-square')){$('#reward-count-check').attr('class','fa fa-check-square');}
-    else{$('#reward-count-check').attr('class','fa fa-square');}
+    EnableCountToggle();
   })
 
   // обработка нажатия на изменение вознгарждения
@@ -280,8 +360,8 @@ $(document).ready(function(){
         $('.delivery-checkbox-active').attr('class','delivery-checkbox');
         $('#no-delivery').attr('class', 'delivery-checkbox-active');
         $('#no-delivery .fa.fa-square').attr('class', 'fa fa-check-square');
-        rewards.splice(rewardParentIndex, 1);
-        rewardParent.remove();
+        // rewards.splice(rewardParentIndex, 1);
+        // rewardParent.remove();
         break;
       case 'Некоторые страны':
         $('.fa-check-square').attr('class','fa fa-square');
@@ -294,8 +374,8 @@ $(document).ready(function(){
         for (let i = 0; i < rewards[rewardParentIndex].Delivery.length; i++) {
           AddCountry(rewards[rewardParentIndex].Delivery[i].Country, rewards[rewardParentIndex].Delivery[i].Cost, 'Некоторые страны', false);
         }
-        rewards.splice(rewardParentIndex, 1);
-        rewardParent.remove();
+        // rewards.splice(rewardParentIndex, 1);
+        // rewardParent.remove();
         break;
       case 'Весь мир':
         $('.fa-check-square').attr('class','fa fa-square');
@@ -313,14 +393,20 @@ $(document).ready(function(){
             AddCountry(rewards[rewardParentIndex].Delivery[i].Country, rewards[rewardParentIndex].Delivery[i].Cost, 'Страны исключения', false);
           }
         }
-        rewards.splice(rewardParentIndex, 1);
-        rewardParent.remove();
+        // rewards.splice(rewardParentIndex, 1);
+        // rewardParent.remove();
         break;
     }
+    if(rewards[rewardParentIndex].Left != null || rewards[rewardParentIndex].Left != ''){
+      $('#reward-count-input').val(rewards[rewardParentIndex].Left.substring(9));
+      EnableCountToggle();
+    }
+    rewards.splice(rewardParentIndex, 1);
+    rewardParent.remove();
   })
 
   // обработка нажатия на удаление вознгарждения
-  $(document).on('click', '.delete-reward-btn', function(){
+  $(document).on('click', '.delete-reward-btn', function(event){
     let rewardParent = event.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
     let rewardParentIndex = $(rewardParent).index();
     rewards.splice(rewardParentIndex, 1);
@@ -328,8 +414,8 @@ $(document).ready(function(){
   }) 
 
   // добавление лота
-  $(document).on('click', '#add-reward-btn', function(event){
-    let image = 'images/pen.jpeg';
+  $(document).on('click', '#add-reward-btn', function(){
+    let image = 'images/stock-reward.jpg';
     let name =  $('#reward-name-input');
     let description = $('#reward-description-input');
     let cost = $('#reward-cost-input');
@@ -366,9 +452,10 @@ $(document).ready(function(){
                   cost.val('');
                   month.val('Выберите месяц');
                   year.val('Выберите год');
+                  count.val('');
                 }
                 else {
-                  if (count.val() != '') {
+                  if (count.val() != '' && count.val() != '0') {
                     let reward = new RewardCard(
                       image,
                       name.val(),
@@ -390,9 +477,9 @@ $(document).ready(function(){
                     month.val('Выберите месяц');
                     year.val('Выберите год');
                     count.val('');
-                    countCheckBox.click();
+                    EnableCountToggle();
                   }
-                  else { ShowAlert('Введите количество вознаграждений!', count, false); }
+                  else { ShowAlert('Количество вознаграждений должно быть больше 0!', count, false); }
                 }
               }
               if (deliveryCheckBox.text().includes('Некоторые страны')) {
@@ -428,9 +515,10 @@ $(document).ready(function(){
                     $('.added-country').remove();
                     EnableCountries($('#add-country-box > option'), 'Выберите страну');
                     EnableCountries($('#exception-country-box > option'), 'Страны исключения');
+                    count.val('');
                   }
                   else {
-                    if (count.val() != '') {
+                    if (count.val() != '' && count.val() != '0') {
                       let addedCountries = $('.added-country');
                       let countries = new Array(addedCountries.length);
                       for (let i = 0; i < addedCountries.length; i++) {
@@ -464,7 +552,7 @@ $(document).ready(function(){
                       EnableCountries($('#add-country-box > option'), 'Выберите страну');
                       EnableCountries($('#exception-country-box > option'), 'Страны исключения');
                     }
-                    else { ShowAlert('Введите количество вознаграждений!', count, false); }
+                    else { ShowAlert('Количество вознаграждений должно быть больше 0!', count, false); }
                   }
                 }
                 else {
@@ -506,9 +594,10 @@ $(document).ready(function(){
                     $('.added-country').remove();
                     EnableCountries($('#add-country-box > option'), 'Выберите страну');
                     EnableCountries($('#exception-country-box > option'), 'Страны исключения');
+                    count.val('');
                   }
                   else {
-                    if (count.val() != '') {
+                    if (count.val() != '' && count.val() != '0') {
                       let addedCountries = $('.added-country');
                       let countries = new Array(addedCountries.length + 1);
                       countries[addedCountries.length] = new DeliveryCountry('all', $('#all-world-delivery-cost').val());
@@ -544,7 +633,7 @@ $(document).ready(function(){
                       EnableCountries($('#add-country-box > option'), 'Выберите страну');
                       EnableCountries($('#exception-country-box > option'), 'Страны исключения');
                     }
-                    else { ShowAlert('Введите количество вознаграждений!', count, false); }
+                    else { ShowAlert('Количество вознаграждений должно быть больше 0!', count, false); }
                   }
                 }
                 else {
@@ -563,4 +652,105 @@ $(document).ready(function(){
     else{ShowAlert('Введите название вознаграждения!', name, false);}
   })
 
+  // добавление вопроса
+  $('#question-add-btn').on('click', function(){
+    AddQuestion();
+  })
+
+  // нажатие на вопрос для появления ответа
+  $('.added-questions').on('click', '.added-question-btn', function(event){
+    $(event.target.parentNode).next().slideToggle(400);
+  })
+
+  // изменение вопроса
+  $('.added-questions').on('click', '.change-question-btn', function(event){
+    let childrens = $(event.target.parentNode).children();
+    $('#question-input').val(childrens.children('p > .added-question-btn').text());
+    $('#answer-input').val(childrens[1].innerText);
+    $(event.target.parentNode).remove();
+  })
+
+  // удаление вопроса
+  $('.added-questions').on('click', '.delete-question-btn', function(event){
+    if($('.added-question').length <= 1){
+      $(event.target.parentNode).remove();
+      $('.added-questions > .title').slideUp(400);
+    }
+  })
+
+  // визивиг
+  // var pageY;
+  // var wisiwig = $('.wisiwig-btns');
+  // $(document).on('scroll', function(){
+  //   pageY = window.pageYOffset + 70;
+  //   if (wisiwig.offset().top <= pageY && descriptionInput.offset().top + descriptionInput.height() + 16 >= wisiwig.offset().top + wisiwig.height()) {
+  //     wisiwig.css({'position': 'relative'});
+  //     wisiwig.css({'top': pageY - 212});
+  //   }
+  //   if (wisiwig.offset().top >= pageY && descriptionInput.parent().parent().parent().offset().top  <= pageY) {
+  //     wisiwig.css({'position': 'relative'});
+  //     wisiwig.css({'top': pageY - 212});
+  //   }
+  // });
+  $('.header-btn').on( 'click', function() {
+    if (window.getSelection() == '') {
+      return false;
+    }
+    let parents = $(window.getSelection().getRangeAt(0).startContainer).parents();
+    for (let i = 0; i < parents.length; i++) {
+      if (parents[i].id == 'full-desciption-input') {
+        let range = window.getSelection().getRangeAt(0);
+        let selectionContents = range.extractContents();
+        let span = document.createElement("span");
+        span.appendChild(selectionContents);
+        span.setAttribute("class", "title");
+        range.insertNode(span);
+        document.execCommand('heading', null, 'H4');
+        break;
+      }
+    }
+  });
+  $('.bold-btn').on( 'click', function() {
+    document.execCommand( 'bold', null, null ); 
+  });
+  $('.italic-btn').on( 'click', function() {
+    document.execCommand( 'italic', null, null ); 
+  });
+  $('.strike-btn').on( 'click', function() {
+    document.execCommand( 'strikeThrough', null, null ); 
+  }); 
+  $('.underline-btn').on( 'click', function() {
+    document.execCommand( 'underline', null, null ); 
+  });
+  $('.sub-btn').on( 'click', function() {
+    document.execCommand( 'subscript', null, null ); 
+  });
+  $('.sup-btn').on( 'click', function() {
+    document.execCommand( 'superscript', null, null ); 
+  });
+  $('.list-ul-btn').on( 'click', function() {
+    document.execCommand( 'insertUnorderedList', null, null ); 
+  });
+  $('.list-ol-btn').on( 'click', function() {
+    document.execCommand( 'insertOrderedList', null, null ); 
+  });
+  $('.align-left-btn').on( 'click', function() {
+    document.execCommand( 'justifyLeft', null, null ); 
+  });
+  $('.align-center-btn').on( 'click', function() {
+    document.execCommand( 'justifyCenter', null, null ); 
+  });
+  $('.align-right-btn').on( 'click', function() {
+    document.execCommand( 'justifyRight', null, null ); 
+  });
+  $('.align-justify-btn').on( 'click', function() {
+    document.execCommand( 'justifyFull', null, null ); 
+  });
+  $('.img-btn').on( 'click', function() {
+    result = document.execCommand( 'insertHTML', false, '<img src="images/project-stock.png" class="projectWall"/><p></p>' );
+    console.log(result); 
+  });
+  $('.link-btn').on( 'click', function() {
+    document.execCommand( 'insertHTML', false, '<a class="link" href="#">link</a>'); 
+  });
 })
