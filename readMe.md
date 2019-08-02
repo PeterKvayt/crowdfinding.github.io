@@ -1,2 +1,2 @@
 # Репозиторий для гибридной платформы
-[CrowdFinding]( https://peterkvayt.github.io/crowdfinding.github.io/)
+[CrowdFinding]( https://peterkvayt.github.io/crowdfinding.github.io/crowdFinding.html)
