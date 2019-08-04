@@ -110,7 +110,7 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <h5>Обратная связь</h5>
+                        <h5 class="title">Обратная связь</h5>
                         <button class="closeBtn" id="askQuestionClose" data-dismiss="modal">&times;</button>
                         <div class="row">
                             <div class="col">
@@ -169,7 +169,7 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <h5>Выбор изображения</h5>
+                        <h5 class="title">Выбор изображения</h5>
                         <button class="closeBtn" id="askQuestionClose" data-dismiss="modal">&times;</button>
                         <div class="row">
                             <div class="col">
@@ -190,6 +190,30 @@
                         <div class="row">
                             <div class="col">
                                 <div class="my-btn" id="choose-img-btn" href="#">Выбрать</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- модальное окно ввода ссылки -->
+        <div class="modal fade" id="inputLink">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h5 class="title">Ввод ссылки</h5>
+                        <button class="closeBtn" id="inputLinkClose" data-dismiss="modal">&times;</button>
+                        <div class="row">
+                            <div class="col">
+                                <input id="input-link" class="inputBox" type="text" placeholder="Введите ссылку">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div id="input-link-btn" class="my-btn" style="margin-top:5px;">
+                                    <span class="fa fa-check fa-fw"></span>
+                                    Готово
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -882,7 +906,7 @@
                         </div>
                         <div class="describe-project-box" id="detailInformation">
                             <div class="row">
-                                <div class="col-lg-1">
+                                <!-- <div class="col-lg-1">
                                         <div class="row wisiwig-btns">
                                             <div class="col-9">
                                                 <div class="min-btn header-btn" title="Заголовок"><span class="fa fa-header"></span></div>
@@ -902,47 +926,66 @@
                                                 <div class="min-btn link-btn" title="Добавление ссылки"><span class="fa fa-link"><span></div>
                                             </div>
                                         </div>
-                                </div>
+                                </div> -->
                                 <div class="col-lg-8">
-                                    <div id="full-description-box" class="box">
-                                        <div class="row">
-                                            <div class="col">
-                                                <div>
-                                                    <h5 class="title">Описание проекта</h5>
+                                        <div id="full-description-box" class="box" style="overflow: visible;">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div>
+                                                        <h5 class="title">Описание проекта</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p style="text-align:justify; border-bottom: 2px solid var(--border); padding-bottom: 10px;">
+                                                        Начните с представления себя, своей команды,
+                                                        а также с предыстории проекта. Далее опишите суть
+                                                        и цель проекта, объясните, в чем его уникальность и
+                                                        почему он должен заинтересовать людей. Распишите, на что
+                                                        будут потрачены вложенные пользователями средства. Избегайте
+                                                        монотонности изложения, разбивайте текст на абзацы с
+                                                        привлекательными
+                                                        заголовками, фото- и видеоматериалами, графическими изображениями и
+                                                        т.п.
+                                                        Совет: по объему текст-описание должен быть примерно наравне с
+                                                        колонкой
+                                                        вознаграждений – идеально, если они заканчиваются на одном уровне.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div id="full-desciption-input" contenteditable data-placeholder="Введите полное описание проекта ..."></div>
+                                                </div>
+                                            </div>
+                                            <div class="sticky">
+                                                <div class="wisiwig-btns">
+                                                    <div class="min-btn header-btn" title="Заголовок"><span class="fa fa-header"></span></div>
+                                                    <div class="min-btn bold-btn" title="Жирное начертание"><span class="fa fa-bold"></span></div>
+                                                    <div class="min-btn italic-btn" title="Курсив"><span class="fa fa-italic"></div>
+                                                    <div class="min-btn strike-btn" title="Зачеркнутый текст"><span class="fa fa-strikethrough"></span></div>
+                                                    <div class="min-btn underline-btn" title="Подчеркнутый текст"><span class="fa fa-underline"></span></div>
+                                                    <div class="min-btn sub-btn" title="Подстрочный текст"><span class="fa fa-subscript"></span></div>
+                                                    <div class="min-btn sup-btn" title="Надстрочный текст"><span class="fa fa-superscript"></span></div>
+                                                    <div class="min-btn list-ul-btn" title="Список"><span class="fa fa-list-ul"><span></div>
+                                                    <div class="min-btn list-ol-btn" title="Нумерованый список"><span class="fa fa-list-ol"><span></div>
+                                                    <div class="min-btn align-left-btn" title="Выравнивание по левому краю"><span class="fa fa-align-left"><span>
+                                                    </div>
+                                                    <div class="min-btn align-center-btn" title="Выравнивание по центру"><span class="fa fa-align-center"><span>
+                                                    </div>
+                                                    <div class="min-btn align-right-btn" title="Выравнивание по правому краю"><span class="fa fa-align-right"><span>
+                                                    </div>
+                                                    <div class="min-btn align-justify-btn" title="Выравнивание по всей строке"><span
+                                                            class="fa fa-align-justify"><span>
+                                                    </div>
+                                                    <div class="min-btn img-btn" href="#chooseImage" data-toggle="modal" title="Добавление изображения"><span
+                                                            class="fa fa-picture-o"><span></a></div>
+                                                    <div class="min-btn link-btn" title="Добавление ссылки"><span class="fa fa-link"><span></div>
+                                                    <div id="modal-link-btn" href="#inputLink" data-toggle="modal" style="display:none;"></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <p style="text-align:justify; border-bottom: 2px solid var(--border); padding-bottom: 10px;">
-                                                    Начните с представления себя, своей команды,
-                                                    а также с предыстории проекта. Далее опишите суть
-                                                    и цель проекта, объясните, в чем его уникальность и
-                                                    почему он должен заинтересовать людей. Распишите, на что
-                                                    будут потрачены вложенные пользователями средства. Избегайте
-                                                    монотонности изложения, разбивайте текст на абзацы с
-                                                    привлекательными
-                                                    заголовками, фото- и видеоматериалами, графическими изображениями и
-                                                    т.п.
-                                                    Совет: по объему текст-описание должен быть примерно наравне с
-                                                    колонкой
-                                                    вознаграждений – идеально, если они заканчиваются на одном уровне.
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div id="full-desciption-input" contenteditable data-placeholder="Введите полное описание проекта ..."></div>
-                                            </div>
-                                        </div>
-                                        <!-- <div class="row">
-                                            <div class="col">
-                                                <div>
-                                                    <textarea id="fullDescription"></textarea>
-                                                </div>
-                                            </div>
-                                        </div> -->
-                                    </div>
                                     <div class="box">
                                         <div class="row">
                                             <div class="col">
@@ -962,7 +1005,7 @@
                                             <div class="col">
                                                 <div>
                                                     <p>
-                                                        <textarea id="answer-input" class="inputBox" type="text" style="min-height: 100px; height: auto;" placeholder="Введите ответ"></textarea>
+                                                        <textarea id="answer-input" class="inputBox" type="text" style="min-height: 150px;" placeholder="Введите ответ"></textarea>
                                                     </p>
                                                 </div>
                                             </div>
@@ -979,7 +1022,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-lg-4">
                                     <div class="row">
                                         <div class="col">
                                             <p>

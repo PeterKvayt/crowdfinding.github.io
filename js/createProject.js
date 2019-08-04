@@ -1,19 +1,19 @@
-jQuery(function($){
-  $("#fullDescription").summernote({
-    lang: 'ru-RU',
-    minHeight: 400,
-    placeholder: 'Введите полное описание проекта',
-    toolbar:[
-      ['style', ['bold', 'italic', 'underline', 'clear']],
-    ['font', ['strikethrough', 'superscript', 'subscript']],
-    ['para', ['ul', 'ol', 'paragraph']],
-    ['height', ['height']],
-    ['insert',['picture', 'link']],
-    ['fontsize', ['fontsize']]
-    ],
-    popover: false
-  });
-})
+// jQuery(function($){
+//   $("#fullDescription").summernote({
+//     lang: 'ru-RU',
+//     minHeight: 400,
+//     placeholder: 'Введите полное описание проекта',
+//     toolbar:[
+//       ['style', ['bold', 'italic', 'underline', 'clear']],
+//     ['font', ['strikethrough', 'superscript', 'subscript']],
+//     ['para', ['ul', 'ol', 'paragraph']],
+//     ['height', ['height']],
+//     ['insert',['picture', 'link']],
+//     ['fontsize', ['fontsize']]
+//     ],
+//     popover: false
+//   });
+// })
 
 $(document).ready(function(){
   const comissionPercent = 0.1;// заработок платформы
@@ -164,7 +164,7 @@ $(document).ready(function(){
     }
     let messageBox = $('#alert-text');
     let elemY = elem.offset().top - 80;
-    messageBox.text(message);
+    messageBox.html(message);
     alertElem.slideDown(400);
     setTimeout(function(){
       alertElem.slideUp(400);
@@ -197,7 +197,7 @@ $(document).ready(function(){
         );
         questionEl.val('');
         answerEl.val('');
-        ShowAlert('Вопрос успешно добавлен)', questionEl, true);
+        ShowAlert('Вопрос успешно добавлен <span class="fa fa-thumbs-o-up fa-fw"></span>', questionEl, true);
       }
       else{
         ShowAlert('Вы не ввели ответ на вопрос!', answerEl, false);
@@ -659,23 +659,28 @@ $(document).ready(function(){
 
   // нажатие на вопрос для появления ответа
   $('.added-questions').on('click', '.added-question-btn', function(event){
-    $(event.target.parentNode).next().slideToggle(400);
+    $(event.target.parentNode).next().slideToggle(250);
   })
 
   // изменение вопроса
   $('.added-questions').on('click', '.change-question-btn', function(event){
     let childrens = $(event.target.parentNode).children();
-    $('#question-input').val(childrens.children('p > .added-question-btn').text());
+    let question = $('#question-input')
+    question.val(childrens.children('p > .added-question-btn').text());
     $('#answer-input').val(childrens[1].innerText);
+    $('body,html').animate({ scrollTop:  question.offset().top - 80}, 400);
+    if($('.added-question').length <= 1){
+      $('.added-questions > .title').slideUp(400);
+    }
     $(event.target.parentNode).remove();
   })
 
   // удаление вопроса
   $('.added-questions').on('click', '.delete-question-btn', function(event){
     if($('.added-question').length <= 1){
-      $(event.target.parentNode).remove();
       $('.added-questions > .title').slideUp(400);
     }
+    $(event.target.parentNode).remove();
   })
 
   // визивиг
@@ -697,17 +702,21 @@ $(document).ready(function(){
       return false;
     }
     let parents = $(window.getSelection().getRangeAt(0).startContainer).parents();
-    for (let i = 0; i < parents.length; i++) {
-      if (parents[i].id == 'full-desciption-input') {
-        let range = window.getSelection().getRangeAt(0);
-        let selectionContents = range.extractContents();
-        let span = document.createElement("span");
-        span.appendChild(selectionContents);
-        span.setAttribute("class", "title");
-        range.insertNode(span);
-        document.execCommand('heading', null, 'H4');
-        break;
+    if (window.getSelection().getRangeAt(0).startContainer.parentNode.className != 'describing-title') {
+      for (let i = 0; i < parents.length; i++) {
+        if (parents[i].id == 'full-desciption-input') {
+          let range = window.getSelection().getRangeAt(0);
+          let selectionContents = range.extractContents();
+          let span = document.createElement("span");
+          span.appendChild(selectionContents);
+          span.setAttribute("class", "describing-title");
+          range.insertNode(span);
+          break;
+        }
       }
+    }
+    else{
+      document.execCommand("removeFormat", false, false);
     }
   });
   $('.bold-btn').on( 'click', function() {
@@ -748,9 +757,35 @@ $(document).ready(function(){
   });
   $('.img-btn').on( 'click', function() {
     result = document.execCommand( 'insertHTML', false, '<img src="images/project-stock.png" class="projectWall"/><p></p>' );
-    console.log(result); 
   });
   $('.link-btn').on( 'click', function() {
-    document.execCommand( 'insertHTML', false, '<a class="link" href="#">link</a>'); 
+    if (window.getSelection() == '') {
+      return false;
+    }
+    let parents = $(window.getSelection().getRangeAt(0).startContainer).parents();
+    if(window.getSelection().getRangeAt(0).startContainer.parentNode.className != 'link'){
+      for (let i = 0; i < parents.length; i++) {
+        if (parents[i].id == 'full-desciption-input') {
+          $('#modal-link-btn').click();
+        }
+      }
+    }
+    else{
+      document.execCommand("unlink", false, false);
+      document.execCommand("removeFormat", false, false);
+    }
+  });
+  $('#input-link-btn').on( 'click', function() {
+    let link = $('#input-link');
+    if(link.val().trim() != ''){
+      let range = window.getSelection().getRangeAt(0);
+      let selectionContents = range.extractContents();
+      let a = document.createElement('a');
+      a.appendChild(selectionContents);
+      a.setAttribute('class', 'link');
+      a.setAttribute('href', link.val().trim());
+      range.insertNode(a);
+      $('#inputLinkClose').click();
+    }
   });
 })
