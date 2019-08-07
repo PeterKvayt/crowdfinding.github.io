@@ -41,6 +41,15 @@ $(document).ready(function(){
       '<option>'+ (dat.getFullYear() + i) +'</option>'
     );
   }
+  // запонение списка годами рождения
+  $('#year-select').append(
+    '<option selected>'+ (dat.getFullYear() - 107) +'</option>'
+  );
+  for (let i = 1; i < 90; i++) {
+    $('#year-select').append(
+      '<option>'+ (dat.getFullYear() - 107 + i) +'</option>'
+    );
+  }
 
   // проверка на цифры
   function CheckNumbers(elem, flag){
@@ -55,6 +64,12 @@ $(document).ready(function(){
     }
   }
 
+  // проверка на буквы
+  function CheckLetters(elem){
+    if (elem.value.match(/[^a-zA-Zа-яА-Я]/g)) {
+      elem.value = elem.value.replace(/[^a-zA-Zа-яА-Я]/g, '');
+    }
+  }
   // добавление стран доставки
   function AddCountry(selecCountry, selecCost, title, flag){
       if(flag){
@@ -237,6 +252,11 @@ $(document).ready(function(){
     projectCategory.text(inputCategory.val());
   })
   
+  // выбор картинки проекта
+  $('#project-picture-btn').on('click', function(){
+    $('#project-picture-choose-btn').click();
+  }) 
+
   // ввод винансовой цели проекта
   financialGoal.on('keyup', function(){
     CheckNumbers(this, true);
@@ -255,6 +275,11 @@ $(document).ready(function(){
   $('#reward-cost-input').on('keyup', function(){
     CheckNumbers(this, true);
     CutZero(this);
+  })
+
+  // выбор картинки лота
+  $('#reward-picture-btn').on('click', function(){
+    $('#reward-picture-choose-btn').click();
   })
 
   // ввод количества лотов
@@ -681,6 +706,103 @@ $(document).ready(function(){
       $('.added-questions > .title').slideUp(400);
     }
     $(event.target.parentNode).remove();
+  })
+
+  // ввод фамилии автора
+  $('#surname-input').on('keyup', function(){
+    CheckLetters(this);
+  })
+
+  // ввод имени автора
+  $('#name-input').on('keyup', function(){
+    CheckLetters(this);
+  })
+  
+  // ввод отчества автора
+  $('#middle-name-input').on('keyup', function(){
+    CheckLetters(this);
+  })
+
+  // ввод контактного телефона
+  $('#phone-number-input').on('keyup', function(){
+    CheckNumbers(this, true);
+  }) 
+
+  // выбор месяца рождения
+  $('#month-select').on('change', function(){
+    let numberSelect = $('#number-select');
+    let numbers = $('#number-select > option');
+    if(numbers.length < 32 ){
+      for (let i = 0; i < 32 - numbers.length; i++) {
+        numberSelect.append(
+          '<option>'+ (numbers.length + i)  +'</option>'
+        );
+      }
+    }
+    switch(this.value){
+      case 'Апрель':
+        numberSelect.children().last().remove();
+        break;
+      case 'Июнь':
+        numberSelect.children().last().remove();
+        break;
+      case 'Сентябрь':
+        numberSelect.children().last().remove();
+        break;
+      case 'Ноябрь':
+        numberSelect.children().last().remove();
+        break;
+      case 'Февраль':
+      let year = Number($('#year-select').val());
+        if(year % 4 == 0 && year % 100 != 0){
+          numberSelect.children().last().remove();
+          numberSelect.children().last().remove();
+          break;
+        }
+        if(year % 4 == 0 && year % 100 == 0 && year % 400 == 0){
+          numberSelect.children().last().remove();
+          numberSelect.children().last().remove();
+          break;
+        }
+        else{
+          numberSelect.children().last().remove();
+          numberSelect.children().last().remove();
+          numberSelect.children().last().remove();
+          break;
+        }  
+      default: break;
+    }
+  })
+
+  // выбор года рождения
+  $('#year-select').on('change', function(){
+    let numberSelect = $('#number-select');
+    let year = Number(this.value);
+    if($('#month-select').val() == 'Февраль'){
+        if(year % 4 == 0 && year % 100 != 0){
+          if(numberSelect.children().length == 29){
+            numberSelect.append(
+              '<option>29</option>'
+            );
+            return;
+          }
+        }
+        if(year % 4 == 0 && year % 100 == 0 && year % 400 == 0){
+          console.log(numberSelect.children().length + 'b');
+          if(numberSelect.children().length == 29){
+            numberSelect.append(
+              '<option>29</option>'
+            );
+            return;
+          }
+        }
+        else{
+          if(numberSelect.children().length == 30){
+            numberSelect.children().last().remove();
+            return;
+          }
+        }
+    }
   })
 
   // визивиг

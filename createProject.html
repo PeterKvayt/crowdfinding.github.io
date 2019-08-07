@@ -387,9 +387,8 @@
                                                 <div class="row">
                                                     <div class="col">
                                                         <p>
-                                                            <form action="#">
-                                                                <input id="project-picture-path" type="file" accept="image/*" onchange="$('#preview-picture').src = window.URL.createObjectURL(this.files[0])">
-                                                            </form>
+                                                            <div id="project-picture-btn" class="my-btn"><span class="fa fa-download"></span> Загрузить изображение</div>
+                                                            <input id="project-picture-choose-btn" style="display:none;" type="file" accept="image/*">
                                                         </p>
                                                     </div>
                                                 </div>
@@ -659,15 +658,12 @@
                                                 <div class="row">
                                                     <div class="col">
                                                         <p>
-                                                            <div class="my-btn">
+                                                            <div id="reward-picture-btn" class="my-btn">
                                                                 <span class="fa fa-download"></span>
                                                                 Загрузить изображение
                                                             </div>
                                                         </p>
-                                                        <form action="#" style="display:none;">
-                                                            <input id="reward-picture-path" type="file" accept="image/*"
-                                                                onchange="$('#preview-picture').src = window.URL.createObjectURL(this.files[0])">
-                                                        </form>
+                                                            <input id="reward-picture-choose-btn" style="display:none;" type="file" accept="image/*">
                                                     </div>
                                                 </div>
                                             </div>
@@ -906,27 +902,6 @@
                         </div>
                         <div class="describe-project-box" id="detailInformation">
                             <div class="row">
-                                <!-- <div class="col-lg-1">
-                                        <div class="row wisiwig-btns">
-                                            <div class="col-9">
-                                                <div class="min-btn header-btn" title="Заголовок"><span class="fa fa-header"></span></div>
-                                                <div class="min-btn bold-btn" title="Жирное начертание"><span class="fa fa-bold"></span></div>
-                                                <div class="min-btn italic-btn" title="Курсив"><span class="fa fa-italic"></div>
-                                                <div class="min-btn strike-btn" title="Зачеркнутый текст"><span class="fa fa-strikethrough"></span></div>
-                                                <div class="min-btn underline-btn" title="Подчеркнутый текст"><span class="fa fa-underline"></span></div>
-                                                <div class="min-btn sub-btn" title="Подстрочный текст"><span class="fa fa-subscript"></span></div>
-                                                <div class="min-btn sup-btn" title="Надстрочный текст"><span class="fa fa-superscript"></span></div>
-                                                <div class="min-btn list-ul-btn" title="Список"><span class="fa fa-list-ul"><span></div>
-                                                <div class="min-btn list-ol-btn" title="Нумерованый список"><span class="fa fa-list-ol"><span></div>
-                                                <div class="min-btn align-left-btn" title="Выравнивание по левому краю"><span class="fa fa-align-left"><span></div>
-                                                <div class="min-btn align-center-btn" title="Выравнивание по центру"><span class="fa fa-align-center"><span></div>
-                                                <div class="min-btn align-right-btn" title="Выравнивание по правому краю"><span class="fa fa-align-right"><span></div>
-                                                <div class="min-btn align-justify-btn" title="Выравнивание по всей строке"><span class="fa fa-align-justify"><span></div>
-                                                <div class="min-btn img-btn" href="#chooseImage" data-toggle="modal" title="Добавление изображения"><span class="fa fa-picture-o"><span></a></div>
-                                                <div class="min-btn link-btn" title="Добавление ссылки"><span class="fa fa-link"><span></div>
-                                            </div>
-                                        </div>
-                                </div> -->
                                 <div class="col-lg-8">
                                         <div id="full-description-box" class="box" style="overflow: visible;">
                                             <div class="row">
@@ -1094,7 +1069,7 @@
                                                 <div>
                                                     <form action="#">
                                                         <p>
-                                                            <input class="inputBox" type="text" placeholder="Фамилия">
+                                                            <input id="surname-input" class="inputBox" type="text" placeholder="Фамилия">
                                                         </p>
                                                     </form>
                                                 </div>
@@ -1105,7 +1080,7 @@
                                                 <div>
                                                     <form action="#">
                                                         <p>
-                                                            <input class="inputBox" type="text" placeholder="Имя">
+                                                            <input id="name-input" class="inputBox" type="text" placeholder="Имя">
                                                         </p>
                                                     </form>
                                                 </div>
@@ -1114,7 +1089,7 @@
                                                 <div>
                                                     <form action="#">
                                                         <p>
-                                                            <input class="inputBox" type="text" placeholder="Отчество">
+                                                            <input id="middle-name-input" class="inputBox" type="text" placeholder="Отчество">
                                                         </p>
                                                     </form>
                                                 </div>
@@ -1132,225 +1107,137 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div>
-                                                    <form action="#">
-                                                        <p>
-                                                            <select class="inputBox">
-                                                                <option disabled selected>Выберите месяц</option>
-                                                                <option>Январь</option>
-                                                                <option>Февраль</option>
-                                                                <option>Март</option>
-                                                                <option>Апрель</option>
-                                                                <option>Май</option>
-                                                                <option>Июнь</option>
-                                                                <option>Июль</option>
-                                                                <option>Август</option>
-                                                                <option>Сентябрь</option>
-                                                                <option>Октябрь</option>
-                                                                <option>Ноябрь</option>
-                                                                <option>Декабрь</option>
-                                                            </select>
-                                                        </p>
-                                                    </form>
+                                                    <p>
+                                                        <select id="month-select" class="inputBox">
+                                                            <option disabled>Выберите месяц</option>
+                                                            <option selected>Январь</option>
+                                                            <option>Февраль</option>
+                                                            <option>Март</option>
+                                                            <option>Апрель</option>
+                                                            <option>Май</option>
+                                                            <option>Июнь</option>
+                                                            <option>Июль</option>
+                                                            <option>Август</option>
+                                                            <option>Сентябрь</option>
+                                                            <option>Октябрь</option>
+                                                            <option>Ноябрь</option>
+                                                            <option>Декабрь</option>
+                                                        </select>
+                                                    </p>
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div>
-                                                    <form action="#">
-                                                        <p>
-                                                            <select class="inputBox">
-                                                                <option disabled selected>Выберите число</option>
-                                                                <option>1</option>
-                                                                <option>2</option>
-                                                                <option>3</option>
-                                                                <option>4</option>
-                                                                <option>5</option>
-                                                                <option>6</option>
-                                                                <option>7</option>
-                                                                <option>8</option>
-                                                                <option>9</option>
-                                                                <option>10</option>
-                                                                <option>11</option>
-                                                                <option>12</option>
-                                                                <option>13</option>
-                                                                <option>14</option>
-                                                                <option>15</option>
-                                                                <option>16</option>
-                                                                <option>17</option>
-                                                                <option>18</option>
-                                                                <option>19</option>
-                                                                <option>20</option>
-                                                                <option>21</option>
-                                                                <option>22</option>
-                                                                <option>23</option>
-                                                                <option>24</option>
-                                                                <option>25</option>
-                                                                <option>26</option>
-                                                                <option>27</option>
-                                                                <option>28</option>
-                                                                <option>29</option>
-                                                                <option>30</option>
-                                                                <option>31</option>
-                                                            </select>
-                                                        </p>
-                                                    </form>
+                                                    <p>
+                                                        <select id="number-select" class="inputBox">
+                                                            <option disabled>Выберите число</option>
+                                                            <option selected>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                            <option>6</option>
+                                                            <option>7</option>
+                                                            <option>8</option>
+                                                            <option>9</option>
+                                                            <option>10</option>
+                                                            <option>11</option>
+                                                            <option>12</option>
+                                                            <option>13</option>
+                                                            <option>14</option>
+                                                            <option>15</option>
+                                                            <option>16</option>
+                                                            <option>17</option>
+                                                            <option>18</option>
+                                                            <option>19</option>
+                                                            <option>20</option>
+                                                            <option>21</option>
+                                                            <option>22</option>
+                                                            <option>23</option>
+                                                            <option>24</option>
+                                                            <option>25</option>
+                                                            <option>26</option>
+                                                            <option>27</option>
+                                                            <option>28</option>
+                                                            <option>29</option>
+                                                            <option>30</option>
+                                                            <option>31</option>
+                                                        </select>
+                                                    </p>
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div>
-                                                    <form action="#">
-                                                        <p>
-                                                            <select class="inputBox">
-                                                                <option disabled selected>Выберите год</option>
-                                                                <option>1900</option>
-                                                                <option>1901</option>
-                                                                <option>1902</option>
-                                                                <option>1903</option>
-                                                                <option>1904</option>
-                                                                <option>1905</option>
-                                                                <option>1906</option>
-                                                                <option>1907</option>
-                                                                <option>1908</option>
-                                                                <option>1909</option>
-                                                                <option>1910</option>
-                                                                <option>1911</option>
-                                                                <option>1912</option>
-                                                                <option>1913</option>
-                                                                <option>1914</option>
-                                                                <option>1915</option>
-                                                                <option>1916</option>
-                                                                <option>1917</option>
-                                                                <option>1918</option>
-                                                                <option>1919</option>
-                                                                <option>1920</option>
-                                                                <option>1921</option>
-                                                                <option>1922</option>
-                                                                <option>1923</option>
-                                                                <option>1924</option>
-                                                                <option>1925</option>
-                                                                <option>1926</option>
-                                                                <option>1927</option>
-                                                                <option>1928</option>
-                                                                <option>1929</option>
-                                                                <option>1930</option>
-                                                                <option>1931</option>
-                                                                <option>1932</option>
-                                                                <option>1933</option>
-                                                                <option>1934</option>
-                                                                <option>1935</option>
-                                                                <option>1936</option>
-                                                                <option>1937</option>
-                                                                <option>1938</option>
-                                                                <option>1939</option>
-                                                                <option>1940</option>
-                                                                <option>1941</option>
-                                                                <option>1942</option>
-                                                                <option>1943</option>
-                                                                <option>1944</option>
-                                                                <option>1945</option>
-                                                                <option>1946</option>
-                                                                <option>1947</option>
-                                                                <option>1948</option>
-                                                                <option>1949</option>
-                                                                <option>1950</option>
-                                                                <option>1951</option>
-                                                                <option>1952</option>
-                                                                <option>1953</option>
-                                                                <option>1954</option>
-                                                                <option>1955</option>
-                                                                <option>1956</option>
-                                                                <option>1957</option>
-                                                                <option>1958</option>
-                                                                <option>1959</option>
-                                                                <option>1960</option>
-                                                                <option>1961</option>
-                                                                <option>1962</option>
-                                                                <option>1963</option>
-
-                                                            </select>
-                                                        </p>
-                                                    </form>
+                                                    <p>
+                                                        <select id="year-select" class="inputBox">
+                                                            <option disabled>Выберите год</option>
+                                                        </select>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col">
                                                 <div>
-                                                    <form action="#">
-                                                        <p>
-                                                            <select class="inputBox">
-                                                                <option disabled selected>Выберите тип документа
-                                                                </option>
-                                                                <option>Паспорт</option>
-                                                                <option>Вид на жительство</option>
-                                                                <option>Удостоверение беженца</option>
-                                                            </select>
-                                                        </p>
-                                                    </form>
+                                                    <p>
+                                                        <select class="inputBox">
+                                                            <option disabled selected>Выберите тип документа
+                                                            </option>
+                                                            <option>Паспорт</option>
+                                                            <option>Вид на жительство</option>
+                                                            <option>Удостоверение беженца</option>
+                                                        </select>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col">
                                                 <div>
-                                                    <form action="#">
-                                                        <p>
-                                                            <input class="inputBox" type="text"
-                                                                placeholder="Серия и номер">
-                                                            Пример: MР1234567
-                                                        </p>
-                                                    </form>
+                                                    <p>
+                                                        <input class="inputBox" type="text" placeholder="Серия и номер" maxlength="9">
+                                                        Пример: MР1234567
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col">
                                                 <div>
-                                                    <form action="#">
-                                                        <p>
-                                                            <input class="inputBox" type="text"
-                                                                placeholder="Личный номер">
-                                                            Пример: 1234567A002PB9
-                                                        </p>
-                                                    </form>
+                                                    <p>
+                                                        <input class="inputBox" type="text" placeholder="Личный номер" maxlength="14">
+                                                        Пример: 1234567A002PB9
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col">
                                                 <div>
-                                                    <form action="#">
-                                                        <p>
-                                                            <input class="inputBox" type="text"
-                                                                placeholder="Кем и когда выдан">
-                                                            Пример: Советское РУВД г.Минска, выдан 22.04.2015
-                                                        </p>
-                                                    </form>
+                                                    <p>
+                                                        <input class="inputBox" type="text" placeholder="Кем и когда выдан">
+                                                        Пример: Советское РУВД г.Минска, выдан 22.04.2015
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col">
                                                 <div>
-                                                    <form action="#">
-                                                        <p>
-                                                            <input class="inputBox" type="text"
-                                                                placeholder="Адрес регистрации">
-                                                            Пример: г.Минск, ул. Е. Полоцкой, д.3, кв. 16
-                                                        </p>
-                                                    </form>
+                                                    <p>
+                                                        <input class="inputBox" type="text" placeholder="Адрес регистрации">
+                                                        Пример: г.Минск, ул. Е. Полоцкой, д.3, кв. 16
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col">
                                                 <div>
-                                                    <form action="#">
-                                                        <p>
-                                                            <input class="inputBox" type="text"
-                                                                placeholder="Контактный номер">
-                                                            Пример: +375 (29) 123 45 67
-                                                        </p>
-                                                    </form>
+                                                    <p>
+                                                        <input id="phone-number-input" class="inputBox" type="text" placeholder="Контактный номер" maxlength="12">
+                                                        Пример: 375291234567
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1481,7 +1368,7 @@
         </div>
     </div>
     </div>
-    <div id="to-top-btn">НАВЕРХ</div>
+    <div id="to-top-btn"><span class="fa fa-chevron-circle-up  fa-3x"></span></div>
     <div id="alert" class="box alert">
         <div class="row">
             <div class="col-1"><span class="fa fa-exclamation fa-3x"></div>
