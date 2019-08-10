@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>PolessInvest</title>
         <link href="http://www.polessu.by/sites/all/themes/danland/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"><!-- ico полессского -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"><!-- библиотека bootstrap -->
+        <link href="css/bootstrap4.1.3.min.css" rel="stylesheet"><!-- библиотека bootstrap -->
         <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"><!--шрифты-->
         <link href="css/headerStyles.css" rel="stylesheet" type="text/css"/>
@@ -37,7 +37,7 @@
             <div id="navbarContent" class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav text-center">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#"><span class="fa fa-user fa-fw"></span>User User</a>
+                        <a class="nav-link active" href="profile.html"><span class="fa fa-user fa-fw"></span>User User</a>
                     </li>
                 </ul>
             </div>
@@ -106,138 +106,136 @@
                 </div>  
             </div>  
      </div>
-     <div class="section profileSettingsSection">
-       <div class="container">
+     <div class="section">
+       <div class="container" style="min-height: 508px;">
         <!-- Навигационные вкладки --> 
-        <div class="nav-box">
-          <ul class="nav">
-              <li class="col-lg-2">
-                <a class="my-tab" href="#profile" data-toggle="tab">Профиль</a>
-              </li>
-              <li class="col-lg-2">
-                <a class="my-tab" href="#access" data-toggle="tab">Доступ</a>
-              </li>
-              <li class="col-lg-2">
-                <a class="my-tab" href="#notifications" data-toggle="tab">Уведомления</a>
-              </li>
-          </ul>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div id="profile" class="active-category"><span class="fa fa-user fa-fw"></span> Профиль</div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div id="access" class="category"><span class="fa fa-lock fa-fw"></span> Доступ</div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div id="notifications" class="category"><span class="fa fa-commenting fa-fw"></span> Уведомления</div>
+            </div>
         </div>
         <!-- Вкладки панелей -->
-        <div class="tab-content">
-          <div class="tab-pane active " id="profile">
-            <div class="row">
-              <div class="col-lg-8">
-                <div class="box">
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <h5 class="title">Личные данные</h5>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                            <div>
-                                <form action="#">
-                                    <p>
-                                      <input class="inputBox" type="text" placeholder="Имя Фамилия">
-                                    </p>
-                                    
-                                </form>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                            <div>
-                                <form action="#">
-                                    <p>
-                                      <textarea class="inputBox" type="text" placeholder="Пару слов о себе" rows="4"></textarea>
-                                    </p>
-                                </form>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                            <div>
-                                <form action="#">
-                                    <p>
-                                      <input class="inputBox" type="text" placeholder="Страна, Город">
-                                    </p>
-                                </form>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                            <div>
-                                <form action="#">
-                                    <p>
-                                      <input class="inputBox" type="text" placeholder="Веб сайт">
-                                    </p>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col">
-                          <a class="my-btn" href="profileSettings.html">+</a>
-                      </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                          <a class="my-btn" href="profileSettings.html">Сохранить</a>
-                        </div>
-                      </div>
+        <div id="profile-box">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="box">
+                <div class="row">
+                  <div class="col">
+                    <div>
+                      <h5 class="title">Личные данные</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div>
+                      <form action="#">
+                        <p>
+                          <input class="inputBox" type="text" placeholder="Имя Фамилия">
+                        </p>
+        
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div>
+                      <form action="#">
+                        <p>
+                          <textarea class="inputBox" type="text" placeholder="Пару слов о себе" rows="4"></textarea>
+                        </p>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div>
+                      <form action="#">
+                        <p>
+                          <input class="inputBox" type="text" placeholder="Страна, Город">
+                        </p>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div>
+                      <form action="#">
+                        <p>
+                          <input class="inputBox" type="text" placeholder="Веб сайт">
+                        </p>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <a class="my-btn" href="profileSettings.html">+</a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <a class="my-btn" href="profileSettings.html">Сохранить</a>
+                  </div>
                 </div>
               </div>
-              <div class="col-lg-4">
-                <div class="box">
-                  <div class="row">
-                    <div class="col">
-                      <div class="avatarBox">
-                          <img src="images/avatar.jpg" alt="avatar" width="160">
-                      </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="box">
+                <div class="row">
+                  <div class="col">
+                    <div class="avatarBox">
+                      <img src="images/user-stock.png" style="width: 100%;border-radius: 4px;" alt="avatar">
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col">
-                        <a class="my-btn" href="profileSettings.html">Загрузить аватар</a>
-                    </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <a class="my-btn" href="profileSettings.html">Загрузить аватар</a>
                   </div>
-                  <div class="row">
-                    <div class="col">
-                        <p>
-                            Вы можете загрузить изображение в формате JPG, GIF, BMP, PNG, JPEG, JPEG2000, JPE. 
-                            Максимальный размер файла – 5 Мб.
-                          </p>
-                    </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <p>
+                      Вы можете загрузить изображение в формате JPG, GIF, BMP, PNG, JPEG, JPEG2000, JPE.
+                      Максимальный размер файла – 5 Мб.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="tab-pane" id="access">
-            <div class="row">
-              <div class="col-lg-8 box">
+        </div>
+        <div id="access-box" style="display: none;">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="box">
                 <div class="row">
                   <div class="col">
-                      <div>
-                          <h5 class="title">Изменить email</h5>
-                      </div>
-                      <p>
-                        Сейчас вы используете электронный адрес v...@utooemail.com
-                      </p>
+                    <div>
+                      <h5 class="title">Изменить email</h5>
+                    </div>
+                    <p>
+                      Сейчас вы используете электронный адрес v...@utooemail.com
+                    </p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
-                      <div>
-                          <form action="#">
-                              <p>
-                                <input class="inputBox" type="text" placeholder="Введите новый email">
-                              </p>
-                          </form>
-                      </div>
+                    <div>
+                      <form action="#">
+                        <p>
+                          <input class="inputBox" type="text" placeholder="Введите новый email">
+                        </p>
+                      </form>
+                    </div>
                   </div>
                 </div>
                 <div class="row">
@@ -247,42 +245,42 @@
                 </div>
                 <div class="row">
                   <div class="col">
-                      <div>
-                          <h5 class="title">Изменить пароль</h5>
-                      </div>
+                    <div>
+                      <h5 class="title">Изменить пароль</h5>
+                    </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
-                      <div>
-                          <form action="#">
-                              <p>
-                                <input class="inputBox" type="text" placeholder="Старый пароль">
-                              </p>
-                          </form>
-                      </div>
+                    <div>
+                      <form action="#">
+                        <p>
+                          <input class="inputBox" type="text" placeholder="Старый пароль">
+                        </p>
+                      </form>
+                    </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
-                      <div>
-                          <form action="#">
-                              <p>
-                                <input class="inputBox" type="text" placeholder="Новый пароль">
-                              </p>
-                          </form>
-                      </div>
+                    <div>
+                      <form action="#">
+                        <p>
+                          <input class="inputBox" type="text" placeholder="Новый пароль">
+                        </p>
+                      </form>
+                    </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
-                      <div>
-                          <form action="#">
-                              <p>
-                                <input class="inputBox" type="text" placeholder="Повторите новый пароль">
-                              </p>
-                          </form>
-                      </div>
+                    <div>
+                      <form action="#">
+                        <p>
+                          <input class="inputBox" type="text" placeholder="Повторите новый пароль">
+                        </p>
+                      </form>
+                    </div>
                   </div>
                 </div>
                 <div class="row">
@@ -291,12 +289,14 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-4 box">
+            </div>
+            <div class="col-lg-4">
+              <div class="box">
                 <div class="row">
                   <div class="col">
-                      <div>
-                          <h5 class="title">Социальные аккаунты</h5>
-                      </div>
+                    <div>
+                      <h5 class="title">Социальные аккаунты</h5>
+                    </div>
                   </div>
                 </div>
                 <div class="row">
@@ -309,12 +309,12 @@
               </div>
             </div>
           </div>
-          <div class="tab-pane active box" id="notifications">
-            <div class="row">
-              <div class="col">
-                  <div>
-                      <h5 class="title">Уведомления по email</h5>
-                  </div>
+        </div>
+        <div id="notifications-box" style="display: none;">
+          <div class="row">
+            <div class="col">
+              <div class="box">
+                <h5 class="title">Уведомления по email</h5>
               </div>
             </div>
           </div>
@@ -373,6 +373,7 @@
   </div>
 </div>
   <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script><!--jQuery-->
+  <script src="js/profileSettings.js"></script>
   <script src="js/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script><!-- popperjs(bootstrap)-->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script><!-- js bootstrap-->
