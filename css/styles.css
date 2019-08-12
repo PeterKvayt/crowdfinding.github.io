@@ -928,9 +928,6 @@ li::before{
   .nav-box{
     margin-top: 3rem;
   }
-.avatarBox{
-  padding: 0rem 4rem;
-}
 
 /* projectPage.html */
 .shortTextInfo{
@@ -944,9 +941,9 @@ li::before{
 /* .short-description{
   font-size: 18px;
 } */
-.headNumber{
+/* .headNumber{
   margin-bottom: 2.5rem;
-}
+} */
 
 /* rewardPage.html */
 

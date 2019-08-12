@@ -98,12 +98,12 @@ $(document).ready(function(){
     active.attr('class', 'category');
     unactive.attr('class', 'active-category');
     if (unactive.attr('id') == 'about') {
-      supportBox.fadeOut(200);
-      infoBox.fadeIn(200);
+      supportBox.hide(200);
+      infoBox.show(200);
     }
     else {
-      infoBox.fadeOut(200);
-      supportBox.fadeIn(200);
+      infoBox.hide(200);
+      supportBox.show(200);
     }
   })
 })

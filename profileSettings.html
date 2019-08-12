@@ -110,13 +110,13 @@
        <div class="container" style="min-height: 508px;">
         <!-- Навигационные вкладки --> 
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div id="profile" class="active-category"><span class="fa fa-user fa-fw"></span> Профиль</div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div id="access" class="category"><span class="fa fa-lock fa-fw"></span> Доступ</div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div id="notifications" class="category"><span class="fa fa-commenting fa-fw"></span> Уведомления</div>
             </div>
         </div>
@@ -147,11 +147,9 @@
                 <div class="row">
                   <div class="col">
                     <div>
-                      <form action="#">
                         <p>
-                          <textarea class="inputBox" type="text" placeholder="Пару слов о себе" rows="4"></textarea>
+                          <textarea class="inputBox" type="text" style="min-height: 200.4px;" placeholder="Пару слов о себе"></textarea>
                         </p>
-                      </form>
                     </div>
                   </div>
                 </div>
@@ -182,7 +180,7 @@
                 </div>
                 <div class="row">
                   <div class="col">
-                    <a class="my-btn" href="profileSettings.html">Сохранить</a>
+                    <div class="my-btn"><span class="fa fa-floppy-o fa-fw"></span> Сохранить</div>
                   </div>
                 </div>
               </div>
@@ -190,23 +188,28 @@
             <div class="col-lg-4">
               <div class="box">
                 <div class="row">
-                  <div class="col">
+                  <div class="col-lg-12 col-md-6 col-sm-12">
                     <div class="avatarBox">
                       <img src="images/user-stock.png" style="width: 100%;border-radius: 4px;" alt="avatar">
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <a class="my-btn" href="profileSettings.html">Загрузить аватар</a>
+                <!-- </div> -->
+                <!-- <div class="row" style="margin-top: 10px;"> -->
+                  <div class="col-lg-12 col-md-6 col-sm-12">
+                    <div class="my-btn" style="width: 100%;text-align: center;margin-top: 10px;" href="profileSettings.html"><span class="fa fa-download fa-fw"></span>Загрузить аватар</div>
+                    <input id="avatar-download" type="file" style="display: none;">
+                    <p>
+                        Вы можете загрузить изображение в формате JPG, GIF, BMP, PNG, JPEG, JPEG2000, JPE.
+                        Максимальный размер файла – 5 Мб.
+                      </p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
-                    <p>
+                    <!-- <p>
                       Вы можете загрузить изображение в формате JPG, GIF, BMP, PNG, JPEG, JPEG2000, JPE.
                       Максимальный размер файла – 5 Мб.
-                    </p>
+                    </p> -->
                   </div>
                 </div>
               </div>
@@ -223,24 +226,22 @@
                       <h5 class="title">Изменить email</h5>
                     </div>
                     <p>
-                      Сейчас вы используете электронный адрес v...@utooemail.com
+                      Сейчас вы используете электронный адрес <span>example@mail.by</span>
                     </p>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
                     <div>
-                      <form action="#">
                         <p>
                           <input class="inputBox" type="text" placeholder="Введите новый email">
                         </p>
-                      </form>
                     </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
-                    <a class="my-btn" href="profileSettings.html">Изменить</a>
+                    <div class="my-btn"><span class="fa fa-pencil-square-o fa-fw"></span> Изменить email</div>
                   </div>
                 </div>
                 <div class="row">
@@ -285,7 +286,7 @@
                 </div>
                 <div class="row">
                   <div class="col">
-                    <a class="my-btn" href="profileSettings.html">Изменить пароль</a>
+                    <div class="my-btn"><span class="fa fa-pencil-square-o fa-fw"></span> Изменить пароль</div>
                   </div>
                 </div>
               </div>
@@ -293,17 +294,39 @@
             <div class="col-lg-4">
               <div class="box">
                 <div class="row">
-                  <div class="col">
+                  <div class="col-12">
                     <div>
                       <h5 class="title">Социальные аккаунты</h5>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col">
+                  
+                  <div class="col-12">
                     <p>
                       Подключите социальные аккаунты, чтобы повысить доверие к себе и своим проектам.
                     </p>
+                  </div>
+                  <div class="col-12">
+                      <span class="fa fa-facebook fa-fw" style="color: #4267b2;"></span>
+                      <input class="inputBox" style="width: 92%;" type="text" placeholder="Адрес Facebook">
+                  </div>
+                  <div class="col-12" style="margin-top: 10px;">
+                      <span class="fa fa-instagram fa-fw" style="color: #F96C40;"></span>
+                      <input class="inputBox" style="width: 92%;" type="text" placeholder="Адрес Instagram">
+                  </div>
+                  <div class="col-12" style="margin-top: 10px;">
+                      <span class="fa fa-vk fa-fw" style="color: #4A76A8;"></span>
+                      <input class="inputBox" style="width: 92%;" type="text" placeholder="Адрес Vk">
+                  </div>  
+                  <div class="col-12" style="margin-top: 10px;">
+                      <span class="fa fa-odnoklassniki fa-fw" style="color: #FA7A01;"></span>
+                      <input class="inputBox" style="width: 92%;" type="text" placeholder="Адрес Одноклассников">
+                  </div>
+                  <div class="col-12" style="margin-top: 10px;">
+                      <span class="fa fa-telegram fa-fw" style="color: #289ED9;"></span>
+                      <input class="inputBox" style="width: 92%;" type="text" placeholder="Адрес Telegram">
+                  </div>
+                  <div class="col-12" style="margin-top: 10px;">
+                    <div class="my-btn" style="width: 100%;text-align:center;"><span class="fa fa-floppy-o fa-fw"></span> Сохранить</div>
                   </div>
                 </div>
               </div>

@@ -61,19 +61,42 @@ $(document).ready(function(){
 
   // смена таба
   $('.row').on('click', '.category', function(){
-    let infoBox = $('#projects-box');
+    let projectsBox = $('#projects-box');
     let supportBox = $('#supported-box');
+    let sketchBox = $('#sketch-box');
     let active = $('.active-category');
-    let unactive = $('.category');
-    active.attr('class', 'category');
-    unactive.attr('class', 'active-category');
-    if (unactive.attr('id') == 'about') {
-      supportBox.fadeOut(200);
-      infoBox.fadeIn(200);
+    let point;
+    if(event.target.className.includes('fa')){
+      point = event.target.parentNode;
     }
-    else {
-      infoBox.fadeOut(200);
-      supportBox.fadeIn(200);
+    else{
+      point = event.target;
+    }
+    active.attr('class', 'category');
+    point.className = 'active-category';
+    switch(active.attr('id')){
+      case 'about':
+        projectsBox.hide(200);
+        break;
+      case 'support':
+        supportBox.hide(200);
+        break;
+      case 'sketch':
+        sketchBox.hide(200);
+        break;
+      default: break;
+    }
+    switch(point.id){
+      case 'about':
+        projectsBox.show(200);
+        break;
+      case 'support':
+        supportBox.show(200);
+        break;
+      case 'sketch':
+        sketchBox.show(200);
+        break;
+      default: break;
     }
   })
 })
