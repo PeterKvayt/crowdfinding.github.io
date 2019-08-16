@@ -924,11 +924,32 @@ li::before{
 }
 
 /* profileSettings.html */
+  .password-status{
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 6.8px;
+    padding-right: 8.8px;
+    border-radius: 4px;
+    background-color: #fc6c85;
+    color: #fff;
+    font-weight: 700;
+  }
+
   /* profile.html */
   .nav-box{
     margin-top: 3rem;
   }
-
+  .social-input-box{
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 5px;
+    background-color: #F9F9F9;
+  }
+  .social-input{
+    border: none;
+    background-color: #F9F9F9;
+    width: 90%;
+  }
 /* projectPage.html */
 .shortTextInfo{
   font-size: 60px;

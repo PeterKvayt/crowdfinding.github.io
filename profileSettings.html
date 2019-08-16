@@ -167,20 +167,23 @@
                 <div class="row">
                   <div class="col">
                     <div>
-                      <form action="#">
                         <p>
-                          <input class="inputBox" type="text" placeholder="Веб сайт">
+                          <input id="web-site-input" class="inputBox" type="text" placeholder="Веб сайт">
                         </p>
-                      </form>
                     </div>
                   </div>
                   <div class="col">
-                    <a class="my-btn" href="profileSettings.html">+</a>
+                    <div id="add-web-site-btn" class="min-btn" style="background-color: var(--backgroundColor);font-weight: 700;padding-right: 10px;"><span class="fa fa-plus fa-fw"></span> Добавить</div>
+                  </div>
+                </div>
+                <div id="web-sites-box" class="row" style="display: none;">
+                  <div class="col-12">
+                    <h5 class="title">Веб сайты</h5>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
-                    <div class="my-btn"><span class="fa fa-floppy-o fa-fw"></span> Сохранить</div>
+                    <div class="my-btn"><span class="fa fa-floppy-o fa-fw"></span> Сохранить изменения профиля</div>
                   </div>
                 </div>
               </div>
@@ -252,35 +255,38 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col">
-                    <div>
-                      <form action="#">
-                        <p>
-                          <input class="inputBox" type="text" placeholder="Старый пароль">
-                        </p>
-                      </form>
+                  <div class="col-lg-8 col-md-8 col-sm-12 password-box">
+                    <div class="social-input-box" style="margin-bottom: 10px;">
+                      <span id="old-password-eye-btn" class="fa fa-eye-slash fa-fw"></span>
+                      <input id="old-password-input" class="social-input" type="password" placeholder="Старый пароль">
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <div>
-                      <form action="#">
-                        <p>
-                          <input class="inputBox" type="text" placeholder="Новый пароль">
-                        </p>
-                      </form>
+                  <div class="col-12">
+                    <p>
+                      Новый пароль должен быть не менее 8 символов в длину и иметь хотя бы одну цифру и заглавную букву! Также пароль не должен быть распространенным, такие пароли как Qwerty123, Pa$$Word321 не подойдут.
+                    </p>
+                  </div>
+                  <div class="col-8  col-md-8 col-sm-12 password-box">
+                    <div class="social-input-box" style="margin-bottom: 10px;">
+                      <span id="new-password-eye-btn" class="fa fa-eye-slash fa-fw"></span>
+                      <input id="new-password-input" class="social-input" type="password" placeholder="Новый пароль">
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <div>
-                      <form action="#">
-                        <p>
-                          <input class="inputBox" type="text" placeholder="Повторите новый пароль">
-                        </p>
-                      </form>
+                  <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div id="new-password-security-box" class="password-status">
+                      <span id="new-password-security-picture" class="fa fa-unlock fa-fw"></span><span> простой</span>
+                    </div>
+                  </div>
+                  <div class="col-8 col-md-8 col-sm-12 password-box">
+                    <div class="social-input-box" style="margin-bottom: 10px;">
+                      <span id="second-new-password-eye-btn" class="fa fa-eye-slash fa-fw"></span>
+                      <input id="second-new-password-input" class="social-input" type="password" placeholder="Повторите новый пароль">
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="password-status">
+                      <span class="fa fa-exclamation-circle fa-fw"></span>
+                      <span id="new-password-repit"> нет совпадения</span>
                     </div>
                   </div>
                 </div>
@@ -299,31 +305,40 @@
                       <h5 class="title">Социальные аккаунты</h5>
                     </div>
                   </div>
-                  
                   <div class="col-12">
                     <p>
                       Подключите социальные аккаунты, чтобы повысить доверие к себе и своим проектам.
                     </p>
                   </div>
-                  <div class="col-12">
+                  <div class="col-12" >
+                    <div class="social-input-box">
                       <span class="fa fa-facebook fa-fw" style="color: #4267b2;"></span>
-                      <input class="inputBox" style="width: 92%;" type="text" placeholder="Адрес Facebook">
+                      <input class="social-input" type="text" placeholder="Адрес Facebook">
+                    </div>
                   </div>
                   <div class="col-12" style="margin-top: 10px;">
-                      <span class="fa fa-instagram fa-fw" style="color: #F96C40;"></span>
-                      <input class="inputBox" style="width: 92%;" type="text" placeholder="Адрес Instagram">
+                      <div class="social-input-box">
+                        <span class="fa fa-instagram fa-fw" style="color: #F96C40;"></span>
+                        <input class="social-input" type="text" placeholder="Адрес Instagram">
+                      </div>
                   </div>
                   <div class="col-12" style="margin-top: 10px;">
+                      <div class="social-input-box">
                       <span class="fa fa-vk fa-fw" style="color: #4A76A8;"></span>
-                      <input class="inputBox" style="width: 92%;" type="text" placeholder="Адрес Vk">
+                      <input class="social-input" type="text" placeholder="Адрес Vk">
+                    </div>
                   </div>  
                   <div class="col-12" style="margin-top: 10px;">
+                      <div class="social-input-box">
                       <span class="fa fa-odnoklassniki fa-fw" style="color: #FA7A01;"></span>
-                      <input class="inputBox" style="width: 92%;" type="text" placeholder="Адрес Одноклассников">
+                      <input class="social-input" type="text" placeholder="Адрес Одноклассников">
+                    </div>
                   </div>
                   <div class="col-12" style="margin-top: 10px;">
+                      <div class="social-input-box">
                       <span class="fa fa-telegram fa-fw" style="color: #289ED9;"></span>
-                      <input class="inputBox" style="width: 92%;" type="text" placeholder="Адрес Telegram">
+                      <input class="social-input" type="text" placeholder="Адрес Telegram">
+                    </div>
                   </div>
                   <div class="col-12" style="margin-top: 10px;">
                     <div class="my-btn" style="width: 100%;text-align:center;"><span class="fa fa-floppy-o fa-fw"></span> Сохранить</div>
@@ -334,10 +349,14 @@
           </div>
         </div>
         <div id="notifications-box" style="display: none;">
-          <div class="row">
-            <div class="col">
-              <div class="box">
-                <h5 class="title">Уведомления по email</h5>
+          <div class="box">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="title">Уведомления</h5>
+              </div>
+              <div class="col-12">
+                <span id="nontification-check" class="fa fa-check-square fa-fw"></span>
+                Хочу получать новости платформы на email
               </div>
             </div>
           </div>
@@ -394,6 +413,14 @@
       </div>
     </div>
   </div>
+</div>
+<div id="alert" class="box alert">
+    <div class="row">
+        <div class="col-1">
+            <span class="fa fa-exclamation fa-3x"></span>
+        </div>
+        <div id="alert-text" style="text-align: justify;" class="col-11"></div>
+    </div>
 </div>
   <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script><!--jQuery-->
   <script src="js/profileSettings.js"></script>
