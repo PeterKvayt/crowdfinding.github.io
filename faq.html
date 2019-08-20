@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Poless Invest</title>
+    <link href="http://www.polessu.by/sites/all/themes/danland/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"><!-- ico полессского -->
+    <link href="css/bootstrap4.1.3.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"><!-- библиотека bootstrap -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">        
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"><!--шрифты-->
+    <link href="css/headerStyles.css" rel="stylesheet" type="text/css"/>
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="css/footarStyles.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div class="wrapper">
+      <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+          <a href="crowdFinding.html"><img src="http://www.polessu.by/sites/all/themes/danland/logo.png" height="50px"
+                  alt="logo"/></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="navbarContent" class="collapse navbar-collapse justify-content-center">
+              <ul class="navbar-nav text-center">
+                  <li class="nav-item">
+                      <a class="nav-link" href="allProjects.html">ВСЕ ПРОЕКТЫ <span class="fa fa-book fa-fw"></span></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="createProjectRules.html">СОЗДАТЬ ПРОЕКТ <span class="fa fa-pencil fa-fw"></span></a>
+                  </li>
+                  <li class="nav-item active">
+                      <a class="nav-link" href="how-it-works.html">ПОМОЩЬ <span class="fa fa-info fa-fw"></span></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">ПОИСК <span class="fa fa-search fa-fw"></span></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link " href="#modalEnter" data-toggle="modal">ВОЙТИ <span class="fa fa-sign-in fa-fw"></span></a>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+      <!-- Модальное окно входа -->
+      <div class="modal fade" id="modalEnter">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-body">
+                      <button class="closeBtn" id="modalEnterClose" data-dismiss="modal">&times;</button>
+                      <h4 class="title">Вход</h4>
+                      <form action="#">
+                          <p>
+                              <input class="inputBox" type="text" placeholder="Email">
+                          </p>
+                          <p>
+                              <input class="inputBox " type="text" placeholder="Пароль">
+                          </p>
+                          <p class="modalLink">
+                              <a class="link" href="#">Забыли пароль?</a>
+                          </p>
+                          <p>
+                              <a class="my-btn modalBtn" href="#">ВОЙТИ</a>
+                          </p>
+                          <p>
+                              <a class="my-btn modalBtn registerBtn" href="#modalRegistration"
+                                  data-toggle="modal">ЗАРЕГИСТРИРОВАТЬСЯ</a>
+                          </p>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Модальное окно регистрации -->
+      <div class="modal fade" id="modalRegistration">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-body">
+                      <button class="closeBtn" id="modalRegistrationClose" data-dismiss="modal">&times;</button>
+                      <h4 class="title">Регистрация</h4>
+                      <form action="#">
+                          <p>
+                              <input class="inputBox" type="text" placeholder="Имя Фамилия">
+                          </p>
+                          <p>
+                              <input class="inputBox" type="text" placeholder="Email">
+                          </p>
+                          <p>
+                              <input class="inputBox" type="text" placeholder="Пароль">
+                          </p>
+                          <p>
+                              <input class="inputBox" type="text" placeholder="Повторите пароль">
+                          </p>
+                          <p class="modalLink modalConditionRegistration">
+                              Нажимая кнопку зарегистрироваться, вы автоматически подтверждаете,
+                              что ознакомлены и согласны с <a class="link" href="#">условиями</a>
+                              платформы PolessCrowdFinding.
+                          </p>
+                          <p>
+                              <a class="my-btn modalBtn" href="#">ЗАРЕГИСТРИРОВАТЬСЯ</a>
+                          </p>
+                          <p>
+                              <a class="my-btn modalBtn enterBtn" href="#modalEnter" data-toggle="modal">ВОЙТИ</a>
+                          </p>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- модально окно "задать вопрос" -->
+      <div class="modal fade" id="askQuestion">
+          <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                  <div class="modal-body">
+                      <h5>Обратная связь</h5>
+                      <button class="closeBtn" id="askQuestionClose" data-dismiss="modal">&times;</button>
+                      <div class="row">
+                          <div class="col">
+                              <form action="#">
+                                  <p>
+                                      <select class="inputBox">
+                                          <option disabled selected>Выберите тему вопроса</option>
+                                          <option>Служба поддержки</option>
+                                          <option>Жалоба</option>
+                                          <option>Предложение</option>
+                                          <option>Другое</option>
+                                      </select>
+                                  </p>
+                              </form>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col">
+                              <form action="#">
+                                  <p>
+                                      <textarea class="inputBox" type="text" placeholder="Задайте свой вопрос"
+                                          rows="6"></textarea>
+                                  </p>
+                              </form>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col">
+                              <form action="#">
+                                  <p>
+                                      <input class="inputBox" type="text" placeholder="Как вас называть?">
+                                  </p>
+                              </form>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col">
+                              <form action="#">
+                                  <p>
+                                      <input class="inputBox" type="text" placeholder="Контактный email">
+                                  </p>
+                              </form>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col">
+                              <a class="my-btn" id="askQestionBtn" href="#">Задать вопрос</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-9">
+              <div class="box">
+                <div class="row">
+                  <div class="col-12">
+                    <h3 class="title">Часто задаваемые вопросы</h3>
+                  </div>
+                  <div class="col-12">
+                    <p>
+                        Возможно, здесь вы найдете ответы на свои вопросы.
+                    </p>
+                    <div>
+                      
+                        <span class="fa fa-angle-double-right fa-fw"></span>
+                        <span class="link">
+                        Общие
+                      </span>
+                    </div>
+                    <p>
+                        <h5><b>О краудфандинге</b></h5>
+                        <p>
+                            Краудфандинг – это инструмент коллективного финансирования проектов и инициатив. В «краудфандинге» большое
+                            количество людей поддерживает интересующий проект малыми или большими суммами, получая взамен результаты от
+                            реализации профинансированного проекта.
+                        </p>
+                        <p>
+                            Автор определяет сумму, необходимую для реализации проекта, и срок сбора средств. Если проект не собирает указанную
+                            сумму, деньги в полном объеме возвращаются спонсорам.
+                        </p>
+                    </p>
+                    <p>
+                        <h5><b>Подробнее о Poless Invest:</b></h5>
+                        <a class="link" href="how-it-works.html">Как работает платформа</a><br>
+                        <a class="link" href="trust&safety.html">Trust & Safety</a>
+                    </p>
+                    <p>
+                        <h5><b>Спонсорам:</b></h5>
+                        <span class="fa fa-check-circle-o fa-fw"></span>
+                        Возможность воспользоваться результатами проекта в обмен на финансовую поддержку.
+                        <br>
+                        <span class="fa fa-check-circle-o fa-fw"></span>
+                        Автоматический возврат всей суммы, если проект не получит 100% финансирования.
+                        <br>
+                        <span class="fa fa-check-circle-o fa-fw"></span>
+                        Минимальная сумма перечисления — 1 рубль.
+                        <br>
+                        <span class="fa fa-check-circle-o fa-fw"></span>
+                        Отсутствие комиссий для спонсоров.
+                        <br><br>
+                        <a class="my-btn" href="allProjects.html"><span class="fa fa-book fa-fw"></span> Ознакомиться с проектами</a>
+                    </p>
+                    <p>
+                        <h5><b>Авторам:</b></h5>
+                        <span class="fa fa-check-circle-o fa-fw"></span>
+                        Бесплатное размещение проекта на платформе.
+                        <br>
+                        <span class="fa fa-check-circle-o fa-fw"></span>
+                        Бесплатный доступ к платежному инструменту Poless Invest. 
+                        <br>
+                        <span class="fa fa-check-circle-o fa-fw"></span>
+                        Бесплатные консультации и поддержка со стороны платформы.
+                        <br>
+                        <span class="fa fa-check-circle-o fa-fw"></span>
+                        Комиссия 10% от собранной суммы <b>ТОЛЬКО</b> в случае успешного сбора средств.
+                        <br><br>
+                        <a class="my-btn" href="createProjectRules.html"><span class="fa fa-pencil fa-fw"></span> Создать проект</a>
+                    </p>
+                    <p>
+                        <h5><b>Компаниям:</b></h5>
+                        Для компаний «Poless Invest» подготовил несколько вариантов взаимодействия:
+                        <br>
+                        <span class="sub-title"><span class="fa fa-check-circle-o fa-fw"></span>Спонсорская помощь проектам</span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                            Компания может стать спонсором понравившегося проекта и оплатить либо всю сумму, заявленную в проекте, либо ее часть.
+                        </div>
+                        <span class="sub-title"><span class="fa fa-check-circle-o fa-fw"></span>Курирование проектов</span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                            Компания может стать куратором проекта, и предоставить нематериальный вклад в проект: поддержать информационно,
+                            оказать консалтинг в той или иной сфере, привлечь сотрудников к реализации той или иной стадии проекта и прочее.
+                        </div>
+                        <span class="sub-title"><span class="fa fa-check-circle-o fa-fw"></span>Размещение рекламы</span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                            Компания может разместить свою рекламу на страницах «Poless Invest».
+                        </div>
+                        <span class="sub-title"><span class="fa fa-check-circle-o fa-fw"></span>Проведение совместных акций с «Poless Invest»</span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                            Компания может стать партнером «Poless Invest» в одной из совместных акций: это может быть фестиваль, круглый стол или
+                            тренинг. «Poless Invest» открыт для предложений.
+                        </div>
+                        <span class="sub-title"><span class="fa fa-check-circle-o fa-fw"></span>Внутрикорпоративный краудфандинг</span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                            «Poless Invest» предлагает компаниям воспользоваться нашим «коробочным» решением, в соответствие с которым компания сможет
+                            обеспечить доступ к внутрикорпоративному фандрайзингу по ссылке, доступной только сотрудникам компании.
+                        </div>
+                        <span class="sub-title"><span class="fa fa-check-circle-o fa-fw"></span>Создание собственной краудфандинговой кампании</span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                            Компания может выступить инициатором проекта, поддержка которого будет доступна всей аудитории «Poless Invest».
+                        </div>
+                        Получить консультацию можно по телефону: +375 (29) 123 45 67.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="box" style="position: sticky;top: 70px;">
+                <div class="row">
+                  <div class="col-12" >
+                      <div class="nav-row">
+                        <span class="nav-tab"></span>
+                        <a class="link" style="top:-12px;" href="how-it-works.html">Как работает платформа</a>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="nav-row">
+                          <span class="nav-tab"></span>
+                            <a class="link" style="top:-12px;" href="about.html">О платформе</a>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="nav-row">
+                            <span class="nav-tab"></span>
+                        <a class="link" style="top:-12px;" href="platform-rules.html">Правила платформы</a>
+                    
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="nav-row">
+                            <span class="nav-tab"></span>
+                        <a class="link" style="top:-12px;" href="trust&safety.html">Trust & Safety</a>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="nav-row">
+                            <span class="active-nav-tab"></span>
+                        <a class="link" style="left:-7px;top:-12px;" href="faq.html">F.A.Q.</a>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="nav-row">
+                            <span class="nav-tab"></span>
+                        <a class="link" style="top:-12px;" href="feedback.html">Обратная связь</a>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="nav-row">
+                                <span class="nav-tab"></span>
+                            <a class="link" style="top:-12px;" href="agreement.html">Соглашение</a>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="footar">
+              <div class="container">
+                  <div class="row">
+                      <div class="footarColumn col-lg-3">
+                          <a href="index.html" class="footarColumnTitle"><img
+                                  src="http://www.polessu.by/sites/all/themes/danland/logo.png" height="50px"
+                                  alt="logo" /></a>
+                          <p class="footarText">
+                              ул. Днепровской флотилии, 23, 225710 Пинск, Брестская область, Республика Беларусь.
+                          </p>
+                      </div>
+                      <div class="footarColumn col-lg-3">
+                          <div class="footarColumnTitle">
+                              <h5>О НАС</h5>
+                          </div>
+                          <div>
+                              <a href="#" class="footarLinks">Что такое PolessInvest?</a><br>
+                              <a href="#" class="footarLinks">Пользовательское соглашение</a><br>
+                              <a href="#" class="footarLinks">Персональные данные</a>
+                          </div>
+                      </div>
+                      <div class="footarColumn col-lg-3">
+                          <div class="footarColumnTitle">
+                              <h5>ПОМОЩЬ</h5>
+                          </div>
+                          <div>
+                              <a href="#" class="footarLinks">Способы оплаты</a><br>
+                              <a href="#" class="footarLinks">Возврат средств</a><br>
+                              <a href="#" class="footarLinks">Задать вопрос</a>
+                          </div>
+                      </div>
+                      <div class="footarColumn col-lg-3">
+                          <div class="footarColumnTitle">
+                              <h5>КОНТАКТЫ</h5>
+                          </div>
+                          <div>
+                              <p class="footarText">
+                                  Tel.: + 375 (165) 31 21 60<br>
+                                  Fax: + 375 (165) 31 21 95<br>
+                                  email@mail.ru
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="footarBottom">
+                      <p class="footarBottomText">
+                          PolessInvest © 2019
+                      </p>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+      </div>
+  </div>
+    <script src="js/jquery-3.0.0.min.js"></script><!--jQuery-->
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap4.1.3.min.js"></script><!-- js bootstrap-->
+</body>
+</html>
