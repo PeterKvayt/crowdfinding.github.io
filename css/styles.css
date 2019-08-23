@@ -53,6 +53,43 @@
   border-radius: 50% 50% 0 0;
 }
 
+.accordion-btn{
+  color: var(--borderBtn);
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+.accordion-btn-alt{
+  color: var(--borderBtn);
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 5px;
+  margin-left: 1rem;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+.accordion-btn:hover{
+  color: var(--greenPoles);
+}
+.accordion-btn-alt:hover{
+  color: var(--greenPoles);
+}
+
+.accordion-content{
+  display: none;
+}
+.accordion-content-alt{
+  display: none;
+  margin-bottom: 5px;
+  margin-left: 1.5rem;
+  text-align: justify;
+}
+
   /* кнопка наверх */
 #to-top-btn {
   border:1px solid var(--borderBtn);
