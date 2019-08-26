@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Poless Invest</title>
+    <link href="http://www.polessu.by/sites/all/themes/danland/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"><!-- ico полессского -->
+    <link href="css/bootstrap4.1.3.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"><!-- библиотека bootstrap -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">        
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"><!--шрифты-->
+    <link href="css/headerStyles.css" rel="stylesheet" type="text/css"/>
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="css/footarStyles.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div class="wrapper">
+      <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+          <a href="crowdFinding.html"><img src="http://www.polessu.by/sites/all/themes/danland/logo.png" height="50px"
+                  alt="logo"/></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="navbarContent" class="collapse navbar-collapse justify-content-center">
+              <ul class="navbar-nav text-center">
+                  <li class="nav-item">
+                      <a class="nav-link" href="allProjects.html">ВСЕ ПРОЕКТЫ <span class="fa fa-book fa-fw"></span></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="createProjectRules.html">СОЗДАТЬ ПРОЕКТ <span class="fa fa-pencil fa-fw"></span></a>
+                  </li>
+                  <li class="nav-item active">
+                      <a class="nav-link" href="how-it-works.html">ПОМОЩЬ <span class="fa fa-info fa-fw"></span></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="search.html">ПОИСК <span class="fa fa-search fa-fw"></span></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link " href="#modalEnter" data-toggle="modal">ВОЙТИ <span class="fa fa-sign-in fa-fw"></span></a>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+      <!-- Модальное окно входа -->
+      <div class="modal fade" id="modalEnter">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-body">
+                      <button class="closeBtn" id="modalEnterClose" data-dismiss="modal">&times;</button>
+                      <h4 class="title">Вход</h4>
+                      <form action="#">
+                          <p>
+                              <input class="inputBox" type="text" placeholder="Email">
+                          </p>
+                          <p>
+                              <input class="inputBox " type="text" placeholder="Пароль">
+                          </p>
+                          <p class="modalLink">
+                              <a class="link" href="#">Забыли пароль?</a>
+                          </p>
+                          <p>
+                              <a class="my-btn modalBtn" href="#">ВОЙТИ</a>
+                          </p>
+                          <p>
+                              <a class="my-btn modalBtn registerBtn" href="#modalRegistration"
+                                  data-toggle="modal">ЗАРЕГИСТРИРОВАТЬСЯ</a>
+                          </p>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Модальное окно регистрации -->
+      <div class="modal fade" id="modalRegistration">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-body">
+                      <button class="closeBtn" id="modalRegistrationClose" data-dismiss="modal">&times;</button>
+                      <h4 class="title">Регистрация</h4>
+                      <form action="#">
+                          <p>
+                              <input class="inputBox" type="text" placeholder="Имя Фамилия">
+                          </p>
+                          <p>
+                              <input class="inputBox" type="text" placeholder="Email">
+                          </p>
+                          <p>
+                              <input class="inputBox" type="text" placeholder="Пароль">
+                          </p>
+                          <p>
+                              <input class="inputBox" type="text" placeholder="Повторите пароль">
+                          </p>
+                          <p class="modalLink modalConditionRegistration">
+                              Нажимая кнопку зарегистрироваться, вы автоматически подтверждаете,
+                              что ознакомлены и согласны с <a class="link" href="#">условиями</a>
+                              платформы PolessCrowdFinding.
+                          </p>
+                          <p>
+                              <a class="my-btn modalBtn" href="#">ЗАРЕГИСТРИРОВАТЬСЯ</a>
+                          </p>
+                          <p>
+                              <a class="my-btn modalBtn enterBtn" href="#modalEnter" data-toggle="modal">ВОЙТИ</a>
+                          </p>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- модально окно "задать вопрос" -->
+      <div class="modal fade" id="askQuestion">
+          <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                  <div class="modal-body">
+                      <h5>Обратная связь</h5>
+                      <button class="closeBtn" id="askQuestionClose" data-dismiss="modal">&times;</button>
+                      <div class="row">
+                          <div class="col">
+                              <form action="#">
+                                  <p>
+                                      <select class="inputBox">
+                                          <option disabled selected>Выберите тему вопроса</option>
+                                          <option>Служба поддержки</option>
+                                          <option>Жалоба</option>
+                                          <option>Предложение</option>
+                                          <option>Другое</option>
+                                      </select>
+                                  </p>
+                              </form>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col">
+                              <form action="#">
+                                  <p>
+                                      <textarea class="inputBox" type="text" placeholder="Задайте свой вопрос"
+                                          rows="6"></textarea>
+                                  </p>
+                              </form>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col">
+                              <form action="#">
+                                  <p>
+                                      <input class="inputBox" type="text" placeholder="Как вас называть?">
+                                  </p>
+                              </form>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col">
+                              <form action="#">
+                                  <p>
+                                      <input class="inputBox" type="text" placeholder="Контактный email">
+                                  </p>
+                              </form>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col">
+                              <a class="my-btn" id="askQestionBtn" href="#">Задать вопрос</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="section">
+        <div class="container">
+          <div class="row">
+            <div id="introduction" class="col-lg-9 col-md-12 active-tab">
+              <div class="box">
+                <div class="row">
+                  <div class="col-12">
+                    <h3 class="title">Введение</h3>
+                    <p>
+                      «Краудфандинг» является эффективным инструментом сбора средств, который подходит для проектов любой тематики. Ваш
+                      проект может быть новой книгой, фильмом, фестивалем, уникальной технологией или программой, инновационным бизнесом или
+                      социальной инициативой и многим-многим другим.
+                      <br><br>
+                      Любая ваша мечта может стать реальностью с помощью «Poless Invest». Четко определите цель и следуйте ей! У вас все получится!
+                      <br><br>
+                      Мы разработали для вас несколько правил, соблюдение которых позволит вам привлечь финансирование.
+                    </p>
+                    <p>
+                        <h5><b>Правила краудфандинга</b></h5>
+                        <span class="sub-title"><span class="fa fa-check-circle-o fa-fw"></span>Польза для окружающих</span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                          Если потенциальные спонсоры не увидят в вашем проекте никакой пользы для себя, то вряд ли вы соберете достаточное
+                          количество средств. Задайте себе вопрос: для кого создается ваш проект и какую проблему решает? Если ответите на этот
+                          вопрос, то вам будет проще убедить спонсоров.
+                        </div>
+                        <span class="sub-title"><span class="fa fa-check-circle-o fa-fw"></span>Наработки по проекту</span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                          Если проект существует лишь в вашей голове, то вряд ли он будет интересен спонсорам. Чем больше сделано по проекту до
+                          старта «краудфандинговой кампании», тем больше шансов на успех. Продемонстрируйте потенциальным спонсорам результат
+                          вашей работы на сегодня!
+                        </div>
+                        <span class="sub-title"><span class="fa fa-check-circle-o fa-fw"></span>Подготовка – самое главное</span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                          Этап «подготовки проекта» намного важнее самой «краудфандинговой кампании». Качественно подготовленное описание,
+                          запоминающееся видео, интересные и востребованные подарки, разумный бюджет – все это заставит спонсоров поверить в вас
+                          и в ваш проект.
+                        </div>
+                        <span class="sub-title"><span class="fa fa-check-circle-o fa-fw"></span>Наличие стратегии продвижения</span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                          После запуска «краудфандинговой кампании» вы должны четко представлять, что и в какой последовательности делать. Не
+                          будет плана – не получится привлечь финансирование. Наличие плана снимет с вас огромное количество вопросов и
+                          обеспечит успех!
+                        </div>
+                        <span class="sub-title"><span class="fa fa-check-circle-o fa-fw"></span>Готовность работать</span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                          Подготовка и проведение «краудфандинговой кампании» требует полной вовлеченности в процесс. Если у вас нет времени и
+                          желания заниматься привлечением финансирования, то вряд ли получится его привлечь. Но если вы готовы посвятить себя
+                          этому краудфандингу, то у вас все получится!
+                        </div>
+                        <span class="sub-title"><span class="fa fa-check-circle-o fa-fw"></span>Наличие команды</span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                          Привлечь финансирование в одиночку с помощью «краудфандинга» будет довольно проблематично. Если у вас нет команды, то
+                          обязательно найдите единомышленников. Вместе вы сможете намного эффективнее раскрыть свой творческий потенциал!
+                        </div>
+                    </p>
+                    <p>
+                        Если вы готовы следовать этим правилам, то можете смело переходить к следующему разделу!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="formalization" class="col-lg-9 col-md-12" style="display: none;">
+              <div class="box">
+                <div class="row">
+                  <div class="col-12">
+                    <h3 class="title">Оформление проекта</h3>
+                    <p>
+                      <h5><b>Оформление проекта состоит из трех частей:</b></h5>
+                  
+                      <span class="fa fa-check-circle-o fa-fw"></span>Обложка проекта
+                      <br>
+                      <span class="fa fa-check-circle-o fa-fw"></span>Видео-обращение
+                      <br>
+                      <span class="fa fa-check-circle-o fa-fw"></span>Описание проекта
+                    </p>
+                    <p>
+                      <h5><b>Обложка проекта</b></h5>
+                      Обложка проекта — это главное изображение, которое первым бросается в глаза потенциальным спонсорам. Если вы хотите
+                      заинтересовать людей, то обложка должна быть:
+                      <span style="margin-bottom:8px;display:block;"></span>
+                      <span class="fa fa-check-circle-o fa-fw"></span>яркой — цеплять глаз оригинальность исполнения;
+                      <br>
+                      <span class="fa fa-check-circle-o fa-fw"></span>информативной — постарайтесь визуализировать то, что вы собираетесь
+                      создать.
+                    </p>
+                    <p>
+                      <h5><b>Видео-обращение</b></h5>
+                      <iframe class="video-box" src="https://www.youtube.com/embed/wgEzP6uUvco" allowfullscreen="" width="100%"
+                        height="445" frameborder="0"></iframe>
+                      <span style="margin-bottom:8px;display:block;"></span>
+                      Нет необходимости готовить профессиональное видео. Большинство проектов с любительскими видео-обращениями успешно
+                      привлекли необходимое финансирование. Если вы будете говорить искренне, то люди поверят в вас и в ваш проект.
+                      <br><br>
+                      Сценарий вашего видео-обращения может быть следующим:
+                      <span style="margin-bottom:8px;display:block;"></span>
+                      <span class="fa fa-check-circle-o fa-fw"></span>Представьте себя и команду, вовлеченную в проект.
+                      <br>
+                      <span class="fa fa-check-circle-o fa-fw"></span>Расскажите о своем проекте. Что именно вы хотите создать? Какие цели
+                      стоят перед проектам? Какие проблемы решает ваш проект?
+                      <br>
+                      <span class="fa fa-check-circle-o fa-fw"></span>Поделитесь результатами, которых достигли к этому времени:
+                      фотографиями,
+                      прототипами, исследованиями, эскизами. Ваши потенциальные дарители высоко оценят подобные детали.
+                      <br>
+                      <span class="fa fa-check-circle-o fa-fw"></span>Поделитесь планом реализации проекта. Не забудьте рассказать о
+                      возможных
+                      сложностях.
+                      <br>
+                      <span class="fa fa-check-circle-o fa-fw"></span>Расскажите о бюджете проекта: сколько средств вы планируете привлечь
+                      и
+                      как вы намерены ими распорядиться.
+                      <br>
+                      <span class="fa fa-check-circle-o fa-fw"></span>И самое главное: улыбайтесь и дарите хорошее настроение и радость :)
+                      <p>
+                        <h5><b>Описание проекта</b></h5>
+                        Описание – это ваша история, которую вы расскажите с помощью текста и изображений. Структура вашего описания может
+                        быть
+                        следующей:
+                        <span style="margin-bottom:8px;display:block;"></span>
+                        <span class="fa fa-check-circle-o fa-fw"></span>Расскажите о проекте, его целях и проблеме, которую решает. Это
+                        должно стать главной частью вашего описания.
+                        <br>
+                        <span class="fa fa-check-circle-o fa-fw"></span>Расскажите о проделанной работе и продемонстрируйте ее.
+                        <br>
+                        <span class="fa fa-check-circle-o fa-fw"></span>Расскажите о трудностях, с которыми можете столкнуться.
+                        <br>
+                        <span class="fa fa-check-circle-o fa-fw"></span>Расскажите о бюджете и покажите, на что пойдут собранные средства.
+                        <br>
+                        <span class="fa fa-check-circle-o fa-fw"></span>Призовите людей к действию – попросите профинансировать проект!
+                        <br><br>
+                        Правила, которых необходимо придерживаться:
+                        <span style="margin-bottom:8px;display:block;"></span>
+                        <span class="fa fa-check-circle-o fa-fw"></span>Описание проекта должно быть четко структурированным.
+                        <br>
+                        <span class="fa fa-check-circle-o fa-fw"></span>Описание проекта не должно быть слишком маленьким или слишком
+                        большим.
+                        <br>
+                        <span class="fa fa-check-circle-o fa-fw"></span>Визуализируйте все, что только можете визуализировать.
+                        Качественные фотографии, иллюстрации и инфографика легче воспринимаются, нежели текст.
+                      </p>
+                      <p>
+                        Качественное описание проекта позволит привлечь необходимое финансирование и собрать армию поклонников.
+                      </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="gifts" class="col-lg-9 col-md-12" style="display: none;">
+              <div class="box">
+                <div class="row">
+                  <div class="col-12">
+                      <h3 class="title">Подарки спонсорам</h3>
+                      <p>
+                        Краудфандинг — это не благотворительность. Спонсоры оказывают финансовую поддержку, рассчитывая получить что-то
+                        взамен. В «Poless Invest» это называется словом «подарки». Чем больше перечисленная сумма, тем больше должен быть подарок.
+                      </p>
+                      <p>
+                        <h5><b>Какие подарки предлагать?</b></h5>
+                        Мы предлагаем разделить подарки на 4 типа. Необязательно использовать их все.
+                        <br>
+                        <span class="sub-title">
+                          <span class="fa fa-check-circle-o fa-fw"></span>Продукт, который вы создаете
+                        </span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                          Это самый главный и наиболее востребованный тип подарка. В большинстве случаев спонсоры перечисляют деньги,
+                          рассчитывая получить продукт, который вы намерены выпустить. Например, копию нового альбома, билет на премьеру
+                          вашего
+                          фильма, изданную вами книгу, абонемент в новую школу танцев или что-то еще.
+                        </div>
+                        <span class="sub-title">
+                          <span class="fa fa-check-circle-o fa-fw"></span>Участие и взаимодействие
+                        </span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                          Спонсорам может быть интересно принять участие в вашем проекте. Например, спонсор может принять участие в съемках
+                          фильма, спеть с вами дуэтом в клипе, стать одним из героев вашей игры или появиться на странице вашей книги.
+                        </div>
+                        <span class="sub-title">
+                          <span class="fa fa-check-circle-o fa-fw"></span>Эмоции и незабываемые впечатления
+                        </span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                          Вы можете подарить спонсорам незабываемые моменты: пригласите их к себе в лабораторию, проведите мастер-класс или
+                          выступите на квартирнике.
+                        </div>
+                        <span class="sub-title">
+                          <span class="fa fa-check-circle-o fa-fw"></span>Сувениры
+                        </span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                          Если у вас не остается никаких вариантов, то вы можете предложить спонсорам сувернирную продукцию с изображением вашего проекта.
+                        </div>
+                      </p>
+                      <p>
+                        <h5><b>Какие подарки не стоит предлагать?</b></h5>
+                        Будьте креативны! Не предлагайте вернуть деньги после успешной реализации проекта. Не предлагайте продукцию, которая
+                        не имеет никакого отношения к вашему проекту и его целям.
+                      </p>
+                      <p>
+                        <h5><b>Основные правила</b></h5>
+                        Мы подготовили для вас несколько правил, которые помогут вам грамотно составить список подарков:
+                        <br>
+                        <span class="sub-title">
+                          <span class="fa fa-check-circle-o fa-fw"></span>Предложите подарок за маленькую сумму
+                        </span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                          Не забывайте о тех людях, которые захотят перечислить вам 5, 10 или 20 рублей. Подарком может быть
+                          оригинальный танец, который вы посвятите всем неравнодушным :) Подумайте, наверняка, вам придет в голову что-то
+                          доброе и забавное!
+                        </div>
+                        <span class="sub-title">
+                          <span class="fa fa-check-circle-o fa-fw"></span>Предложите несколько вариантов подарков
+                        </span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                          Один единственный подарок в большинстве случаев не удовлетворит интерес всех спонсоров. Рассмотрите несколько
+                          вариантов, которые могут заинтересовать людей, неравнодушных к вашему делу.
+                        </div>
+                        <span class="sub-title">
+                          <span class="fa fa-check-circle-o fa-fw"></span>Ни в коем случае не завышайте стоимость подарка
+                        </span>
+                        <div style="margin-left: 25px;margin-bottom:10px;">
+                          Спонсоры рассчитывают получить подарок по цене, ниже рыночной. Если вы предлагаете билет на концерт, то он должен
+                          быть значительно ниже рыночной цены. Если вы предлагаете экземпляр книги, то он должен быть значительно ниже
+                          розничной цены в книжном магазине. Не жадничайте!
+                        </div>
+                      </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="budget" class="col-lg-9 col-md-12" style="display: none;">
+              <div class="box">
+                <div class="row">
+                  <div class="col-12">
+                    <h3 class="title">Бюджет проекта</h3>
+                    «Poless Invest» использует модель «все или ничего». Автор получает деньги, если привлеченное финансирование составит
+                    100% от заявленной суммы и выше. Именно поэтому бюджет проекта должен быть минимально возможным. У проекта с раздутым
+                    бюджетом минимальные шансы на успех.
+                    <br><br>
+                    <h5><b>Рекомендации по оценке бюджета:</b></h5>
+                    <br>
+                    <span class="sub-title">
+                      <span class="fa fa-check-circle-o fa-fw"></span>Составьте список расходов
+                    </span>
+                    <div style="margin-left: 25px;margin-bottom:10px;">
+                      Составьте список всех ожидаемых расходов по проекту. В расчетах вы должны использовать рыночные цены. Постарайтесь
+                      найти лучшие предложения. Подойдите к этому вопросу серьезно, т.к. спонсоры будут задавать вопросы относительно
+                      планируемых расходов.
+                    </div>
+                    <span class="sub-title">
+                      <span class="fa fa-check-circle-o fa-fw"></span>Не забудьте про себестоимость подарков
+                    </span>
+                    <div style="margin-left: 25px;margin-bottom:10px;">
+                      Помните о себестоимости подарков, их упаковке и доставке. Все это тоже является частью ваших будущих расходов.
+                    </div>
+                    <span class="sub-title">
+                      <span class="fa fa-check-circle-o fa-fw"></span>Определите общий объем финансирования
+                    </span>
+                    <div style="margin-left: 25px;margin-bottom:10px;">
+                      Сложите расходы, необходимые на реализацию проекта, и расходы, необходимые на подготовку и доставку подарков.
+                    </div>
+                    <span class="sub-title">
+                      <span class="fa fa-check-circle-o fa-fw"></span>Добавьте комиссию и налоги
+                    </span>
+                    <div style="margin-left: 25px;margin-bottom:10px;">
+                      Если ваш проект будет успешно профинансирован, то общая комиссия «Poless Invest», банка и платежной системы составит 10% от
+                      собранной суммы. Также стоит учитывать подоходный налог, который составит 13% от собранной суммы (если сумма превышает
+                      4 947 рублей).
+                    </div>
+                    <span class="sub-title">
+                      <span class="fa fa-check-circle-o fa-fw"></span>Определите срок сбора средств
+                    </span>
+                    <div style="margin-left: 25px;margin-bottom:10px;">
+                      Привлечение средств может длиться от 1 до 180 дней. Исходя из опыта зарубежных площадок, проекты, длящиеся 30 дней и
+                      меньше, имеют больше шансов на успех. Более короткие сроки придают дополнительный стимул спонсорам и автору проекта.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="strategy" class="col-lg-9 col-md-12" style="display: none;">
+              <div class="box">
+                <div class="row">
+                  <div class="col-12">
+                      <h3 class="title">Стратегия продвижения</h3>
+                      Подготовив описание проекта, список подарков и оценив бюджет, необходимо перейти к планированию рекламной кампании. О
+                      вашем проекте никто не узнает, если вы не займетесь его продвижением. Не рассчитывайте на то, что случайные посетители
+                      «Poless Invest» полностью профинансируют ваш проект. Исходя из мирового опыта, всего 5-7% от запрашиваемой суммы поступает от
+                      случайных спонсоров. Таким образом, вы должны быть готовы привлечь 95% своими силами.
+                      <br><br>
+                      <h5><b>Советы по планированию продвижения:</b></h5>
+                      <br>
+                      <span class="sub-title">
+                        <span class="fa fa-check-circle-o fa-fw"></span>Составьте список знакомых
+                      </span>
+                      <div style="margin-left: 25px;margin-bottom:10px;">
+                        Вашими первыми спонсорами станут ваши друзья, родственники и знакомые. Рассчитывайте, что 5-10% от необходимой суммы
+                        вам перечислят именно они. Составьте список близких контактов и поговорите с каждым, получив предварительное согласие
+                        на поддержку.
+                      </div>
+                      <span class="sub-title">
+                        <span class="fa fa-check-circle-o fa-fw"></span>Составьте список СМИ и сообществ
+                      </span>
+                      <div style="margin-left: 25px;margin-bottom:10px;">
+                        О вашем проекте должно узнать как можно большее количеств человек. Составьте список СМИ и сообществ, которые могут
+                        заинтересоваться вашим проектом. Именно они донесут идею вашего проекта массам. Заранее подготовьте пресс-релизы и
+                        узнайте контакты людей, с которыми необходимо будет связываться.
+                      </div>
+                      <span class="sub-title">
+                        <span class="fa fa-check-circle-o fa-fw"></span>Найдите «звезду»
+                      </span>
+                      <div style="margin-left: 25px;margin-bottom:10px;">
+                        Если у вас есть знакомая «звезда», то договоритесь с ней о публичном призыве поддержать ваш проект. Подобная
+                        публикация в соц. сетях может вызвать вирусный эффект в поддержку вашего проекта.
+                      </div>
+                      <span class="sub-title">
+                        <span class="fa fa-check-circle-o fa-fw"></span>Развивайте сообщество
+                      </span>
+                      <div style="margin-left: 25px;margin-bottom:10px;">
+                        Создайте группу или запустите сайт. Начните формировать сообщество энтузиастов вокруг вашего проекта. Каждый день
+                        делитесь новостями об успехах проекта еще до старта «краудфандинговой кампании».
+                      </div>
+                      <span class="sub-title">
+                        <span class="fa fa-check-circle-o fa-fw"></span>Будьте оригинальны
+                      </span>
+                      <div style="margin-left: 25px;margin-bottom:10px;">
+                        Стандартные способы продвижения, стандартные публикации дают значительно меньший эффект. Постарайтесь придумать что-то
+                        по-настоящему оригинальное: задумайтесь о флэш-мобе, вечеринке, акции или о чем-то еще.
+                      </div>
+                      Чем раньше вы начнете планировать продвижение, тем больше у вас будет возможностей найти оригинальные пути продвижения.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="fundraising" class="col-lg-9 col-md-12" style="display: none;">
+              <div class="box">
+                <div class="row">
+                  <div class="col-12">
+                      <h3 class="title">Сбор средств</h3>
+                      Если вы подготовили отличное описание и детально продумали стратегию продвижения, то вам останется лишь следовать
+                      намеченному плану.
+                      <br><br>
+                      <h5><b>Советы по привлечению средств:</b></h5>
+                      <br>
+                      <span class="sub-title">
+                        <span class="fa fa-check-circle-o fa-fw"></span>Не останавливайтесь
+                      </span>
+                      <div style="margin-left: 25px;margin-bottom:10px;">
+                        Важно демонстрировать ежедневную динамику по проекту. Запланируйте мероприятия на каждый день, которые будут
+                        провоцировать прирост финансирования. Обзванивайте друзей и знакомых, рассказывайте им о своем проекте. Просите
+                        поддержать проект — помните, что вы просите не денег, а поддержку.
+                      </div>
+                      <span class="sub-title">
+                        <span class="fa fa-check-circle-o fa-fw"></span>Действуйте согласно намеченному плану
+                      </span>
+                      <div style="margin-left: 25px;margin-bottom:10px;">
+                        В любой даже самой успешной краудфандинговой кампании могут быть спады в динамике поступления средств на проект. Это
+                        не должно вас смущать и останавливать. Никогда не опускайте руки и не теряйте веру в себя.
+                      </div>
+                      <span class="sub-title">
+                        <span class="fa fa-check-circle-o fa-fw"></span>Общайтесь
+                      </span>
+                      <div style="margin-left: 25px;margin-bottom:10px;">
+                        Свяжитесь со своими друзьями, семьей и знакомыми и напомните им о своем проекте. Попробуйте сформировать стартовый
+                        капитал в размере 5—10%. Это уберет недоверие со стороны незнакомых спонсоров. Помните, что каждый человек, которого
+                        вы знаете способен вас поддержать финансово или информационно. 
+                      </div>
+                      <span class="sub-title">
+                        <span class="fa fa-check-circle-o fa-fw"></span>Наблюдайте за динамикой
+                      </span>
+                      <div style="margin-left: 25px;margin-bottom:10px;">
+                        Разбейте срок краудфандинговой кампании на 4 части. В каждой из этих частей будут свои индикаторы, которые будут вам
+                        давать понять, что нужно не сбавлять обороты, и что вам есть чем гордиться в рамках вашей кампании. Важно преодолевать
+                        «рубежи», например, — сумма в 14% выглядит хуже, чем 16%, и т.д.
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="gifts-delivery" class="col-lg-9 col-md-12" style="display: none;">
+              <div class="box">
+                <div class="row">
+                  <div class="col-12">
+                      <h3 class="title">Доставка подарков</h3>
+                      После получения финансирования и реализации проекта, необходимо доставить обещанные подарки. Как и любой другой этап,
+                      доставка подарков требует планирования и расходов. Но это тоже может быть весело!
+                      <br><br>
+                      <h5><b>Как доставить подарки:</b></h5>
+                      <br>
+                      <span class="sub-title">
+                        <span class="fa fa-check-circle-o fa-fw"></span>Уточните детали доставки
+                      </span>
+                      <div style="margin-left: 25px;margin-bottom:10px;">
+                        После сбора средств «Poless Invest» отправит вам информацию о всехспонсорах и подарках, которые необходимо будет им отправить.
+                        Для уточнения деталей доставки вы сможете связаться с каждым спонсором лично.
+                      </div>
+                      <span class="sub-title">
+                        <span class="fa fa-check-circle-o fa-fw"></span>Доставка подарков
+                      </span>
+                      <div style="margin-left: 25px;margin-bottom:10px;">
+                        Вы ответственны за доставку всех физических подарков, которые обещали спонсорам. Продумайте то, как вы доставите
+                        каждый отдельный подарок, как вы его упакуете, сколько будет стоить доставка.
+                      </div>
+                      <span class="sub-title">
+                        <span class="fa fa-check-circle-o fa-fw"></span>Общение
+                      </span>
+                      <div style="margin-left: 25px;margin-bottom:10px;">
+                        Получите удовольствие от вручения подарков! Сфотографируйте процесс упаковки и отправки подарков, поделитесь
+                        фотографиями со своим сообществом. Делитесь смешными историями, которые появятся в процессе отправки подарков.
+                        Попросите своих последователей сообщить вам о получении подарка. Отнеситесь внимательно к этому последнему этапу!
+                      </div>
+                      <span class="sub-title">
+                        <span class="fa fa-check-circle-o fa-fw"></span>Финишная черта
+                      </span>
+                      <div style="margin-left: 25px;margin-bottom:10px;">
+                        Собрав деньги, реализовав проект и отправив подарки, вы можете начинать гордиться проделанной работой. Отпразднуйте
+                        это событие и расскажите о завершении проекта своему сообществу.
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="conclusion" class="col-lg-9 col-md-12" style="display: none;">
+              <div class="box">
+                <div class="row">
+                  <div class="col-12">
+                      <h3 class="title">Заключение</h3>
+                      Сбор средств с помощью «Poless Invest» — это удивительное приключение, во время которого вы столкнетесь с интересными задачами и познакомитесь с замечательными людьми. Вы получите огромное удовольствие! Откройте миру себя и свою идею. У вас все получится!
+                      <br><br>
+                      <h5 style="text-align:center;"><b>Удачи!</b></h5>
+                      <img class="video-box" src="images/good-luck.jpg" width="100%" alt="good-luck">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-12">
+              <div class="box" style="position: sticky;top: 70px;">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="nav-row">
+                      <span class="active-nav-tab"></span>
+                      <div class="link tab-link" style="left: -7px;top:-12px;">Введение</div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="nav-row">
+                      <span class="nav-tab"></span>
+                      <div class="link tab-link" style="top:-12px;">Оформление проекта</div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="nav-row">
+                      <span class="nav-tab"></span>
+                      <div class="link tab-link" style="top:-12px;">Подарки спонсорам</div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="nav-row">
+                      <span class="nav-tab"></span>
+                      <div class="link tab-link" style="top:-12px;">Бюджет проекта</div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="nav-row">
+                      <span class="nav-tab"></span>
+                      <div class="link tab-link" style="top:-12px;">Стратегия продвижения</div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="nav-row">
+                      <span class="nav-tab"></span>
+                      <div class="link tab-link" style="top:-12px;">Сбор средств</div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="nav-row">
+                      <span class="nav-tab"></span>
+                      <div class="link tab-link" style="top:-12px;">Доставка подарков</div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="nav-row">
+                      <span class="nav-tab"></span>
+                      <div class="link tab-link" style="top:-12px;">Заключение</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="footar">
+              <div class="container">
+                  <div class="row">
+                      <div class="footarColumn col-lg-3">
+                          <a href="index.html" class="footarColumnTitle"><img
+                                  src="http://www.polessu.by/sites/all/themes/danland/logo.png" height="50px"
+                                  alt="logo" /></a>
+                          <p class="footarText">
+                              ул. Днепровской флотилии, 23, 225710 Пинск, Брестская область, Республика Беларусь.
+                          </p>
+                      </div>
+                      <div class="footarColumn col-lg-3">
+                          <div class="footarColumnTitle">
+                              <h5>О НАС</h5>
+                          </div>
+                          <div>
+                              <a href="about.html" class="footarLinks">О платформе</a><br>
+                              <a href="agreement.html" class="footarLinks">Пользовательское соглашение</a><br>
+                              <a href="contacts.html" class="footarLinks">Контакты</a>
+                          </div>
+                      </div>
+                      <div class="footarColumn col-lg-3">
+                          <div class="footarColumnTitle">
+                              <h5>ПОМОЩЬ</h5>
+                          </div>
+                          <div>
+                              <a href="platform-rules.html" class="footarLinks">Правила платформы</a><br>
+                              <a href="faq.html" class="footarLinks">F.A.Q.</a><br>
+                              <a href="feedback.html" class="footarLinks">Обратная связь</a>
+                          </div>
+                      </div>
+                      <div class="footarColumn col-lg-3">
+                          <div class="footarColumnTitle">
+                              <h5>КОНТАКТЫ</h5>
+                          </div>
+                          <div>
+                              <p class="footarText">
+                                  Tel.: + 375 (165) 31 21 60<br>
+                                  Fax: + 375 (165) 31 21 95<br>
+                                  email@mail.ru
+                              </p>
+                          </div>
+                          <br><br><br>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+  </div>
+    <script src="js/jquery-3.0.0.min.js"></script><!--jQuery-->
+    <script src="js/tutorial.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap4.1.3.min.js"></script><!-- js bootstrap-->
+</body>
+</html>
