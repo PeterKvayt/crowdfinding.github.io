@@ -12,7 +12,7 @@ class ProjectCard {
   // добавляет карточку проекта
   AddProjectCard(selector){
     $(selector).append(
-      ' <div class="col-lg-4 col-md-4 card-wrapper">'+
+      '<div class="col-lg-4 col-md-4 card-wrapper">'+
         '<div class="card-box">'+
           '<div class="card-picture-wrapper">'+
             '<div class="card-picture-box">'+

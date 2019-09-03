@@ -109,32 +109,43 @@
         </div>
         <div class="section">
             <div class="container" style="min-height: 367px;">
-              <div class="row">
-                <div class="col-lg-8">
-                    <div class="inputBox">
-                        <span class="fa fa-search fa-fw"></span>
-                        <input type="text" style="border: none;width: 95%;background-color: transparent;" placeholder="Введите запрос">
-                      </div>
-                </div>
-                <div class="col-lg-4">
-
-                </div>
-              </div>
-              <div id="projects-search-results" class="row">
-                <div class="col">
-                  <h4 class="title">Найденные проекты</h4>
-                </div>
-              </div>
-              <div id="rewards-search-results" class="row">
-                  <div class="col">
-                      <h4 class="title">Найденные вознаграждения</h4>
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <div class="search-input-left">
+                            <span class="fa fa-search fa-fw"></span>
+                            Поиск
+                        </div>
+                        <div class="search-input-right">
+                            <input type="text" style="border: none;width: 100%;background-color: transparent;"
+                                placeholder="Введите запрос">
+                        </div>
                     </div>
-              </div>
-              <div id="users-search-results" class="row">
-                  <div class="col">
-                      <h4 class="title">Найденные пользователи</h4>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <select id="search-params" class="inputBox" style="padding:7.15px;">
+                            <option disabled>Параметры</option>
+                            <option value="Всё" selected>Всё</option>
+                            <option value="Проекты">Проекты</option>
+                            <option value="Вознаграждения">Вознаграждения</option>
+                            <option value="Пользователи">Пользователи</option>
+                        </select>
                     </div>
-              </div>
+                </div>
+                <div id="projects-search-results" class="search-results row" style="display:none;">
+                    <div class="col-12">
+                        <h4 class="title">Найденные проекты</h4>
+                    </div>
+                </div>
+                <div id="rewards-search-results" class="search-results row" style="margin-top:4rem;display:none;">
+                    <div class="col" >
+                        
+                            <h4 class="title" style="background-color:#fff; border-radius:4px;opacity: 0.87;">Найденные вознаграждения</h4>
+                    </div>
+                </div>
+                <div id="users-search-results" class="search-results row" style="margin-top:4rem;display:none;">
+                    <div class="col">
+                        <h4 class="title" style="background-color:#fff; border-radius:4px;opacity: 0.87;">Найденные пользователи</h4>
+                    </div>
+                </div>
             </div>
             <div id="footar">
                     <div class="container">
@@ -187,6 +198,9 @@
     </div>
     <div id="to-top-btn">НАВЕРХ</div >
     <script src="js/jquery-3.0.0.min.js"></script><!--jQuery-->
+    <script src="js/UserCard.js"></script>
+    <script src="js/projectCard.js"></script>
+    <script src="js/rewardCard.js"></script>
     <script src="js/search.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap4.1.3.min.js"></script><!-- js bootstrap-->
