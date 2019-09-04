@@ -14,6 +14,7 @@ class RewardCard{
     else{this.DeliveryType = ''};
     this.Delivery = delivery; // страны доставки
     this.Project = project; // проект лота
+    // this.Href = href; // ссылка на оплату лота
   }
 
   AddRewardCard(selector){
@@ -118,7 +119,7 @@ class RewardCard{
               '</div>'+
               '<div class="row">' +
                 '<div class="col">' +
-                  '<a class="link" href="#">Продолжить</a>' +
+                  '<a class="link" href="payPage.html">Продолжить</a>' +
                 '</div>' +
               '</div>'+
             '</div>'+
