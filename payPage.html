@@ -119,7 +119,7 @@
                           <input class="inputBox" type="text" placeholder="Введите имя и фамилию">
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
-                            <input class="inputBox" type="text" placeholder="Введите email">
+                            <input id="email-input" class="inputBox" type="text" placeholder="Введите email">
                         </div>
                         <div class="col-12">
                           <h5 class="title-min-left" style="margin-top:10px;">Способ оплаты</h5>
@@ -141,44 +141,62 @@
                         <div id="erip-pay-info" class="col-12" style="display:none;">
                           <div class="row">
                             <div class="col-12">
-                              <span class="title-min-left">Данные плательщика ЕРИП</span>
-                              <p>
-                                  Для возврата средств в случае неуспешного завершения кампании необходимо указать паспортные данные.
-                              </p>
-                            </div>
-                              <div class="col-lg-6 col-md-6 col-sm-12">
-                                  <p>
-                                      <input class="inputBox" type="text" placeholder="Введите фамилию">
-                                  </p>
-                              </div>
-                              <div class="col-lg-6 col-md-6 col-sm-12">
+                                <span class="title-min-left">Данные плательщика ЕРИП</span>
                                 <p>
-                                    <input class="inputBox" type="text" placeholder="Введите имя">                                  
+                                    Для возврата средств в случае неуспешного завершения кампании необходимо указать паспортные данные.
                                 </p>
-                              </div>
-                              <div class="col-lg-6 col-md-6 col-sm-12">
-                                  <p>
-                                      <input class="inputBox" type="text" placeholder="Введите отчество">
-                                  </p>                                  
-                              </div>
-                              <div class="col-lg-6 col-md-6 col-sm-12">
-                                  <p>
-                                      <input class="inputBox" type="text" placeholder="Введите серию и номер паспорта">
-                                      <span>Пример: AB12345678</span>
-                                  </p>                                  
-                              </div>
-                              <div class="col-lg-6 col-md-6 col-sm-12">
-                                  <p>
-                                      <input class="inputBox" type="text" placeholder="Кем выдан пасспорт">
-                                      <span>Пример: Советское РУВД г.Минска</span>
-                                  </p>                                  
-                              </div>
-                              <div class="col-lg-6 col-md-6 col-sm-12">
-                                  <p>
-                                      <input class="inputBox" type="text" placeholder="Когда выдан пасспорт">
-                                      <span>Пример: 22.04.2000</span>
-                                  </p>                                  
-                              </div>
+                            </div>
+                            <div class="col-12">
+                                <p>
+                                    <input class="inputBox" type="text" placeholder="Введите фамилию">
+                                </p>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <p>
+                                    <input class="inputBox" type="text" placeholder="Введите имя">
+                                </p>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <p>
+                                    <input class="inputBox" type="text" placeholder="Введите отчество">
+                                </p>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <p>
+                                    <input id="passport-sries-number" class="inputBox" type="text" placeholder="Введите серию и номер паспорта"
+                                        maxlength="10">
+                                    <span>Пример: AB12345678</span>
+                                </p>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <p>
+                                        <input class="inputBox" type="text" placeholder="Кем выдан паспорт">
+                                        <span>Пример: Советское РУВД г.Минска</span>
+                                    </p>
+                                </div>
+                            <div class="col-12">
+                                <div class="row" style="vertical-align:middle;">
+                                    <div class="col-12">
+                                        <span>Дата выдачи паспорта</span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-sm-4">
+                                        <p>
+                                            <input id="passport-date-day" class="inputBox" type="text" placeholder="Число" maxlength="2">
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-sm-4">
+                                        <p>
+                                            <input id="passport-date-month" class="inputBox" type="text" placeholder="Месяц" maxlength="2">
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-sm-4">
+                                        <p>
+                                            <input id="passport-date-year" class="inputBox" type="text" placeholder="Год" maxlength="4">
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
                           </div>
                         </div>
                         <div class="col-12">
@@ -296,7 +314,15 @@
                 </div>
         </div>
     </div>
-    <div id="to-top-btn">НАВЕРХ</div >
+    <div id="to-top-btn">НАВЕРХ</div>
+    <div id="alert" class="box alert">
+        <div class="row">
+            <div class="col-1">
+                <span class="fa fa-exclamation fa-3x"></span>
+            </div>
+            <div id="alert-text" style="text-align: justify;" class="col-11"></div>
+        </div>
+    </div>
     <script src="js/jquery-3.0.0.min.js"></script><!--jQuery-->
     <script src="js/payPage.js"></script>
     <script src="js/main.js"></script>
