@@ -33,7 +33,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="how-it-works.html">ПОМОЩЬ <span class="fa fa-info fa-fw"></span></a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="search.html">ПОИСК <span class="fa fa-search fa-fw"></span></a>
                     </li>
                     <li class="nav-item">
@@ -116,10 +116,51 @@
                           <h4 class="title">Project Name</h4>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12" style="margin-bottom: 5px;">
-                          <input class="inputBox" type="text" placeholder="Введите имя и фамилию">
+                          <input class="inputBox" type="text" placeholder="Имя и фамилия">
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
-                            <input id="email-input" class="inputBox" type="text" placeholder="Введите email">
+                            <input id="email-input" class="inputBox" type="text" placeholder="Еmail">
+                        </div>
+                        <div class="col-12">
+                            <h5 class="title-min-left" style="margin-top:10px;">Адрес доставки</h5>
+                          </div>
+                          <div class="col-12">
+                            <p>
+                                <input class="inputBox" type="text" placeholder="Фамилия получателя">
+                            </p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <p>
+                                <input class="inputBox" type="text" placeholder="Имя">
+                            </p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <p>
+                                <input class="inputBox" type="text" placeholder="Отчество">
+                            </p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <p>
+                                <select class="inputBox">
+                                    <option value="default" selected disabled>Выберите страну</option>
+                                </select>
+                            </p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <p>
+                                <input class="inputBox" type="text" placeholder="Город">
+                            </p>
+                        </div>
+                        <div class="col-lg-8 col-md-12 col-sm-12">
+                            <p>
+                                <input class="inputBox" type="text" placeholder="Полный адрес">
+                                <span style="font-size:15px;margin-left:8px;">Пример: ул. Первомайская, дом 1, кв.13</span>
+                            </p>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <p>
+                                <input id="post-index" class="inputBox" type="text" placeholder="Почтовый индекс">
+                            </p>
                         </div>
                         <div class="col-12">
                           <h5 class="title-min-left" style="margin-top:10px;">Способ оплаты</h5>
@@ -148,36 +189,36 @@
                             </div>
                             <div class="col-12">
                                 <p>
-                                    <input class="inputBox" type="text" placeholder="Введите фамилию">
+                                    <input class="inputBox" type="text" placeholder="Фамилия">
                                 </p>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <p>
-                                    <input class="inputBox" type="text" placeholder="Введите имя">
+                                    <input class="inputBox" type="text" placeholder="Имя">
                                 </p>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <p>
-                                    <input class="inputBox" type="text" placeholder="Введите отчество">
+                                    <input class="inputBox" type="text" placeholder="Отчество">
                                 </p>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <p>
-                                    <input id="passport-sries-number" class="inputBox" type="text" placeholder="Введите серию и номер паспорта"
+                                    <input id="passport-sries-number" class="inputBox" type="text" placeholder="Серия и номер паспорта"
                                         maxlength="10">
-                                    <span>Пример: AB12345678</span>
+                                    <span style="font-size:15px;margin-left:8px;">Пример: AB12345678</span>
                                 </p>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                     <p>
                                         <input class="inputBox" type="text" placeholder="Кем выдан паспорт">
-                                        <span>Пример: Советское РУВД г.Минска</span>
+                                        <span style="font-size:15px;margin-left:8px;">Пример: Советское РУВД г.Минска</span>
                                     </p>
                                 </div>
                             <div class="col-12">
                                 <div class="row" style="vertical-align:middle;">
-                                    <div class="col-12">
-                                        <span>Дата выдачи паспорта</span>
+                                    <div class="col-12" style="margin-bottom:10px;">
+                                        <span >Дата выдачи паспорта</span>
                                     </div>
                                     <div class="col-lg-2 col-md-4 col-sm-4">
                                         <p>
@@ -222,13 +263,13 @@
                               платформы «Poless Invest».
                           </p>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
                             <a href="rewardPage.html" class="category">
                               <span class="fa fa-chevron-left fa-fw"></span>
                               Назад
                             </a>
                           </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
                           <a id="continue-btn" class="category" href="pay-card-page.html">
                             Продолжить
                             <span class="fa fa-chevron-right fa-fw"></span>
@@ -248,8 +289,13 @@
                               <hr>
                             </div>
                             <div style="color: var(--borderBtn);">
+                                    Доставка:
+                                    <span style="color: var(--greenPoles);font-weight: 600;">5 BYN</span>
+                                    <hr>
+                                  </div>
+                            <div style="color: var(--borderBtn);">
                               Итого:
-                              <span style="color: var(--greenPoles);font-weight: 600;">100 BYN</span>
+                              <span style="color: var(--greenPoles);font-weight: 600;">105 BYN</span>
                             </div>
                           </div>
                         </div>

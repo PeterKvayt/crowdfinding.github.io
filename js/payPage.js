@@ -100,4 +100,11 @@ $(document).ready(function(){
       this.value = '';
     }
   })
+
+  // проверка почтового индекса
+  $('#post-index').on('keyup', function () {
+    if(/[^A-Z0-9-]/g.test(this.value)){
+      this.value = this.value.replace(/[^A-Z0-9-]/g, '');
+    }
+  })
 })

@@ -1281,3 +1281,39 @@ body{
   padding: 4px 10px;
   background-color: #F9F9F9;
 }
+
+/* pay-card-page.html */
+.pay-card-number-input, .pay-card-number-input-left, .pay-card-number-input-right, .pay-card-number-split{
+  margin: 0;
+  /* margin-bottom: 10px; */
+  padding: 5px 10px;
+  border: none;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  width: 60px;
+  background-color: #F9F9F9;
+  position: relative;
+}
+
+.pay-card-number-input-left{
+  border-left: 1px solid var(--border);
+  border-radius: 4px 0 0 4px;
+}
+
+.pay-card-number-input-right{
+  border-right: 1px solid var(--border);
+  border-radius: 0 4px 4px 0;
+  left: -12px;
+}
+
+.pay-card{
+  margin-top: 1rem;
+}
+
+.pay-card .greydark {
+  fill: var(--greenPoles);
+}
+
+.pay-card .grey {
+  fill: rgb(8, 138, 161);
+}
