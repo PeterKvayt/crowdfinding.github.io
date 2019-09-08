@@ -132,39 +132,7 @@
                                     </p>
                                 </div>
                                 <div class="col-12">
-                                    <input class="pay-card-number-input-left" type="text" placeholder="0123" maxlength="4">
-                                    <input class="pay-card-number-input" style="left:-4px;" type="text" placeholder="1234" maxlength="4">
-                                    <input class="pay-card-number-input" style="left:-8px;" type="text" placeholder="2345" maxlength="4">
-                                    <input class="pay-card-number-input-right" type="text" placeholder="3456" maxlength="4">
-                                </div>
-                                <!-- <div class="col-lg-3 col-md-3">
-                                    <p>
-                                        <input class="inputBox" style="text-align:center;" type="text" placeholder="1234" maxlength="4">
-                                    </p>
-                                </div>
-                                <div class="col-lg-3 col-md-3">
-                                    <p>
-                                        <input class="inputBox" style="text-align:center;" type="text" placeholder="1234" maxlength="4">
-                                    </p>
-                                </div>
-                                <div class="col-lg-3 col-md-3">
-                                    <p>
-                                        <input class="inputBox" style="text-align:center;" type="text" placeholder="1234" maxlength="4">
-                                    </p>
-                                </div>
-                                <div class="col-lg-3 col-md-3">
-                                    <p>
-                                        <input class="inputBox" style="text-align:center;" type="text" placeholder="1234" maxlength="4">
-                                    </p>
-                                </div> -->
-                                <div class="col-12">
-                                    <br>
-                                    <p class="title-min-left">
-                                        Введите срок действия
-                                    </p>
-                                </div>
-                                <div class="col-lg-3 col-md-2 col-sm-3">
-                                    <input class="inputBox" type="text" placeholder="ММ/ГГ" maxlength="5">
+                                    <input id="cardnumber" class="inputBox" type="text" inputmode="numeric" placeholder="0123 4567 8910 1112">
                                 </div>
                                 <div class="col-12">
                                     <br>
@@ -172,23 +140,43 @@
                                         Введите имя, как на карте
                                     </p>
                                 </div>
-                                <div class="col-lg-8 col-md-6">
-                                    <input class="inputBox" type="text" placeholder="IVAN IVANOV">
+                                <div class="col-12">
+                                    <input id="name" class="inputBox" type="text" placeholder="IVAN IVANOV" maxlength="20">
                                 </div>
                                 <div class="col-12">
-                                    <br>
-                                    <p class="title-min-left">
-                                        CVC2/CVV2
-                                    </p>
+                                    <div class="row">
+                                        <div class="col-lg-8 col-md-7 col-sm-6">
+                                            <br>
+                                            <p class="title-min-left">
+                                                Введите срок действия
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 col-md-5 col-sm-6">
+                                            <br>
+                                            <p class="title-min-left">
+                                                CVC2/CVV2
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-3 col-md-2 col-sm-3">
+                                            <input id="expirationdate" class="inputBox" type="text" placeholder="ММ/ГГ">
+                                        </div>
+                                        <div class="col-lg-5 col-md-5 col-sm-3"></div>
+                                        <div class="col-lg-3 col-md-2 col-sm-2">
+                                            <input id="securitycode" class="inputBox" type="text" placeholder="123">
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-sm-2">
-                                    <input class="inputBox" type="text" placeholder="123" maxlength="4">
-                                </div>
+                            </div>
+                            <div style="text-align:center;">
+                                <div class="my-btn" style="margin-top:1rem;">Оплатить</div>
+                            </div>
+                            <div style="text-align:center;">
+                                <a class="link" href="payPage.html">Отмена</a>
                             </div>
                         </div>
                         <div class="col-lg-1"></div>
                         <div class="col-lg-5 col-md-12 col-sm-12">
-                            <div class="pay-card">
+                            <div class="creditcard">
                                 <div class="front">
                                     <div id="ccsingle"></div>
                                     <svg version="1.1" id="cardfront" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -204,7 +192,7 @@
                                                 <path class="darkcolor greydark"
                                                     d="M750,431V193.2c-217.6-57.5-556.4-13.5-750,24.9V431c0,22.1,17.9,40,40,40h670C732.1,471,750,453.1,750,431z" />
                                             </g>
-                                            <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber" class="st2 st3 st4">0123 1234 2345 3456</text>
+                                            <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber" class="st2 st3 st4">0123 4567 8910 1112</text>
                                             <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname" class="st2 st5 st6">IVAN IVANOV</text>
                                             <text transform="matrix(1 0 0 1 54.1074 389.8793)" class="st7 st5 st8">cardholder name</text>
                                             <text transform="matrix(1 0 0 1 479.7754 388.8793)" class="st7 st5 st8">expiration</text>
@@ -255,7 +243,7 @@
                                         </g>
                                     </svg>
                                 </div>
-                                <div class="back" style="display:none;">
+                                <div class="back">
                                     <svg version="1.1" id="cardback" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                         x="0px" y="0px" viewBox="0 0 750 471" style="enable-background:new 0 0 750 471;" xml:space="preserve">
                                         <g id="Front">
@@ -290,43 +278,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- <div class="col-lg-7 col-md-12 col-sm-12">
-                      <div class="row">
-                        <div class="col-12">
-                            
-                        </div>
-                        <div class="col-12">
-                            
-                        </div>
-                        <div class="col-12">
-                          
-                        </div>
-                        <div class="col-lg-12">
-                          <div class="box">
-                            <div class="row">
-                              <div class="col-3">
-                                <input class="inputBox" type="text" placeholder="xxxx">
-                              </div>
-                              <div class="col-3">
-                                  <input class="inputBox" type="text" placeholder="xxxx">
-                                </div>
-                                <div class="col-3">
-                                    <input class="inputBox" type="text" placeholder="xxxx">
-                                  </div>
-                                  <div class="col-3">
-                                      <input class="inputBox" type="text" placeholder="xxxx">
-                                    </div>
-                            </div>
-                          </div>
-                          <div class="pay-card-bottom">
-                            
-                            </div>
-                        </div>
-                      </div>
-                    </div> -->
-                    <div class="col-lg-4">
-
                     </div>
                 </div>
             </div>
@@ -380,6 +331,8 @@
         </div>
     </div>
     <script src="js/jquery-3.0.0.min.js"></script><!--jQuery-->
+    <script src="js/imask.min.js"></script>
+    <script src="js/pay-card-page.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap4.1.3.min.js"></script><!-- js bootstrap-->
 </body>
