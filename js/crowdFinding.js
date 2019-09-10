@@ -94,7 +94,7 @@ $(document).ready(function(){
 
   // добавление слайдов и nav dots в разметку
   for (let i = 0; i < projects.length; i++) {
-    slider.AddSlide(projects[i], projects.length);
+    slider.AddSlide(projects[i], projects.length, 'projectPage.html');
     slider.AddNavDot();
   }
 

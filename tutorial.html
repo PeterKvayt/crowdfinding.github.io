@@ -39,71 +39,104 @@
               </ul>
           </div>
       </nav>
-      <!-- Модальное окно входа -->
-      <div class="modal fade" id="modalEnter">
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-body">
-                      <button class="closeBtn" id="modalEnterClose" data-dismiss="modal">&times;</button>
-                      <h4 class="title">Вход</h4>
-                      <form action="#">
-                          <p>
-                              <input class="inputBox" type="text" placeholder="Email">
-                          </p>
-                          <p>
-                              <input class="inputBox " type="text" placeholder="Пароль">
-                          </p>
-                          <p class="modalLink">
-                              <a class="link" href="#">Забыли пароль?</a>
-                          </p>
-                          <p>
-                              <a class="my-btn modalBtn" href="#">ВОЙТИ</a>
-                          </p>
-                          <p>
-                              <a class="my-btn modalBtn registerBtn" href="#modalRegistration"
-                                  data-toggle="modal">ЗАРЕГИСТРИРОВАТЬСЯ</a>
-                          </p>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <!-- Модальное окно регистрации -->
-      <div class="modal fade" id="modalRegistration">
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-body">
-                      <button class="closeBtn" id="modalRegistrationClose" data-dismiss="modal">&times;</button>
-                      <h4 class="title">Регистрация</h4>
-                      <form action="#">
-                          <p>
-                              <input class="inputBox" type="text" placeholder="Имя Фамилия">
-                          </p>
-                          <p>
-                              <input class="inputBox" type="text" placeholder="Email">
-                          </p>
-                          <p>
-                              <input class="inputBox" type="text" placeholder="Пароль">
-                          </p>
-                          <p>
-                              <input class="inputBox" type="text" placeholder="Повторите пароль">
-                          </p>
-                          <p class="modalLink modalConditionRegistration">
-                              Нажимая кнопку зарегистрироваться, вы автоматически подтверждаете,
-                              что ознакомлены и согласны с <a class="link" href="#">условиями</a>
-                              платформы PolessCrowdFinding.
-                          </p>
-                          <p>
-                              <a class="my-btn modalBtn" href="#">ЗАРЕГИСТРИРОВАТЬСЯ</a>
-                          </p>
-                          <p>
-                              <a class="my-btn modalBtn enterBtn" href="#modalEnter" data-toggle="modal">ВОЙТИ</a>
-                          </p>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </div>
+     <!-- Модальные окна -->
+     <div class="modal fade" id="modalEnter">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!-- вход -->
+                    <div id="enter-modal" class="my-modal-content-active">
+                        <button class="closeBtn" id="modalEnterClose" data-dismiss="modal">&times;</button>
+                        <h4 class="title">Вход</h4>
+                        <p>
+                            <input class="inputBox email-input" type="text" placeholder="Email">
+                        </p>
+                        <p>
+                            <div class="social-input-box password-input">
+                                <span class="fa fa-eye-slash fa-fw"></span>
+                                <input class="social-input" type="password" placeholder="Пароль">
+                            </div>
+                        </p>
+                        <p class="modalLink">
+                            <span id="forgot-password-btn" class="link">Забыли пароль?</span>
+                        </p>
+                        <p>
+                            <span class="category modal-enter-btn">ВОЙТИ</span>
+                        </p>
+                        <p>
+                            <span class="category modal-registration-btn">ЗАРЕГИСТРИРОВАТЬСЯ</span>
+                        </p>
+                    </div>
+                    <!-- регистрация -->
+                    <div id="registration-modal" class="my-modal-content">
+                        <button class="closeBtn" id="modalEnterClose" data-dismiss="modal">&times;</button>
+                        <h4 class="title">Регистрация</h4>
+                        <p>
+                            <input class="inputBox" type="text" placeholder="Имя Фамилия">
+                        </p>
+                        <p>
+                            <input class="inputBox email-input" type="text" placeholder="Email">
+                        </p>
+                        <div class="row" style="margin-bottom:7px;">
+                            <div class="col-lg-11 col-md-11 col-sm-11">
+                                <div class="social-input-box password-input">
+                                    <span class="fa fa-eye-slash fa-fw"></span>
+                                    <input id="registration-password-input-modal" class="social-input" type="password" placeholder="Пароль">
+                                </div>
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-1">
+                                <div id="modal-password-status-box" class="modal-password-status">
+                                    <span id="password-security-pict-modal" class="fa fa-unlock fa-fw"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-11 col-md-11 col-sm-11">
+                                <div class="social-input-box password-input">
+                                    <span class="fa fa-eye-slash fa-fw"></span>
+                                    <input id="second-registration-password-input-modal" class="social-input" type="password" placeholder="Повторите пароль">
+                                </div>
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-1">
+                                <div class="modal-password-status">
+                                    <span id="second-registration-password-status-modal" class="fa fa-exclamation-circle fa-fw"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="modalLink modalConditionRegistration">
+                            Нажимая кнопку зарегистрироваться, вы автоматически подтверждаете,
+                            что ознакомлены и согласны с <a class="link" href="agreement.html">Пользовательским соглашением</a>
+                            платформы Poless Invest.
+                        </p>
+                        <p>
+                            <span class="category modal-registration-btn">ЗАРЕГИСТРИРОВАТЬСЯ</span>
+                        </p>
+                        <p>
+                            <span class="category modal-enter-btn">ВОЙТИ</span>
+                        </p>
+                    </div>
+                    <!-- восстановление пароля -->
+                    <div id="password-recovery-modal" class="my-modal-content">
+                        <button class="closeBtn" id="modalEnterClose" data-dismiss="modal">&times;</button>
+                        <h4 class="title">Восстановление пароля</h4>
+                        <p>
+                            <input class="inputBox email-input" type="text" placeholder="Email">
+                        </p>
+                        <p>
+                            Для восстановления пароля необходимо ввести почту, с которой связан ваш аккаунт.
+                            На нее будет отправлено сообщение для восстановления пароля.
+                        </p>
+                        <p>
+                            <span class="category modal-recovery-btn" href="#">ВОССТАНОВИТЬ</span>
+                        </p>
+                        <p>
+                            <span class="category modal-enter-btn">ВОЙТИ</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
       <!-- модально окно "задать вопрос" -->
       <div class="modal fade" id="askQuestion">
           <div class="modal-dialog modal-lg">
@@ -699,6 +732,14 @@
               </div>
           </div>
       </div>
+      </div>
+  </div>
+  <div id="alert" class="box alert">
+      <div class="row">
+          <div class="col-1">
+              <span class="fa fa-exclamation fa-3x"></span>
+          </div>
+          <div id="alert-text" style="text-align: justify;" class="col-11"></div>
       </div>
   </div>
     <script src="js/jquery-3.0.0.min.js"></script><!--jQuery-->

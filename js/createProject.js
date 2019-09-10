@@ -152,6 +152,7 @@ $(document).ready(function(){
   // вывод сообщения
   function ShowAlert(message, elem, type){
     let alertElem = $('#alert');
+    let messageBox = $('#alert-text');
     if(type){
       alertElem.css('border-color', '#008000');
       alertElem.css('background-color', '#00e600');
@@ -160,7 +161,6 @@ $(document).ready(function(){
       alertElem.css('border-color', '#fc0a32');
       alertElem.css('background-color', '#fc6c85');
     }
-    let messageBox = $('#alert-text');
     let elemY = elem.offset().top - 80;
     messageBox.html(message);
     alertElem.slideDown(400);

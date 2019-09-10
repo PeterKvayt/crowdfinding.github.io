@@ -58,11 +58,11 @@ class Slider {
   }
 
   // adding new slide
-  AddSlide(project, len) {
+  AddSlide(project, len, href) {
     $('#slidewrapper').css({'width':'calc(100% * ' + len + ')'});
     $('#slidewrapper').append(
       '<div class="slide" style="width: calc(100%/' + len + ')">'+
-        '<a class="slide-wrapper" href="#">'+
+        '<a class="slide-wrapper" href="'+ href +'">'+
           '<div class="slider-descriprion-box" style="width: calc((100%/' + len + ')'+'*0.35'+')">'+
             '<div class="slider-descriprion-title">'+ project.Name +'</div>'+
             '<div class="slider-descriprion-text">'+
