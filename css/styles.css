@@ -92,16 +92,18 @@
 
   /* кнопка наверх */
 #to-top-btn {
-  border:1px solid var(--borderBtn);
-  border-radius: 4px;
-  background:var(--backgroundColor);
+  background: #000;
+  opacity: 0.75;
   text-align:center;
-  padding: 0px 6px;
+  padding: 6px;
   position:fixed;
-  bottom:10px;
+  bottom:15px;
   right:10px;
   cursor:pointer;
-  color: var(--greenPoles);
+  color: #fff;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
   }
   /* минималистичная кнопка */
 .min-btn, .wisiwig-btn{

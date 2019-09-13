@@ -173,10 +173,10 @@ $(document).ready(function(){
   var toTopBtn = $('#to-top-btn');
   $(document).on('scroll', function(){
     if(window.pageYOffset <= 300){
-      toTopBtn.children().first().attr('class', 'fa fa-angle-double-down fa-3x')
+      toTopBtn.children().first().attr('class', 'fa fa-chevron-down fa-2x')
     }
     else{
-      toTopBtn.children().first().attr('class', 'fa fa-angle-double-up fa-3x')
+      toTopBtn.children().first().attr('class', 'fa fa-chevron-up fa-2x')
     }
     if (prevScrollpos > window.pageYOffset) {
       $('#navbar').css({'top': '0'});
@@ -189,7 +189,7 @@ $(document).ready(function(){
 
   // click-event to-to-btn
   toTopBtn.click(function () {
-    if(toTopBtn.children().first().attr('class') == 'fa fa-angle-double-down fa-3x'){
+    if(toTopBtn.children().first().attr('class') == 'fa fa-chevron-down fa-2x'){
       $('body,html').animate({ scrollTop: $('body').height() }, 500);
     }
     else{
