@@ -20,7 +20,7 @@ class RewardCard{
   AddRewardCard(selector){
     $(selector).append(
       '<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">'+
-      '<a class="reward-link" href="projectPage.html">'+
+      '<a class="reward-link" href="project-page.html">'+
         '<div class="reward-card-box">'+
           '<img class="reward-img" src="'+ this.Picture +'" alt="rewardImg"/>'+
           '<div class="reward-card-body">'+
@@ -119,7 +119,7 @@ class RewardCard{
               '</div>'+
               '<div class="row">' +
                 '<div class="col">' +
-                  '<a class="link" href="payPage.html">Продолжить</a>' +
+                  '<a class="link" href="pay-page.html">Продолжить</a>' +
                 '</div>' +
               '</div>'+
             '</div>'+
