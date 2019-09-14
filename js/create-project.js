@@ -1,6 +1,8 @@
 $(document).ready(function(){
-  const comissionPercent = 0.1;// заработок платформы
+  const comissionPercent = 0.2;// заработок платформы
   const maxProjectDuration = 180;
+  const fixedMinTax = 4947; // минимальная сумма, не облогаемая налогом
+  const taxPercent = 0.13 // процент налога
   var categories = $('.project-category');
   var projectPicture = $('#project-picture');
   var projectCategory = $('#project-category');
@@ -16,6 +18,10 @@ $(document).ready(function(){
   var tax = $('#tax');
   var total = $('#total');
   var rewards = [];
+
+  // заполнение процента налога и заработка платформы
+  $('#comissionPercent').text(comissionPercent * 100);
+  $('#taxPercent').text(taxPercent * 100);
 
   // заполнение списка годами доставки
   let dat = new Date();
@@ -215,7 +221,7 @@ $(document).ready(function(){
   })
   
   // event on input project name
-  inputProjectName.on('keyup', function(){
+  inputProjectName.on('input', function(){
     projectName.text(inputProjectName.val());
     if (inputProjectName.val() === '') {
       projectName.text('Название проекта');
@@ -223,7 +229,7 @@ $(document).ready(function(){
   })
   
   // event on input project short description
-  inputShortDescription.on('keyup', function(){
+  inputShortDescription.on('input', function(){
     projectShortDescription.text(inputShortDescription.val());
     if (inputShortDescription.val() === '') {
       projectShortDescription.text('Описание проекта');
@@ -244,18 +250,29 @@ $(document).ready(function(){
   financialGoal.on('keyup', function(){
     CheckNumbers(this, true);
     CutZero(this);
-    comissionFee.text(Number((financialGoal.val()) * comissionPercent).toFixed(2));
+    let totalTax = 0;
+    let finPurpose = Number(financialGoal.val());
+    let platformProfit = (finPurpose * comissionPercent).toFixed();
+    comissionFee.text(platformProfit);
+    if(finPurpose > fixedMinTax){
+      totalTax = ((finPurpose - fixedMinTax) * taxPercent).toFixed();
+      tax.text(totalTax);
+    }
+    else{
+      tax.text(totalTax);
+    }
+    total.text(finPurpose - platformProfit - totalTax);
   })
 
   // ввод продолжительности проекта
-  projectDurationEl.on('keyup', function(){
+  projectDurationEl.on('input', function(){
     CheckNumbers(this, true);
     CutZero(this);
     if(projectDurationEl.val() > maxProjectDuration){projectDurationEl.val(maxProjectDuration);}
   })
 
   // ввод стоимости лота
-  $('#reward-cost-input').on('keyup', function(){
+  $('#reward-cost-input').on('input', function(){
     CheckNumbers(this, true);
     CutZero(this);
   })
@@ -266,25 +283,25 @@ $(document).ready(function(){
   })
 
   // ввод количества лотов
-  $('#reward-count-input').on('keyup', function () {
+  $('#reward-count-input').on('input', function () {
     CheckNumbers(this, true);
     CutZero(this);
   })
 
   // ввод стоимости доставки в некоторых странах
-  $(document).on('keyup', '#add-country-cost', function(event){
+  $(document).on('input', '#add-country-cost', function(event){
     CheckNumbers(event.target, true);
     CutZero(event.target);
   })
 
   // ввод стоимости доставки по всему миру
-  $(document).on('keyup', '#all-world-delivery-cost', function(event){
+  $(document).on('input', '#all-world-delivery-cost', function(event){
     CheckNumbers(event.target, true);
     CutZero(event.target);
   })
 
   // ввод стоимости доставки в странах исключениях
-  $(document).on('keyup', '#exception-country-cost', function(event){
+  $(document).on('input', '#exception-country-cost', function(event){
     CheckNumbers(event.target, true);
     CutZero(event.target);
   })
@@ -692,22 +709,22 @@ $(document).ready(function(){
   })
 
   // ввод фамилии автора
-  $('#surname-input').on('keyup', function(){
+  $('#surname-input').on('input', function(){
     CheckLetters(this);
   })
 
   // ввод имени автора
-  $('#name-input').on('keyup', function(){
+  $('#name-input').on('input', function(){
     CheckLetters(this);
   })
   
   // ввод отчества автора
-  $('#middle-name-input').on('keyup', function(){
+  $('#middle-name-input').on('input', function(){
     CheckLetters(this);
   })
 
   // ввод контактного телефона
-  $('#phone-number-input').on('keyup', function(){
+  $('#phone-number-input').on('input', function(){
     CheckNumbers(this, true);
   }) 
 
@@ -785,6 +802,19 @@ $(document).ready(function(){
             return;
           }
         }
+    }
+  })
+
+  // приводит к верхнему регистру серию паспорта
+  $('#passport-sries-number').on('input', function(){
+    this.value = this.value.toUpperCase();
+  })
+
+  // ввод серии и номера паспорта
+  $('#passport-sries-number').focusout(function () {
+    if (/[A-Z]{2,2}\d{7,7}/.test(this.value) == false) {
+      ShowAlert('Введите правильные серию и номер паспорта.', $(this), false);
+      this.value = '';
     }
   })
 

@@ -67,6 +67,18 @@ $(document).ready(function(){
     elem.focus();
   }
 
+  // проверка на совпадение пароля
+  function CheckPasswordOnMatchModal(val, id){
+    let label = $('#second-registration-password-status-modal');
+    if(val != $(id).val()){
+      label.parent().css('background-color', '#fc6c85');
+      label.attr('class', 'fa fa-exclamation-circle fa-fw');
+    }
+    else{
+      label.parent().css('background-color', '#00e600');
+      label.attr('class', 'fa fa-check fa-fw');
+    }
+  }
   // нажатие на кнопку войти
   $('.modal-enter-btn').on('click', function(){
     ChangeModalWindow('enter-modal');
@@ -96,7 +108,7 @@ $(document).ready(function(){
   })
 
   // ввод пароля при регистрации
-  $('#registration-password-input-modal').on('keyup', function(){
+  $('#registration-password-input-modal').on('input', function(){
     let isUniq = true;
     let passwords = [
       'Qwerty123',
@@ -145,19 +157,12 @@ $(document).ready(function(){
         SetPasswordSecurityModal(picture, box, 'easy');
       }
     }
+    CheckPasswordOnMatchModal(this.value, '#second-registration-password-input-modal');
   })
 
   // повторный ввод пароля при регистрации
-  $('#second-registration-password-input-modal').on('keyup', function(){
-    let label = $('#second-registration-password-status-modal');
-    if(this.value != $('#registration-password-input-modal').val()){
-      label.parent().css('background-color', '#fc6c85');
-      label.attr('class', 'fa fa-exclamation-circle fa-fw');
-    }
-    else{
-      label.parent().css('background-color', '#00e600');
-      label.attr('class', 'fa fa-check fa-fw');
-    }
+  $('#second-registration-password-input-modal').on('input', function(){
+    CheckPasswordOnMatchModal(this.value, '#registration-password-input-modal');
   })
 
   // проверка email

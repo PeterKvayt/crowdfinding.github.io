@@ -58,6 +58,21 @@ $(document).ready(function(){
     }
   }
 
+  // проверка на совпадение пароля
+  function ChekPasswordOnMatch(val,id){
+    let label = $('#new-password-repit');
+    if(val != $(id).val()){
+      label.text(' нет совпадения');
+      label.parent().css('background-color', '#fc6c85');
+      label.parent().children().first().attr('class', 'fa fa-exclamation-circle fa-fw');
+    }
+    else{
+      label.text(' совпадение');
+      label.parent().css('background-color', '#00e600');
+      label.parent().children().first().attr('class', 'fa fa-check fa-fw');
+    }
+  }
+
   // смена таба
   $('.row').on('click', '.category', function(event){
     let profileBox = $('#profile-box');
@@ -206,20 +221,11 @@ $(document).ready(function(){
         SetPasswordSecurity(picture, box, status, 'easy');
       }
     }
+    ChekPasswordOnMatch(this.value,'#second-new-password-input');
   })
 
   // повторный ввод нового пароля
   $('#second-new-password-input').on('keyup', function(){
-    let label = $('#new-password-repit');
-    if(this.value != $('#new-password-input').val()){
-      label.text(' нет совпадения');
-      label.parent().css('background-color', '#fc6c85');
-      label.parent().children().first().attr('class', 'fa fa-exclamation-circle fa-fw');
-    }
-    else{
-      label.text(' совпадение');
-      label.parent().css('background-color', '#00e600');
-      label.parent().children().first().attr('class', 'fa fa-check fa-fw');
-    }
+    ChekPasswordOnMatch(this.value, '#new-password-input');
   })
 })

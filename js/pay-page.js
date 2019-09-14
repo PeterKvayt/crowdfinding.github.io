@@ -53,29 +53,26 @@ $(document).ready(function(){
   // проверка email
   $('#email-input').focusout(function () {
     if (/\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b/.test(this.value) == false) {
-      ShowAlert('Неверный почтовый адрес.', $(this), false);
+      ShowAlert('Неверный формат почтового адреса.', $(this), false);
       this.value = '';
     }
   })
 
-  // проверка серии и номера паспорта
-  $('#passport-sries-number').focusout(function () {
-    if (/[A-Z]{2,2}\d{8,8}/.test(this.value) == false) {
-      ShowAlert('Введите правильные серию и номер паспорта.', $(this), false);
-      this.value = '';
-    }
+  // приводит к верхнему регистру серию паспорта
+  $('#passport-sries-number').on('input', function(){
+    this.value = this.value.toUpperCase();
   })
 
   // проверка серии и номера паспорта
   $('#passport-sries-number').focusout(function () {
-    if (/[A-Z]{2,2}\d{8,8}/.test(this.value) == false) {
+    if (/[A-Z]{2,2}\d{7,7}/.test(this.value) == false) {
       ShowAlert('Введите правильные серию и номер паспорта.', $(this), false);
       this.value = '';
     }
   })
 
   // проверка дня выдачи паспорта
-  $('#passport-date-day').on('keyup', function () {
+  $('#passport-date-day').on('input', function () {
     CheckNumbers(this);
     if(Number(this.value) > 31){
       ShowAlert('В месяце максимум может быть 31 день.', $(this), false);
@@ -84,7 +81,7 @@ $(document).ready(function(){
   })
 
   // проверка месяца выдачи паспорта
-  $('#passport-date-month').on('keyup', function () {
+  $('#passport-date-month').on('input', function () {
     CheckNumbers(this);
     if(Number(this.value) > 12){
       ShowAlert('В году не более 12 месяцев.', $(this), false);
@@ -93,7 +90,7 @@ $(document).ready(function(){
   })
 
   // проверка года выдачи паспорта
-  $('#passport-date-year').on('keyup', function () {
+  $('#passport-date-year').on('input', function () {
     CheckNumbers(this);
     if(Number(this.value) > (new Date()).getFullYear()){
       ShowAlert('Вы превысили текущий год.', $(this), false);
@@ -102,7 +99,7 @@ $(document).ready(function(){
   })
 
   // проверка почтового индекса
-  $('#post-index').on('keyup', function () {
+  $('#post-index').on('input', function () {
     if(/[^A-Z0-9-]/g.test(this.value)){
       this.value = this.value.replace(/[^A-Z0-9-]/g, '');
     }

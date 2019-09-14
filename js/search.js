@@ -101,22 +101,22 @@ $(document).ready(function(){
     new UserCard(
       'images/user-stock.png',
       'Тим Кук',
-      'profilePage.html'
+      'profile.html'
     ),
     new UserCard(
       'images/user-stock.png',
       'Гейб Ньюел',
-      'profilePage.html'
+      'profile.html'
     ),
     new UserCard(
       'images/user-stock.png',
       'Просто пользователь',
-      'profilePage.html'
+      'profile.html'
     ),
     new UserCard(
       'images/user-stock.png',
       'Зеленое общество',
-      'profilePage.html'
+      'profile.html'
     ),
   ]
 

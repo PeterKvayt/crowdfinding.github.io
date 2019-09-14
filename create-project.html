@@ -19,22 +19,26 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div id="navbarContent" class="collapse navbar-collapse justify-content-center">
+            <div class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav text-center">
                     <li class="nav-item">
                         <a class="nav-link" href="all-projects.html">ВСЕ ПРОЕКТЫ <span class="fa fa-book fa-fw"></span></a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="create-project-rules.html">СОЗДАТЬ ПРОЕКТ <span class="fa fa-pencil fa-fw"></span></a>
-                    </li>
+                    <!-- <li class="nav-item">
+                                        <a class="nav-link" href="create-project-rules.html">СОЗДАТЬ ПРОЕКТ <span class="fa fa-pencil fa-fw"></span></a>
+                                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="how-it-works.html">ПОМОЩЬ <span class="fa fa-info fa-fw"></span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="search.html">ПОИСК <span class="fa fa-search fa-fw"></span></a>
                     </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav text-center">
                     <li class="nav-item">
-                        <a class="nav-link " href="#modalEnter" data-toggle="modal">ВОЙТИ <span class="fa fa-sign-in fa-fw"></span></a>
+                        <a class="nav-link active" href="#"><span class="fa fa-user fa-fw"></span>User User</a>
                     </li>
                 </ul>
             </div>
@@ -182,7 +186,7 @@
                             <div class="col">
                                 <form action="#">
                                     <p>
-                                        <input class="inputBox" type="text" placeholder="Контактный email">
+                                        <input class="inputBox email-input" type="text" placeholder="Контактный email">
                                     </p>
                                 </form>
                             </div>
@@ -487,10 +491,9 @@
                                             <div class="col">
                                                 <div>
                                                     <p>
-                                                        <span id="comission-fee">0</span> BYN Комиссионный сбор (10%)
-                                                        <span class="info"
+                                                        <span id="comission-fee">0</span> BYN Комиссионный сбор (<span id="comissionPercent"></span>%)
+                                                        <span class="fa fa-info-circle fa-lg info"
                                                             title="Комиссионный сбор включает общую комиссию платформы, банка и платежной системы. Комиссия взимается со всей собранной суммы ТОЛЬКО в случае успешного окончания краудфандинговой кампании.">
-                                                            ?
                                                         </span>
                                                     </p>
                                                 </div>
@@ -500,10 +503,9 @@
                                             <div class="col">
                                                 <div>
                                                     <p>
-                                                        <span id="tax">0</span> BYN Подоходный налог (13%)
-                                                        <span class="info"
+                                                        <span id="tax">0</span> BYN Подоходный налог (<span id="taxPercent"></span>%)
+                                                        <span class="fa fa-info-circle fa-lg info"
                                                             title="Подоходный налог, взимаемый государством, составляет 13%. Стоит учитывать, что сумма в 4 947 руб. налогом не облагается. Уплату налога следует производить самостоятельно.">
-                                                            ?
                                                         </span>
                                                     </p>
                                                 </div>
@@ -514,9 +516,8 @@
                                                 <div>
                                                     <p>
                                                         Итого = <span id="total">0</span> BYN
-                                                        <span class="info"
+                                                        <span class="fa fa-info-circle fa-lg info"
                                                             title="Данный подсчет является приблизительным. Итоговая сумма может отличаться от указанной.">
-                                                            ?
                                                         </span>
                                                     </p>
                                                 </div>
@@ -1221,8 +1222,8 @@
                                             <div class="col">
                                                 <div>
                                                     <p>
-                                                        <input class="inputBox" type="text" placeholder="Серия и номер" maxlength="9">
-                                                        Пример: MР1234567
+                                                        <input id="passport-sries-number" class="inputBox" type="text" placeholder="Серия и номер" maxlength="9">
+                                                        <span class="example-input"> Пример: MР1234567</span> 
                                                     </p>
                                                 </div>
                                             </div>
@@ -1232,7 +1233,7 @@
                                                 <div>
                                                     <p>
                                                         <input class="inputBox" type="text" placeholder="Личный номер" maxlength="14">
-                                                        Пример: 1234567A002PB9
+                                                        <span class="example-input">Пример: 1234567A002PB9</span> 
                                                     </p>
                                                 </div>
                                             </div>
@@ -1242,7 +1243,7 @@
                                                 <div>
                                                     <p>
                                                         <input class="inputBox" type="text" placeholder="Кем и когда выдан">
-                                                        Пример: Советское РУВД г.Минска, выдан 22.04.2015
+                                                        <span class="example-input">Пример: Советское РУВД г.Минска, выдан 22.04.2015</span> 
                                                     </p>
                                                 </div>
                                             </div>
@@ -1252,7 +1253,7 @@
                                                 <div>
                                                     <p>
                                                         <input class="inputBox" type="text" placeholder="Адрес регистрации">
-                                                        Пример: г.Минск, ул. Е. Полоцкой, д.3, кв. 16
+                                                        <span class="example-input">Пример: г.Минск, ул. Е. Полоцкой, д.3, кв. 16</span> 
                                                     </p>
                                                 </div>
                                             </div>
@@ -1262,7 +1263,7 @@
                                                 <div>
                                                     <p>
                                                         <input id="phone-number-input" class="inputBox" type="text" placeholder="Контактный номер" maxlength="12">
-                                                        Пример: 375291234567
+                                                        <span class="example-input">Пример: 375291234567</span> 
                                                     </p>
                                                 </div>
                                             </div>

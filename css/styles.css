@@ -104,6 +104,7 @@
   height: 50px;
   width: 50px;
   border-radius: 50%;
+  z-index: 100;
   }
   /* минималистичная кнопка */
 .min-btn, .wisiwig-btn{
@@ -249,6 +250,13 @@
 }
 .link:hover:before{
   transform: scaleX(1);
+}
+
+/* строка пример ввода */
+.example-input{
+  font-size:15px;
+  margin-left:8px;
+  color: #333333;
 }
 /* заголовок */
 .title, .describing-title{
@@ -821,22 +829,14 @@ text-decoration: none;
   outline: none;
 }
 .info{
-  color: var(--border);
-  background-color: #F9F9F9;
-  border: 1px solid var(--border);
+  color: var(--greenPoles);
+  background-color: #fff;
   border-radius: 50%;
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  text-align: center;
-  vertical-align: center;
   transition: 0.3s;
-  font-weight: 700;
 }
 .info:hover{
   background-color: var(--greenPoles);
   color: white;
-  border-color: var(--greenPoles);
 }
 #fullDescription{
   z-index: 5!important;
@@ -1285,21 +1285,6 @@ body{
 }
 
 /* modal */
-.my-modal{
-  display: none;
-  position: fixed;
-  z-index: 100;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0, 0.8);
-  /* filter:blur(7px);
-  -moz-filter:blur(7px);
-  -webkit-filter: blur(7px); */
-  padding: 5rem;
-}
 
 .my-modal-content{
   display: none;
