@@ -144,6 +144,7 @@ $(document).ready(function(){
     }
   }
 
+  // переключает ограничение лотов
   function EnableCountToggle(){
     if($('#reward-count-check').hasClass('fa fa-square')){
       $('#reward-count-check').attr('class','fa fa-check-square');
@@ -370,9 +371,9 @@ $(document).ready(function(){
   })
 
   // обработка нажатия на изменение вознгарждения
-  $(document).on('click', '.change-reward-btn', function(event){
-    let rewardParent = event.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
-    let rewardParentIndex = $(rewardParent).index();
+  $('#rewards-wrapper').on('click', '.change-reward-btn', function(event){
+    let rewardParent = this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
+    let rewardParentIndex = $(rewardParent).index();  
     $('#reward-name-input').val(rewards[rewardParentIndex].Name);
     $('#reward-description-input').val(rewards[rewardParentIndex].Description);
     $('#reward-cost-input').val(rewards[rewardParentIndex].Price);
@@ -385,8 +386,6 @@ $(document).ready(function(){
         $('.delivery-checkbox-active').attr('class','delivery-checkbox');
         $('#no-delivery').attr('class', 'delivery-checkbox-active');
         $('#no-delivery .fa.fa-square').attr('class', 'fa fa-check-square');
-        // rewards.splice(rewardParentIndex, 1);
-        // rewardParent.remove();
         break;
       case 'Некоторые страны':
         $('.fa-check-square').attr('class','fa fa-square');
@@ -399,8 +398,6 @@ $(document).ready(function(){
         for (let i = 0; i < rewards[rewardParentIndex].Delivery.length; i++) {
           AddCountry(rewards[rewardParentIndex].Delivery[i].Country, rewards[rewardParentIndex].Delivery[i].Cost, 'Некоторые страны', false);
         }
-        // rewards.splice(rewardParentIndex, 1);
-        // rewardParent.remove();
         break;
       case 'Весь мир':
         $('.fa-check-square').attr('class','fa fa-square');
@@ -418,11 +415,10 @@ $(document).ready(function(){
             AddCountry(rewards[rewardParentIndex].Delivery[i].Country, rewards[rewardParentIndex].Delivery[i].Cost, 'Страны исключения', false);
           }
         }
-        // rewards.splice(rewardParentIndex, 1);
-        // rewardParent.remove();
         break;
+      dafault: break;
     }
-    if(rewards[rewardParentIndex].Left != null || rewards[rewardParentIndex].Left != ''){
+    if(rewards[rewardParentIndex].Left != ''){
       $('#reward-count-input').val(rewards[rewardParentIndex].Left.substring(9));
       EnableCountToggle();
     }
@@ -431,8 +427,8 @@ $(document).ready(function(){
   })
 
   // обработка нажатия на удаление вознгарждения
-  $(document).on('click', '.delete-reward-btn', function(event){
-    let rewardParent = event.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
+  $('#rewards-wrapper').on('click', '.delete-reward-btn', function(){
+    let rewardParent = this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
     let rewardParentIndex = $(rewardParent).index();
     rewards.splice(rewardParentIndex, 1);
     rewardParent.remove();
@@ -471,7 +467,7 @@ $(document).ready(function(){
                   rewards.push(reward);
                   reward.AddFullRewardCard('#rewards-wrapper');
                   reward.AddContolButtons('.reward-card-pay-info:last');
-                  ShowAlert('Вознаграждение успешно добавлено', $('#rewards-wrapper > .col-12:first-child'), true);
+                  ShowAlert('Вознаграждение успешно добавлено', $('#rewards-wrapper > .col-12:last-child'), true);
                   name.val('');
                   description.val('');
                   cost.val('');
@@ -495,7 +491,7 @@ $(document).ready(function(){
                     rewards.push(reward);
                     reward.AddFullRewardCard('#rewards-wrapper');
                     reward.AddContolButtons('.reward-card-pay-info:last');
-                    ShowAlert('Вознаграждение успешно добавлено', $('#rewards-wrapper > .col-12:first-child'), true);
+                    ShowAlert('Вознаграждение успешно добавлено', $('#rewards-wrapper > .col-12:last-child'), true);
                     name.val('');
                     description.val('');
                     cost.val('');
@@ -530,7 +526,7 @@ $(document).ready(function(){
                     rewards.push(reward);
                     reward.AddFullRewardCard('#rewards-wrapper');
                     reward.AddContolButtons('.reward-card-pay-info:last');
-                    ShowAlert('Вознаграждение успешно добавлено', $('#rewards-wrapper > .col-12:first-child'), true);
+                    ShowAlert('Вознаграждение успешно добавлено', $('#rewards-wrapper > .col-12:last-child'), true);
                     name.val('');
                     description.val('');
                     cost.val('');
@@ -564,7 +560,7 @@ $(document).ready(function(){
                       rewards.push(reward);
                       reward.AddFullRewardCard('#rewards-wrapper');
                       reward.AddContolButtons('.reward-card-pay-info:last');
-                      ShowAlert('Вознаграждение успешно добавлено', $('#rewards-wrapper > .col-12:first-child'), true);
+                      ShowAlert('Вознаграждение успешно добавлено', $('#rewards-wrapper > .col-12:last-child'), true);
                       name.val('');
                       description.val('');
                       cost.val('');
@@ -608,7 +604,7 @@ $(document).ready(function(){
                     rewards.push(reward);
                     reward.AddFullRewardCard('#rewards-wrapper');
                     reward.AddContolButtons('.reward-card-pay-info:last');
-                    ShowAlert('Вознаграждение успешно добавлено', $('#rewards-wrapper > .col-12:first-child'), true);
+                    ShowAlert('Вознаграждение успешно добавлено', $('#rewards-wrapper > .col-12:last-child'), true);
                     name.val('');
                     description.val('');
                     cost.val('');
@@ -644,7 +640,7 @@ $(document).ready(function(){
                       rewards.push(reward);
                       reward.AddFullRewardCard('#rewards-wrapper');
                       reward.AddContolButtons('.reward-card-pay-info:last');
-                      ShowAlert('Вознаграждение успешно добавлено', $('#rewards-wrapper > .col-12:first-child'), true);
+                      ShowAlert('Вознаграждение успешно добавлено', $('#rewards-wrapper > .col-12:last-child'), true);
                       name.val('');
                       description.val('');
                       cost.val('');
@@ -689,7 +685,7 @@ $(document).ready(function(){
 
   // изменение вопроса
   $('.added-questions').on('click', '.change-question-btn', function(event){
-    let childrens = $(event.target.parentNode).children();
+    let childrens = $(this.parentNode).children();
     let question = $('#question-input')
     question.val(childrens.children('p > .added-question-btn').text());
     $('#answer-input').val(childrens[1].innerText);
@@ -697,15 +693,16 @@ $(document).ready(function(){
     if($('.added-question').length <= 1){
       $('.added-questions > .title').slideUp(400);
     }
-    $(event.target.parentNode).remove();
+    $(this.parentNode).remove();
   })
 
   // удаление вопроса
-  $('.added-questions').on('click', '.delete-question-btn', function(event){
+  $('.added-questions').on('click', '.delete-question-btn', function(){
+    console.log(this.parentNode);
     if($('.added-question').length <= 1){
       $('.added-questions > .title').slideUp(400);
     }
-    $(event.target.parentNode).remove();
+    $(this.parentNode).remove();
   })
 
   // ввод фамилии автора

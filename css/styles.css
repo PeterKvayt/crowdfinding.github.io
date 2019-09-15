@@ -119,6 +119,7 @@
   text-align: center;
   padding: 5px;
   color: var(--greenPoles);
+  font-weight: 700;
   margin-bottom: 5px;
   text-decoration: none;
   transition: 0.5s;
@@ -364,7 +365,11 @@
   opacity: 0.75;
 }
 
-.card-box:hover .card-description{
+.card-box:hover .card-description, .card-down-status{
+  color: black;
+}
+
+.card-box:hover .card-down-status{
   color: black;
 }
 
@@ -416,9 +421,11 @@
 .filter{
   font-size: 13px;
   margin-bottom: 0px;
+  z-index: 2;
 }
 
 .card-description{
+  position: relative;
   display: block;
   width: 100%;
   font-size: 14px;
@@ -428,6 +435,8 @@
   overflow: hidden;
   text-align: justify;
   transition: 0.32s;
+  background-color: transparent;
+  z-index: 2;
 }
 
 .card-description:hover{
@@ -442,6 +451,8 @@
   font-weight: 600;
   font-size: 17px;
   width: 100%;
+  z-index: 2;
+  background-color: transparent;
 }
 
 .projectName:hover{
@@ -493,7 +504,16 @@
 
 .card-down-status:hover{
   text-decoration: none;
-  color: #AFAFAF;
+}
+
+.project-card-status-pict{
+  position:absolute;
+  right: 9%;
+  text-align:end;
+  z-index: 0;
+  display: none;
+  color: lightblue;
+  /* color: lightsalmon; */
 }
 /* 
 .progressBar{

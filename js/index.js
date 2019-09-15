@@ -9,7 +9,9 @@ $(document).ready(function(){
       'представляем сбор на новый альбом, который обещает стать настоящим феноменом '+
       'музыкальной индустрии.',
       '10000',
-      '100'
+      '100',
+      '0',
+      '23д.'
     ),
     new ProjectCard(
       'images/vr.jpg',
@@ -17,7 +19,9 @@ $(document).ready(function(){
       'Виртуальные радости 2019: Зима близко',
       'Вестник игрового мира в оффлайне, журнал "Виртуальные радости" объявляет подписку до конца 2019 года',
       '1000 ',
-      '3402'
+      '3402',
+      '0',
+      '11ч.'
     ),
     new ProjectCard(
       'images/child.jpg',
@@ -25,7 +29,9 @@ $(document).ready(function(){
       'Короткометражный фильм-антиутопия о правах ребенка',
       'Сбор средств на расходы во время съемки, а также на постпродакшен короткометражного игрового фильма-антиутопии о правах ребенка в духе "Черного зеркала".',
       '1200',
-      '270'
+      '1201',
+      '0',
+      '1ч.'
     )
   ]
 
@@ -104,7 +110,12 @@ $(document).ready(function(){
   // добавление проектов в разметку
   for (let i = 0; i < projects.length; i++) {
     projects[i].AddProjectCard('#popular-projects');
+    projects[i].ShowProgressStatusPict();
+  }
+
+  for (let i = 0; i < projects.length; i++) {
     projects[i].AddProjectCard('#recomended-projects');
+    projects[i].ShowProgressStatusPict();
   }
 
   // добавление вознаграждений в разметку

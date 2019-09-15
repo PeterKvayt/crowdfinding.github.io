@@ -177,7 +177,7 @@ $(document).ready(function(){
   var prevScrollpos = window.pageYOffset;
   var toTopBtn = $('#to-top-btn');
   $(document).on('scroll', function(){
-    if(window.pageYOffset <= 300){
+    if(window.pageYOffset <= document.documentElement.scrollHeight * 0.2){
       toTopBtn.children().first().attr('class', 'fa fa-chevron-down fa-2x')
     }
     else{

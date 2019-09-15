@@ -46,7 +46,7 @@ class RewardCard{
   }
 
   AddFullRewardCard(selector){
-    $(selector).prepend(
+    $(selector).append(
       '<div class="col-12">' +
         // '<a class="reward-link" href="projectPage.html">' +
           '<div class="reward-card-box">' +
