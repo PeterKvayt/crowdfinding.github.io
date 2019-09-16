@@ -183,7 +183,7 @@ class ProjectCard {
         pict.css('color', '#00e600');
       }
       if((profit / aim) >= 3){
-        pict.css('color', 'purple');
+        pict.css('color', 'plum');
       }
     }
   }

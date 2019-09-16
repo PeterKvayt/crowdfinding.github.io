@@ -16,7 +16,7 @@
     width: 100%;
     border-bottom: 1px solid #fff;
     opacity: 0.985;
-    z-index: 2;
+    z-index: 5;
     background-color: #fff;
     top: 0;
     transition: 0.32s;

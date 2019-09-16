@@ -450,6 +450,7 @@
   text-align: left;
   font-weight: 600;
   font-size: 17px;
+  /* font-size: 1.1vw; */
   width: 100%;
   z-index: 2;
   background-color: transparent;
@@ -513,7 +514,6 @@
   z-index: 0;
   display: none;
   color: lightblue;
-  /* color: lightsalmon; */
 }
 /* 
 .progressBar{
@@ -973,12 +973,7 @@ li::before{
   background-color: var(--greenPoles);
   color: white;
 }
-@media (min-width: 768px) and (max-width: 991px){
-  .myCard:hover .cardLinkHoverSupport{
-      opacity: 1;
-      font-size: 13px;
-  }
-}
+
 /* -что такое краудфайндинг + что такое краудинвестинг */
 .littleDecorationLine{
   width: 100%;
@@ -1043,16 +1038,17 @@ body{
 
 .slider-descriprion-box{
   position: absolute;
-  height: 47em;
+  /* height: 47em; */
   border-radius: 4px;
   padding: 2em;
   z-index: 1;
+  overflow: hidden;
 }
 
 .slider-descriprion-title, .slider-descriprion-text{
   background-color: #fff;
   color: var(--greenPoles);
-  font-size: 1.1em;
+  font-size: 1.15vw;
   padding: 0.5em 0.5em;
   margin: 0;
 }
@@ -1070,6 +1066,8 @@ body{
   border-radius: 0px 0px 4px 4px;
   opacity: 0.7;
   transition: 0.32s;
+  font-size: 1.1vw;
+
 }
 
 .slider-descriprion-text:hover{

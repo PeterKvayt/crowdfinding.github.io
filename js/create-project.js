@@ -816,40 +816,43 @@ $(document).ready(function(){
   })
 
   // визивиг
-  // var pageY;
-  // var wisiwig = $('.wisiwig-btns');
-  // $(document).on('scroll', function(){
-  //   pageY = window.pageYOffset + 70;
-  //   if (wisiwig.offset().top <= pageY && descriptionInput.offset().top + descriptionInput.height() + 16 >= wisiwig.offset().top + wisiwig.height()) {
-  //     wisiwig.css({'position': 'relative'});
-  //     wisiwig.css({'top': pageY - 212});
-  //   }
-  //   if (wisiwig.offset().top >= pageY && descriptionInput.parent().parent().parent().offset().top  <= pageY) {
-  //     wisiwig.css({'position': 'relative'});
-  //     wisiwig.css({'top': pageY - 212});
-  //   }
-  // });
   $('.header-btn').on( 'click', function() {
     if (window.getSelection() == '') {
       return false;
     }
+
     let parents = $(window.getSelection().getRangeAt(0).startContainer).parents();
-    if (window.getSelection().getRangeAt(0).startContainer.parentNode.className != 'describing-title') {
-      for (let i = 0; i < parents.length; i++) {
-        if (parents[i].id == 'full-desciption-input') {
-          let range = window.getSelection().getRangeAt(0);
-          let selectionContents = range.extractContents();
-          let span = document.createElement("span");
-          span.appendChild(selectionContents);
-          span.setAttribute("class", "describing-title");
-          range.insertNode(span);
-          break;
+    console.log(window.getSelection().focusNode.parentElement.className);
+    if (window.getSelection().getRangeAt(0).startContainer.parentNode.className != 'describing-title'){
+      for (let i = 0; i < parents.length; i++){
+        if (parents[i].id == 'full-desciption-input'){
+          document.execCommand('insertHTML', false, '<span class="describing-title">'+ window.getSelection().getRangeAt(0).extractContents().textContent +'</span>');
         }
       }
     }
     else{
-      document.execCommand("removeFormat", false, false);
-    }
+        document.execCommand("removeFormat", false, 'span');
+      }
+    // let parents = $(window.getSelection().getRangeAt(0).startContainer).parents();
+    // if (window.getSelection().getRangeAt(0).startContainer.parentNode.className != 'describing-title') {
+    //   for (let i = 0; i < parents.length; i++) {
+    //     if (parents[i].id == 'full-desciption-input') {
+    //       let range = window.getSelection().getRangeAt(0);
+    //       let selectionContents = range.extractContents();
+    //       let span = document.createElement("span");
+    //       span.appendChild(selectionContents);
+    //       span.setAttribute('class', 'describing-title');
+    //       range.insertNode(span);
+    //       console.log(window.getSelection().getRangeAt(0).startContainer.parentNode.className);
+    //       window.getSelection().empty();
+    //       break;
+    //     }
+    //   }
+    // }
+    // else{
+    //   document.execCommand("removeFormat", false, false);
+    //   window.getSelection().empty();
+    // }
   });
   $('.bold-btn').on( 'click', function() {
     document.execCommand( 'bold', null, null ); 
@@ -857,9 +860,6 @@ $(document).ready(function(){
   $('.italic-btn').on( 'click', function() {
     document.execCommand( 'italic', null, null ); 
   });
-  $('.strike-btn').on( 'click', function() {
-    document.execCommand( 'strikeThrough', null, null ); 
-  }); 
   $('.underline-btn').on( 'click', function() {
     document.execCommand( 'underline', null, null ); 
   });
@@ -888,16 +888,52 @@ $(document).ready(function(){
     document.execCommand( 'justifyFull', null, null ); 
   });
   $('.img-btn').on( 'click', function() {
-    result = document.execCommand( 'insertHTML', false, '<img src="images/project-stock.png" class="projectWall"/><p></p>' );
+    result = document.execCommand('insertHTML', false, '<img src="images/project-stock.png" class="projectWall"/><p></p>');
   });
+
+  $('#video-btn').on( 'click', function() {
+    console.log();
+    // $('#full-desciption-input').focus();
+    let textBox = $('#input-video-text-box');
+    if (textBox.val() != '' && textBox.val().includes('youtu')) {
+      let newLink = textBox.val().replace('https://youtu.be', 'https://www.youtube.com/embed');
+
+      let range = window.getSelection().getRangeAt(0);
+      // let selectionContents = range.extractContents();
+      let video = document.createElement('iframe');
+      // video.appendChild(selectionContents);
+      video.setAttribute('class', 'video-box');
+      video.setAttribute('width', '100%');
+      video.setAttribute('height', '400');
+      video.setAttribute('src', newLink);
+      video.setAttribute('frameborder', '0');
+      video.setAttribute('allowfullscreen', 'true');
+      range.insertNode(document.createElement('br'));
+      range.insertNode(document.createElement('br'));
+      range.insertNode(video);
+      range.insertNode(document.createElement('br'));
+
+      // result = document.execCommand('insertHTML', false,
+      //   '<iframe class="video-box" width="100%" height="400" src="' + newLink + '" frameborder="0" allowfullscreen></iframe><br/><p></p>');
+    }
+    else {
+      ShowAlert('Введите ссылку', textBox, false);
+    }
+    textBox.val('');
+    $('#inputVideoClose').click();
+  });
+
+  let linkRange;
   $('.link-btn').on( 'click', function() {
     if (window.getSelection() == '') {
       return false;
     }
     let parents = $(window.getSelection().getRangeAt(0).startContainer).parents();
+    console.log(window.getSelection().getRangeAt(0));
     if(window.getSelection().getRangeAt(0).startContainer.parentNode.className != 'link'){
       for (let i = 0; i < parents.length; i++) {
         if (parents[i].id == 'full-desciption-input') {
+          linkRange = window.getSelection().getRangeAt(0);
           $('#modal-link-btn').click();
         }
       }
@@ -910,14 +946,21 @@ $(document).ready(function(){
   $('#input-link-btn').on( 'click', function() {
     let link = $('#input-link');
     if(link.val().trim() != ''){
-      let range = window.getSelection().getRangeAt(0);
-      let selectionContents = range.extractContents();
+      // $('#full-desciption-input').focus();
+      // document.execCommand('insertHTML', false, 
+      // '<a class="link" href="'+ link.val().trim() +'">'+ window.getSelection().getRangeAt(0).extractContents().textContent +'</a>');
+
+
+
+      
+      let selectionContents = linkRange.extractContents();
       let a = document.createElement('a');
       a.appendChild(selectionContents);
       a.setAttribute('class', 'link');
       a.setAttribute('href', link.val().trim());
-      range.insertNode(a);
+      linkRange.insertNode(a);
       $('#inputLinkClose').click();
+      window.getSelection().empty();
     }
   });
 })

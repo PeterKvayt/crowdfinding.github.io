@@ -256,6 +256,30 @@
                 </div>
             </div>
         </div>
+        <!-- модальное окно ввода ссылки на видео -->
+        <div class="modal fade" id="chooseVideo">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h5 class="title">Ввод ссылки на видео</h5>
+                        <button class="closeBtn" id="inputVideoClose" data-dismiss="modal">&times;</button>
+                        <div class="row">
+                            <div class="col">
+                                <input id="input-video-text-box" class="inputBox" type="text" placeholder="Введите ссылку на видео с YouTube">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div id="video-btn" class="my-btn" style="margin-top:5px;">
+                                    <span class="fa fa-check fa-fw"></span>
+                                    Готово
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="section">
             <div class="container">
                 <div class="row">
@@ -453,7 +477,7 @@
                                                 <div class="row">
                                                     <div class="col">
                                                         <p>Вам необходимо предварительно загрузить свое видео на YouTube,
-                                                                а затем скопировать сюда ссылку на него.</p>
+                                                                а затем нажать на кнопку поделиться и скопировать сюда ссылку.</p>
                                                     </div>
                                                 </div>
                                                 <div>
@@ -1356,23 +1380,17 @@
                                                     <div class="wisiwig-btn header-btn" title="Заголовок"><span class="fa fa-header"></span></div>
                                                     <div class="wisiwig-btn bold-btn" title="Жирное начертание"><span class="fa fa-bold"></span></div>
                                                     <div class="wisiwig-btn italic-btn" title="Курсив"><span class="fa fa-italic"></div>
-                                                    <div class="wisiwig-btn strike-btn" title="Зачеркнутый текст"><span class="fa fa-strikethrough"></span></div>
                                                     <div class="wisiwig-btn underline-btn" title="Подчеркнутый текст"><span class="fa fa-underline"></span></div>
                                                     <div class="wisiwig-btn sub-btn" title="Подстрочный текст"><span class="fa fa-subscript"></span></div>
                                                     <div class="wisiwig-btn sup-btn" title="Надстрочный текст"><span class="fa fa-superscript"></span></div>
                                                     <div class="wisiwig-btn list-ul-btn" title="Список"><span class="fa fa-list-ul"><span></div>
                                                     <div class="wisiwig-btn list-ol-btn" title="Нумерованый список"><span class="fa fa-list-ol"><span></div>
-                                                    <div class="wisiwig-btn align-left-btn" title="Выравнивание по левому краю"><span class="fa fa-align-left"><span>
-                                                    </div>
-                                                    <div class="wisiwig-btn align-center-btn" title="Выравнивание по центру"><span class="fa fa-align-center"><span>
-                                                    </div>
-                                                    <div class="wisiwig-btn align-right-btn" title="Выравнивание по правому краю"><span class="fa fa-align-right"><span>
-                                                    </div>
-                                                    <div class="wisiwig-btn align-justify-btn" title="Выравнивание по всей строке"><span
-                                                            class="fa fa-align-justify"><span>
-                                                    </div>
-                                                    <div class="wisiwig-btn img-btn" href="#chooseImage" data-toggle="modal" title="Добавление изображения"><span
-                                                            class="fa fa-picture-o"><span></a></div>
+                                                    <div class="wisiwig-btn align-left-btn" title="Выравнивание по левому краю"><span class="fa fa-align-left"><span></div>
+                                                    <div class="wisiwig-btn align-center-btn" title="Выравнивание по центру"><span class="fa fa-align-center"><span></div>
+                                                    <div class="wisiwig-btn align-right-btn" title="Выравнивание по правому краю"><span class="fa fa-align-right"><span></div>
+                                                    <div class="wisiwig-btn align-justify-btn" title="Выравнивание по всей строке"><span class="fa fa-align-justify"><span></div>
+                                                    <div class="wisiwig-btn img-btn" href="#chooseImage" data-toggle="modal" title="Добавление изображения"><span class="fa fa-picture-o"><span></a></div>
+                                                    <div class="wisiwig-btn" href="#chooseVideo" data-toggle="modal" title="Добавление видео"><span class="fa fa-youtube-play"><span></a></div>
                                                     <div class="wisiwig-btn link-btn" title="Добавление ссылки"><span class="fa fa-link"><span></div>
                                                     <div id="modal-link-btn" href="#inputLink" data-toggle="modal" style="display:none;"></div>
                                                 </div>
