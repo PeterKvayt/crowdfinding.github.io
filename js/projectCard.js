@@ -45,7 +45,8 @@ class ProjectCard {
             '</div>'+
           '</div>'+
           '<div class="card-body">'+
-            '<span class="fa fa-certificate fa-2x project-card-status-pict"></span>'+
+          '<span class="fa fa-check fa-fw project-card-status-pict-check"></span>'+
+          '<span class="fa fa-certificate fa-2x project-card-status-pict"></span>'+
             '<a class="link filter" href="all-projects.html">'+ this.Category +'</a>'+
             '<a class="card-description" href="project-page.html">'+
               '<span class="projectName">'+ this.Name +'</span>'+
@@ -167,7 +168,6 @@ class ProjectCard {
       return 'ИДЕТ СБОР';
     }
     else{
-      // $('.project-card-status-pict').last().css('display', 'block');
       return 'УСПЕХ';
     }
   }
@@ -177,8 +177,10 @@ class ProjectCard {
     let profit = Number(this.Progress);
     let aim = Number(this.Budget);
     let pict = $('.fa.fa-certificate.fa-2x.project-card-status-pict').last();
+    let pictCheck = $('.fa.fa-check.fa-fw.project-card-status-pict-check').last();
     if (profit >= aim) {
       pict.css('display', 'block');
+      pictCheck.css('display', 'block');
       if((profit / aim) >= 2){
         pict.css('color', '#00e600');
       }

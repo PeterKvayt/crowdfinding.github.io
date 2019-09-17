@@ -515,6 +515,67 @@
   display: none;
   color: lightblue;
 }
+
+.project-card-status-pict-check{
+  position:absolute;
+  right: 10.5%;
+  top:  51%;
+  text-align:end;
+  display: none;
+  z-index: 1;
+  color: #fff;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .slider-descriprion-title{
+    font-size: 17px;
+  }
+  .slider-descriprion-text{
+    font-size: 16px;
+  }
+  .project-card-status-pict-check{
+    right: 10.8%;
+    top:  46.7%;
+  }
+  .card-box:hover .card-picture-link{
+    font-size: 108%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .slider-descriprion-title{
+    font-size: 15px;
+  }
+  .slider-descriprion-text{
+    font-size: 14px;
+  }
+  .project-card-status-pict-check{
+    right: 11.1%;
+    top:  40%;
+  }
+  .card-up-status, .projectName{
+    font-size: 16px;
+  }
+  .card-box:hover .card-picture-link{
+    font-size: 80%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .slider-descriprion-title{
+    font-size: 10px;
+  }
+  .slider-descriprion-text{
+    font-size: 10px;
+  }
+  .project-card-status-pict-check{
+    right: 10.1%;
+    top:  59.7%;
+  }
+  .card-box:hover .card-picture-link{
+    font-size: 200%;
+  }
+}
 /* 
 .progressBar{
   width: 10%;
@@ -1038,7 +1099,7 @@ body{
 
 .slider-descriprion-box{
   position: absolute;
-  /* height: 47em; */
+  height: 47em;
   border-radius: 4px;
   padding: 2em;
   z-index: 1;
@@ -1048,7 +1109,7 @@ body{
 .slider-descriprion-title, .slider-descriprion-text{
   background-color: #fff;
   color: var(--greenPoles);
-  font-size: 1.15vw;
+  /* font-size: 1.15vw; */
   padding: 0.5em 0.5em;
   margin: 0;
 }
@@ -1066,7 +1127,7 @@ body{
   border-radius: 0px 0px 4px 4px;
   opacity: 0.7;
   transition: 0.32s;
-  font-size: 1.1vw;
+  /* font-size: 1.1vw; */
 
 }
 
