@@ -69,7 +69,7 @@ class Slider {
               project.Description +
             '</div>'+
           '</div>'+
-          '<img class="slide-img" src="' + project.ImagePath + '" width="100%">'+
+          '<img class="slide-img lazy" data-original="' + project.ImagePath + '" width="100%" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==">'+
         '</a>'+
       '</div>'
     );

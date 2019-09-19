@@ -22,7 +22,7 @@ class RewardCard{
       '<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">'+
       '<a class="reward-link" href="project-page.html">'+
         '<div class="reward-card-box">'+
-          '<img class="reward-img" src="'+ this.Picture +'" alt="rewardImg"/>'+
+          '<img class="reward-img lazy" data-original="'+ this.Picture +'" alt="rewardImg" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="/>'+
           '<div class="reward-card-body">'+
             '<div class="reward-card-description">'+
               '<div class="reward-title">'+ this.Name +'</div>'+
@@ -50,7 +50,7 @@ class RewardCard{
       '<div class="col-12">' +
         // '<a class="reward-link" href="projectPage.html">' +
           '<div class="reward-card-box">' +
-            '<img class="reward-img" src="' + this.Picture + '" />' +
+            '<img class="reward-img lazy" data-original="' + this.Picture + '" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="/>' +
             '<div class="reward-card-body">' +
               '<div class="reward-card-description-full">' +
                 '<div class="reward-title-full">' + this.Name + '</div>' +
@@ -89,7 +89,7 @@ class RewardCard{
     $(selector).append(
     '<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">'+
         '<div class="reward-card-box">'+
-          '<img class="reward-img" src="'+ this.Picture +'" alt="rewardImg"/>'+
+          '<img class="reward-img lazy" data-original="'+ this.Picture +'" alt="rewardImg" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="/>'+
           '<div class="reward-card-body">'+
             '<div class="reward-card-description-full">'+
               '<div class="reward-title">'+ this.Name +'</div>'+

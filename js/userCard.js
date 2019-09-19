@@ -15,7 +15,7 @@ class UserCard {
             '<div class="user-card-name">' +
               this.Name +
             '</div>' +
-            '<img width="100%" src="'+ this.ImagePath +'" alt="user">' +
+            '<img class="lazy" width="100%" data-original="'+ this.ImagePath +'" alt="user" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==">' +
           '</div>' +
         '</a>' +
       '</div>'

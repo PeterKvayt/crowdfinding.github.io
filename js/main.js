@@ -1,4 +1,11 @@
+
 $(document).ready(function(){
+  // lazyload init
+  $('img.lazy').lazyload(
+    {
+      effect : "fadeIn"
+  });
+
   // меняет модальные окна
   function ChangeModalWindow(tag){
     let current = $('.my-modal-content-active');

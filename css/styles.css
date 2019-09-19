@@ -540,6 +540,9 @@
   .card-box:hover .card-picture-link{
     font-size: 108%;
   }
+  .shortTextInfo{
+    font-size: 50px!important;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -558,6 +561,9 @@
   }
   .card-box:hover .card-picture-link{
     font-size: 80%;
+  }
+  .shortTextInfo{
+    font-size: 10px;
   }
 }
 

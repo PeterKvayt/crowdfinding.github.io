@@ -41,7 +41,7 @@ class ProjectCard {
             '<div class="card-picture-box">'+
               '<a class="card-picture-link" href="project-page.html">ПОДДЕРЖАТЬ ПРОЕКТ</a>'+
               '<img class="card-picture-hover" src="images/exampleProjectPictHover.png"/>' +
-              '<img class="card-picture" src="'+ this.ImagePath +'" alt="Project picture">'+
+              '<img class="card-picture lazy" data-original="'+ this.ImagePath +'" alt="Project picture" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==">'+
             '</div>'+
           '</div>'+
           '<div class="card-body">'+
@@ -89,6 +89,7 @@ class ProjectCard {
     // ShowProgressStatusPict();
   }
 
+  // добавляет черновик проекта
   AddSketchCard(selector){
     $(selector).append(
       '<div class="col-lg-4 col-md-4 card-wrapper">'+
@@ -97,7 +98,7 @@ class ProjectCard {
             '<div class="card-picture-box">'+
               '<a class="card-picture-link" href="create-project.html">РЕДАКТИРОВАТЬ</a>'+
               '<img class="card-picture-hover" src="images/exampleProjectPictHover.png"/>' +
-              '<img class="card-picture" src="'+ this.ImagePath +'" alt="Project picture">'+
+              '<img class="card-picture lazy" data-original="'+ this.ImagePath +'" alt="Project picture" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==">'+
             '</div>'+
           '</div>'+
           '<div class="card-body">'+
@@ -106,7 +107,6 @@ class ProjectCard {
               '<span class="projectName">'+ this.Name +'</span>'+
               this.Description +
             '</a>'+
-            // '<span class="fa fa-clock-o fa-fw"></span><span class="card-down-status">'+ this.LeftSketchTime +'</span>'+
             '<a class="row" href="create-project.html">'+
               '<div class="col card-right-status">'+
                 '<div class="card-down-status">'+
@@ -114,35 +114,6 @@ class ProjectCard {
                 '</div>'+
               '</div>'+
             '</a>'+
-            // 
-            // '<a class="card-progress-box" href="project-page.html">'+
-            //   '<div class="progress-bar" style="width:'+ this.GetProgressLine() +'%"></div>'+
-            // '</a>'+
-            // '<div class="row">'+
-            //   '<div class="col">'+
-            //     '<div class="row">'+
-            //       '<div class="col">'+
-            //         '<a class="card-up-status" href="project-page.html">'+ this.GetProgress() +' %</a>'+
-            //       '</div>'+
-            //     '</div>'+
-            //     '<div class="row">'+
-            //       '<div class="col">'+
-            //         '<a class="card-down-status" href="project-page.html">'+ this.GetProgressStatus() +'</a>'+
-            //       '</div>'+
-            //     '</div>'+
-            //   '</div>'+
-            //   '<div class="col">'+
-            //     '<div class="row">'+
-            //       '<div class="col card-right-status">'+
-            //         '<a class="card-up-status" href="project-page.html">'+ this.Progress +' BYN</a>'+
-            //       '</div>'+
-            //     '</div>'+
-            //   '<div class="row">'+
-            //     '<div class="col card-right-status">'+
-            //       '<a class="card-down-status" href="project-page.html">СОБРАНО</a>'+
-            //     '</div>'+
-            //   '</div>'+
-            // '</div>'+
           '</div>'+
         '</div>'+
       '</div>'+
