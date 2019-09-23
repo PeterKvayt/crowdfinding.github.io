@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
   // lazyload init
-  $('img.lazy').lazyload(
+  $('.lazy').lazyload(
     {
       effect : "fadeIn"
   });
