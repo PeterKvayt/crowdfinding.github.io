@@ -128,6 +128,7 @@ $(document).ready(function(){
   $('#add-web-site-btn').on('click', function(){
     let input = $('#web-site-input');
     let webBox = $('#web-sites-box');
+    let webName = $('#web-site-input-name');
     if(input.val().trim().length > 0){
       if(webBox.children().length <= 1){
         webBox.show(400);
@@ -137,10 +138,11 @@ $(document).ready(function(){
           '<div class="my-btn web-site-del-btn">Удалить</div>'+
         '</div>'+
         '<div class="col-10">'+
-          '<a class="link" href="#">'+ input.val().trim() +'</a>'+
+          '<a class="link" href="'+ input.val().trim() +'">'+ webName.val().trim() +'</a>'+
         '</div>'
       );
       input.val('');
+      webName.val('');
     }
     else{
       ShowAlert('Введите адрес веб-сайта', input, false, 2500);

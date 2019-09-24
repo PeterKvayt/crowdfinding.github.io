@@ -324,7 +324,7 @@
                                                     <form action="#">
                                                         <p>
                                                             <input id="input-project-name" class="inputBox" type="text"
-                                                                placeholder="Введите название проекта">
+                                                                placeholder="Введите название проекта" maxlength="60">
                                                         </p>
                                                         <p>
                                                             Название должно быть лаконичным, уникальным и
@@ -352,7 +352,7 @@
                                                         <p>
                                                             <textarea id="input-short-description" class="inputBox" type="text"
                                                                 placeholder="Коротко расскажите о проекте ( не больше 280 символов)"
-                                                                rows="4"></textarea>
+                                                                rows="4" maxlength="280"></textarea>
                                                         </p>
                                                         <p>
                                                             Опишите в одном предложении цель вашего проекта.
@@ -670,7 +670,7 @@
                                                     <form action="#">
                                                         <p>
                                                             <input id="reward-name-input" class="inputBox" type="text"
-                                                                placeholder="Введите название вознаграджения">
+                                                                placeholder="Введите название вознаграджения" maxlength="150">
                                                         </p>
                                                     </form>
                                                 </div>
@@ -693,7 +693,7 @@
                                                         <p>
                                                             <textarea id="reward-description-input" class="inputBox" type="text"
                                                                 placeholder="Описание вознаграждения"
-                                                                rows="2"></textarea>
+                                                                rows="2" maxlength="2000"></textarea>
                                                         </p>
                                                     </form>
                                                 </div>
@@ -1406,7 +1406,7 @@
                                             <div class="col">
                                                 <div>
                                                     <p>
-                                                        <input id="question-input" class="inputBox" type="text" placeholder="Введите вопрос">
+                                                        <input id="question-input" class="inputBox" type="text" placeholder="Введите вопрос" maxlength="1000"
                                                     </p>
                                                 </div>
                                             </div>
@@ -1415,7 +1415,7 @@
                                             <div class="col">
                                                 <div>
                                                     <p>
-                                                        <textarea id="answer-input" class="inputBox" type="text" style="min-height: 150px;" placeholder="Введите ответ"></textarea>
+                                                        <textarea id="answer-input" class="inputBox" type="text" style="min-height: 150px;" placeholder="Введите ответ" maxlength="2000"></textarea>
                                                     </p>
                                                 </div>
                                             </div>
@@ -1539,15 +1539,21 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col">
+                                            
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
                                                 <div>
                                                     <p>
                                                         Дата рождения:
                                                     </p>
                                                 </div>
                                             </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                    <p>
+                                                        <input id="birthday" class="inputBox" type="date">
+                                                    </p>
+                                                </div>
                                         </div>
-                                        <div class="row">
+                                        <!-- <div class="row">
                                             <div class="col">
                                                 <div>
                                                     <p>
@@ -1618,7 +1624,7 @@
                                                     </p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="row">
                                             <div class="col">
                                                 <div>
@@ -1655,11 +1661,24 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col">
+                                            <div class="col-lg-7 col-sm-12">
                                                 <div>
                                                     <p>
-                                                        <input class="inputBox" type="text" placeholder="Кем и когда выдан">
-                                                        <span class="example-input">Пример: Советское РУВД г.Минска, выдан 22.04.2015</span> 
+                                                        <input class="inputBox" type="text" placeholder="Кем выдан">
+                                                        <span class="example-input">Пример: Советское РУВД г.Минска</span> 
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col-4">
+                                                <p>
+                                                    Дата выдачи:
+                                                </p>
+                                            </div> -->
+                                            <div class="col-lg-5 col-sm-12">
+                                                <div>
+                                                    <p>
+                                                        <input class="inputBox" type="date">
+                                                        <span class="example-input">Дата выдачи</span>   
                                                     </p>
                                                 </div>
                                             </div>

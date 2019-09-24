@@ -725,80 +725,94 @@ $(document).ready(function(){
     CheckNumbers(this, true);
   }) 
 
-  // выбор месяца рождения
-  $('#month-select').on('change', function(){
-    let numberSelect = $('#number-select');
-    let numbers = $('#number-select > option');
-    if(numbers.length < 32 ){
-      for (let i = 0; i < 32 - numbers.length; i++) {
-        numberSelect.append(
-          '<option>'+ (numbers.length + i)  +'</option>'
-        );
-      }
-    }
-    switch(this.value){
-      case 'Апрель':
-        numberSelect.children().last().remove();
-        break;
-      case 'Июнь':
-        numberSelect.children().last().remove();
-        break;
-      case 'Сентябрь':
-        numberSelect.children().last().remove();
-        break;
-      case 'Ноябрь':
-        numberSelect.children().last().remove();
-        break;
-      case 'Февраль':
-      let year = Number($('#year-select').val());
-        if(year % 4 == 0 && year % 100 != 0){
-          numberSelect.children().last().remove();
-          numberSelect.children().last().remove();
-          break;
-        }
-        if(year % 4 == 0 && year % 100 == 0 && year % 400 == 0){
-          numberSelect.children().last().remove();
-          numberSelect.children().last().remove();
-          break;
-        }
-        else{
-          numberSelect.children().last().remove();
-          numberSelect.children().last().remove();
-          numberSelect.children().last().remove();
-          break;
-        }  
-      default: break;
-    }
-  })
+  // // выбор месяца рождения
+  // $('#month-select').on('change', function(){
+  //   let numberSelect = $('#number-select');
+  //   let numbers = $('#number-select > option');
+  //   if(numbers.length < 32 ){
+  //     for (let i = 0; i < 32 - numbers.length; i++) {
+  //       numberSelect.append(
+  //         '<option>'+ (numbers.length + i)  +'</option>'
+  //       );
+  //     }
+  //   }
+  //   switch(this.value){
+  //     case 'Апрель':
+  //       numberSelect.children().last().remove();
+  //       break;
+  //     case 'Июнь':
+  //       numberSelect.children().last().remove();
+  //       break;
+  //     case 'Сентябрь':
+  //       numberSelect.children().last().remove();
+  //       break;
+  //     case 'Ноябрь':
+  //       numberSelect.children().last().remove();
+  //       break;
+  //     case 'Февраль':
+  //     let year = Number($('#year-select').val());
+  //       if(year % 4 == 0 && year % 100 != 0){
+  //         numberSelect.children().last().remove();
+  //         numberSelect.children().last().remove();
+  //         break;
+  //       }
+  //       if(year % 4 == 0 && year % 100 == 0 && year % 400 == 0){
+  //         numberSelect.children().last().remove();
+  //         numberSelect.children().last().remove();
+  //         break;
+  //       }
+  //       else{
+  //         numberSelect.children().last().remove();
+  //         numberSelect.children().last().remove();
+  //         numberSelect.children().last().remove();
+  //         break;
+  //       }  
+  //     default: break;
+  //   }
+  // })
 
-  // выбор года рождения
-  $('#year-select').on('change', function(){
-    let numberSelect = $('#number-select');
-    let year = Number(this.value);
-    if($('#month-select').val() == 'Февраль'){
-        if(year % 4 == 0 && year % 100 != 0){
-          if(numberSelect.children().length == 29){
-            numberSelect.append(
-              '<option>29</option>'
-            );
-            return;
-          }
-        }
-        if(year % 4 == 0 && year % 100 == 0 && year % 400 == 0){
-          console.log(numberSelect.children().length + 'b');
-          if(numberSelect.children().length == 29){
-            numberSelect.append(
-              '<option>29</option>'
-            );
-            return;
-          }
-        }
-        else{
-          if(numberSelect.children().length == 30){
-            numberSelect.children().last().remove();
-            return;
-          }
-        }
+  // // выбор года рождения
+  // $('#year-select').on('change', function(){
+  //   let numberSelect = $('#number-select');
+  //   let year = Number(this.value);
+  //   if($('#month-select').val() == 'Февраль'){
+  //       if(year % 4 == 0 && year % 100 != 0){
+  //         if(numberSelect.children().length == 29){
+  //           numberSelect.append(
+  //             '<option>29</option>'
+  //           );
+  //           return;
+  //         }
+  //       }
+  //       if(year % 4 == 0 && year % 100 == 0 && year % 400 == 0){
+  //         console.log(numberSelect.children().length + 'b');
+  //         if(numberSelect.children().length == 29){
+  //           numberSelect.append(
+  //             '<option>29</option>'
+  //           );
+  //           return;
+  //         }
+  //       }
+  //       else{
+  //         if(numberSelect.children().length == 30){
+  //           numberSelect.children().last().remove();
+  //           return;
+  //         }
+  //       }
+  //   }
+  // })
+
+  // ввод даты рождения автора
+  $('#birthday').on('change', function(){
+    let birthday = new Date(this.value.substring(0,4),this.value.substring(5,7),this.value.substring(8,10));
+    let now = new Date();
+    if(birthday > now.setDate(now.getDate() - 6570)){
+      ShowAlert('Вы должны быть совершеннолетним(ей)',$(this),false);
+      this.value = '';
+    }
+    if(birthday < now.setDate(now.getDate() - 36500)){
+      ShowAlert('Если вам действительно более 120 лет, то напишите в обратную связь',$(this),false);
+      this.value = '';
     }
   })
 
