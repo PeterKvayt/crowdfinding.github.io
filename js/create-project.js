@@ -816,6 +816,20 @@ $(document).ready(function(){
     }
   })
 
+  // ввод даты выдачи паспорта
+  $('#passport-getting-date').on('change', function(){
+    let date = new Date(this.value.substring(0,4),this.value.substring(5,7),this.value.substring(8,10));
+    let now = new Date();
+    if(date > now){
+      ShowAlert('Введите корректную дату выдачи паспорта',$(this),false);
+      this.value = '';
+    }
+    if(date < now.setDate(now.getDate() - 7300)){
+      ShowAlert('Введите корректную дату выдачи паспорта',$(this),false);
+      this.value = '';
+    }
+  })
+
   // приводит к верхнему регистру серию паспорта
   $('#passport-sries-number').on('input', function(){
     this.value = this.value.toUpperCase();
