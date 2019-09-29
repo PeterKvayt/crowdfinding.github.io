@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Poless Invest</title>
+    <link href="http://www.polessu.by/sites/all/themes/danland/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"><!-- ico полессского -->
+    <link href="~/css/bootstrap4.1.3.min.css" rel="stylesheet"><!-- библиотека bootstrap -->
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"><!--шрифты-->
+    <link href="~/css/headerStyles.css" rel="stylesheet" type="text/css"/>
+    <link href="~/css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/footerStyles.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="wrapper">
+        @RenderBody()
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footerColumn col-lg-3">
+                        <a href="index.html" class="footerColumnTitle">
+                            <img src="http://www.polessu.by/sites/all/themes/danland/logo.png" height="50"
+                                 alt="logo" />
+                        </a>
+                        <p class="footerText">
+                            ул. Днепровской флотилии, 23, 225710 Пинск, Брестская область, Республика Беларусь.
+                        </p>
+                    </div>
+                    <div class="footerColumn col-lg-3">
+                        <div class="footerColumnTitle">
+                            <h5>О НАС</h5>
+                        </div>
+                        <div>
+                            <a href="about.html" class="footerLinks">О платформе</a><br>
+                            <a href="agreement.html" class="footerLinks">Пользовательское соглашение</a><br>
+                            <a href="contacts.html" class="footerLinks">Контакты</a>
+                        </div>
+                    </div>
+                    <div class="footerColumn col-lg-3">
+                        <div class="footerColumnTitle">
+                            <h5>ПОМОЩЬ</h5>
+                        </div>
+                        <div>
+                            <a href="platform-rules.html" class="footerLinks">Правила платформы</a><br>
+                            <a href="faq.html" class="footerLinks">F.A.Q.</a><br>
+                            <a href="feedback.html" class="footerLinks">Обратная связь</a>
+                        </div>
+                    </div>
+                    <div class="footerColumn col-lg-3">
+                        <div class="footerColumnTitle">
+                            <h5>КОНТАКТЫ</h5>
+                        </div>
+                        <div>
+                            <p class="footerText">
+                                Tel.: + 375 (165) 31 21 60<br>
+                                Fax: + 375 (165) 31 21 95<br>
+                                email@mail.ru
+                            </p>
+                        </div>
+                        <br><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="alert" class="box alert">
+        <div class="row">
+            <div class="col-1">
+                <span class="fa fa-exclamation fa-3x"></span>
+            </div>
+            <div id="alert-text" style="text-align: justify;" class="col-11"></div>
+        </div>
+    </div>
+    <script src="~/js/jquery-3.0.0.min.js"></script><!--jQuery-->
+    <script src="~/js/lazy-load.min.js"></script><!--lazy load-->
+    <script src="~/js/bootstrap4.1.3.min.js"></script><!-- js bootstrap-->
+    @RenderSection("JsFiles")
+    <script src="~/js/main.js"></script>
+</body>
+</html>
