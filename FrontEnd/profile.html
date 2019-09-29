@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>PolessInvest</title>
+        <link href="http://www.polessu.by/sites/all/themes/danland/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"><!-- ico полессского -->
+        <link href="css/bootstrap4.1.3.min.css" rel="stylesheet"><!-- библиотека bootstrap -->
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">        
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"><!--шрифты-->
+        <link href="css/headerStyles.css" rel="stylesheet" type="text/css"/>
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="css/footarStyles.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="wrapper">
+      <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+            <a href="index.html"><img src="http://www.polessu.by/sites/all/themes/danland/logo.png" height="50px" alt="logo"/></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarContent" class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="all-projects.html">ВСЕ ПРОЕКТЫ <span class="fa fa-book fa-fw"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="create-project-rules.html">СОЗДАТЬ ПРОЕКТ <span class="fa fa-pencil fa-fw"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="how-it-works.html">ПОМОЩЬ <span class="fa fa-info fa-fw"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="search.html">ПОИСК <span class="fa fa-search fa-fw"></span></a>
+                    </li>
+                </ul>    
+            </div>
+            <div id="navbarContent" class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav text-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><span class="fa fa-user fa-fw"></span>User User</a>
+                    </li>
+                </ul>
+            </div>
+      </nav>
+        <!-- Модальное окно полной информации -->
+        <div class="modal fade" id="modalAllInformation">
+            <div class="modal-dialog modal-lg">
+                 <div class="modal-content">
+                     <div class="modal-body">
+                            <button class="closeBtn" id="modalRegistrationClose" data-dismiss="modal">&times;</button>
+                        <h4 class="title">Имя Фамилия</h4>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img src="images/user-stock.png" style="width: 100%;border-radius: 4px;" alt="photo">
+                            </div>
+                            <div class="col-lg-9">
+                                <p>
+                                    <a class="link" href="#"><span class="fa fa-vk fa-fw"></span> Вконтакте</a>
+                                </p>
+                                <p>
+                                    Бренд-менеджер инвестиционной компании "Зубр Капитал", 
+                                    один из авторов книги "Все компании счастливы одинаково".
+                                </p>
+                                <p>
+                                    Бренд-менеджер инвестиционной компании "Зубр Капитал", 
+                                    один из авторов книги "Все компании счастливы одинаково".
+                                </p><p>
+                                    Бренд-менеджер инвестиционной компании "Зубр Капитал", 
+                                    один из авторов книги "Все компании счастливы одинаково".
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>  
+        </div>  
+        <!-- Модальное окно истории платежей -->
+        <div class="modal fade" id="pay-history">
+                <div class="modal-dialog modal-lg">
+                     <div class="modal-content">
+                         <div class="modal-body">
+                                <button class="closeBtn" id="modalRegistrationClose" data-dismiss="modal">&times;</button>
+                            <h4 class="title">История платежей</h4>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p style="border: 1px solid var(--border);border-radius: 4px; padding: 10px; background-color: #F9F9F9;">
+                                        Проект: <span>Project name</span><br>
+                                        Вознаграждение: <span>Reward name</span><br>
+                                        Сумма перевода: <span>1000</span> BYN <br>
+                                        Дата перевода: <span>24.10.2020</span><span> 14:23</span><br>
+                                        Способ оплаты : <span>платежная карта</span>
+                                    </p>
+                                    <p style="border: 1px solid var(--border);border-radius: 4px; padding: 10px; background-color: #F9F9F9;">
+                                        Проект: <span>Project Name</span><br>
+                                        Вознаграждение: <span>Reward name</span><br>
+                                        Сумма перевода: <span>1000</span> BYN <br>
+                                        Дата перевода: <span>24.10.2020</span><span> 14:23</span><br>
+                                        Способ оплаты : <span>ЕРИП </span><span>5919986312</span>
+                                    </p>
+                                    <p style="border: 1px solid var(--border);border-radius: 4px; padding: 10px; background-color: #F9F9F9;">
+                                        Проект: <span>Project Name</span><br>
+                                        Вознаграждение: <span>Reward name</span><br>
+                                        Сумма перевода: <span>1000</span> BYN <br>
+                                        Дата перевода: <span>24.10.2020</span><span> 14:23</span><br>
+                                        Способ оплаты : <span>платежная карта</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>  
+            </div>  
+        <div class="section">
+          <div class="container" style="min-height: 750px;">
+            <div class="row">
+              <div class="col-lg-3 col-md-5 col-sm-5">
+                <img src="images/user-stock.png" style="width: 100%;border-radius: 4px;" alt="profile photo">
+              </div>
+              <div class="col-lg-9 col-md-7 col-sm-7">
+                <div class="row">
+                  <div class="col">
+                    <h3 class="title-min-left" style="margin-top: 20px; font-size: 30px">User User</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <p>
+                      <a class="link" href="#modalAllInformation" data-toggle="modal"><span class="fa fa-info fa-fw"></span>Полная информация</a>
+                    </p>
+                  </div>
+                  <div class="col-12">
+                    <p>
+                      <a class="link" href="#pay-history" data-toggle="modal"><span class="fa fa-credit-card fa-fw"></span> История платежей</a>
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <a class="my-btn" href="profile-settings.html"><span class="fa fa-cog fa-fw"></span> Редактировать данные</a>
+                  </div>
+                <div class="col-12">
+                    <a class="my-btn" href="index.html"><span class="fa fa-sign-out fa-fw"></span> Выйти</a>
+                </div>
+                </div>
+              </div>
+            </div>
+            <!-- Навигационные вкладки --> 
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div id="about" class="active-category"><span class="fa fa-briefcase fa-fw"></span> Мои проекты</div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div id="support" class="category"><span class="fa fa-thumbs-up fa-fw"></span> Поддержал</div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div id="sketch" class="category"><span class="fa fa-bookmark fa-fw"></span> Черновики</div>
+                </div>
+            </div>
+            <!-- Вкладки панелей -->
+            <div id="projects-box" class="row"></div>
+            <div id="supported-box" class="row" style="display:none;"></div>
+            <div id="sketch-box" class="row" style="display:none;">
+                <div class="col-12">
+                    <p style="margin-left: 5px;margin-top: 16px;">
+                        После внесения изменений черновик хранится 
+                        <span style="font-weight:700;">7 суток</span>. Если в течение 
+                        <span style="font-weight:700;">7 суток</span> в черновик не будут внесены новые
+                        изменения или он не будет отправлен на модерацию, то этот черновик будет 
+                        <span style="font-weight:700;">удален</span> без возможности восстановления!
+                    </p>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div id="footar">
+                <div class="container">
+                    <div class="row">
+                        <div class="footarColumn col-lg-3">
+                            <a href="index.html" class="footarColumnTitle"><img
+                                    src="http://www.polessu.by/sites/all/themes/danland/logo.png" height="50px"
+                                    alt="logo" /></a>
+                            <p class="footarText">
+                                ул. Днепровской флотилии, 23, 225710 Пинск, Брестская область, Республика Беларусь.
+                            </p>
+                        </div>
+                        <div class="footarColumn col-lg-3">
+                            <div class="footarColumnTitle">
+                                <h5>О НАС</h5>
+                            </div>
+                            <div>
+                                <a href="about.html" class="footarLinks">О платформе</a><br>
+                                <a href="agreement.html" class="footarLinks">Пользовательское соглашение</a><br>
+                                <a href="contacts.html" class="footarLinks">Контакты</a>
+                            </div>
+                        </div>
+                        <div class="footarColumn col-lg-3">
+                            <div class="footarColumnTitle">
+                                <h5>ПОМОЩЬ</h5>
+                            </div>
+                            <div>
+                                <a href="platform-rules.html" class="footarLinks">Правила платформы</a><br>
+                                <a href="faq.html" class="footarLinks">F.A.Q.</a><br>
+                                <a href="feedback.html" class="footarLinks">Обратная связь</a>
+                            </div>
+                        </div>
+                        <div class="footarColumn col-lg-3">
+                            <div class="footarColumnTitle">
+                                <h5>КОНТАКТЫ</h5>
+                            </div>
+                            <div>
+                                <p class="footarText">
+                                    Tel.: + 375 (165) 31 21 60<br>
+                                    Fax: + 375 (165) 31 21 95<br>
+                                    email@mail.ru
+                                </p>
+                            </div>
+                            <br><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+    </div>
+    <div id="to-top-btn"><span class="fa fa-chevron-down fa-2x"></span></div>
+    <div id="alert" class="box alert">
+            <div class="row">
+                <div class="col-1">
+                    <span class="fa fa-exclamation fa-3x"></span>
+                </div>
+                <div id="alert-text" style="text-align: justify;" class="col-11"></div>
+            </div>
+        </div>
+    <script src="js/jquery-3.0.0.min.js"></script><!--jQuery-->
+    <script src="js/lazy-load.min.js"></script><!--lazy load-->
+    <script src="js/bootstrap4.1.3.min.js"></script><!-- js bootstrap-->
+    <script src="js/projectCard.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/main.js"></script>
+    </body>
+</html> 
