@@ -144,9 +144,10 @@ namespace Example2.Controllers
     //    )
     //};
 
-        public IActionResult Index()
-        { 
-            return View();
+        public async Task<IActionResult> Index()
+        {
+            //public IEnumerable<VwActiveProjectCard> projectCards = db.vwActiveProjectCards.ToListAsync();
+            return View(await db.vwActiveProjectCards.ToListAsync());
         }
 
         public async Task<IActionResult> AllProjects()

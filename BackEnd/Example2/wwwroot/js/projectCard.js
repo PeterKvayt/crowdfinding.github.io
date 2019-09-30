@@ -143,23 +143,26 @@ class ProjectCard {
     }
   }
 
-  // 
-  ShowProgressStatusPict(){
-    let profit = Number(this.Progress);
-    let aim = Number(this.Budget);
-    let pict = $('.fa.fa-certificate.fa-2x.project-card-status-pict').last();
-    let pictCheck = $('.fa.fa-check.fa-fw.project-card-status-pict-check').last();
-    if (profit >= aim) {
-      pict.css('display', 'block');
-      pictCheck.css('display', 'block');
-      if((profit / aim) >= 2){
-        pict.css('color', '#00e600');
-      }
-      if((profit / aim) >= 3){
-        pict.css('color', 'plum');
-      }
-    }
-  }
+  //static ShowProgressStatusPict(selector){
+  //    let projects = selector.children('.card-wrapper');
+  //    for (var i = 0; i < projects.lenght; i++) {
+  //          let profit = Number(project[i].Progress);
+  //          let aim = Number(this.Budget);
+  //          let pict = $('.fa.fa-certificate.fa-2x.project-card-status-pict').last();
+  //          let pictCheck = $('.fa.fa-check.fa-fw.project-card-status-pict-check').last();
+  //          if (profit >= aim) {
+  //                pict.css('display', 'block');
+  //                pictCheck.css('display', 'block');
+  //                if((profit / aim) >= 2){
+  //                      pict.css('color', '#00e600');
+  //                }
+  //                if((profit / aim) >= 3){
+  //                      pict.css('color', 'plum');
+  //                }
+  //          }
+
+  //    }
+  //}
 }
 ;
 

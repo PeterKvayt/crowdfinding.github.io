@@ -1,4 +1,4 @@
-﻿@*@model IEnumerable<Example2.Models.vwActiveProjectCard>*@
+﻿@model IEnumerable<Example2.Models.VwActiveProjectCard>
 
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
         <a href="~/Main/Index">
@@ -139,7 +139,20 @@
                     <div class="col">
                         <div id="block-for-slider">
                             <div id="viewport">
-                                <div id="slidewrapper"></div>
+                                <div id="slidewrapper" style="width: @(100*Model.Count<VwActiveProjectCard>())%;">
+                                    @foreach (VwActiveProjectCard item in Model)
+                                    {
+                                      <div class="slide" style="width: @(100/Model.Count<VwActiveProjectCard>())%;">
+                                        <a class="slide-wrapper" href="~/Main/ProjectPage/@item.ProjectID">
+                                          <div class="slider-descriprion-box" style="width:@((35/Model.Count<VwActiveProjectCard>()).ToString("#.##"))%;">
+                                            <div class="slider-descriprion-title">@item.Name</div>
+                                            <div class="slider-descriprion-text">@item.ShortDescription</div>
+                                          </div>
+                                          <img class="slide-img lazy" data-original="@item.Image" width="100%" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==">
+                                        </a>
+                                      </div>
+                                    }
+                                </div>
                                 <div id="prev-next-btns">
                                     <div class="row"></div>
                                     <button id="prev-btn" class=".my-btn">
@@ -150,6 +163,10 @@
                                     </button>
                                 </div>
                                 <div id="nav-btns">
+                                    @foreach (VwActiveProjectCard item in Model)
+                                    {
+                                        <li class="slide-nav-btn"></li>
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -163,7 +180,60 @@
                         </div>
                     </div>
                 </div>
-                <div id="popular-projects" class="row"></div>
+                <div id="popular-projects" class="row">
+                    @foreach (VwActiveProjectCard item in Model)
+                    {
+                        <div class="col-lg-4 col-md-4 card-wrapper">
+                            <div class="card-box">
+                                <div class="card-picture-wrapper">
+                                    <div class="card-picture-box">
+                                        <a class="card-picture-link" href="project-page.html">ПОДДЕРЖАТЬ ПРОЕКТ</a>
+                                        <img class="card-picture-hover" src="~/images/exampleProjectPictHover.png" />
+                                        <img class="card-picture lazy" data-original="@item.Image" alt="Project picture" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==">
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <span class="fa fa-check fa-fw project-card-status-pict-check" style="@item.ShowStatusCheck()"></span>
+                                    <span class="fa fa-certificate fa-2x project-card-status-pict" style="@item.ShowStatusCertificate()"></span>
+                                    <a class="link filter" href="~/Main/AllProjects">@item.Category</a>
+                                    <a class="card-description" href="project-page.html">
+                                        <span class="projectName">@item.Name</span>
+                                        @item.ShortDescription
+                                    </a>
+                                    <a class="card-progress-box" href="project-page.html">
+                                        <div class="progress-bar" style="width: @item.GetProgressLine()"></div>
+                                    </a>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <a class="card-up-status" href="project-page.html">@item.GetProgress()</a>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <a class="card-down-status" href="project-page.html">@item.GetProgressStatus()</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col card-right-status">
+                                                    <a class="card-up-status" href="project-page.html">@item.Progress BYN</a>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col card-right-status">
+                                                    <a class="card-down-status" href="project-page.html"><span class="fa fa-clock-o fa-fw"></span>@item.GetLeftTime()</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
                 <div class="row">
                     <div class="col">
                         <div class="title">
@@ -179,7 +249,60 @@
                         </div>
                     </div>
                 </div>
-                <div id="recomended-projects" class="row"></div>
+                <div id="recomended-projects" class="row">
+                    @foreach (VwActiveProjectCard item in Model)
+                    {
+                        <div class="col-lg-4 col-md-4 card-wrapper">
+                            <div class="card-box">
+                                <div class="card-picture-wrapper">
+                                    <div class="card-picture-box">
+                                        <a class="card-picture-link" href="project-page.html">ПОДДЕРЖАТЬ ПРОЕКТ</a>
+                                        <img class="card-picture-hover" src="~/images/exampleProjectPictHover.png" />
+                                        <img class="card-picture lazy" data-original="@item.Image" alt="Project picture" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==">
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <span class="fa fa-check fa-fw project-card-status-pict-check" style="@item.ShowStatusCheck()"></span>
+                                    <span class="fa fa-certificate fa-2x project-card-status-pict" style="@item.ShowStatusCertificate()"></span>
+                                    <a class="link filter" href="~/Main/AllProjects">@item.Category</a>
+                                    <a class="card-description" href="project-page.html">
+                                        <span class="projectName">@item.Name</span>
+                                        @item.ShortDescription
+                                    </a>
+                                    <a class="card-progress-box" href="project-page.html">
+                                        <div class="progress-bar" style="width: @item.GetProgressLine()"></div>
+                                    </a>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <a class="card-up-status" href="project-page.html">@item.GetProgress()</a>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <a class="card-down-status" href="project-page.html">@item.GetProgressStatus()</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col card-right-status">
+                                                    <a class="card-up-status" href="project-page.html">@item.Progress BYN</a>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col card-right-status">
+                                                    <a class="card-down-status" href="project-page.html"><span class="fa fa-clock-o fa-fw"></span>@item.GetLeftTime()</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
                 <div class="row">
                     <div class="col">
                         <div class="title">
@@ -306,10 +429,10 @@
             </div>
         </div>
     </div>
-@section JsFiles{
-    <script src="~/js/projectCard.js"></script>
-    <script src="~/js/rewardCard.js"></script>
-    <script src="~/js/slider.js"></script>
-    <script src="~/js/index.js"></script>
-}
+    @section JsFiles{
+        <script src="~/js/projectCard.js"></script>
+        <script src="~/js/rewardCard.js"></script>
+        <script src="~/js/slider.js"></script>
+        <script src="~/js/index.js"></script>
+    }
 

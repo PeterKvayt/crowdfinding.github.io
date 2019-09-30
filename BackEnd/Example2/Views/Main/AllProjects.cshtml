@@ -4,7 +4,7 @@
 
 <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
     <a href="~/Main/Index">
-        <img src="http://www.polessu.by/sites/all/themes/danland/logo.png" height="50px"
+        <img src="http://www.polessu.by/sites/all/themes/danland/logo.png" height="50"
              alt="logo" />
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
@@ -234,8 +234,8 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <span class="fa fa-check fa-fw project-card-status-pict-check"></span>
-                            <span class="fa fa-certificate fa-2x project-card-status-pict"></span>
+                            <span class="fa fa-check fa-fw project-card-status-pict-check" style="@item.ShowStatusCheck()"></span>
+                            <span class="fa fa-certificate fa-2x project-card-status-pict" style="@item.ShowStatusCertificate()"></span>
                             <a class="link filter" href="~/Main/AllProjects">@item.Category</a>
                             <a class="card-description" href="project-page.html">
                                 <span class="projectName">@item.Name</span>

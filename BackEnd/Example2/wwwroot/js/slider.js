@@ -57,23 +57,23 @@ class Slider {
     });
   }
 
-  // adding new slide
-  AddSlide(project, len, href) {
-    $('#slidewrapper').css({'width':'calc(100% * ' + len + ')'});
-    $('#slidewrapper').append(
-      '<div class="slide" style="width: calc(100%/' + len + ')">'+
-        '<a class="slide-wrapper" href="'+ href +'">'+
-          '<div class="slider-descriprion-box" style="width: calc((100%/' + len + ')'+'*0.35'+')">'+
-            '<div class="slider-descriprion-title">'+ project.Name +'</div>'+
-            '<div class="slider-descriprion-text">'+
-              project.Description +
-            '</div>'+
-          '</div>'+
-          '<img class="slide-img lazy" data-original="' + project.ImagePath + '" width="100%" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==">'+
-        '</a>'+
-      '</div>'
-    );
-  }
+  //// adding new slide
+  //AddSlide(project, len, href) {
+  //  $('#slidewrapper').css({'width':'calc(100% * ' + len + ')'});
+  //  $('#slidewrapper').append(
+  //    '<div class="slide" style="width: calc(100%/' + len + ')">'+
+  //      '<a class="slide-wrapper" href="'+ href +'">'+
+  //        '<div class="slider-descriprion-box" style="width: calc((100%/' + len + ')'+'*0.35'+')">'+
+  //          '<div class="slider-descriprion-title">'+ project.Name +'</div>'+
+  //          '<div class="slider-descriprion-text">'+
+  //            project.Description +
+  //          '</div>'+
+  //        '</div>'+
+  //        '<img class="slide-img lazy" data-original="' + project.ImagePath + '" width="100%" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==">'+
+  //      '</a>'+
+  //    '</div>'
+  //  );
+  //}
   
   // changing nav dots activity
   ChangeNavDotActivity(){
@@ -122,11 +122,11 @@ class Slider {
     }
   }
 
-  // add new nav dot
-  AddNavDot(){
-    $('#nav-btns').append(
-      '<li class="slide-nav-btn"></li>'
-    );
-  }
+  //// add new nav dot
+  //AddNavDot(){
+  //  $('#nav-btns').append(
+  //    '<li class="slide-nav-btn"></li>'
+  //  );
+  //}
 
 }

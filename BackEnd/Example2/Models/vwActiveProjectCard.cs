@@ -114,6 +114,30 @@ namespace Example2.Models
             }
             return "none";
         }
+
+        // show certificate ico
+        public string ShowStatusCertificate()
+        {
+            return Progress > Budget ? "display: block;" : "";
+        }
+
+        // show chek ico and set color
+        public string ShowStatusCheck()
+        {
+            string style = Progress > Budget ? "display: block;" : ""; ;
+            if (Progress/Budget >= 2)
+            {
+                if(Progress / Budget >= 3)
+                {
+                    style += "color: plum;";
+                }
+                else
+                {
+                    style += "color: #00e600;";
+                }
+            }
+            return style;
+        }
     }
 }
 

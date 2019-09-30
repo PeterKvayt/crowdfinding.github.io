@@ -22,6 +22,8 @@ namespace Example2.Models
 
         public DbSet<VwActiveProjectCard> vwActiveProjectCards { get; set; } // текущие карточки проектов
 
+        //public DbSet<VwActiveProjectSide> vwActiveProjectSlides { get; set; } // текущие карточки проектов
+
         //public DbSet<vwSlides> Slide { get; set; } // слайды проектов
 
         //public DbSet<Question> Questions { get; set; } // часто задаваемый вопрос

@@ -16,6 +16,7 @@ $(document).ready(function(){
     }
   })
 
+  
   // инициализация проектов
   //var projects = [
   //  new ProjectCard(
