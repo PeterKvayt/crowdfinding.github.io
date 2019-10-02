@@ -8,35 +8,50 @@ namespace Example2.Models
 {
     public class CrowdFindingContext : DbContext
     {
-        //public DbSet<User> Users { get; set; } // пользователи
+        // пользователи
+        //public DbSet<User> Users { get; set; } 
 
-        //public DbSet<Category> Categories { get; set; } // категории проектов
+        // категории проектов
+        //public DbSet<Category> Categories { get; set; } 
 
-        //public DbSet<EripPayment> EripPayments { get; set; } // переводы через ерип
+        // переводы через ерип
+        //public DbSet<EripPayment> EripPayments { get; set; } 
 
-        //public DbSet<OrderAddres> OrderAddresses { get; set; } // адрес доставки лота
+        // адрес доставки лота
+        //public DbSet<OrderAddres> OrderAddresses { get; set; } 
 
-        //public DbSet<Order> Orders { get; set; } // заказ лота
+        // заказ лота
+        //public DbSet<Order> Orders { get; set; } 
 
-        //public DbSet<Project> Projects { get; set; } // проект
+        // проект
+        //public DbSet<Project> Projects { get; set; } 
 
-        public DbSet<VwActiveProjectCard> vwActiveProjectCards { get; set; } // текущие карточки проектов
+        // текущие карточки проектов
+        public DbSet<VwActiveProjectCard> vwActiveProjectCards { get; set; }
+        
+        // текущие карточки проектов
+        public DbSet<VwActiveProjectSlide> vwActiveProjectSlides { get; set; }
 
-        //public DbSet<VwActiveProjectSide> vwActiveProjectSlides { get; set; } // текущие карточки проектов
+        // слайды проектов
+        //public DbSet<vwSlides> Slide { get; set; } 
 
-        //public DbSet<vwSlides> Slide { get; set; } // слайды проектов
+        // часто задаваемый вопрос
+        //public DbSet<Question> Questions { get; set; } 
 
-        //public DbSet<Question> Questions { get; set; } // часто задаваемый вопрос
+        // география доставки лота
+        //public DbSet<RewardGeography> RewardGeographies { get; set; } 
 
-        //public DbSet<RewardGeography> RewardGeographies { get; set; } // география доставки лота
+        // лоты
+        //public DbSet<Reward> Rewards { get; set; } 
 
-        //public DbSet<Reward> Rewards { get; set; } // лоты
+        // типы социальных сетей
+        //public DbSet<SocialNetworksType> SocialNetworksTypes { get; set; } 
 
-        //public DbSet<SocialNetworksType> SocialNetworksTypes { get; set; } // типы социальных сетей
+        // социальные сети пользователей
+        //public DbSet<UsersSocialNetwork> UsersSocialNetworks { get; set; } 
 
-        //public DbSet<UsersSocialNetwork> UsersSocialNetworks { get; set; } // социальные сети пользователей
-
-        //public DbSet<UsersWebSite> UsersWebSites { get; set; } // сайты пользователей
+        // сайты пользователей
+        //public DbSet<UsersWebSite> UsersWebSites { get; set; } 
 
         public CrowdFindingContext(DbContextOptions<CrowdFindingContext> options)
             : base(options)
@@ -45,6 +60,10 @@ namespace Example2.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<VwActiveProjectCard>(entity => {
+                entity.HasKey(e => e.ProjectID);
+            });
+
+            modelBuilder.Entity<VwActiveProjectSlide>(entity => {
                 entity.HasKey(e => e.ProjectID);
             });
         }

@@ -1,11 +1,18 @@
 ﻿namespace Example2.Models
 {
-    public class VwActiveProjectSide
+    public class VwActiveProjectSlide
     {
-        public long ProjectID { get; set; } // id
-        public string Image { get; set; } // path to img
-        public string Name { get; set; } // project name
-        public string ShortDescription { get; set; } // project brief description
+        // id
+        public long ProjectID { get; set; }
+
+        // path to img
+        public string Image { get; set; }
+
+        // project name
+        public string Name { get; set; }
+
+        // project brief description
+        public string ShortDescription { get; set; } 
 
     //    // adding new slide
     //    public AddSlide(project, len, href)
