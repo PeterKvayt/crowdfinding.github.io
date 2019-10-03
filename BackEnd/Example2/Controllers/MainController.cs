@@ -28,7 +28,8 @@ namespace Example2.Controllers
                 //ProjectCards = await db.vwActiveProjectCards.ToListAsync();
                 //ProjectSlide = await db.vwActiveProjectSlides.ToListAsync();
                 ProjectCards = db.vwActiveProjectCards.ToList(),
-                ProjectSlide = db.vwActiveProjectSlides.ToList()
+                ProjectSlide = db.vwActiveProjectSlides.ToList(),
+                RecomendedRewards = db.vwRecomendedRewards.ToList()
             };
             return View(model);
         }

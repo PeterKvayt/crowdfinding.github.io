@@ -44,6 +44,9 @@ namespace Example2.Models
         // лоты
         //public DbSet<Reward> Rewards { get; set; } 
 
+        //рекомендованные лоты
+        public DbSet<VwRecomendedReward> vwRecomendedRewards { get; set; }
+
         // типы социальных сетей
         //public DbSet<SocialNetworksType> SocialNetworksTypes { get; set; } 
 
@@ -65,6 +68,10 @@ namespace Example2.Models
 
             modelBuilder.Entity<VwActiveProjectSlide>(entity => {
                 entity.HasKey(e => e.ProjectID);
+            });
+
+            modelBuilder.Entity<VwRecomendedReward>(entity => {
+                entity.HasKey(e => e.RewardID);
             });
         }
     }

@@ -333,7 +333,34 @@
                     </div>
                 </div>
             </div>
-            <div id="rewards" class="row"></div>
+            <div id="rewards" class="row">
+                @foreach (VwRecomendedReward item in Model.RecomendedRewards)
+                {
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
+                        <a class="reward-link" href="~/Main/ProjectPage/@item.ProjectID">
+                            <div class="reward-card-box">
+                                <img class="reward-img lazy" data-original="@item.RewardImage" alt="rewardImg" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="/>
+                                <div class="reward-card-body">
+                                    <div class="reward-card-description">
+                                        <div class="reward-title">@item.RewardName</div>
+                                            @item.RewardDescription
+                                    </div>
+                                    <div class="reward-card-pay-info">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="reward-cost">@item.Price BYN</div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="rewards-left">@item.GetLeftRewards()</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                   </div>
+                }
+            </div>
             <!-- Категории проектов -->
             <div class="row">
                 <div class="col">

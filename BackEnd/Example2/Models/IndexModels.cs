@@ -10,5 +10,7 @@ namespace Example2.Models
         public IEnumerable<VwActiveProjectCard> ProjectCards { get; set; }
 
         public IEnumerable<VwActiveProjectSlide> ProjectSlide { get; set; }
+
+        public IEnumerable<VwRecomendedReward> RecomendedRewards { get; set; }
     }
 }
