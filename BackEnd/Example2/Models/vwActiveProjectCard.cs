@@ -88,7 +88,7 @@ namespace Example2.Models
         {
             Progress = Progress == null ? 0 : Progress;
             double result = ((double)Progress / Budget) * 100;
-            return result > 100 ? "100%" : result.ToString()+"%";
+            return result > 100 ? "100%" : result.ToString().Replace(",",".") + "%";
         }
 
         // return project status

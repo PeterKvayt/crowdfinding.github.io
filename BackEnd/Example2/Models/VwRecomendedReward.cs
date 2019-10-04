@@ -23,7 +23,6 @@ namespace Example2.Models
         public int Price { get; set; }
 
         // оставшиеся лоты
-        //private int? LeftRewards { get; set; }
         private int? leftRewards;
 
         public int? LeftRewards
@@ -36,6 +35,7 @@ namespace Example2.Models
             set => leftRewards = value;
         }
 
+        // возращает оставшееся число лотов
         public string GetLeftRewards()
         {
             string result = LeftRewards == null ? "" : "ОСТАЛОСЬ " + leftRewards.ToString();

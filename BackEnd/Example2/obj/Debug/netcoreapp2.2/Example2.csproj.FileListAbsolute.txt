@@ -62,3 +62,4 @@ D:\MyDirectory\crowdfinding.github.io\BackEnd\Example2\obj\Debug\netcoreapp2.2\E
 D:\MyDirectory\crowdfinding.github.io\BackEnd\Example2\obj\Debug\netcoreapp2.2\Example2.dll
 D:\MyDirectory\crowdfinding.github.io\BackEnd\Example2\obj\Debug\netcoreapp2.2\Example2.pdb
 D:\MyDirectory\crowdfinding.github.io\BackEnd\Example2\obj\Debug\netcoreapp2.2\Example2.csproj.CopyComplete
+D:\MyDirectory\crowdfinding.github.io\BackEnd\Example2\obj\Debug\netcoreapp2.2\Razor\Views\Main\CreateProjectRules.g.cshtml.cs

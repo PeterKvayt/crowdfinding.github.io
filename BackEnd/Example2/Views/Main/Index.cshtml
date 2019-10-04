@@ -1,5 +1,8 @@
-﻿@*@model IEnumerable<Example2.Models.VwActiveProjectCard>*@
-@model Example2.Models.IndexModels
+﻿@model Example2.Models.IndexModels
+
+@{ 
+    ViewBag.Title = "Главная | Poless Invest";
+}
 
 <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
     <a href="~/Main/Index">
@@ -15,15 +18,15 @@
                 <a class="nav-link" href="~/Main/AllProjects">ВСЕ ПРОЕКТЫ <span class="fa fa-book fa-fw"></span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="create-project-rules.html">
+                <a class="nav-link" href="~/Main/CreateProjectRules">
                     СОЗДАТЬ ПРОЕКТ <span class="fa fa-pencil fa-fw"></span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="how-it-works.html">ПОМОЩЬ <span class="fa fa-info fa-fw"></span></a>
+                <a class="nav-link" href="~/Main/HowItWorks">ПОМОЩЬ <span class="fa fa-info fa-fw"></span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="search.html">ПОИСК <span class="fa fa-search fa-fw"></span></a>
+                <a class="nav-link" href="~/Main/Search">ПОИСК <span class="fa fa-search fa-fw"></span></a>
             </li>
             <li class="nav-item">
                 <a href="#modalEnter" data-toggle="modal" class="nav-link">
@@ -140,26 +143,12 @@
                 <div class="col">
                     <div id="block-for-slider">
                         <div id="viewport">
-                            @*<div id="slidewrapper" style="width: @(100*Model.Count<VwActiveProjectCard>())%;">
-            @foreach (VwActiveProjectCard item in Model)
-            {
-                <div class="slide" style="width: @(100/Model.Count<VwActiveProjectCard>())%;">
-                    <a class="slide-wrapper" href="~/Main/ProjectPage/@item.ProjectID">
-                        <div class="slider-descriprion-box" style="width:@((35/Model.Count<VwActiveProjectCard>()).ToString("#.##"))%;">
-                            <div class="slider-descriprion-title">@item.Name</div>
-                            <div class="slider-descriprion-text">@item.ShortDescription</div>
-                        </div>
-                        <img class="slide-img lazy" data-original="@item.Image" width="100%" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==">
-                    </a>
-                </div>
-            }
-        </div>*@
                             <div id="slidewrapper" style="width: @(100*Model.ProjectSlide.Count<VwActiveProjectSlide>())%;">
                                 @foreach (VwActiveProjectSlide item in Model.ProjectSlide)
                                 {
-                                    <div class="slide" style="width: @(100/Model.ProjectSlide.Count<VwActiveProjectSlide>())%;">
+                                    <div class="slide" style="width: @((100/Model.ProjectSlide.Count<VwActiveProjectSlide>()).ToString().Replace(",","."))%;">
                                         <a class="slide-wrapper" href="~/Main/ProjectPage/@item.ProjectID">
-                                            <div class="slider-descriprion-box" style="width:@((35/Model.ProjectSlide.Count<VwActiveProjectSlide>()).ToString("#.##"))%;">
+                                            <div class="slider-descriprion-box" style="width:@((35/Model.ProjectSlide.Count<VwActiveProjectSlide>()).ToString().Replace(",","."))%;">
                                                 <div class="slider-descriprion-title">@item.Name</div>
                                                 <div class="slider-descriprion-text">@item.ShortDescription</div>
                                             </div>

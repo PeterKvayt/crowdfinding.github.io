@@ -39,6 +39,12 @@ namespace Example2.Controllers
             return View(await db.vwActiveProjectCards.ToListAsync());
         }
 
+        //public async Task<IActionResult> CreateProjectRules()
+        public IActionResult CreateProjectRules()
+        {
+            return View();
+        }
+
         [HttpGet]
         public IActionResult Buy(int id)
         {
