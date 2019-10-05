@@ -2,7 +2,7 @@
 
 namespace Example2.Models
 {
-    public class VwRecomendedReward
+    public class ViewRecomendedReward
     {
         // id лота
         public long RewardID { get; set; }

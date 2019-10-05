@@ -1,6 +1,8 @@
-﻿@*@model Example2.Models.ProjectCard*@
-@model IEnumerable<Example2.Models.VwActiveProjectCard>
+﻿@model IEnumerable<Example2.Models.ViewActiveProjectCard>
 
+@{ 
+    ViewBag.Title = "Все проекты | Poless Invest";
+}
 
 <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
     <a href="~/Main/Index">
@@ -222,7 +224,7 @@
         </div>
         <!-- Проекты -->
         <div id="projects" class="row">
-            @foreach (VwActiveProjectCard item in Model)
+            @foreach (ViewActiveProjectCard item in Model)
             {
                 <div class="col-lg-4 col-md-4 card-wrapper">
                     <div class="card-box">

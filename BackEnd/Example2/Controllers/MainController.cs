@@ -25,8 +25,6 @@ namespace Example2.Controllers
             //public IEnumerable<VwActiveProjectCard> projectCards = db.vwActiveProjectCards.ToListAsync();
             IndexModels model = new IndexModels
             {
-                //ProjectCards = await db.vwActiveProjectCards.ToListAsync();
-                //ProjectSlide = await db.vwActiveProjectSlides.ToListAsync();
                 ProjectCards = db.vwActiveProjectCards.ToList(),
                 ProjectSlide = db.vwActiveProjectSlides.ToList(),
                 RecomendedRewards = db.vwRecomendedRewards.ToList()
@@ -43,6 +41,15 @@ namespace Example2.Controllers
         public IActionResult CreateProjectRules()
         {
             return View();
+        }
+
+        public IActionResult ProjectPage(long projectId)
+        {
+            ProjectPageModels model = new ProjectPageModels
+            {
+                Project = db.vwAllProjects.FromSql($"exec GetProject {projectId}").ToList()
+            };
+            return View(model);
         }
 
         [HttpGet]

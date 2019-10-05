@@ -1,0 +1,399 @@
+﻿@model Example2.Models.ProjectPageModels;
+
+@{
+    ViewBag.Title = Model.Project[0].Name;
+    }
+
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+    <a href="~/Main/Index">
+        <img src="http://www.polessu.by/sites/all/themes/danland/logo.png" height="50"
+             alt="logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarContent" class="collapse navbar-collapse justify-content-center">
+        <ul class="navbar-nav text-center">
+            <li class="nav-item">
+                <a class="nav-link" href="~/Main/AllProjects">ВСЕ ПРОЕКТЫ <span class="fa fa-book fa-fw"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="~/Main/CreateProjectRules">
+                    СОЗДАТЬ ПРОЕКТ <span class="fa fa-pencil fa-fw"></span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="~/Main/HowItWorks">ПОМОЩЬ <span class="fa fa-info fa-fw"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="~/Main/Search">ПОИСК <span class="fa fa-search fa-fw"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#modalEnter" data-toggle="modal">
+                    ВОЙТИ <span class="fa fa-sign-in fa-fw"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- Модальные окна -->
+<div class="modal fade" id="modalEnter">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!-- вход -->
+                <div id="enter-modal" class="my-modal-content-active">
+                    <button class="closeBtn" id="modalEnterClose" data-dismiss="modal">&times;</button>
+                    <h4 class="title">Вход</h4>
+                    <p>
+                        <input class="inputBox email-input" type="text" placeholder="Email">
+                    </p>
+                    <p>
+                        <div class="social-input-box password-input">
+                            <span class="fa fa-eye-slash fa-fw"></span>
+                            <input class="social-input" type="password" placeholder="Пароль">
+                        </div>
+                    </p>
+                    <p class="modalLink">
+                        <span id="forgot-password-btn" class="link">Забыли пароль?</span>
+                    </p>
+                    <p>
+                        <span class="category modal-enter-btn">ВОЙТИ</span>
+                    </p>
+                    <p>
+                        <span class="category modal-registration-btn">ЗАРЕГИСТРИРОВАТЬСЯ</span>
+                    </p>
+                </div>
+                <!-- регистрация -->
+                <div id="registration-modal" class="my-modal-content">
+                    <button class="closeBtn" id="modalEnterClose" data-dismiss="modal">&times;</button>
+                    <h4 class="title">Регистрация</h4>
+                    <p>
+                        <input class="inputBox" type="text" placeholder="Имя Фамилия">
+                    </p>
+                    <p>
+                        <input class="inputBox email-input" type="text" placeholder="Email">
+                    </p>
+                    <div class="row" style="margin-bottom:7px;">
+                        <div class="col-lg-11 col-md-11 col-sm-11">
+                            <div class="social-input-box password-input">
+                                <span class="fa fa-eye-slash fa-fw"></span>
+                                <input id="registration-password-input-modal" class="social-input" type="password" placeholder="Пароль">
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-1">
+                            <div id="modal-password-status-box" class="modal-password-status">
+                                <span id="password-security-pict-modal" class="fa fa-unlock fa-fw"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-11 col-md-11 col-sm-11">
+                            <div class="social-input-box password-input">
+                                <span class="fa fa-eye-slash fa-fw"></span>
+                                <input id="second-registration-password-input-modal" class="social-input" type="password" placeholder="Повторите пароль">
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-1">
+                            <div class="modal-password-status">
+                                <span id="second-registration-password-status-modal" class="fa fa-exclamation-circle fa-fw"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="modalLink modalConditionRegistration">
+                        Нажимая кнопку зарегистрироваться, вы автоматически подтверждаете,
+                        что ознакомлены и согласны с <a class="link" href="agreement.html">Пользовательским соглашением</a>
+                        платформы Poless Invest.
+                    </p>
+                    <p>
+                        <span class="category modal-registration-btn">ЗАРЕГИСТРИРОВАТЬСЯ</span>
+                    </p>
+                    <p>
+                        <span class="category modal-enter-btn">ВОЙТИ</span>
+                    </p>
+                </div>
+                <!-- восстановление пароля -->
+                <div id="password-recovery-modal" class="my-modal-content">
+                    <button class="closeBtn" id="modalEnterClose" data-dismiss="modal">&times;</button>
+                    <h4 class="title">Восстановление пароля</h4>
+                    <p>
+                        <input class="inputBox email-input" type="text" placeholder="Email">
+                    </p>
+                    <p>
+                        Для восстановления пароля необходимо ввести почту, с которой связан ваш аккаунт.
+                        На нее будет отправлено сообщение для восстановления пароля.
+                    </p>
+                    <p>
+                        <span class="category modal-recovery-btn" href="#">ВОССТАНОВИТЬ</span>
+                    </p>
+                    <p>
+                        <span class="category modal-enter-btn">ВОЙТИ</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- модально окно "задать вопрос" -->
+<div class="modal fade" id="askQuestion">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h5 class="title">Новое сообщение</h5>
+                <button class="closeBtn" id="askQuestionClose" data-dismiss="modal">&times;</button>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <img src="images/avatar.jpg" alt="ava" width="50">
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <a class="link" href="profile.html">Филипп Галлагер</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <span class="littleShortText">АВТОР ПРОЕКТА</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <form action="#">
+                            <p class="supportBox">
+                                <textarea class="inputBox" type="text" placeholder="Задайте свой вопрос"
+                                          rows="6"></textarea>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <a class="my-btn" id="askQestionBtn" href="#">Отправить</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="title">@Model.Project[0].Name</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-9 col-md-12">
+                @if (!String.IsNullOrEmpty(Model.Project[0].VideoUrl))
+                {
+                    <iframe class="video-box" width="100%" height="550" src="https://www.youtube.com/embed/@Model.Project[0].VideoUrl" frameborder="0" allowfullscreen></iframe>
+                }
+                else
+                {
+                    <img class="projectWall lazy" data-original="@Model.Project[0].Image" alt="project photo" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==">
+                }
+            </div>
+            <div class="col-lg-3 col-md-12">
+                <div class="row">
+                    <div class="col-lg-12 col-md-9 col-sm-8" style="margin-bottom: 1rem;">
+                        <span class="title shortTextInfo">@Model.Project[0].Progress</span>
+                        <span class="littleShortText">BYN</span><br>
+                        <span class="littleShortText">СОБРАНО</span>
+                    </div>
+
+                    <div class="col-lg-12 col-md-9 col-sm-8" style="margin-bottom: 1rem;">
+                        <span class="title shortTextInfo">@Model.Project[0].Budget</span>
+                        <span class="littleShortText">BYN</span><br>
+                        <span class="littleShortText">ЦЕЛЬ ПРОЕКТА</span>
+                    </div>
+                    <div class="col-lg-12 col-md-3 col-sm-4" style="margin-bottom: 1rem;">
+                        <span class="title shortTextInfo">@Model.Project[0].Orders</span><br>
+                        <span class="littleShortText">КОЛИЧЕСТВО ЗАЯВОК</span>
+                    </div>
+                    <div class="col-lg-12 col-md-3 col-sm-4" style="margin-bottom: 1rem;">
+                        @if (Model.Project[0].LeftDays > 0)
+                        {
+                            <span class="title shortTextInfo">@Model.Project[0].LeftDays</span>
+                            <span class="littleShortText">ДНЕЙ</span><br>
+                        }
+                        else
+                        {
+                            <span class="title shortTextInfo">@Model.Project[0].LeftTime.Hours</span>
+                            <span class="littleShortText">ЧАСОВ</span><br>
+                            <span class="title shortTextInfo">@Model.Project[0].LeftTime.Minutes</span>
+                            <span class="littleShortText">МИНУТ</span><br>
+                        }
+                        <span class="littleShortText">ДО ОКОНЧАНИЯ СБОРА</span>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12" style="margin-bottom: 1rem;">
+                        <a class="my-btn" href="~/Main/RewardPage/@Model.Project[0].ProjectID">Поддержать проект</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    @Model.Project[0].ShortDescription
+                </div>
+            </div>
+            <div class="row" style="margin-top:15px;">
+                <div class="col-lg-1">
+                    <img src="@Model.Project[0].UserImage" alt="ava" style="border-radius:4px; width:50px;">
+                </div>
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col" style="margin-left:4px;">
+                            <a class="link" href="~/Main/Profile/@Model.Project[0].UserID">@Model.Project[0].UserName</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span class="fa fa-user fa-fw"></span><span class="littleShortText">АВТОР ПРОЕКТА</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="row">
+                        <div class="col" style="margin-left:4px;">
+                            <a class="link" href="~/Main/AllProject[0]s"><span>@Model.Project[0].CategoryName</span></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span class="fa fa-bookmark fa-fw"></span><span class="littleShortText">КАТЕГОРИЯ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+                    <div class="row">
+                        <div class="col" style="margin-left:4px;">
+                            <span>@Model.Project[0].Location</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span class="fa fa-map-marker fa-fw"></span><span class="littleShortText">ГОРОД РЕАЛИЗАЦИИ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Навигационные вкладки -->
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div id="about" class="active-category">
+                    <span class="fa fa-info-circle fa-fw"
+                          aria-hidden="true"></span> О проекте
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div id="support" class="category"><span class="fa fa-users fa-fw"></span> Поддержали</div>
+            </div>
+        </div>
+        <!-- Вкладки панелей -->
+        <div id="total-info">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="box">
+                        @Model.Project[0].FullDescription
+                        @*<p>
+                            Все вечеринки уже давно похожи друг на друга? У нашей команды свой взгляд на то, какой
+                            должна быть
+                            бессонная ночь в Комарово!
+                        </p>
+                        <p>
+                            <img src="images/photo1.jpg" alt="photo1">
+                        </p>
+                        <p>
+                            И если Вы поддержите нас, мы сделаем Rock'n'Rave незабываемым и ярким событием Вашего
+                            лета!
+                        </p>
+                        <h4 class="title">Только представьте…</h4>
+                        <p>
+                            Live-сцена, 4 танц-пола под бесконечным небом, мощный звук, насыщенный свет, шумные
+                            бары, фудкорт,
+                            перфомансы с
+                            развлечениями в коктейле с вашими любимым ди-джеями и музыкальными группами! Rock'n'Rave
+                            сделает эту
+                            ночь долгой,
+                            насыщенной и незабываемой! Мы остановим для Вас время!
+                        </p>
+                        <p>
+                            <img src="images/photo2.jpg" alt="photo2">
+                        </p>
+                        <p>
+                            Чтобы сделать Ваше пребывание на фестивале Rock'n'Rave еще более комфортным,
+                            мы доставим Вас из самого центра Минска на автобусах, которые будут курсировать целую
+                            ночь!
+                        </p>
+                        <p>
+                            Поддержите нас и станьте самым желанным гостем фестиваля Rock'n'Rave! Для Вас проезд на
+                            автобусе
+                            будет
+                            бесплатным!
+                        </p>
+                        <h4 class="title">На что пойдут собранные средства?</h4>
+                        <p>
+                            <ul>
+                                <li>
+                                    Чтобы всю ночь с 9 по 10 июня с Городского Вала в загородный комплекс «Комарово»
+                                    курсировали
+                                    автобусы, нам нужно собрать 20 000 000 руб.
+                                </li>
+                                <li>
+                                    Чтобы Вы могли приехать и на велосипеде – мы организуем охраняемую стоянку с
+                                    веломастерской
+                                    - 5
+                                    000 000 руб.
+                                </li>
+                                <li>
+                                    Чтобы забронировать гостиницу загородного комплекса для Вашего комфортного
+                                    пребывания на
+                                    фестивале - 25 000 000 руб.
+                                </li>
+                                <li>
+                                    Чтобы подарить Вам оригинальные подарки за Вашу помощь и доставить их вам – еще
+                                    5 000 000
+                                    руб.
+                                </li>
+                            </ul>
+                        </p>*@
+                    </div>
+                    <a class="my-btn" href="#askQuestion" data-toggle="modal" style="margin-top: 1rem;">
+                        Задать
+                        вопрос
+                    </a>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="title"><span class="fa fa-gift fa-fw"></span>Вознаграждения</h5>
+                        </div>
+                        <div id="rewards-box" style="margin-top:16px;"></div>
+                        <div class="col sticky" style="margin-top:16px;">
+                            <a class="my-btn" href="reward-page.html"
+                               style="width:100%; text-align:center;">
+                                Поддержать
+                                проект
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="society" style="display: none;">
+            <div id="orders-box" class="row"></div>
+        </div>
+    </div>
+<div id="to-top-btn"><span class="fa fa-chevron-down fa-2x"></span></div>
+@section JsFiles{
+    <script src="js/rewardCard.js"></script>
+    <script src="js/order.js"></script>
+    <script src="js/project-page.js"></script>
+    
+}

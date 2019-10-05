@@ -143,12 +143,12 @@
                 <div class="col">
                     <div id="block-for-slider">
                         <div id="viewport">
-                            <div id="slidewrapper" style="width: @(100*Model.ProjectSlide.Count<VwActiveProjectSlide>())%;">
-                                @foreach (VwActiveProjectSlide item in Model.ProjectSlide)
+                            <div id="slidewrapper" style="width: @(100*Model.ProjectSlide.Count<ViewActiveProjectSlide>())%;">
+                                @foreach (ViewActiveProjectSlide item in Model.ProjectSlide)
                                 {
-                                    <div class="slide" style="width: @((100/Model.ProjectSlide.Count<VwActiveProjectSlide>()).ToString().Replace(",","."))%;">
-                                        <a class="slide-wrapper" href="~/Main/ProjectPage/@item.ProjectID">
-                                            <div class="slider-descriprion-box" style="width:@((35/Model.ProjectSlide.Count<VwActiveProjectSlide>()).ToString().Replace(",","."))%;">
+                                    <div class="slide" style="width: @((100/Model.ProjectSlide.Count<ViewActiveProjectSlide>()).ToString().Replace(",","."))%;">
+                                        <a class="slide-wrapper" href="~/Main/ProjectPage?projectId=@item.ProjectID">
+                                            <div class="slider-descriprion-box" style="width:@((35/Model.ProjectSlide.Count<ViewActiveProjectSlide>()).ToString().Replace(",","."))%;">
                                                 <div class="slider-descriprion-title">@item.Name</div>
                                                 <div class="slider-descriprion-text">@item.ShortDescription</div>
                                             </div>
@@ -167,7 +167,7 @@
                                 </button>
                             </div>
                             <div id="nav-btns">
-                                @foreach (VwActiveProjectSlide item in Model.ProjectSlide)
+                                @foreach (ViewActiveProjectSlide item in Model.ProjectSlide)
                                 {
                                     <li class="slide-nav-btn"></li>
                                 }
@@ -185,7 +185,7 @@
                 </div>
             </div>
             <div id="popular-projects" class="row">
-                @foreach (VwActiveProjectCard item in Model.ProjectCards)
+                @foreach (ViewActiveProjectCard item in Model.ProjectCards)
                 {
                     <div class="col-lg-4 col-md-4 card-wrapper">
                         <div class="card-box">
@@ -254,7 +254,7 @@
                 </div>
             </div>
             <div id="recomended-projects" class="row">
-                @foreach (VwActiveProjectCard item in Model.ProjectCards)
+                @foreach (ViewActiveProjectCard item in Model.ProjectCards)
                 {
                     <div class="col-lg-4 col-md-4 card-wrapper">
                         <div class="card-box">
@@ -323,7 +323,7 @@
                 </div>
             </div>
             <div id="rewards" class="row">
-                @foreach (VwRecomendedReward item in Model.RecomendedRewards)
+                @foreach (ViewRecomendedReward item in Model.RecomendedRewards)
                 {
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
                         <a class="reward-link" href="~/Main/ProjectPage/@item.ProjectID">

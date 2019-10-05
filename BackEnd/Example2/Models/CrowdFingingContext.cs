@@ -26,11 +26,14 @@ namespace Example2.Models
         // проект
         //public DbSet<Project> Projects { get; set; } 
 
+        // все проекты
+        public DbSet<ViewAllProject> vwAllProjects { get; set; }
+
         // текущие карточки проектов
-        public DbSet<VwActiveProjectCard> vwActiveProjectCards { get; set; }
+        public DbSet<ViewActiveProjectCard> vwActiveProjectCards { get; set; }
         
         // текущие карточки проектов
-        public DbSet<VwActiveProjectSlide> vwActiveProjectSlides { get; set; }
+        public DbSet<ViewActiveProjectSlide> vwActiveProjectSlides { get; set; }
 
         // слайды проектов
         //public DbSet<vwSlides> Slide { get; set; } 
@@ -45,7 +48,7 @@ namespace Example2.Models
         //public DbSet<Reward> Rewards { get; set; } 
 
         //рекомендованные лоты
-        public DbSet<VwRecomendedReward> vwRecomendedRewards { get; set; }
+        public DbSet<ViewRecomendedReward> vwRecomendedRewards { get; set; }
 
         // типы социальных сетей
         //public DbSet<SocialNetworksType> SocialNetworksTypes { get; set; } 
@@ -62,16 +65,20 @@ namespace Example2.Models
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<VwActiveProjectCard>(entity => {
+            modelBuilder.Entity<ViewActiveProjectCard>(entity => {
                 entity.HasKey(e => e.ProjectID);
             });
 
-            modelBuilder.Entity<VwActiveProjectSlide>(entity => {
+            modelBuilder.Entity<ViewActiveProjectSlide>(entity => {
                 entity.HasKey(e => e.ProjectID);
             });
 
-            modelBuilder.Entity<VwRecomendedReward>(entity => {
+            modelBuilder.Entity<ViewRecomendedReward>(entity => {
                 entity.HasKey(e => e.RewardID);
+            });
+
+            modelBuilder.Entity<ViewAllProject>(entity => {
+                entity.HasKey(e => e.ProjectID);
             });
         }
     }
