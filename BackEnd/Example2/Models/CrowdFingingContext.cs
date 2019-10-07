@@ -50,6 +50,9 @@ namespace Example2.Models
         //рекомендованные лоты
         public DbSet<ViewRecomendedReward> vwRecomendedRewards { get; set; }
 
+        // все лоты для отображения в ProjectPage
+        public DbSet<ViewAllRewards> vwAllRewards { get; set; }
+
         // типы социальных сетей
         //public DbSet<SocialNetworksType> SocialNetworksTypes { get; set; } 
 
@@ -79,6 +82,11 @@ namespace Example2.Models
 
             modelBuilder.Entity<ViewAllProject>(entity => {
                 entity.HasKey(e => e.ProjectID);
+            });
+
+            modelBuilder.Entity<ViewAllRewards>(entity =>
+            {
+                entity.HasKey(e => e.RewardID);
             });
         }
     }

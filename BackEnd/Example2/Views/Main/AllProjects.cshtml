@@ -230,7 +230,7 @@
                     <div class="card-box">
                         <div class="card-picture-wrapper">
                             <div class="card-picture-box">
-                                <a class="card-picture-link" href="project-page.html">ПОДДЕРЖАТЬ ПРОЕКТ</a>
+                                <a class="card-picture-link" href="~/Main/ProjectPage?projectId=@item.ProjectID">ПОДДЕРЖАТЬ ПРОЕКТ</a>
                                 <img class="card-picture-hover" src="~/images/exampleProjectPictHover.png" />
                                 <img class="card-picture lazy" data-original="@item.Image" alt="Project picture" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==">
                             </div>
@@ -243,31 +243,31 @@
                                 <span class="projectName">@item.Name</span>
                                 @item.ShortDescription
                             </a>
-                            <a class="card-progress-box" href="project-page.html">
+                            <a class="card-progress-box" href="~/Main/ProjectPage?projectId=@item.ProjectID">
                                 <div class="progress-bar" style="width: @item.GetProgressLine()"></div>
                             </a>
                             <div class="row">
                                 <div class="col">
                                     <div class="row">
                                         <div class="col">
-                                            <a class="card-up-status" href="project-page.html">@item.GetProgress()</a>
+                                            <a class="card-up-status" href="~/Main/ProjectPage?projectId=@item.ProjectID">@item.GetProgress()</a>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <a class="card-down-status" href="project-page.html">@item.GetProgressStatus()</a>
+                                            <a class="card-down-status" href="~/Main/ProjectPage?projectId=@item.ProjectID">@item.GetProgressStatus()</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="row">
                                         <div class="col card-right-status">
-                                            <a class="card-up-status" href="project-page.html">@item.Progress BYN</a>
+                                            <a class="card-up-status" href="~/Main/ProjectPage?projectId=@item.ProjectID">@item.Progress BYN</a>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col card-right-status">
-                                            <a class="card-down-status" href="project-page.html"><span class="fa fa-clock-o fa-fw"></span>@item.GetLeftTime()</a>
+                                            <a class="card-down-status" href="~/Main/ProjectPage?projectId=@item.ProjectID"><span class="fa fa-clock-o fa-fw"></span>@item.GetLeftTime()</a>
                                         </div>
                                     </div>
                                 </div>

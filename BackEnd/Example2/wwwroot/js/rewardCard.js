@@ -17,73 +17,73 @@ class RewardCard{
     // this.Href = href; // ссылка на оплату лота
   }
 
-  AddRewardCard(selector){
-    $(selector).append(
-      '<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">'+
-      '<a class="reward-link" href="project-page.html">'+
-        '<div class="reward-card-box">'+
-          '<img class="reward-img lazy" data-original="'+ this.Picture +'" alt="rewardImg" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="/>'+
-          '<div class="reward-card-body">'+
-            '<div class="reward-card-description">'+
-              '<div class="reward-title">'+ this.Name +'</div>'+
-              this.Description +
-            '</div>'+
-            '<div class="reward-card-pay-info">'+
-              '<div class="row">'+
-                '<div class="col">'+
-                  '<div class="reward-cost">'+ this.Price +' BYN</div>'+
-                '</div>'+
-                '<div class="col">'+
-                  '<div class="rewards-left">'+ this.Left +'</div>'+
-               '</div>'+
-              '</div>'+
-            '</div>'+
-          '</div>'+
-        '</div>'+
-      '</a>'+
-    '</div>'
-    );
-  }
+  //AddRewardCard(selector){
+  //  $(selector).append(
+  //    '<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">'+
+  //    '<a class="reward-link" href="project-page.html">'+
+  //      '<div class="reward-card-box">'+
+  //        '<img class="reward-img lazy" data-original="'+ this.Picture +'" alt="rewardImg" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="/>'+
+  //        '<div class="reward-card-body">'+
+  //          '<div class="reward-card-description">'+
+  //            '<div class="reward-title">'+ this.Name +'</div>'+
+  //            this.Description +
+  //          '</div>'+
+  //          '<div class="reward-card-pay-info">'+
+  //            '<div class="row">'+
+  //              '<div class="col">'+
+  //                '<div class="reward-cost">'+ this.Price +' BYN</div>'+
+  //              '</div>'+
+  //              '<div class="col">'+
+  //                '<div class="rewards-left">'+ this.Left +'</div>'+
+  //             '</div>'+
+  //            '</div>'+
+  //          '</div>'+
+  //        '</div>'+
+  //      '</div>'+
+  //    '</a>'+
+  //  '</div>'
+  //  );
+  //}
 
-  AddFullRewardCard(selector){
-    $(selector).append(
-      '<div class="col-12">' +
-        // '<a class="reward-link" href="projectPage.html">' +
-          '<div class="reward-card-box">' +
-            '<img class="reward-img lazy" data-original="' + this.Picture + '" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="/>' +
-            '<div class="reward-card-body">' +
-              '<div class="reward-card-description-full">' +
-                '<div class="reward-title-full">' + this.Name + '</div>' +
-                this.Description +
-              '</div>' +
-              '<div class="reward-card-pay-info">' +
-                '<div class="row">' +
-                  '<div class="col">' +
-                  '<span class="card-down-status">Примерная дата доставки</span>'+
-                  '<span class="reward-card-description-full">'+ this.DeliveryMonth +' '+ this.DeliveryYear +'</span>'+
-                  '</div>' +
-                '</div>' +
-                '<div class="row">' +
-                  '<div class="col">' +
-                  '<span class="card-down-status">Способ получения</span>'+
-                  '<span class="reward-card-description-full">'+ this.DeliveryType +'</span>'+
-                  '</div>' +
-                '</div>' +
-                '<div class="row">' +
-                  '<div class="col">' +
-                    '<div class="reward-cost">' + this.Price + ' BYN</div>' +
-                  '</div>' +
-                  '<div class="col">' +
-                    '<div class="rewards-left">' + this.Left + '</div>' +
-                  '</div>' +
-                '</div>' +
-              '</div>' +
-            '</div>' +
-          '</div>' +
-        // '</a>' +
-      '</div>'
-    );
-  }
+  //AddFullRewardCard(selector){
+  //  $(selector).append(
+  //    '<div class="col-12">' +
+  //      // '<a class="reward-link" href="projectPage.html">' +
+  //        '<div class="reward-card-box">' +
+  //          '<img class="reward-img lazy" data-original="' + this.Picture + '" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="/>' +
+  //          '<div class="reward-card-body">' +
+  //            '<div class="reward-card-description-full">' +
+  //              '<div class="reward-title-full">' + this.Name + '</div>' +
+  //              this.Description +
+  //            '</div>' +
+  //            '<div class="reward-card-pay-info">' +
+  //              '<div class="row">' +
+  //                '<div class="col">' +
+  //                '<span class="card-down-status">Примерная дата доставки</span>'+
+  //                '<span class="reward-card-description-full">'+ this.DeliveryMonth +' '+ this.DeliveryYear +'</span>'+
+  //                '</div>' +
+  //              '</div>' +
+  //              '<div class="row">' +
+  //                '<div class="col">' +
+  //                '<span class="card-down-status">Способ получения</span>'+
+  //                '<span class="reward-card-description-full">'+ this.DeliveryType +'</span>'+
+  //                '</div>' +
+  //              '</div>' +
+  //              '<div class="row">' +
+  //                '<div class="col">' +
+  //                  '<div class="reward-cost">' + this.Price + ' BYN</div>' +
+  //                '</div>' +
+  //                '<div class="col">' +
+  //                  '<div class="rewards-left">' + this.Left + '</div>' +
+  //                '</div>' +
+  //              '</div>' +
+  //            '</div>' +
+  //          '</div>' +
+  //        '</div>' +
+  //      // '</a>' +
+  //    '</div>'
+  //  );
+  //}
 
   AddPayReward(selector){
     $(selector).append(

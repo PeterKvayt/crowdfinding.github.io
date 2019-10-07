@@ -2,8 +2,22 @@
 
 namespace Example2.Models
 {
-    public class ViewRecomendedReward
+    public class ViewAllRewards 
+        //: ViewRecomendedReward
     {
+        // примерная дата доставки
+        public DateTime DeliveryDate { get; set; }
+
+        // тип доставки
+        public string DeliveryType { get; set; }
+
+        //public ViewAllRewards(long RewardID, long ProjectID, string RewardName, string RewardImage, string RewardDescription, int Price, int? leftRewards, DateTime DeliveryDate, string DeliveryType)
+        //    : base(RewardID, ProjectID, RewardName, RewardImage, RewardDescription, Price, leftRewards)
+        //{
+        //    this.DeliveryDate = DeliveryDate;
+        //    this.DeliveryType = DeliveryType;
+        //}
+
         // id лота
         public long RewardID { get; set; }
 
@@ -24,17 +38,6 @@ namespace Example2.Models
 
         // оставшиеся лоты
         private int? leftRewards;
-
-        //public ViewRecomendedReward(long RewardID, long ProjectID, string RewardName, string RewardImage, string RewardDescription, int Price, int? leftRewards)
-        //{
-        //    this.RewardID = RewardID;
-        //    this.ProjectID = ProjectID;
-        //    this.RewardName = RewardName;
-        //    this.RewardImage = RewardImage;
-        //    this.RewardDescription = RewardDescription;
-        //    this.Price = Price;
-        //    this.leftRewards = leftRewards;
-        //}
 
         public int? LeftRewards
         {

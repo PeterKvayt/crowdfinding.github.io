@@ -47,7 +47,8 @@ namespace Example2.Controllers
         {
             ProjectPageModels model = new ProjectPageModels
             {
-                Project = db.vwAllProjects.FromSql($"exec GetProject {projectId}").ToList()
+                Project = db.vwAllProjects.FromSql($"exec GetProject {projectId}").ToList(),
+                Rewards = db.vwAllRewards.FromSql($"exec GetRewards {projectId}").ToList()
             };
             return View(model);
         }

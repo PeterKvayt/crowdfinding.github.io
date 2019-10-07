@@ -301,68 +301,6 @@
                 <div class="col-lg-8">
                     <div class="box">
                         @Model.Project[0].FullDescription
-                        @*<p>
-                            Все вечеринки уже давно похожи друг на друга? У нашей команды свой взгляд на то, какой
-                            должна быть
-                            бессонная ночь в Комарово!
-                        </p>
-                        <p>
-                            <img src="images/photo1.jpg" alt="photo1">
-                        </p>
-                        <p>
-                            И если Вы поддержите нас, мы сделаем Rock'n'Rave незабываемым и ярким событием Вашего
-                            лета!
-                        </p>
-                        <h4 class="title">Только представьте…</h4>
-                        <p>
-                            Live-сцена, 4 танц-пола под бесконечным небом, мощный звук, насыщенный свет, шумные
-                            бары, фудкорт,
-                            перфомансы с
-                            развлечениями в коктейле с вашими любимым ди-джеями и музыкальными группами! Rock'n'Rave
-                            сделает эту
-                            ночь долгой,
-                            насыщенной и незабываемой! Мы остановим для Вас время!
-                        </p>
-                        <p>
-                            <img src="images/photo2.jpg" alt="photo2">
-                        </p>
-                        <p>
-                            Чтобы сделать Ваше пребывание на фестивале Rock'n'Rave еще более комфортным,
-                            мы доставим Вас из самого центра Минска на автобусах, которые будут курсировать целую
-                            ночь!
-                        </p>
-                        <p>
-                            Поддержите нас и станьте самым желанным гостем фестиваля Rock'n'Rave! Для Вас проезд на
-                            автобусе
-                            будет
-                            бесплатным!
-                        </p>
-                        <h4 class="title">На что пойдут собранные средства?</h4>
-                        <p>
-                            <ul>
-                                <li>
-                                    Чтобы всю ночь с 9 по 10 июня с Городского Вала в загородный комплекс «Комарово»
-                                    курсировали
-                                    автобусы, нам нужно собрать 20 000 000 руб.
-                                </li>
-                                <li>
-                                    Чтобы Вы могли приехать и на велосипеде – мы организуем охраняемую стоянку с
-                                    веломастерской
-                                    - 5
-                                    000 000 руб.
-                                </li>
-                                <li>
-                                    Чтобы забронировать гостиницу загородного комплекса для Вашего комфортного
-                                    пребывания на
-                                    фестивале - 25 000 000 руб.
-                                </li>
-                                <li>
-                                    Чтобы подарить Вам оригинальные подарки за Вашу помощь и доставить их вам – еще
-                                    5 000 000
-                                    руб.
-                                </li>
-                            </ul>
-                        </p>*@
                     </div>
                     <a class="my-btn" href="#askQuestion" data-toggle="modal" style="margin-top: 1rem;">
                         Задать
@@ -374,7 +312,44 @@
                         <div class="col">
                             <h5 class="title"><span class="fa fa-gift fa-fw"></span>Вознаграждения</h5>
                         </div>
-                        <div id="rewards-box" style="margin-top:16px;"></div>
+                        <div id="rewards-box" style="margin-top:16px;">
+                            @foreach (var item in Model.Rewards)
+                            {
+                               <div class="col-12">
+                                  <div class="reward-card-box">
+                                    <img class="reward-img lazy" data-original="@item.RewardImage" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="/>
+                                    <div class="reward-card-body">
+                                        <div class="reward-card-description-full">
+                                            <div class="reward-title-full">@item.RewardName</div>
+                                            @item.RewardDescription
+                                        </div>
+                                      <div class="reward-card-pay-info">
+                                        <div class="row">
+                                          <div class="col">
+                                          <span class="card-down-status">Примерная дата доставки</span>
+                                          <span class="reward-card-description-full">@item.DeliveryDate.ToString("MMMMMMMM") @item.DeliveryDate.ToString("yyyy")</span>
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="col">
+                                          <span class="card-down-status">Способ получения</span>
+                                          <span class="reward-card-description-full">@item.DeliveryType</span>
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="col">
+                                              <div class="reward-cost">@item.Price BYN</div>
+                                          </div>
+                                          <div class="col">
+                                              <div class="rewards-left">@item.GetLeftRewards()</div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                            }
+                        </div>
                         <div class="col sticky" style="margin-top:16px;">
                             <a class="my-btn" href="reward-page.html"
                                style="width:100%; text-align:center;">
