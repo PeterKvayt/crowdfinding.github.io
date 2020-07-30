@@ -1,8 +1,9 @@
 ﻿using System;
+using Example2.Models;
 
 namespace Example2.Models
 {
-    public class ViewAllRewards 
+    public class ViewAllRewards
         //: ViewRecomendedReward
     {
         // примерная дата доставки
@@ -11,11 +12,23 @@ namespace Example2.Models
         // тип доставки
         public string DeliveryType { get; set; }
 
+        //public ViewRecomendedReward ViewReward { get; set; }
+
         //public ViewAllRewards(long RewardID, long ProjectID, string RewardName, string RewardImage, string RewardDescription, int Price, int? leftRewards, DateTime DeliveryDate, string DeliveryType)
-        //    : base(RewardID, ProjectID, RewardName, RewardImage, RewardDescription, Price, leftRewards)
         //{
+        //    this.ViewReward = new ViewRecomendedReward
+        //    (
+        //        RewardID,
+        //        ProjectID,
+        //        RewardName,
+        //        RewardImage,
+        //        RewardDescription,
+        //        Price,
+        //        leftRewards
+        //    );
         //    this.DeliveryDate = DeliveryDate;
         //    this.DeliveryType = DeliveryType;
+        //    this.RewardID = RewardID;
         //}
 
         // id лота

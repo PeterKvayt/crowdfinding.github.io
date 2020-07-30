@@ -12942,11 +12942,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyDirectory\\crowdfinding.github.io\\BackEnd\\Example2\\Example2.csproj",
+      "projectUniqueName": "D:\\MyDirectory\\GitRepositories\\crowdfinding.github.io\\BackEnd\\Example2\\Example2.csproj",
       "projectName": "Example2",
-      "projectPath": "D:\\MyDirectory\\crowdfinding.github.io\\BackEnd\\Example2\\Example2.csproj",
+      "projectPath": "D:\\MyDirectory\\GitRepositories\\crowdfinding.github.io\\BackEnd\\Example2\\Example2.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\MyDirectory\\crowdfinding.github.io\\BackEnd\\Example2\\obj\\",
+      "outputPath": "D:\\MyDirectory\\GitRepositories\\crowdfinding.github.io\\BackEnd\\Example2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

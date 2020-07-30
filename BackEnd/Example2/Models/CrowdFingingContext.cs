@@ -68,6 +68,8 @@ namespace Example2.Models
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+
             modelBuilder.Entity<ViewActiveProjectCard>(entity => {
                 entity.HasKey(e => e.ProjectID);
             });
